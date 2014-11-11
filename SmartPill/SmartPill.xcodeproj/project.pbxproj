@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF6256031A124272009CA08D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF6256021A124272009CA08D /* .gitignore */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF6256021A124272009CA08D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 		B3D647DF1A12408600461CAF /* SmartPill */ = {
 			isa = PBXGroup;
 			children = (
+				AF6256021A124272009CA08D /* .gitignore */,
 				B3D647E81A12408600461CAF /* SPAppDelegate.h */,
 				B3D647E91A12408600461CAF /* SPAppDelegate.m */,
 				B3D647EB1A12408600461CAF /* Main.storyboard */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6256031A124272009CA08D /* .gitignore in Resources */,
 				B3D647F21A12408600461CAF /* Images.xcassets in Resources */,
 				B3D647E41A12408600461CAF /* InfoPlist.strings in Resources */,
 				B3D647ED1A12408600461CAF /* Main.storyboard in Resources */,
@@ -457,6 +461,7 @@
 				B3D6480A1A12408600461CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3D6480B1A12408600461CAF /* Build configuration list for PBXNativeTarget "SmartPillTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +470,7 @@
 				B3D6480D1A12408600461CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
