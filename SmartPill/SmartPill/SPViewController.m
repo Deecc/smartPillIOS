@@ -128,6 +128,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     }
 }
 
+#pragma mark - Google+
 - (void)createGoogleLoginButton {
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;

@@ -51,23 +51,15 @@
 //                  sourceApplication:sourceApplication
 //                         annotation:annotation];
 //}
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-     BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-        
-       BOOL wasHandledG = [GPPURLHandler handleURL:url
-                      sourceApplication:sourceApplication
-                             annotation:annotation];
-    if(wasHandled){
-        return wasHandled;
-    }else{
-       return wasHandledG;
-    }
-
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    
+    return ([FBSession.activeSession handleOpenURL:url] || [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation]);
+    
 }
+
+
+
 
 
 
