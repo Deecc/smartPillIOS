@@ -54,42 +54,34 @@
     loginView.delegate = self;
     [self.view addSubview:loginView];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-// This method will be called when the user information has been fetched
+//Método chamado para pegar informações do user
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    //lugar onde podemos pegar informações
     //self.profilePicture.profileID = user.id;
     //self.name.text = user.name;
     if ([user.id isEqualToString:@"878485092182794"]) {
         [self goToHomeScreen];
     }
 }
+//Método que muda para o ScheduleViewController
 - (void)goToHomeScreen{
     UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
     viewControllerLogged.navigationItem.hidesBackButton = YES;
     [self.navigationController pushViewController:viewControllerLogged animated:YES];
 }
-// Logged-in user experience
+//Quando da certo na hora de logar entre nesse método
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    //Quando deu certo na hora de logar
     //self.status.text = @"You're logged in as";
 }
-// Logged-out user experience
+//Quando dá errado o log in
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    //Quando dá errado o log in
 //    UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
 //    loginLabel.text = @"You're not logged in!";
 //    loginLabel.textAlignment = NSTextAlignmentCenter;
 //    [loginLabel sizeToFit];
 //    [self.view addSubview:loginLabel];
 }
-// Handle possible errors that can occur during login
+//Cuida de possiveis erros ao logar
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
     
