@@ -24,6 +24,7 @@
     [self createLoginButton];
 }
 
+#pragma mark - Facebook
 
 - (void)createLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
