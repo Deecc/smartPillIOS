@@ -70,7 +70,6 @@
     UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
     viewControllerLogged.navigationItem.hidesBackButton = YES;
     [self.navigationController pushViewController:viewControllerLogged animated:YES];
-    NSLog(@"goToHomeScreen");
 }
 // Logged-in user experience
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
