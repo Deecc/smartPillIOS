@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF6256031A124272009CA08D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF6256021A124272009CA08D /* .gitignore */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		80FD6CB74E9B9CC6BEF532FC /* Pods-SmartPill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPill/Pods-SmartPill.debug.xcconfig"; sourceTree = "<group>"; };
-		AF6256021A124272009CA08D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,7 +133,6 @@
 			children = (
 				B3EFE0191A1285550082591C /* Controller */,
 				B3EFE0171A12854E0082591C /* Model */,
-				AF6256021A124272009CA08D /* .gitignore */,
 				B3D647EB1A12408600461CAF /* Main.storyboard */,
 				B3D647F11A12408600461CAF /* Images.xcassets */,
 				B3D647E01A12408600461CAF /* Supporting Files */,
@@ -271,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF6256031A124272009CA08D /* .gitignore in Resources */,
 				B3D647F21A12408600461CAF /* Images.xcassets in Resources */,
 				B3D647E41A12408600461CAF /* InfoPlist.strings in Resources */,
 				B3D647ED1A12408600461CAF /* Main.storyboard in Resources */,
