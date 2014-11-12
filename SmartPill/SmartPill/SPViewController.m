@@ -9,8 +9,10 @@
 #import "SPViewController.h"
 #import "SPScheduleViewController.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
 
 
+static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
 @interface SPViewController ()
 
@@ -22,8 +24,8 @@
 {
     [super viewDidLoad];
     [self createLoginButton];
+    [self createGoogleLoginButton];
 }
-
 
 - (void)createLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
@@ -130,6 +132,47 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
+}
+
+- (void)createGoogleLoginButton {
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn.shouldFetchGooglePlusUser = YES;
+    //signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    signIn.clientID = kClientId;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    //signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    // Optional: declare signIn.actions, see "app activities"
+    signIn.delegate = self;
+    
+    GPPSignInButton *loginGoogleView = [[GPPSignInButton alloc] init];
+    loginGoogleView.frame = CGRectMake(200, 100, 200, 200);
+    
+    
+    UIImage *loginImage = [UIImage imageNamed:@"google+.png"];
+    UIImage *loginImageHighlithed = [UIImage imageNamed:@"google+.png"];
+    
+    [loginGoogleView setBackgroundImage:loginImage forState:UIControlStateNormal];
+    [loginGoogleView setBackgroundImage:nil forState:UIControlStateSelected];
+    [loginGoogleView setBackgroundImage:loginImageHighlithed forState:UIControlStateHighlighted];
+    [loginGoogleView sizeToFit];
+    
+    
+    [self.view addSubview:loginGoogleView];
+    
+}
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error {
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+}
+
+- (void)presentSignInViewController:(UIViewController *)viewController {
+    // This is an example of how you can implement it if your app is navigation-based.
+    [[self navigationController] pushViewController:viewController animated:YES];
 }
 
 

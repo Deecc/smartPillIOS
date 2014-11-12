@@ -7,6 +7,7 @@
 //
 #import <FacebookSDK/FacebookSDK.h>
 #import "SPAppDelegate.h"
+#import <GooglePlus/GooglePlus.h>
 
 @implementation SPAppDelegate
 
@@ -42,18 +43,32 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+//- (BOOL)application: (UIApplication *)application
+//            openURL: (NSURL *)url
+//  sourceApplication: (NSString *)sourceApplication
+//         annotation: (id)annotation {
+//    return [GPPURLHandler handleURL:url
+//                  sourceApplication:sourceApplication
+//                         annotation:annotation];
+//}
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-    
-    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    
-    // You can add your app-specific url handling code here if needed
-    
-    return wasHandled;
+     BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+        
+       BOOL wasHandledG = [GPPURLHandler handleURL:url
+                      sourceApplication:sourceApplication
+                             annotation:annotation];
+    if(wasHandled){
+        return wasHandled;
+    }else{
+       return wasHandledG;
+    }
+
+
 }
+
 
 
 @end
