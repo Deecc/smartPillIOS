@@ -7,7 +7,11 @@
 //
 #import <FacebookSDK/FacebookSDK.h>
 #import <UIKit/UIKit.h>
+#import <GooglePlus/GooglePlus.h>
 
+@interface MyViewController : UIViewController <GPPSignInDelegate>
+
+@end
 @interface SPViewController : UIViewController<FBLoginViewDelegate>
 
 @end

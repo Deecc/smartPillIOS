@@ -8,6 +8,9 @@
 
 #import "SPViewController.h"
 #import "SPScheduleViewController.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
+
+
 
 @interface SPViewController ()
 
@@ -20,6 +23,7 @@
     [super viewDidLoad];
     [self createLoginButton];
 }
+
 
 - (void)createLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];

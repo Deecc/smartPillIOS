@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */; };
+		AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7761A13DC790079AEA3 /* GooglePlus.framework */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		80FD6CB74E9B9CC6BEF532FC /* Pods-SmartPill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPill/Pods-SmartPill.debug.xcconfig"; sourceTree = "<group>"; };
+		AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		AF05F7761A13DC790079AEA3 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */,
+				AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */,
 				B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */,
 				B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */,
 				B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */,
@@ -119,6 +125,8 @@
 		B3D647D81A12408600461CAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */,
+				AF05F7761A13DC790079AEA3 /* GooglePlus.framework */,
 				B3D647D91A12408600461CAF /* Foundation.framework */,
 				B3D647DB1A12408600461CAF /* CoreGraphics.framework */,
 				B3D647DD1A12408600461CAF /* UIKit.framework */,
@@ -451,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartPill/SmartPill-Prefix.pch";
 				INFOPLIST_FILE = "SmartPill/SmartPill-Info.plist";
@@ -465,6 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartPill/SmartPill-Prefix.pch";
 				INFOPLIST_FILE = "SmartPill/SmartPill-Info.plist";
