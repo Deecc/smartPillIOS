@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */; };
 		AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7761A13DC790079AEA3 /* GooglePlus.framework */; };
+		AF05F77A1A13E6750079AEA3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7791A13E6750079AEA3 /* AddressBook.framework */; };
+		AF05F77C1A13E6810079AEA3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F77B1A13E6810079AEA3 /* AssetsLibrary.framework */; };
+		AF05F77E1A13E6930079AEA3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F77D1A13E6930079AEA3 /* CoreLocation.framework */; };
+		AF05F7801A13E69E0079AEA3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F77F1A13E69E0079AEA3 /* CoreMotion.framework */; };
+		AF05F7821A13E6AE0079AEA3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7811A13E6AE0079AEA3 /* CoreText.framework */; };
+		AF05F7841A13E6BD0079AEA3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */; };
+		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
+		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -41,6 +49,14 @@
 		80FD6CB74E9B9CC6BEF532FC /* Pods-SmartPill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPill/Pods-SmartPill.debug.xcconfig"; sourceTree = "<group>"; };
 		AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		AF05F7761A13DC790079AEA3 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		AF05F7791A13E6750079AEA3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		AF05F77B1A13E6810079AEA3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		AF05F77D1A13E6930079AEA3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AF05F77F1A13E69E0079AEA3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		AF05F7811A13E6AE0079AEA3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,11 +87,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */,
+				AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */,
+				AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */,
+				AF05F7841A13E6BD0079AEA3 /* MediaPlayer.framework in Frameworks */,
+				AF05F7821A13E6AE0079AEA3 /* CoreText.framework in Frameworks */,
+				B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */,
+				AF05F7801A13E69E0079AEA3 /* CoreMotion.framework in Frameworks */,
+				AF05F77E1A13E6930079AEA3 /* CoreLocation.framework in Frameworks */,
+				B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */,
+				AF05F77C1A13E6810079AEA3 /* AssetsLibrary.framework in Frameworks */,
+				AF05F77A1A13E6750079AEA3 /* AddressBook.framework in Frameworks */,
 				AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */,
 				AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */,
-				B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */,
-				B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */,
-				B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */,
 				CDA54F9E8F101C565CC7B880 /* libPods-SmartPill.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +149,14 @@
 		B3D647D81A12408600461CAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */,
+				AF05F7851A13E6C70079AEA3 /* Security.framework */,
+				AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */,
+				AF05F7811A13E6AE0079AEA3 /* CoreText.framework */,
+				AF05F77F1A13E69E0079AEA3 /* CoreMotion.framework */,
+				AF05F77D1A13E6930079AEA3 /* CoreLocation.framework */,
+				AF05F77B1A13E6810079AEA3 /* AssetsLibrary.framework */,
+				AF05F7791A13E6750079AEA3 /* AddressBook.framework */,
 				AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */,
 				AF05F7761A13DC790079AEA3 /* GooglePlus.framework */,
 				B3D647D91A12408600461CAF /* Foundation.framework */,
