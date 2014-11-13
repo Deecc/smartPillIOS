@@ -14,11 +14,18 @@
 
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
-@interface SPViewController ()
 
+
+@interface SPViewController ()
+@property id email;
 @end
 
-@implementation SPViewController
+@implementation SPViewController {
+ GPPSignIn *signIn ; 
+}
+
+
+
 
 - (void)viewDidLoad
 {
@@ -79,11 +86,11 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 //Quando dá errado o log in
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-//    UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
-//    loginLabel.text = @"You're not logged in!";
-//    loginLabel.textAlignment = NSTextAlignmentCenter;
-//    [loginLabel sizeToFit];
-//    [self.view addSubview:loginLabel];
+    UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
+    loginLabel.text = @"You're not logged in!";
+    loginLabel.textAlignment = NSTextAlignmentCenter;
+    [loginLabel sizeToFit];
+    [self.view addSubview:loginLabel];
 }
 //Cuida de possiveis erros ao logar
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
@@ -130,15 +137,16 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 
 #pragma mark - Google+
 - (void)createGoogleLoginButton {
-    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
-    //signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    signIn.shouldFetchGoogleUserEmail = YES;
+    
     
     // You previously set kClientId in the "Initialize the Google+ client" step
     signIn.clientID = kClientId;
     
     // Uncomment one of these two statements for the scope you chose in the previous step
-    signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+   signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
     //signIn.scopes = @[ @"profile" ];            // "profile" scope
     
     // Optional: declare signIn.actions, see "app activities"
@@ -159,15 +167,40 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     
     [self.view addSubview:loginGoogleView];
     
+    
+    
 }
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
     NSLog(@"Received error %@ and auth object %@",error, auth);
+    if (error) {
+        // Do some error handling here.
+    } else {
+        
+                self.email = signIn.authentication.userEmail;
+        [self refreshInterfaceBasedOnSignIn];
+    }
 }
 
 - (void)presentSignInViewController:(UIViewController *)viewController {
     // This is an example of how you can implement it if your app is navigation-based.
     [[self navigationController] pushViewController:viewController animated:YES];
+}
+
+-(void)refreshInterfaceBasedOnSignIn {
+    if ([[GPPSignIn sharedInstance] authentication]) {
+        // The user is signed in.
+        // Perform other actions here, such as showing a sign-out button
+        if([self.email isEqualToString:@"thiago.ericus@gmail.com"]){
+            [self goToHomeScreen];
+        }else{NSLog(@"Email não autorizado");}
+    }else{
+        UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 300, 100, 100)];
+        loginLabel.text = @"You're not logged in GOOGLE+!";
+        loginLabel.textAlignment = NSTextAlignmentCenter;
+        [loginLabel sizeToFit];
+        [self.view addSubview:loginLabel];
+    }
 }
 
 
