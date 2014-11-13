@@ -14,29 +14,26 @@
 
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
-
-
 @interface SPViewController ()
-@property id email;
+    @property NSString * email;
 @end
 
 @implementation SPViewController {
  GPPSignIn *signIn ; 
 }
 
-
-
-
+//Inicializando a aplicação, desenhando 2 botões personalizados.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createLoginButton];
+    [self createFacebookLoginButton];
     [self createGoogleLoginButton];
 }
 
 #pragma mark - Facebook
 
-- (void)createLoginButton{
+//Método para criar o botão do Facebook.
+- (void)createFacebookLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
     loginView.frame = CGRectMake(50, 100, 200, 200);
     for (id obj in loginView.subviews)
@@ -65,33 +62,21 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     loginView.delegate = self;
     [self.view addSubview:loginView];
 }
-//Método chamado para pegar informações do user
+
+//Método chamado para pegar informações do usuário.
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    //self.profilePicture.profileID = user.id;
-    //self.name.text = user.name;
     if ([user.id isEqualToString:@"878485092182794"]) {
         [self goToHomeScreen];
     }
 }
-//Método que muda para o ScheduleViewController
+//Método que muda para o instancia o controlador ScheduleViewController e cria sua view.
 - (void)goToHomeScreen{
     UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
     viewControllerLogged.navigationItem.hidesBackButton = YES;
     [self.navigationController pushViewController:viewControllerLogged animated:YES];
 }
-//Quando da certo na hora de logar entre nesse método
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    //self.status.text = @"You're logged in as";
-}
-//Quando dá errado o log in
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
-    loginLabel.text = @"You're not logged in!";
-    loginLabel.textAlignment = NSTextAlignmentCenter;
-    [loginLabel sizeToFit];
-    [self.view addSubview:loginLabel];
-}
+
 //Cuida de possiveis erros ao logar
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
@@ -104,23 +89,18 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         alertMessage = [FBErrorUtility userMessageForError:error];
         
         // This code will handle session closures that happen outside of the app
-        // You can take a look at our error handling guide to know more about it
-        // https://developers.facebook.com/docs/ios/errors
-    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
+        } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
         alertTitle = @"Session Error";
         alertMessage = @"Your current session is no longer valid. Please log in again.";
         
         // If the user has cancelled a login, we will do nothing.
-        // You can also choose to show the user a message if cancelling login will result in
         // the user not being able to complete a task they had initiated in your app
         // (like accessing FB-stored information or posting to Facebook)
     } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
         NSLog(@"user cancelled login");
         
         // For simplicity, this sample handles other errors with a generic message
-        // You can checkout our error handling guide for more detailed information
-        // https://developers.facebook.com/docs/ios/errors
-    } else {
+        } else {
         alertTitle  = @"Something went wrong";
         alertMessage = @"Please try again later.";
         NSLog(@"Unexpected error:%@", error);
@@ -136,6 +116,8 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 
 #pragma mark - Google+
+
+//Método para criar o botão do Google+.
 - (void)createGoogleLoginButton {
     signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
@@ -164,29 +146,23 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [loginGoogleView setBackgroundImage:loginImageHighlithed forState:UIControlStateHighlighted];
     [loginGoogleView sizeToFit];
     
-    
     [self.view addSubview:loginGoogleView];
     
-    
-    
 }
+
+//Método chamado quando o login funciona.
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
     NSLog(@"Received error %@ and auth object %@",error, auth);
     if (error) {
         // Do some error handling here.
     } else {
-        
-                self.email = signIn.authentication.userEmail;
+        self.email = signIn.authentication.userEmail;
         [self refreshInterfaceBasedOnSignIn];
     }
 }
 
-- (void)presentSignInViewController:(UIViewController *)viewController {
-    // This is an example of how you can implement it if your app is navigation-based.
-    [[self navigationController] pushViewController:viewController animated:YES];
-}
-
+//Método usado para conferencia de dados.
 -(void)refreshInterfaceBasedOnSignIn {
     if ([[GPPSignIn sharedInstance] authentication]) {
         // The user is signed in.
@@ -202,7 +178,5 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         [self.view addSubview:loginLabel];
     }
 }
-
-
 
 @end

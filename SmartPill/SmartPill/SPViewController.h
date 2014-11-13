@@ -10,9 +10,5 @@
 #import <GooglePlus/GooglePlus.h>
 @class GPPSignInButton;
 
-
-
-
 @interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate>
-//@property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
 @end
