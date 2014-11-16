@@ -17,21 +17,21 @@
 		AF05F7841A13E6BD0079AEA3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */; };
 		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
+		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
+		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
+		B3CFE9921A18D335009E5503 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
 		B3D647E41A12408600461CAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D647E21A12408600461CAF /* InfoPlist.strings */; };
 		B3D647E61A12408600461CAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D647E51A12408600461CAF /* main.m */; };
 		B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D647E91A12408600461CAF /* SPAppDelegate.m */; };
-		B3D647ED1A12408600461CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D647EB1A12408600461CAF /* Main.storyboard */; };
-		B3D647F01A12408600461CAF /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D647EF1A12408600461CAF /* SPViewController.m */; };
 		B3D647F21A12408600461CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D647F11A12408600461CAF /* Images.xcassets */; };
 		B3D647F91A12408600461CAF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647F81A12408600461CAF /* XCTest.framework */; };
 		B3D647FA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647FB1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
 		B3D648031A12408600461CAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D648011A12408600461CAF /* InfoPlist.strings */; };
 		B3D648051A12408600461CAF /* SmartPillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D648041A12408600461CAF /* SmartPillTests.m */; };
-		B3EFE01C1A12860A0082591C /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFE01B1A12860A0082591C /* SPScheduleViewController.m */; };
 		CDA54F9E8F101C565CC7B880 /* libPods-SmartPill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +58,11 @@
 		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartPill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31BCB631A18D17600094C45 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewController.h; path = Controller/SPViewController.h; sourceTree = "<group>"; };
+		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
+		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
+		B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPScheduleViewController.m; path = Controller/SPScheduleViewController.m; sourceTree = "<group>"; };
+		B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,17 +73,12 @@
 		B3D647E71A12408600461CAF /* SmartPill-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartPill-Prefix.pch"; sourceTree = "<group>"; };
 		B3D647E81A12408600461CAF /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
 		B3D647E91A12408600461CAF /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
-		B3D647EC1A12408600461CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B3D647EE1A12408600461CAF /* SPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPViewController.h; sourceTree = "<group>"; };
-		B3D647EF1A12408600461CAF /* SPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPViewController.m; sourceTree = "<group>"; };
 		B3D647F11A12408600461CAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3D647F71A12408600461CAF /* SmartPillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartPillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647F81A12408600461CAF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B3D648001A12408600461CAF /* SmartPillTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartPillTests-Info.plist"; sourceTree = "<group>"; };
 		B3D648021A12408600461CAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3D648041A12408600461CAF /* SmartPillTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartPillTests.m; sourceTree = "<group>"; };
-		B3EFE01A1A12860A0082591C /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPScheduleViewController.h; sourceTree = "<group>"; };
-		B3EFE01B1A12860A0082591C /* SPScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPScheduleViewController.m; sourceTree = "<group>"; };
 		C1C522D96FF95F1B08A7CCFC /* Pods-SmartPill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPill.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPill/Pods-SmartPill.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +173,7 @@
 			children = (
 				B3EFE0191A1285550082591C /* Controller */,
 				B3EFE0171A12854E0082591C /* Model */,
-				B3D647EB1A12408600461CAF /* Main.storyboard */,
+				B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */,
 				B3D647F11A12408600461CAF /* Images.xcassets */,
 				B3D647E01A12408600461CAF /* Supporting Files */,
 			);
@@ -221,10 +221,10 @@
 		B3EFE0191A1285550082591C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B3D647EE1A12408600461CAF /* SPViewController.h */,
-				B3D647EF1A12408600461CAF /* SPViewController.m */,
-				B3EFE01A1A12860A0082591C /* SPScheduleViewController.h */,
-				B3EFE01B1A12860A0082591C /* SPScheduleViewController.m */,
+				B31BCB631A18D17600094C45 /* SPViewController.h */,
+				B31BCB641A18D17600094C45 /* SPViewController.m */,
+				B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */,
+				B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 			files = (
 				B3D647F21A12408600461CAF /* Images.xcassets in Resources */,
 				B3D647E41A12408600461CAF /* InfoPlist.strings in Resources */,
-				B3D647ED1A12408600461CAF /* Main.storyboard in Resources */,
+				B3CFE9921A18D335009E5503 /* mainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +362,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3EFE01C1A12860A0082591C /* SPScheduleViewController.m in Sources */,
+				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
-				B3D647F01A12408600461CAF /* SPViewController.m in Sources */,
+				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,14 +394,6 @@
 				B3D647E31A12408600461CAF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B3D647EB1A12408600461CAF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3D647EC1A12408600461CAF /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B3D648011A12408600461CAF /* InfoPlist.strings */ = {

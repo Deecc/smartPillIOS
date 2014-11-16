@@ -2,13 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "login.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "facebook-logo.png"
+      "filename" : "Cópia de facebook-icon.png"
     }
   ],
   "info" : {

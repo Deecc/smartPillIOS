@@ -15,11 +15,14 @@
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
 @interface SPViewController ()
-    @property NSString * email;
+//Google
+@property NSString * email;
+//Server
+
 @end
 
 @implementation SPViewController {
- GPPSignIn *signIn ; 
+    GPPSignIn *signIn ;
 }
 
 //Inicializando a aplicação, desenhando 2 botões personalizados.
@@ -35,7 +38,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 //Método para criar o botão do Facebook.
 - (void)createFacebookLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.frame = CGRectMake(50, 100, 200, 200);
+    loginView.frame = CGRectMake(50, 100,200,200);
     for (id obj in loginView.subviews)
     {
         if ([obj isKindOfClass:[UIButton class]])
@@ -58,6 +61,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
             [loginLabel sizeToFit];
         }
     }
+    
     loginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     loginView.delegate = self;
     [self.view addSubview:loginView];
@@ -70,7 +74,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         [self goToHomeScreen];
     }
 }
-//Método que muda para o instancia o controlador ScheduleViewController e cria sua view.
+//Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
 - (void)goToHomeScreen{
     UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
     viewControllerLogged.navigationItem.hidesBackButton = YES;
@@ -89,7 +93,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         alertMessage = [FBErrorUtility userMessageForError:error];
         
         // This code will handle session closures that happen outside of the app
-        } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
+    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
         alertTitle = @"Session Error";
         alertMessage = @"Your current session is no longer valid. Please log in again.";
         
@@ -100,7 +104,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         NSLog(@"user cancelled login");
         
         // For simplicity, this sample handles other errors with a generic message
-        } else {
+    } else {
         alertTitle  = @"Something went wrong";
         alertMessage = @"Please try again later.";
         NSLog(@"Unexpected error:%@", error);
@@ -128,14 +132,14 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     signIn.clientID = kClientId;
     
     // Uncomment one of these two statements for the scope you chose in the previous step
-   signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
     //signIn.scopes = @[ @"profile" ];            // "profile" scope
     
     // Optional: declare signIn.actions, see "app activities"
     signIn.delegate = self;
     
     GPPSignInButton *loginGoogleView = [[GPPSignInButton alloc] init];
-    loginGoogleView.frame = CGRectMake(200, 100, 200, 200);
+    loginGoogleView.frame = CGRectMake(170, 100, 0, 0);
     
     
     UIImage *loginImage = [UIImage imageNamed:@"google+.png"];
