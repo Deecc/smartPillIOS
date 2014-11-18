@@ -9,27 +9,35 @@
             <objects>
                 <viewController storyboardIdentifier="firstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PHa-sX-VOG" customClass="SPViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GZx-bQ-zvp"/>
-                        <viewControllerLayoutGuide type="bottom" id="fLr-M5-xpX"/>
+                        <viewControllerLayoutGuide type="top" id="weB-Nd-D0X"/>
+                        <viewControllerLayoutGuide type="bottom" id="TUU-1J-dSv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nbD-1X-LeD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW9-Lu-VSH">
+                                <rect key="frame" x="20" y="527" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="UdH-wx-pFO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVE-ME-BRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="141"/>
+            <point key="canvasLocation" x="1176" y="138"/>
         </scene>
         <!--Schedule View Controller - Item-->
         <scene sceneID="H6l-pu-ooE">
             <objects>
                 <viewController id="Los-4l-cja" customClass="SPScheduleViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4pa-5a-eUU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Uaa-gt-uWN"/>
+                        <viewControllerLayoutGuide type="top" id="iNy-IL-MEp"/>
+                        <viewControllerLayoutGuide type="bottom" id="c2R-T5-DVb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7t9-7k-wxS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -42,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="2186" y="138"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--SmartPill-->
         <scene sceneID="OAo-2D-OXD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ew7-3J-uwF" sceneMemberID="viewController">
+                <navigationController title="SmartPill" automaticallyAdjustsScrollViewInsets="NO" id="ew7-3J-uwF" userLabel="SmartPill" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qzc-94-8uY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -10,6 +10,7 @@
 #import "SPScheduleViewController.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
+#import "SPLoginLines.h"
 
 
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
@@ -17,7 +18,6 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 @interface SPViewController ()
 //Google
 @property NSString * email;
-//Server
 
 @end
 
@@ -29,8 +29,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createFacebookLoginButton];
-    [self createGoogleLoginButton];
+    [self createViews];
 }
 
 #pragma mark - Facebook
@@ -38,14 +37,14 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 //Método para criar o botão do Facebook.
 - (void)createFacebookLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.frame = CGRectMake(50, 100,200,200);
+    loginView.frame = CGRectMake(20,100,130,47);
     for (id obj in loginView.subviews)
     {
         if ([obj isKindOfClass:[UIButton class]])
         {
             UIButton *loginButton =  obj;
-            UIImage *loginImage = [UIImage imageNamed:@"login.png"];
-            UIImage *loginImageHighlithed = [UIImage imageNamed:@"login.png"];
+            UIImage *loginImage = [UIImage imageNamed:@"Facebook.png"];
+            UIImage *loginImageHighlithed = [UIImage imageNamed:@"Facebook.png"];
             
             [loginButton setBackgroundImage:loginImage forState:UIControlStateNormal];
             [loginButton setBackgroundImage:nil forState:UIControlStateSelected];
@@ -122,7 +121,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 #pragma mark - Google+
 
 //Método para criar o botão do Google+.
-- (void)createGoogleLoginButton {
+-(void)createGoogleLoginButton {
     signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
     signIn.shouldFetchGoogleUserEmail = YES;
@@ -139,11 +138,11 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     signIn.delegate = self;
     
     GPPSignInButton *loginGoogleView = [[GPPSignInButton alloc] init];
-    loginGoogleView.frame = CGRectMake(170, 100, 0, 0);
+    loginGoogleView.frame = CGRectMake(170, 100, 130, 47);
     
     
-    UIImage *loginImage = [UIImage imageNamed:@"google+.png"];
-    UIImage *loginImageHighlithed = [UIImage imageNamed:@"google+.png"];
+    UIImage *loginImage = [UIImage imageNamed:@"Google+.png"];
+    UIImage *loginImageHighlithed = [UIImage imageNamed:@"Google+.png"];
     
     [loginGoogleView setBackgroundImage:loginImage forState:UIControlStateNormal];
     [loginGoogleView setBackgroundImage:nil forState:UIControlStateSelected];
@@ -167,7 +166,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 
 //Método usado para conferencia de dados.
--(void)refreshInterfaceBasedOnSignIn {
+- (void)refreshInterfaceBasedOnSignIn {
     if ([[GPPSignIn sharedInstance] authentication]) {
         // The user is signed in.
         // Perform other actions here, such as showing a sign-out button
@@ -182,5 +181,140 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         [self.view addSubview:loginLabel];
     }
 }
+
+#pragma mark - Extra views
+
+- (void)createLineViews{
+    SPLoginLines *lines = [[SPLoginLines alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:lines];
+}
+- (void)createLabelSignIn{
+    CGRect labelRectLogin = CGRectMake(116, 70, 85, 28);
+    UILabel *labelLogin = [[UILabel alloc] initWithFrame:labelRectLogin];
+    labelLogin.text = @"ENTRAR COM";
+    [labelLogin setFont: [UIFont fontWithName:@"Arial" size:12.0]];
+    [labelLogin setTextColor:[UIColor grayColor]];
+    [self.view addSubview:labelLogin];
+}
+- (void)createLabelOr{
+    CGRect labelRectOr = CGRectMake(152, 150, 26, 30);
+    UILabel *labelOr = [[UILabel alloc] initWithFrame:labelRectOr];
+    labelOr.text = @"OU";
+    [labelOr setFont: [UIFont fontWithName:@"Arial" size:12.0]];
+    [labelOr setTextColor:[UIColor grayColor]];
+    [self.view addSubview:labelOr];
+}
+
+- (void)createLabelInsertEmail{
+    CGRect labelRectEmail = CGRectMake(20, 190, 200, 28);
+    UILabel *labelEmail = [[UILabel alloc] initWithFrame:labelRectEmail];
+    labelEmail.text = @"Insira seu email aqui:";
+    [labelEmail setFont: [UIFont systemFontOfSize:15]];
+    [self.view addSubview:labelEmail];
+}
+
+- (void)createLabelInsertPassword{
+    CGRect labelRectPassword = CGRectMake(20, 260, 200, 28);
+    UILabel *labelPassword = [[UILabel alloc] initWithFrame:labelRectPassword];
+    labelPassword.text = @"Insira sua senha aqui:";
+    [labelPassword setFont: [UIFont systemFontOfSize:15]];
+    [self.view addSubview:labelPassword];
+}
+
+- (void)createEmailTextField{
+    CGRect textFieldRectEmail = CGRectMake(20, 220, 280, 40);
+    UITextField * emailTextField = [[UITextField alloc] initWithFrame:textFieldRectEmail];
+    emailTextField.borderStyle = UITextBorderStyleRoundedRect;
+    emailTextField.font = [UIFont systemFontOfSize:15];
+    emailTextField.placeholder = @"Email";
+    emailTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    emailTextField.keyboardType = UIKeyboardTypeDefault;
+    emailTextField.returnKeyType = UIReturnKeyDone;
+    emailTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    emailTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    emailTextField.delegate = self;
+    [self.view addSubview:emailTextField];
+}
+
+- (void)createPasswordTextField{
+    CGRect textFieldRectPassword = CGRectMake(20, 290, 280, 40);
+    UITextField * passwordTextField = [[UITextField alloc] initWithFrame:textFieldRectPassword];
+    passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    passwordTextField.font = [UIFont systemFontOfSize:15];
+    passwordTextField.placeholder = @"Senha";
+    passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    passwordTextField.keyboardType = UIKeyboardTypeDefault;
+    passwordTextField.returnKeyType = UIReturnKeyDone;
+    passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    passwordTextField.delegate = self;
+    [self.view addSubview:passwordTextField];
+}
+
+- (void)createSignInButton{
+    UIButton *signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [signInButton addTarget:self
+               action:@selector(aMethod:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [signInButton setTitle:@"Entrar" forState:UIControlStateNormal];
+    signInButton.titleLabel.font = [UIFont systemFontOfSize:23];
+    signInButton.frame = CGRectMake(120,330,80,60);
+    [self.view addSubview:signInButton];
+}
+
+- (void)createNewUserButton{
+    UIButton *newUserButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [newUserButton addTarget:self
+                     action:@selector(aMethod:)
+           forControlEvents:UIControlEventTouchUpInside];
+    [newUserButton setTitle:@"Sem Cadastro?" forState:UIControlStateNormal];
+    newUserButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    newUserButton.frame = CGRectMake(20,527,110,40);
+    [self.view addSubview:newUserButton];
+}
+
+- (void)createForgotPasswordButton{
+    UIButton *forgotPasswordButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [forgotPasswordButton addTarget:self
+                      action:@selector(aMethod:)
+            forControlEvents:UIControlEventTouchUpInside];
+    [forgotPasswordButton setTitle:@"Esqueceu a senha?" forState:UIControlStateNormal];
+    forgotPasswordButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    forgotPasswordButton.frame = CGRectMake(170,527,140,40);
+    [self.view addSubview:forgotPasswordButton];
+}
+
+- (void)createButtonViews{
+    [self createFacebookLoginButton];
+    [self createGoogleLoginButton];
+    [self createSignInButton];
+    [self createNewUserButton];
+    [self createForgotPasswordButton];
+}
+
+- (void)createLabelViews{
+    [self createLabelSignIn];
+    [self createLabelOr];
+    [self createLabelInsertEmail];
+    [self createLabelInsertPassword];
+}
+
+- (void)createTextFieldViews{
+    [self createEmailTextField];
+    [self createPasswordTextField];
+}
+
+- (void)setNavegationBarConfigs{
+    self.navigationController.navigationBar.topItem.title = @"SmartPill";
+}
+
+- (void)createViews{
+    [self createLineViews];
+    [self createButtonViews];
+    [self createLabelViews];
+    [self createTextFieldViews];
+    [self setNavegationBarConfigs];
+}
+
 
 @end

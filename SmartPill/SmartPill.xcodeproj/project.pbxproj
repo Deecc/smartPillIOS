@@ -32,6 +32,7 @@
 		B3D647FB1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
 		B3D648031A12408600461CAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D648011A12408600461CAF /* InfoPlist.strings */; };
 		B3D648051A12408600461CAF /* SmartPillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D648041A12408600461CAF /* SmartPillTests.m */; };
+		B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */; };
 		CDA54F9E8F101C565CC7B880 /* libPods-SmartPill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22D19A053C07F08C7F99AEC /* libPods-SmartPill.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		B3D648001A12408600461CAF /* SmartPillTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartPillTests-Info.plist"; sourceTree = "<group>"; };
 		B3D648021A12408600461CAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3D648041A12408600461CAF /* SmartPillTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartPillTests.m; sourceTree = "<group>"; };
+		B3DE0A751A1B6E5700ABBB5F /* SPLoginLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLoginLines.h; path = View/SPLoginLines.h; sourceTree = "<group>"; };
+		B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLoginLines.m; path = View/SPLoginLines.m; sourceTree = "<group>"; };
 		C1C522D96FF95F1B08A7CCFC /* Pods-SmartPill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPill.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPill/Pods-SmartPill.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +127,16 @@
 				C1C522D96FF95F1B08A7CCFC /* Pods-SmartPill.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B39FA9CD1A1B57980088EFE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */,
+				B3DE0A751A1B6E5700ABBB5F /* SPLoginLines.h */,
+				B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B3D647CD1A12408600461CAF = {
@@ -173,7 +186,7 @@
 			children = (
 				B3EFE0191A1285550082591C /* Controller */,
 				B3EFE0171A12854E0082591C /* Model */,
-				B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */,
+				B39FA9CD1A1B57980088EFE5 /* View */,
 				B3D647F11A12408600461CAF /* Images.xcassets */,
 				B3D647E01A12408600461CAF /* Supporting Files */,
 			);
@@ -362,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
