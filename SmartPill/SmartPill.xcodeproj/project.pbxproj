@@ -19,6 +19,7 @@
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
+		B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B34080781A1E8E3D00C63D49 /* MyStyleKit.m */; };
 		B3CFE9921A18D335009E5503 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
 		B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPScheduleViewController.m; path = Controller/SPScheduleViewController.m; sourceTree = "<group>"; };
+		B34080771A1E8E3D00C63D49 /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyStyleKit.h; path = "PaintCode App/MyStyleKit.h"; sourceTree = "<group>"; };
+		B34080781A1E8E3D00C63D49 /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyStyleKit.m; path = "PaintCode App/MyStyleKit.m"; sourceTree = "<group>"; };
 		B3CFE9911A18D335009E5503 /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,6 +199,8 @@
 		B3D647E01A12408600461CAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B34080771A1E8E3D00C63D49 /* MyStyleKit.h */,
+				B34080781A1E8E3D00C63D49 /* MyStyleKit.m */,
 				B3D647E81A12408600461CAF /* SPAppDelegate.h */,
 				B3D647E91A12408600461CAF /* SPAppDelegate.m */,
 				B3D647E11A12408600461CAF /* SmartPill-Info.plist */,
@@ -375,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */,
 				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
