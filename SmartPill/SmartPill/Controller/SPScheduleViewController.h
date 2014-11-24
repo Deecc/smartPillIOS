@@ -10,5 +10,4 @@
 
 
 @interface SPScheduleViewController : UIViewController
-
 @end
