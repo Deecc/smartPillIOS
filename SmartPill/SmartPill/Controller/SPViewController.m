@@ -13,12 +13,18 @@
 #import "SPLoginLines.h"
 
 
+
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
 @interface SPViewController ()
 //Google
-@property NSString * email;
-
+@property NSString * googleUserId;
+@property NSString * googleUserName;
+@property NSString * googleUserEmail;
+//Facebook
+@property NSString * facebookUserId;
+@property NSString * facebookUserName;
+@property NSString * facebookUserEmail;
 @end
 
 @implementation SPViewController {
@@ -69,15 +75,23 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 //Método chamado para pegar informações do usuário.
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    if ([user.id isEqualToString:@"878485092182794"]) {
+    self.facebookUserId = user.id;
+    self.facebookUserName = user[@"name"];
+    self.facebookUserEmail = [user objectForKey:@"email"];
+    
+    SPUser* facebookUser = [SPUserHandler createUserWithName:self.facebookUserName Email:self.facebookUserEmail UserId:self.facebookUserId andPassword:nil];
+    
+    if ([SPUserHandler doesUserExist:facebookUser]) {
+        [SPUserHandler updateUserDataFromServer:facebookUser];
         [self goToHomeScreen];
+    }else{
+        [SPUserHandler sendUserToLocalDatabase:facebookUser];
+        [SPUserHandler sendUserToRemoteDatabase:facebookUser];
     }
-}
-//Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
-- (void)goToHomeScreen{
-    UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
-    viewControllerLogged.navigationItem.hidesBackButton = YES;
-    [self.navigationController pushViewController:viewControllerLogged animated:YES];
+    
+//    if ([self.facebookUserId isEqualToString:@"878485092182794"]) {
+//        [self goToHomeScreen];
+//    }
 }
 
 //Cuida de possiveis erros ao logar
@@ -124,7 +138,9 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 -(void)createGoogleLoginButton {
     signIn = [GPPSignIn sharedInstance];
     signIn.shouldFetchGooglePlusUser = YES;
+    signIn.shouldFetchGoogleUserID = YES;
     signIn.shouldFetchGoogleUserEmail = YES;
+    
     
     
     // You previously set kClientId in the "Initialize the Google+ client" step
@@ -154,14 +170,48 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 
 //Método chamado quando o login funciona.
-- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
-                   error: (NSError *) error {
-    NSLog(@"Received error %@ and auth object %@",error, auth);
+- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
+    
     if (error) {
         // Do some error handling here.
     } else {
-        self.email = signIn.authentication.userEmail;
         [self refreshInterfaceBasedOnSignIn];
+        
+        GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
+        
+        // 1. Create a |GTLServicePlus| instance to send a request to Google+.
+        GTLServicePlus* plusService = [[GTLServicePlus alloc] init] ;
+        plusService.retryEnabled = YES;
+        
+        // 2. Set a valid |GTMOAuth2Authentication| object as the authorizer.
+        [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
+        
+        // 3. Use the "v1" version of the Google+ API.*
+        plusService.apiVersion = @"v1";
+        [plusService executeQuery:query
+                completionHandler:^(GTLServiceTicket *ticket,
+                                    GTLPlusPerson *person,
+                                    NSError *error) {
+                    if (error) {
+                        //Handle Error
+                    } else {
+                        self.googleUserId = person.identifier;
+                        self.googleUserName = person.displayName;
+                        for (GTLPlusPersonEmailsItem *email in person.emails) {
+                            if ([email isKindOfClass: [GTLPlusPersonEmailsItem class]]) {
+                                self.googleUserEmail = email.value;
+                            }
+                        }
+                        SPUser* googleUser = [SPUserHandler createUserWithName:self.googleUserName Email:self.googleUserEmail UserId:self.googleUserId andPassword:nil];
+                        if ([SPUserHandler doesUserExist:googleUser]) {
+                            [SPUserHandler updateUserDataFromServer:googleUser];
+                            [self goToHomeScreen];
+                        }else{
+                            [SPUserHandler sendUserToLocalDatabase:googleUser];
+                            [SPUserHandler sendUserToRemoteDatabase:googleUser];
+                        }
+                    }
+                }];
     }
 }
 
@@ -267,7 +317,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)createNewUserButton{
     UIButton *newUserButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [newUserButton addTarget:self
-                     action:@selector(aMethod:)
+                     action:@selector(goToSignUpScreen)
            forControlEvents:UIControlEventTouchUpInside];
     [newUserButton setTitle:@"Sem Cadastro?" forState:UIControlStateNormal];
     newUserButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -318,5 +368,21 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self setNavegationBarConfigs];
 }
 
+#pragma mark - Connections
+
+#pragma mark - Exchanging screens
+
+//Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
+- (void)goToHomeScreen{
+    UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
+    viewControllerLogged.navigationItem.hidesBackButton = YES;
+    [self.navigationController pushViewController:viewControllerLogged animated:YES];
+}
+
+- (void)goToSignUpScreen{
+    UITabBarController * viewControllerNewUser = [self.storyboard instantiateViewControllerWithIdentifier:@"newuser"];
+    viewControllerNewUser.navigationItem.hidesBackButton = YES;
+    [self.navigationController pushViewController:viewControllerNewUser animated:YES];
+}
 
 @end

@@ -8,6 +8,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <UIKit/UIKit.h>
 #import <GooglePlus/GooglePlus.h>
+#import "SPUserHandler.h"
+
 @class GPPSignInButton;
 
 @interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate>
