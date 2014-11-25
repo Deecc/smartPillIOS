@@ -12,8 +12,13 @@
 
 @property NSString * name;
 @property NSString * email;
-@property NSString * facebookId;
-@property NSString * googleEmail;
+@property NSString * userId;
+@property NSString * password;
 @property NSMutableArray * listOfMedicine;
+
+- (instancetype)initWithName:(NSString*)name
+                       Email:(NSString*)email
+                      UserId:(NSString*)userId
+                 andPassword:(NSString*)password;
 
 @end
