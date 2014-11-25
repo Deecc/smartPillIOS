@@ -220,17 +220,16 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     if ([[GPPSignIn sharedInstance] authentication]) {
         // The user is signed in.
         // Perform other actions here, such as showing a sign-out button
-        if([self.email isEqualToString:@"thiago.ericus@gmail.com"]){
-            [self goToHomeScreen];
-        }else if ([self.email isEqualToString:@"nunesdennis@me.com"]){
-            [self goToHomeScreen];
-        }else{NSLog(@"Email não autorizado");}
-    }else{
-        UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 300, 100, 100)];
-        loginLabel.text = @"You're not logged in GOOGLE+!";
-        loginLabel.textAlignment = NSTextAlignmentCenter;
-        [loginLabel sizeToFit];
-        [self.view addSubview:loginLabel];
+      
+//        if([signIn.userID isEqualToString:@"107336804221157967523"]){
+//            [self goToHomeScreen];
+//        }else{NSLog(@"Usuário não autorizado");}
+//    }else{
+//        UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 300, 100, 100)];
+//        loginLabel.text = @"You're not logged in GOOGLE+!";
+//        loginLabel.textAlignment = NSTextAlignmentCenter;
+//        [loginLabel sizeToFit];
+//        [self.view addSubview:loginLabel];
     }
 }
 
