@@ -35,6 +35,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UITabBar appearance] setTintColor:[UIColor greenColor]];
     [self createViews];
 }
 
