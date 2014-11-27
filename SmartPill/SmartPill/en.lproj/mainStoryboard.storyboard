@@ -266,7 +266,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="3930" y="560"/>
+            <point key="canvasLocation" x="2878" y="1336"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qPw-hx-WMe">
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkZ-xr-BRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="560"/>
+            <point key="canvasLocation" x="3639" y="1342"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ulz-wU-PuI">
@@ -304,12 +304,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeQ-uK-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="1246"/>
+            <point key="canvasLocation" x="3639" y="2028"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="90m-x2-MS6">
             <objects>
-                <viewController id="V99-4k-uFG" sceneMemberID="viewController">
+                <viewController id="V99-4k-uFG" customClass="SPProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qyi-KN-lPL"/>
                         <viewControllerLayoutGuide type="bottom" id="vd6-bW-ozF"/>
@@ -317,13 +317,49 @@
                     <view key="view" contentMode="scaleToFill" id="q9b-aA-pMJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qN-Ft-NzS">
+                                <rect key="frame" x="20" y="115" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz6-RF-mV2">
+                                <rect key="frame" x="20" y="163" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-jb-3TY">
+                                <rect key="frame" x="137" y="445" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeAccountAction:" destination="V99-4k-uFG" eventType="touchUpInside" id="fX0-Oq-X9o"/>
+                                </connections>
+                            </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXE-i9-uhS">
+                                <rect key="frame" x="20" y="205" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nZ4-Sh-fvS"/>
+                    <connections>
+                        <outlet property="connectedWith" destination="XXE-i9-uhS" id="EsC-oe-E0B"/>
+                        <outlet property="userEmail" destination="kz6-RF-mV2" id="pLj-W4-k1J"/>
+                        <outlet property="userName" destination="7qN-Ft-NzS" id="ceU-nj-F3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN4-Ll-BSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3339" y="-116"/>
+            <point key="canvasLocation" x="3639" y="677"/>
         </scene>
         <!--View Controller - Caixa-->
         <scene sceneID="ANs-TL-CSt">
@@ -399,7 +435,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="3486" y="560"/>
+            <point key="canvasLocation" x="2434" y="1336"/>
         </scene>
     </scenes>
     <resources>
