@@ -24,6 +24,7 @@
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
+		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -76,6 +77,8 @@
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
+		B3CC13FC1A276365001D6C10 /* SPProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPProfileViewController.h; path = Controller/SPProfileViewController.h; sourceTree = "<group>"; };
+		B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPProfileViewController.m; path = Controller/SPProfileViewController.m; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -258,6 +261,8 @@
 				B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */,
 				B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */,
 				B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */,
+				B3CC13FC1A276365001D6C10 /* SPProfileViewController.h */,
+				B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
+				B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */,
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,

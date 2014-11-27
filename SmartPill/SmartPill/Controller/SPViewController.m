@@ -17,14 +17,7 @@
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
 
 @interface SPViewController ()
-//Google
-@property NSString * googleUserId;
-@property NSString * googleUserName;
-@property NSString * googleUserEmail;
-//Facebook
-@property NSString * facebookUserId;
-@property NSString * facebookUserName;
-@property NSString * facebookUserEmail;
+
 @end
 
 @implementation SPViewController {
