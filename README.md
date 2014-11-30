@@ -22,21 +22,22 @@ A partir desses pontos levantados, o aplicativo smartPill tem como objetivo cont
 - Décio Casagrande Ramuski Filho<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/4605630704325603<br />
-  CPF 068.219.404-28
+  CPF 059.309.069-12
 - Dennis da Silva Nunes<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/9286590493995361<br />
   CPF 068.219.404-28<br />
   31/07/1989
+- Ítalo Berg Marques Souza dos Reis<br />
+  IFRN-CNAT<br />
+  http://lattes.cnpq.br/7311096861956541<br />
+  CPF 093.851.594-29<br />
+  16/11/1990
 - Julian Ignacio Sansat<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/4979805015193377<br />
   CPF 016.348.174-19<br />
   01/08/1991
-- Ítalo Berg Marques Souza dos Reis<br />
-  IFRN-CNAT<br />
-  CPF 093.851.594-29<br />
-  16/11/1990
 - Thiago Freitas de Almeida<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/3089057453728782<br />
