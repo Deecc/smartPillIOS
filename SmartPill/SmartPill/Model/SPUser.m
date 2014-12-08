@@ -25,7 +25,7 @@
         self.email = email;
         self.userId = userId;
         self.password = password;
-        self.listOfMedicine = @[];
+        self.listOfMedicine = [@[] mutableCopy];
     }
     return self;
 }

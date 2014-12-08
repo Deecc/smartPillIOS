@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "SmartPill.png"
+      "filename" : "ProfileImage.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "SmartPill@2x.png"
+      "filename" : "ProfileImage@2x.png"
     }
   ],
   "info" : {

@@ -11,6 +11,7 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import "SPLoginLines.h"
+#import "SPTabBarViewController.h"
 
 
 
@@ -360,16 +361,30 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self createTextFieldViews];
     [self setNavegationBarConfigs];
 }
+#pragma mark - Extra
 
-#pragma mark - Connections
+- (void)passingDataToTabBar:(SPTabBarViewController*)tbvc{
+    if (self.facebookUserName) {
+        tbvc.facebookUserName = self.facebookUserName;
+        tbvc.facebookUserId = self.facebookUserId;
+        tbvc.facebookUserEmail = self.facebookUserEmail;
+    }
+    if (self.googleUserName) {
+        tbvc.googleUserName = self.googleUserName;
+        tbvc.googleUserId = self.googleUserId;
+        tbvc.googleUserEmail = self.googleUserEmail;
+    }
+}
 
 #pragma mark - Exchanging screens
 
 //Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
 - (void)goToHomeScreen{
-    UITabBarController * viewControllerLogged = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
-    viewControllerLogged.navigationItem.hidesBackButton = YES;
-    [self.navigationController pushViewController:viewControllerLogged animated:YES];
+    SPTabBarViewController * viewControllerTabBar = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
+    [self passingDataToTabBar:viewControllerTabBar];
+    //passando dados para a tabBar
+    viewControllerTabBar.navigationItem.hidesBackButton = YES;
+    [self.navigationController pushViewController:viewControllerTabBar animated:YES];
 }
 
 - (void)goToSignUpScreen{

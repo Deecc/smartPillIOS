@@ -19,7 +19,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UdH-wx-pFO"/>
                     <connections>
-                        <segue destination="XU3-Th-Lx2" kind="push" id="j57-Gl-MOL"/>
+                        <segue destination="XU3-Th-Lx2" kind="push" identifier="profileSegue" id="j57-Gl-MOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVE-ME-BRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="2434" y="-787"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="89O-yg-6el">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sLD-nP-bNB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sLD-nP-bNB" customClass="SPTabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZzL-Hk-rgd">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -191,7 +191,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-76-RTn">
+                                                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-76-RTn">
                                                     <rect key="frame" x="20" y="15" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -332,9 +332,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-jb-3TY">
-                                <rect key="frame" x="137" y="445" width="46" height="30"/>
+                                <rect key="frame" x="111" y="434" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Desenvincular">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -439,9 +440,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ProfileImage" width="34" height="34"/>
         <image name="SmartPill" width="50" height="50"/>
-        <image name="profile" width="34" height="34"/>
     </resources>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

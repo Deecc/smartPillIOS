@@ -8,6 +8,7 @@
 
 #import "SPProfileViewController.h"
 #import "SPViewController.h"
+#import "SPTabBarViewController.h"
 
 @interface SPProfileViewController ()
 
@@ -29,39 +30,40 @@
 }
 
 - (NSString*)userNameString{
-    return @"teste";
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    if (tbvc.facebookUserName) {
+        return tbvc.facebookUserName;
+    }
+    if (tbvc.googleUserName) {
+        return tbvc.googleUserName;
+    }
+    return nil;
 }
 
 - (NSString*)userEmailString{
-    return @"TESTE";
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    if (tbvc.facebookUserName) {
+        return tbvc.facebookUserEmail;
+    }
+    if (tbvc.googleUserName) {
+        return tbvc.googleUserEmail;
+    }
+    return nil;
 }
 
 - (NSString*)connectedWithString{
-    SPViewController * firstViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"firstScreen"];
-    BOOL isFacebookConnected = NO;
-    BOOL google = NO;
-    if (firstViewController.facebookUserName) {
-        NSLog(@"%@",firstViewController.facebookUserName);
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    if (tbvc.facebookUserName) {
+        return @"Facebook";
     }
-    if (firstViewController.googleUserName) {
-        NSLog(@"%@",firstViewController.googleUserName);
+    if (tbvc.googleUserName) {
+        return @"Google";
     }
-    
-    
-    return @"teste";
+    return nil;
 }
 
 - (IBAction)removeAccountAction:(UIButton *)sender {
+    //Retirar do banco
 }
-
-
-
-
-
-
-
-
-
-
 
 @end
