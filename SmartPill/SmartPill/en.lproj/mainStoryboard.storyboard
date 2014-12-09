@@ -166,14 +166,22 @@
             </objects>
             <point key="canvasLocation" x="1647" y="141"/>
         </scene>
-        <!--Table View Controller-->
+        <!--More View Controller-->
         <scene sceneID="RhL-Wd-agR">
             <objects>
-                <tableViewController id="97y-Du-Xeh" sceneMemberID="viewController">
+                <tableViewController id="97y-Du-Xeh" customClass="SPMoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IwB-ii-Kin">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sCD-E4-RnW">
+                            <rect key="frame" x="0.0" y="259" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="SignOut"/>
+                            <connections>
+                                <action selector="signOutAction:" destination="97y-Du-Xeh" eventType="touchUpInside" id="dAW-3F-ZS7"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection id="vki-xG-rhe">
                                 <cells>
@@ -258,6 +266,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="a7u-vj-bSp"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="sCD-E4-RnW" id="Hqw-XF-9S1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VX-3H-XWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="ifo-kO-TAc" customClass="MyStyleKit">
@@ -417,6 +428,12 @@
         <!--Navigation Controller - Extras-->
         <scene sceneID="FN0-Ws-DwF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCb-TZ-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="5h0-Ra-UXJ" customClass="MyStyleKit">
+                    <connections>
+                        <outletCollection property="extrasTargets" destination="9kW-dT-zLZ" id="Ypa-99-9YE"/>
+                    </connections>
+                </customObject>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XPf-cX-yrr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Extras" id="9kW-dT-zLZ"/>
                     <toolbarItems/>
@@ -429,12 +446,6 @@
                         <segue destination="97y-Du-Xeh" kind="relationship" relationship="rootViewController" id="GrH-HG-xuW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uCb-TZ-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="5h0-Ra-UXJ" customClass="MyStyleKit">
-                    <connections>
-                        <outletCollection property="extrasTargets" destination="9kW-dT-zLZ" id="Ypa-99-9YE"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="2434" y="1336"/>
         </scene>
