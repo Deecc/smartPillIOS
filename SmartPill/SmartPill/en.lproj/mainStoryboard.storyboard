@@ -428,12 +428,6 @@
         <!--Navigation Controller - Extras-->
         <scene sceneID="FN0-Ws-DwF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uCb-TZ-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="5h0-Ra-UXJ" customClass="MyStyleKit">
-                    <connections>
-                        <outletCollection property="extrasTargets" destination="9kW-dT-zLZ" id="Ypa-99-9YE"/>
-                    </connections>
-                </customObject>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XPf-cX-yrr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Extras" id="9kW-dT-zLZ"/>
                     <toolbarItems/>
@@ -446,6 +440,12 @@
                         <segue destination="97y-Du-Xeh" kind="relationship" relationship="rootViewController" id="GrH-HG-xuW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCb-TZ-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="5h0-Ra-UXJ" customClass="MyStyleKit">
+                    <connections>
+                        <outletCollection property="extrasTargets" destination="9kW-dT-zLZ" id="Ypa-99-9YE"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="2434" y="1336"/>
         </scene>

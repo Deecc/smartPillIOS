@@ -22,7 +22,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 @end
 
 @implementation SPViewController {
-    GPPSignIn *signIn ;
+    GPPSignIn *signIn;
 }
 
 //Inicializando a aplicação, desenhando 2 botões personalizados.
@@ -77,16 +77,12 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     SPUser* facebookUser = [SPUserHandler createUserWithName:self.facebookUserName Email:self.facebookUserEmail UserId:self.facebookUserId andPassword:nil];
     
     if ([SPUserHandler doesUserExist:facebookUser]) {
-        [SPUserHandler updateUserDataFromServer:facebookUser];
-        [self goToHomeScreen];
+            [SPUserHandler updateUserDataFromServer:facebookUser];
+            [self goToHomeScreen];
     }else{
-        [SPUserHandler sendUserToLocalDatabase:facebookUser];
-        [SPUserHandler sendUserToRemoteDatabase:facebookUser];
+            [SPUserHandler sendUserToLocalDatabase:facebookUser];
+            [SPUserHandler sendUserToRemoteDatabase:    facebookUser];
     }
-    
-//    if ([self.facebookUserId isEqualToString:@"878485092182794"]) {
-//        [self goToHomeScreen];
-//    }
 }
 
 //Cuida de possiveis erros ao logar
@@ -384,7 +380,9 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self passingDataToTabBar:viewControllerTabBar];
     //passando dados para a tabBar
     viewControllerTabBar.navigationItem.hidesBackButton = YES;
-    [self.navigationController pushViewController:viewControllerTabBar animated:YES];
+    if ([self isEqual:self.navigationController.topViewController]) {
+        [self.navigationController pushViewController:viewControllerTabBar animated:YES];
+    }
 }
 
 - (void)goToSignUpScreen{

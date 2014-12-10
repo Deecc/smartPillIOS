@@ -29,7 +29,7 @@
 //Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
 
 - (void)goToSignUpScreen{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (NSString*)checkConnectedAccount{
