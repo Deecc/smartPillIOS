@@ -12,6 +12,7 @@
 #import <GooglePlus/GooglePlus.h>
 #import "SPLoginLines.h"
 #import "SPTabBarViewController.h"
+#import "SPNewUserViewController.h"
 
 
 
@@ -386,9 +387,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 
 - (void)goToSignUpScreen{
-    UITabBarController * viewControllerNewUser = [self.storyboard instantiateViewControllerWithIdentifier:@"newuser"];
-    viewControllerNewUser.navigationItem.hidesBackButton = YES;
-    [self.navigationController pushViewController:viewControllerNewUser animated:YES];
+    [self performSegueWithIdentifier:@"newUserSegue" sender:self];
 }
 
 @end

@@ -28,7 +28,7 @@
 
 //Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
 
-- (void)goToSignUpScreen{
+- (void)goToSignInScreen{
     [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -43,7 +43,7 @@
             return @"SmartPill";
 }
 - (IBAction)signOutAction:(UIButton *)sender {
-    [self goToSignUpScreen];
+    [self goToSignInScreen];
 }
 
 

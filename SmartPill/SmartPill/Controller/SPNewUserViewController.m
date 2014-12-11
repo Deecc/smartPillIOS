@@ -41,14 +41,14 @@
             [SPUserHandler sendUserToRemoteDatabase:smartPillUser];
         }
         NSLog(@"%@",smartPillUser);
-        [self goToLoginScreen];
+        [self goToSignInScreen];
     }else{
         NSLog(@"Password did not match password confirmation");
     }
 }
 
 - (IBAction)cancelSignUpAction:(UIBarButtonItem *)sender {
-    [self goToLoginScreen];
+    [self goToSignInScreen];
 }
 
 
@@ -59,8 +59,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)goToLoginScreen{
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)goToSignInScreen{
+[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
