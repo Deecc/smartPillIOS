@@ -377,11 +377,11 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 
 //Método que muda para a instancia do controlador ScheduleViewController e cria sua view.
 - (void)goToHomeScreen{
-    SPTabBarViewController * viewControllerTabBar = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
-    [self passingDataToTabBar:viewControllerTabBar];
-    //passando dados para a tabBar
-    viewControllerTabBar.navigationItem.hidesBackButton = YES;
     if ([self isEqual:self.navigationController.topViewController]) {
+        SPTabBarViewController * viewControllerTabBar = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
+        [self passingDataToTabBar:viewControllerTabBar];
+    //passando dados para a tabBar
+        viewControllerTabBar.navigationItem.hidesBackButton = YES;
         [self.navigationController pushViewController:viewControllerTabBar animated:YES];
     }
 }

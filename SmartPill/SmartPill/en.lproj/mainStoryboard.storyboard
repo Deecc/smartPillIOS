@@ -187,7 +187,7 @@
                         <button key="tableFooterView" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sCD-E4-RnW">
                             <rect key="frame" x="0.0" y="259" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="SignOut"/>
+                            <state key="normal" title="Deslogar"/>
                             <connections>
                                 <action selector="signOutAction:" destination="97y-Du-Xeh" eventType="touchUpInside" id="dAW-3F-ZS7"/>
                             </connections>
