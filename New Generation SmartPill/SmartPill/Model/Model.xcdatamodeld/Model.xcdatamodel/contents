@@ -34,7 +34,7 @@
         <relationship name="remedios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Remedios" inverseName="user" inverseEntity="Remedios" syncable="YES"/>
     </entity>
     <entity name="User_Facebook" syncable="YES">
-        <attribute name="idFacebook" optional="YES" syncable="YES"/>
+        <attribute name="idFacebook" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="facebook" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User_Google" syncable="YES">
