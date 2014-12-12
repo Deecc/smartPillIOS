@@ -42,4 +42,4 @@ A partir desses pontos levantados, o aplicativo smartPill tem como objetivo cont
   IFRN-CNAT<br />
   http://lattes.cnpq.br/3089057453728782<br />
   CPF 075.654.144-17<br />
-  13/10/1986
+
