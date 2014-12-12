@@ -1,4 +1,4 @@
-# SmartPill: Ajuda inteligente para gerenciar meus medicamentos
+# SmartPill: Ajuda inteligente para gerenciar seus medicamentos
 
 ## Resumo
 Segundo pesquisa do IBGE, estima-se que mais de 30% dos brasileiros de todas as idades são portadores de doenças crônicas, na qual o tratamento não pode ser interrompido, muitas delas sendo idosas, amparado pela maior expectativa de vida. Esse quadro tende a aumentar porque o número de brasileiros acima de 65 anos deve praticamente quadruplicar até 2060. Este é um fato global e hoje já é realidade em países europeus onde a sociedade tem mais de 50% de seu total idosos.
