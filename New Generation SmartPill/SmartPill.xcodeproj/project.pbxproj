@@ -17,6 +17,7 @@
 		AF05F7841A13E6BD0079AEA3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */; };
 		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
+		AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
@@ -64,6 +65,7 @@
 		AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AF937C891A3B5A1E00610583 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B31BCB631A18D17600094C45 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewController.h; path = Controller/SPViewController.h; sourceTree = "<group>"; };
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		B3EFE0171A12854E0082591C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */,
 				B32BCE051A23B66B0003F97A /* SPUser.h */,
 				B32BCE061A23B66B0003F97A /* SPUser.m */,
 				B3960F171A23D583006888ED /* SPUserHandler.h */,
@@ -374,6 +377,7 @@
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
+				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +607,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF937C891A3B5A1E00610583 /* Model.xcdatamodel */,
+			);
+			currentVersion = AF937C891A3B5A1E00610583 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Model/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B3D647CE1A12408600461CAF /* Project object */;
 }
