@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <GooglePlus/GooglePlus.h>
 #import "SPUserHandler.h"
+#import <CoreData/CoreData.h>
 
 @class GPPSignInButton;
 
-@interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate>
+@interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate,NSFetchedResultsControllerDelegate>
 
 //Google
 @property NSString * googleUserId;
@@ -22,5 +23,8 @@
 @property NSString * facebookUserId;
 @property NSString * facebookUserName;
 @property NSString * facebookUserEmail;
+//CoreData
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

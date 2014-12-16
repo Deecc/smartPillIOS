@@ -8,23 +8,38 @@
 
 #import <Foundation/Foundation.h>
 #import "SPUser.h"
+#import "User.h"
+#import "User+create.h"
+#import "User_Facebook.h"
+#import "User_Facebook+Create.h"
+#import "User_Google.h"
+#import "User_Google+create.h"
 
 @interface SPUserHandler : NSObject
++ (SPUser*)createFacebookUserWithName:(NSString*)name
+                                Email:(NSString*)email
+                       UserFacebookId:(NSString*)userFacebookId;
++ (SPUser*)createGoogleUserWithName:(NSString*)name
+                              Email:(NSString*)email
+                       UserGoogleId:(NSString*)userGoogleId;
 + (SPUser*)createUserWithName:(NSString*)name
                         Email:(NSString*)email
                        UserId:(NSString*)userId
                   andPassword:(NSString*)password;
-+ (void)deleteUser:(SPUser*)user;
++ (void)deleteUser:(SPUser*)user
+      fromDataBase:(NSManagedObjectContext*)context;
 + (void)updateUser:(SPUser*)user
           withName:(NSString*)name
              Email:(NSString*)email
-            UserId:(NSString*)userId
+            UserId:(NSNumber*)userId
        andPassword:(NSString*)password;
-+ (SPUser*)getLastUser;
-+ (void)sendUserToLocalDatabase:(SPUser*)user;
++ (void)sendUser:(SPUser*)user toLocalDatabase:(NSManagedObjectContext*)context;
 + (void)sendUserToRemoteDatabase:(SPUser*)user;
-+ (BOOL)doesUserExist:(SPUser*)user;
-+ (BOOL)checkUserPresenceLocally:(SPUser*)user;
++ (BOOL)doesUserExist:(SPUser*)user
+           OnDataBase:(NSManagedObjectContext*)context;
++ (BOOL)checkUserPresenceLocally:(SPUser*)user
+                      OnDataBase:(NSManagedObjectContext*)context;
 + (BOOL)checkUserPresenceRemotely:(SPUser*)user;
 + (void)updateUserDataFromServer:(SPUser*)user;
++ (void)dataFromDatabase;
 @end

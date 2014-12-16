@@ -14,25 +14,4 @@
 
 @implementation SPUser
 
-- (instancetype)initWithName:(NSString*)name
-                       Email:(NSString*)email
-                      UserId:(NSString*)userId
-                 andPassword:(NSString *)password
-{
-    self = [super init];
-    if (self) {
-        self.name = name;
-        self.email = email;
-        self.userId = userId;
-        self.password = password;
-        self.listOfMedicine = [@[] mutableCopy];
-    }
-    return self;
-}
-
-- (NSString *)description{
-    NSString * description = [NSString stringWithFormat:@"User: %@, Email: %@, Id: %@",self.name,self.email,self.userId];
-    return description;
-}
-
 @end

@@ -74,15 +74,8 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     self.facebookUserId = user.id;
     self.facebookUserName = user[@"name"];
     self.facebookUserEmail = [user objectForKey:@"email"];
-    
-    SPUser* facebookUser = [SPUserHandler createUserWithName:self.facebookUserName Email:self.facebookUserEmail UserId:self.facebookUserId andPassword:nil];
-    
-    if ([SPUserHandler doesUserExist:facebookUser]) {
-            [SPUserHandler updateUserDataFromServer:facebookUser];
-            [self goToHomeScreen];
-    }else{
-            [SPUserHandler sendUserToLocalDatabase:facebookUser];
-            [SPUserHandler sendUserToRemoteDatabase:    facebookUser];
+    if ([self isEqual:self.navigationController.topViewController]) {
+        [self checkAndSaveFacebookUserData];
     }
 }
 
@@ -121,6 +114,29 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
                                    delegate:nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
+    }
+}
+
+- (BOOL)isFacebookDataCollected{
+    if (self.facebookUserName && self.facebookUserId && self.facebookUserEmail) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (void)checkAndSaveFacebookUserData{
+    if ([self isFacebookDataCollected]) {
+        SPUser* facebookUser = [SPUserHandler createFacebookUserWithName:self.facebookUserName Email:self.facebookUserEmail UserFacebookId:self.facebookUserId];
+        
+        if ([SPUserHandler doesUserExist:facebookUser OnDataBase:self.managedObjectContext]) {
+            [SPUserHandler updateUserDataFromServer:facebookUser];
+            [self goToHomeScreen];
+        }else{
+            [SPUserHandler sendUser:facebookUser toLocalDatabase:self.managedObjectContext];
+            [SPUserHandler sendUserToRemoteDatabase:facebookUser];
+            [self goToHomeScreen];
+        }
     }
 }
 
@@ -194,13 +210,8 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
                                 self.googleUserEmail = email.value;
                             }
                         }
-                        SPUser* googleUser = [SPUserHandler createUserWithName:self.googleUserName Email:self.googleUserEmail UserId:self.googleUserId andPassword:nil];
-                        if ([SPUserHandler doesUserExist:googleUser]) {
-                            [SPUserHandler updateUserDataFromServer:googleUser];
-                            [self goToHomeScreen];
-                        }else{
-                            [SPUserHandler sendUserToLocalDatabase:googleUser];
-                            [SPUserHandler sendUserToRemoteDatabase:googleUser];
+                        if ([self isEqual:self.navigationController.topViewController]) {
+                            [self checkAndSaveGoogleUserData];
                         }
                     }
                 }];
@@ -224,6 +235,30 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 //        [self.view addSubview:loginLabel];
     }
 }
+
+- (BOOL)isGoogleDataColected{
+    if (self.googleUserName && self.googleUserEmail && self.googleUserId) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+
+- (void)checkAndSaveGoogleUserData{
+    if ([self isGoogleDataColected]) {
+        SPUser* googleUser = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
+        if ([SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext]) {
+            [SPUserHandler updateUserDataFromServer:googleUser];
+            [self goToHomeScreen];
+        }else{
+            [SPUserHandler sendUser:googleUser toLocalDatabase:self.managedObjectContext];
+            [SPUserHandler sendUserToRemoteDatabase:googleUser];
+            [self goToHomeScreen];
+        }
+    }
+}
+
 
 #pragma mark - Extra views
 
@@ -363,13 +398,19 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)passingDataToTabBar:(SPTabBarViewController*)tbvc{
     if (self.facebookUserName) {
         tbvc.facebookUserName = self.facebookUserName;
+        self.facebookUserName = nil;
         tbvc.facebookUserId = self.facebookUserId;
+        self.facebookUserId = nil;
         tbvc.facebookUserEmail = self.facebookUserEmail;
+        self.facebookUserEmail = nil;
     }
     if (self.googleUserName) {
         tbvc.googleUserName = self.googleUserName;
+        self.googleUserName = nil;
         tbvc.googleUserId = self.googleUserId;
+        self.googleUserId = nil;
         tbvc.googleUserEmail = self.googleUserEmail;
+        self.googleUserEmail = nil;
     }
 }
 

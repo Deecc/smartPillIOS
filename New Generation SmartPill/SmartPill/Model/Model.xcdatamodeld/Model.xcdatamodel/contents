@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Lembrete" syncable="YES">
+    <entity name="Lembrete" representedClassName="Lembrete" syncable="YES">
         <attribute name="idLembrete" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="lembretes_horario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lembrete_Horarios" inverseName="lembretes" inverseEntity="Lembrete_Horarios" syncable="YES"/>
         <relationship name="lembretes_som" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lembrete_Som" inverseName="lembretes" inverseEntity="Lembrete_Som" syncable="YES"/>
         <relationship name="remedios" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Remedios" inverseName="lembretes" inverseEntity="Remedios" syncable="YES"/>
     </entity>
-    <entity name="Lembrete_Horarios" syncable="YES">
+    <entity name="Lembrete_Horarios" representedClassName="Lembrete_Horarios" syncable="YES">
         <attribute name="idLembreteHorarios" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="lembretes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lembrete" inverseName="lembretes_horario" inverseEntity="Lembrete" syncable="YES"/>
     </entity>
-    <entity name="Lembrete_Som" syncable="YES">
+    <entity name="Lembrete_Som" representedClassName="Lembrete_Som" syncable="YES">
         <attribute name="idLembreteSom" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="lembretes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lembrete" inverseName="lembretes_som" inverseEntity="Lembrete" syncable="YES"/>
     </entity>
-    <entity name="Remedios" syncable="YES">
+    <entity name="Remedios" representedClassName="Remedios" syncable="YES">
         <attribute name="apresentacao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fabricante" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idRemedio" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -24,7 +24,7 @@
         <relationship name="lembretes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lembrete" inverseName="remedios" inverseEntity="Lembrete" syncable="YES"/>
         <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="remedios" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User" syncable="YES">
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idUser" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,21 +33,21 @@
         <relationship name="google" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User_Google" inverseName="user" inverseEntity="User_Google" syncable="YES"/>
         <relationship name="remedios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Remedios" inverseName="user" inverseEntity="Remedios" syncable="YES"/>
     </entity>
-    <entity name="User_Facebook" syncable="YES">
-        <attribute name="idFacebook" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    <entity name="User_Facebook" representedClassName="User_Facebook" syncable="YES">
+        <attribute name="idFacebook" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="facebook" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User_Google" syncable="YES">
+    <entity name="User_Google" representedClassName="User_Google" syncable="YES">
         <attribute name="idGoogle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="google" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-180" positionY="50" width="128" height="148"/>
-        <element name="User_Google" positionX="-279" positionY="-109" width="128" height="73"/>
-        <element name="User_Facebook" positionX="-29" positionY="-172" width="128" height="73"/>
-        <element name="Remedios" positionX="63" positionY="-19" width="128" height="163"/>
         <element name="Lembrete" positionX="340" positionY="5" width="128" height="103"/>
-        <element name="Lembrete_Som" positionX="243" positionY="-126" width="128" height="73"/>
         <element name="Lembrete_Horarios" positionX="288" positionY="261" width="128" height="73"/>
+        <element name="Lembrete_Som" positionX="243" positionY="-126" width="128" height="73"/>
+        <element name="Remedios" positionX="63" positionY="-19" width="128" height="163"/>
+        <element name="User" positionX="-180" positionY="50" width="128" height="148"/>
+        <element name="User_Facebook" positionX="-29" positionY="-172" width="128" height="73"/>
+        <element name="User_Google" positionX="-324" positionY="-145" width="128" height="73"/>
     </elements>
 </model>
