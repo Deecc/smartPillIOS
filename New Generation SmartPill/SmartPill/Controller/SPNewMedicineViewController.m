@@ -10,10 +10,15 @@
 #import "Remedios+create.h"
 
 @interface SPNewMedicineViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation SPNewMedicineViewController
+
+- (void)viewDidLoad
+{
+}
 
 
 - (NSManagedObjectContext *)managedObjectContext {
