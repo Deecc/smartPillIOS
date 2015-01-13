@@ -8,6 +8,7 @@
 
 #import "SPTabBarViewController.h"
 
+
 @interface SPTabBarViewController ()
 
 @end
@@ -17,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [SPUserHandler dataFromDatabase];
 }
 
 @end

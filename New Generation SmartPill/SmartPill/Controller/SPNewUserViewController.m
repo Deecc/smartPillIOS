@@ -8,6 +8,7 @@
 
 #import "SPNewUserViewController.h"
 #import "SPViewController.h"
+#import "SPAppDelegate.h"
 
 
 @interface SPNewUserViewController ()
@@ -31,16 +32,16 @@
     NSString * userEmail = self.userEmail.text;
     NSString * userPassword = self.userPassword.text;
     NSString * userPasswordConfirmation = self.userPasswordConfirmation.text;
-
+    SPAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    
     if ([userPassword isEqualToString:userPasswordConfirmation]) {
         SPUser * smartPillUser = [SPUserHandler createUserWithName:userName Email:userEmail UserId:nil andPassword:userPassword];
-        if ([SPUserHandler doesUserExist:smartPillUser]) {
+        if ([SPUserHandler doesUserExist:smartPillUser OnDataBase:appDelegate.managedObjectContext]) {
             [SPUserHandler updateUserDataFromServer:smartPillUser];
         }else{
-            [SPUserHandler sendUserToLocalDatabase:smartPillUser];
+            [SPUserHandler sendUser:smartPillUser toLocalDatabase:appDelegate.managedObjectContext];
             [SPUserHandler sendUserToRemoteDatabase:smartPillUser];
         }
-        NSLog(@"%@",smartPillUser);
         [self goToSignInScreen];
     }else{
         NSLog(@"Password did not match password confirmation");

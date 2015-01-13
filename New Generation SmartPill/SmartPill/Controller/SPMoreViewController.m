@@ -8,6 +8,7 @@
 
 #import "SPMoreViewController.h"
 #import "SPTabBarViewController.h"
+#import "SPViewController.h"
 
 
 @interface SPMoreViewController ()
@@ -43,8 +44,18 @@
             return @"SmartPill";
 }
 - (IBAction)signOutAction:(UIButton *)sender {
+    [self resetUserLabelData];
     [self goToSignInScreen];
 }
 
+- (void)resetUserLabelData{
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    tbvc.facebookUserName = nil;
+    tbvc.facebookUserId = nil;
+    tbvc.facebookUserEmail = nil;
+    tbvc.googleUserName = nil;
+    tbvc.googleUserId = nil;
+    tbvc.googleUserEmail = nil;
+}
 
 @end

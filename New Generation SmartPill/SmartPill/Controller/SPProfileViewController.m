@@ -9,6 +9,7 @@
 #import "SPProfileViewController.h"
 #import "SPViewController.h"
 #import "SPTabBarViewController.h"
+#import "SPAppDelegate.h"
 
 @interface SPProfileViewController ()
 
@@ -40,6 +41,17 @@
     return nil;
 }
 
+- (NSString*)userIdNumber{
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    if (tbvc.facebookUserId) {
+        return tbvc.facebookUserId;
+    }
+    if (tbvc.googleUserId) {
+        return tbvc.googleUserId;
+    }
+    return nil;
+}
+
 - (NSString*)userEmailString{
     SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
     if (tbvc.facebookUserName) {
@@ -62,8 +74,30 @@
     return nil;
 }
 
+- (void)resetUserLabelData{
+    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
+    tbvc.facebookUserName = nil;
+    tbvc.facebookUserId = nil;
+    tbvc.facebookUserEmail = nil;
+    tbvc.googleUserName = nil;
+    tbvc.googleUserId = nil;
+    tbvc.googleUserEmail = nil;
+}
+
 - (IBAction)removeAccountAction:(UIButton *)sender {
     //Retirar do banco
+    SPAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
+        SPUser * user = [SPUserHandler createFacebookUserWithName:[self userNameString] Email:[self userEmailString] UserFacebookId:[self userIdNumber]];
+        [SPUserHandler deleteUser:user fromDataBase:appDelegate.managedObjectContext];
+        [self resetUserLabelData];
+        [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
+    }else if ([[self connectedWithString]isEqualToString:@"Google"]){
+        SPUser * user = [SPUserHandler createGoogleUserWithName:[self userNameString] Email:[self userEmailString] UserGoogleId:[self userIdNumber]];
+        [SPUserHandler deleteUser:user fromDataBase:appDelegate.managedObjectContext];
+        [self resetUserLabelData];
+        [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 @end

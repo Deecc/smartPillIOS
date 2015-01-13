@@ -18,17 +18,31 @@
 		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
 		AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */; };
+		B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C451A408AA600B7002D /* User_Facebook+Create.m */; };
+		B3115C491A408AC500B7002D /* User_Google+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C481A408AC500B7002D /* User_Google+create.m */; };
+		B3115C4C1A408ADF00B7002D /* User+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C4B1A408ADF00B7002D /* User+create.m */; };
+		B3115C6D1A40A8F400B7002D /* User_Google.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C6C1A40A8F400B7002D /* User_Google.m */; };
+		B3115C701A40A8F500B7002D /* User_Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C6F1A40A8F500B7002D /* User_Facebook.m */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
 		B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */; };
+		B33E75F81A644C4B0028D469 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E75F71A644C4B0028D469 /* User.m */; };
+		B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */; };
+		B33F572C1A438C5A00394227 /* SPNewMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */; };
+		B33F572F1A43934900394227 /* Remedios+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572E1A43934900394227 /* Remedios+create.m */; };
 		B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B34080781A1E8E3D00C63D49 /* MyStyleKit.m */; };
 		B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B365399A1A29F24800E4404A /* SPTabBarViewController.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
+		B3BCB50C1A3B7EE600D5696C /* Lembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BCB50B1A3B7EE600D5696C /* Lembrete.m */; };
+		B3BCB5151A3B7EE700D5696C /* Lembrete_Som.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BCB5141A3B7EE700D5696C /* Lembrete_Som.m */; };
+		B3BCB5181A3B7EE700D5696C /* Lembrete_Horarios.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BCB5171A3B7EE700D5696C /* Lembrete_Horarios.m */; };
+		B3BCB51B1A3B7EE700D5696C /* Remedios.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BCB51A1A3B7EE700D5696C /* Remedios.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
+		B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -66,6 +80,16 @@
 		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AF937C891A3B5A1E00610583 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B3115C441A408AA600B7002D /* User_Facebook+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User_Facebook+Create.h"; path = "Model/CoreDataModels/Categories/User_Facebook+Create.h"; sourceTree = "<group>"; };
+		B3115C451A408AA600B7002D /* User_Facebook+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User_Facebook+Create.m"; path = "Model/CoreDataModels/Categories/User_Facebook+Create.m"; sourceTree = "<group>"; };
+		B3115C471A408AC500B7002D /* User_Google+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User_Google+create.h"; path = "Model/CoreDataModels/Categories/User_Google+create.h"; sourceTree = "<group>"; };
+		B3115C481A408AC500B7002D /* User_Google+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User_Google+create.m"; path = "Model/CoreDataModels/Categories/User_Google+create.m"; sourceTree = "<group>"; };
+		B3115C4A1A408ADF00B7002D /* User+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+create.h"; path = "Model/CoreDataModels/Categories/User+create.h"; sourceTree = "<group>"; };
+		B3115C4B1A408ADF00B7002D /* User+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+create.m"; path = "Model/CoreDataModels/Categories/User+create.m"; sourceTree = "<group>"; };
+		B3115C6B1A40A8F400B7002D /* User_Google.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User_Google.h; path = Model/CoreDataModels/User_Google.h; sourceTree = "<group>"; };
+		B3115C6C1A40A8F400B7002D /* User_Google.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User_Google.m; path = Model/CoreDataModels/User_Google.m; sourceTree = "<group>"; };
+		B3115C6E1A40A8F500B7002D /* User_Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User_Facebook.h; path = Model/CoreDataModels/User_Facebook.h; sourceTree = "<group>"; };
+		B3115C6F1A40A8F500B7002D /* User_Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User_Facebook.m; path = Model/CoreDataModels/User_Facebook.m; sourceTree = "<group>"; };
 		B31BCB631A18D17600094C45 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewController.h; path = Controller/SPViewController.h; sourceTree = "<group>"; };
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
@@ -73,6 +97,14 @@
 		B32BCE051A23B66B0003F97A /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUser.h; path = Model/SPUser.h; sourceTree = "<group>"; };
 		B32BCE061A23B66B0003F97A /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUser.m; path = Model/SPUser.m; sourceTree = "<group>"; };
 		B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		B33E75F61A644C4B0028D469 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/CoreDataModels/User.h; sourceTree = "<group>"; };
+		B33E75F71A644C4B0028D469 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/CoreDataModels/User.m; sourceTree = "<group>"; };
+		B33F57271A436B7200394227 /* SPMedicineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMedicineDetailsViewController.h; path = Controller/SPMedicineDetailsViewController.h; sourceTree = "<group>"; };
+		B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMedicineDetailsViewController.m; path = Controller/SPMedicineDetailsViewController.m; sourceTree = "<group>"; };
+		B33F572A1A438C5A00394227 /* SPNewMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineViewController.h; path = Controller/SPNewMedicineViewController.h; sourceTree = "<group>"; };
+		B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewMedicineViewController.m; path = Controller/SPNewMedicineViewController.m; sourceTree = "<group>"; };
+		B33F572D1A43934900394227 /* Remedios+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Remedios+create.h"; path = "Model/CoreDataModels/Categories/Remedios+create.h"; sourceTree = "<group>"; };
+		B33F572E1A43934900394227 /* Remedios+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Remedios+create.m"; path = "Model/CoreDataModels/Categories/Remedios+create.m"; sourceTree = "<group>"; };
 		B34080771A1E8E3D00C63D49 /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyStyleKit.h; path = "PaintCode App/MyStyleKit.h"; sourceTree = "<group>"; };
 		B34080781A1E8E3D00C63D49 /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyStyleKit.m; path = "PaintCode App/MyStyleKit.m"; sourceTree = "<group>"; };
 		B36539991A29F24800E4404A /* SPTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTabBarViewController.h; path = Controller/SPTabBarViewController.h; sourceTree = "<group>"; };
@@ -81,11 +113,21 @@
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
+		B3BCB50A1A3B7EE600D5696C /* Lembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lembrete.h; path = Model/CoreDataModels/Lembrete.h; sourceTree = "<group>"; };
+		B3BCB50B1A3B7EE600D5696C /* Lembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lembrete.m; path = Model/CoreDataModels/Lembrete.m; sourceTree = "<group>"; };
+		B3BCB5131A3B7EE700D5696C /* Lembrete_Som.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lembrete_Som.h; path = Model/CoreDataModels/Lembrete_Som.h; sourceTree = "<group>"; };
+		B3BCB5141A3B7EE700D5696C /* Lembrete_Som.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lembrete_Som.m; path = Model/CoreDataModels/Lembrete_Som.m; sourceTree = "<group>"; };
+		B3BCB5161A3B7EE700D5696C /* Lembrete_Horarios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lembrete_Horarios.h; path = Model/CoreDataModels/Lembrete_Horarios.h; sourceTree = "<group>"; };
+		B3BCB5171A3B7EE700D5696C /* Lembrete_Horarios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lembrete_Horarios.m; path = Model/CoreDataModels/Lembrete_Horarios.m; sourceTree = "<group>"; };
+		B3BCB5191A3B7EE700D5696C /* Remedios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Remedios.h; path = Model/CoreDataModels/Remedios.h; sourceTree = "<group>"; };
+		B3BCB51A1A3B7EE700D5696C /* Remedios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Remedios.m; path = Model/CoreDataModels/Remedios.m; sourceTree = "<group>"; };
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
 		B3CC13FC1A276365001D6C10 /* SPProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPProfileViewController.h; path = Controller/SPProfileViewController.h; sourceTree = "<group>"; };
 		B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPProfileViewController.m; path = Controller/SPProfileViewController.m; sourceTree = "<group>"; };
+		B3D4A0DD1A41FCFB001A90F4 /* SPBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBoxViewController.h; path = Controller/SPBoxViewController.h; sourceTree = "<group>"; };
+		B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBoxViewController.m; path = Controller/SPBoxViewController.m; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +191,35 @@
 				B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		B3BCB4F11A3B7E2A00D5696C /* CoreData Models */ = {
+			isa = PBXGroup;
+			children = (
+				B33E75F61A644C4B0028D469 /* User.h */,
+				B33E75F71A644C4B0028D469 /* User.m */,
+				B3115C441A408AA600B7002D /* User_Facebook+Create.h */,
+				B3115C451A408AA600B7002D /* User_Facebook+Create.m */,
+				B3115C6E1A40A8F500B7002D /* User_Facebook.h */,
+				B3115C6F1A40A8F500B7002D /* User_Facebook.m */,
+				B3115C471A408AC500B7002D /* User_Google+create.h */,
+				B3115C481A408AC500B7002D /* User_Google+create.m */,
+				B3115C6B1A40A8F400B7002D /* User_Google.h */,
+				B3115C6C1A40A8F400B7002D /* User_Google.m */,
+				B3115C4A1A408ADF00B7002D /* User+create.h */,
+				B3115C4B1A408ADF00B7002D /* User+create.m */,
+				B33F572D1A43934900394227 /* Remedios+create.h */,
+				B33F572E1A43934900394227 /* Remedios+create.m */,
+				B3BCB5191A3B7EE700D5696C /* Remedios.h */,
+				B3BCB51A1A3B7EE700D5696C /* Remedios.m */,
+				B3BCB5161A3B7EE700D5696C /* Lembrete_Horarios.h */,
+				B3BCB5171A3B7EE700D5696C /* Lembrete_Horarios.m */,
+				B3BCB5131A3B7EE700D5696C /* Lembrete_Som.h */,
+				B3BCB5141A3B7EE700D5696C /* Lembrete_Som.m */,
+				B3BCB50A1A3B7EE600D5696C /* Lembrete.h */,
+				B3BCB50B1A3B7EE600D5696C /* Lembrete.m */,
+			);
+			name = "CoreData Models";
 			sourceTree = "<group>";
 		};
 		B3D647CD1A12408600461CAF = {
@@ -240,11 +311,12 @@
 		B3EFE0171A12854E0082591C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */,
 				B32BCE051A23B66B0003F97A /* SPUser.h */,
 				B32BCE061A23B66B0003F97A /* SPUser.m */,
 				B3960F171A23D583006888ED /* SPUserHandler.h */,
 				B3960F181A23D583006888ED /* SPUserHandler.m */,
+				AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */,
+				B3BCB4F11A3B7E2A00D5696C /* CoreData Models */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,6 +336,12 @@
 				B365399A1A29F24800E4404A /* SPTabBarViewController.m */,
 				B382364B1A2DF59D00FA7538 /* SPMoreViewController.h */,
 				B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */,
+				B3D4A0DD1A41FCFB001A90F4 /* SPBoxViewController.h */,
+				B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */,
+				B33F57271A436B7200394227 /* SPMedicineDetailsViewController.h */,
+				B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */,
+				B33F572A1A438C5A00394227 /* SPNewMedicineViewController.h */,
+				B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -316,6 +394,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "IFRN - Mobile School";
 				TargetAttributes = {
+					B3D647D51A12408600461CAF = {
+						DevelopmentTeam = SAQR654RZN;
+					};
 					B3D647F61A12408600461CAF = {
 						TestTargetID = B3D647D51A12408600461CAF;
 					};
@@ -366,19 +447,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3115C491A408AC500B7002D /* User_Google+create.m in Sources */,
+				B33F572C1A438C5A00394227 /* SPNewMedicineViewController.m in Sources */,
+				B33E75F81A644C4B0028D469 /* User.m in Sources */,
+				B33F572F1A43934900394227 /* Remedios+create.m in Sources */,
 				B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */,
+				B3115C6D1A40A8F400B7002D /* User_Google.m in Sources */,
 				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
+				B3BCB5181A3B7EE700D5696C /* Lembrete_Horarios.m in Sources */,
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
+				B3BCB5151A3B7EE700D5696C /* Lembrete_Som.m in Sources */,
+				B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
+				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
+				B3BCB50C1A3B7EE600D5696C /* Lembrete.m in Sources */,
+				B3115C4C1A408ADF00B7002D /* User+create.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */,
 				B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */,
+				B3BCB51B1A3B7EE700D5696C /* Remedios.m in Sources */,
+				B3115C701A40A8F500B7002D /* User_Facebook.m in Sources */,
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
+				B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
