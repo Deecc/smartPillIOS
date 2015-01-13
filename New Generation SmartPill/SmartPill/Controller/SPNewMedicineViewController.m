@@ -15,7 +15,6 @@
 
 @implementation SPNewMedicineViewController
 
-
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
