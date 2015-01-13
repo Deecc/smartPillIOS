@@ -32,6 +32,7 @@
 - (IBAction)doneButtonAction:(UIBarButtonItem *)sender {
     if (self.medicine) {
         // Update existing medicine
+        NSLog(@"Done button action if");
         [self.medicine setValue:self.nameTextField forKey:@"nome"];
         [self.medicine setValue:self.activePrincipleTextField forKey:@"principioAtivo"];
         [self.medicine setValue:self.madeInTextField forKey:@"fabricante"];

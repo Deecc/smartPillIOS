@@ -238,7 +238,6 @@
                         <outlet property="nameTextField" destination="44A-9S-Zcs" id="Udo-Sc-Bqk"/>
                         <outlet property="presentationTextField" destination="P9K-Ot-bWK" id="TCf-9l-8gL"/>
                         <outlet property="quantityTextField" destination="TcB-NZ-sD3" id="tzQ-hz-qkN"/>
-                        <outlet property="scrollView" destination="iAx-Dl-xqJ" id="0hs-Fa-0EU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FS9-hW-0th" userLabel="First Responder" sceneMemberID="firstResponder"/>

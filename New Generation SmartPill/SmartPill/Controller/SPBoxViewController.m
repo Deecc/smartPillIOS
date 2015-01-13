@@ -118,8 +118,8 @@
     
     // Configure the cell...
     NSManagedObject *medicine = [self.medicines objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [medicine valueForKey:@"nome"], [medicine valueForKey:@"quantidade"]]];
-    [cell.detailTextLabel setText:[medicine valueForKey:@"fabricante"]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [medicine valueForKey:@"name"], [medicine valueForKey:@"quantity"]]];
+    [cell.detailTextLabel setText:[medicine valueForKey:@"manufacturer"]];
     
     return cell;
 }

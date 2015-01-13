@@ -24,7 +24,7 @@
     
     if ([name length]>0) {
      
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Medicines"];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Medicine"];
         request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
         
         NSError *error;
@@ -35,7 +35,7 @@
             return nil;
         } else if (![matches count]) {
            
-            medicine = [NSEntityDescription insertNewObjectForEntityForName:@"Medicines"
+            medicine = [NSEntityDescription insertNewObjectForEntityForName:@"Medicine"
                                                  inManagedObjectContext:context];
            
             medicine.name = name;
