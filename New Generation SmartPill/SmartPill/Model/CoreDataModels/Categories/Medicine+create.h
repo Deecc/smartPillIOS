@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import "Remedios.h"
+#import "Medicine.h"
 
-@interface Remedios (create)
-+ (Remedios *)medicineWithName:(NSString *)name
-                  presentation:(NSString *)presentation
-                        madeIn:(NSString *)factory
-               activePrinciple:(NSString *)activePrinciple
+@interface Medicine (create)
++ (Medicine *)medicineWithName:(NSString *)name
+                  availability:(NSString *)availability
+                        manufactuary:(NSString *)manufactuary
+               activeIngredient:(NSString *)activeIngredient
                       quantity:(NSNumber *)quantity
-                     reminders:(NSArray *)reminders
+                     reminder:(NSSet *)reminder
                           user:(User*)user
         inManagedObjectContext:(NSManagedObjectContext *)context;
 @end

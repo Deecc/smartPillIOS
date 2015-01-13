@@ -7,7 +7,7 @@
 //
 
 #import "SPNewMedicineViewController.h"
-#import "Remedios+create.h"
+#import "Medicine+create.h"
 
 @interface SPNewMedicineViewController ()
 
@@ -40,7 +40,9 @@
         [self.medicine setValue:self.quantityTextField forKey:@"quantidade"];
     } else {
         // Create a new medicine
-        Remedios * medicine = [Remedios medicineWithName:self.nameTextField.text presentation:self.presentationTextField.text madeIn:self.madeInTextField.text activePrinciple:self.activePrincipleTextField.text quantity:[NSNumber numberWithInt:[self.quantityTextField.text intValue]] reminders:nil user:self.currentUser inManagedObjectContext:[self managedObjectContext]];
+
+        
+        Medicine * medicine = [Medicine medicineWithName:self.nameTextField.text availability:self.presentationTextField.text  manufactuary:self.madeInTextField.text activeIngredient:self.activePrincipleTextField.text quantity:[NSNumber numberWithInt:[self.quantityTextField.text intValue]] reminder:nil user:self.currentUser inManagedObjectContext:[self managedObjectContext]];
         self.medicine = medicine;
         
     }

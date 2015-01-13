@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Remedios.h"
+#import "Medicine.h"
 
 @interface SPMedicineDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeInLabel;
 
-@property (strong) Remedios * medicine;
+@property (strong) Medicine * medicine;
 @end

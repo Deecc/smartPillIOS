@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Remedios.h"
+#import "Medicine.h"
 #import "SPUserHandler.h"
 #import "SPTabBarViewController.h"
 
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *madeInTextField;
 @property (weak, nonatomic) IBOutlet UITextField *presentationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
-@property (strong) Remedios * medicine;
+@property (strong) Medicine * medicine;
 @property User * currentUser;
 
 - (IBAction)cancelButtonAction:(UIBarButtonItem *)sender;

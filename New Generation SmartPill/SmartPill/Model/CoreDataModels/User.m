@@ -2,12 +2,12 @@
 //  User.m
 //  SmartPill
 //
-//  Created by Dennis da Silva Nunes on 12/01/15.
+//  Created by Mobile School - Thiago on 13/01/15.
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
 #import "User.h"
-#import "Remedios.h"
+#import "Medicine.h"
 #import "User_Facebook.h"
 #import "User_Google.h"
 
@@ -20,6 +20,6 @@
 @dynamic password;
 @dynamic facebook;
 @dynamic google;
-@dynamic remedios;
+@dynamic medicine;
 
 @end

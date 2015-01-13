@@ -1,18 +1,18 @@
 //
-//  User_Facebook.m
+//  Reminder_Sound.m
 //  SmartPill
 //
 //  Created by Mobile School - Thiago on 13/01/15.
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
-#import "User_Facebook.h"
-#import "User.h"
+#import "Reminder_Sound.h"
+#import "Reminder.h"
 
 
-@implementation User_Facebook
+@implementation Reminder_Sound
 
-@dynamic idFacebook;
-@dynamic user;
+@dynamic idReminderSound;
+@dynamic reminder;
 
 @end

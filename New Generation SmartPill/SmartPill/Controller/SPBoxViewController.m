@@ -46,9 +46,9 @@
     if (!_medicines) {
         NSLog(@"IF true");
         User * user = [self getCurrentDatabaseUser];
-        _medicines = [[user.remedios allObjects]mutableCopy];
-        for (Remedios *med in _medicines) {
-            NSLog(@"medicine name %@ quantity %@", med.nome, med.quantidade);
+        _medicines = [[user.medicine allObjects]mutableCopy];
+        for (Medicine *med in _medicines) {
+            NSLog(@"medicine name %@ quantity %@", med.name, med.quantity);
         }
         
     }
@@ -156,7 +156,7 @@
 {
     NSLog(@"prepareForSegue");
     if ([[segue identifier] isEqualToString:@"medicineDetails"]) {
-        Remedios *selectedMedicine = [self.medicines objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Medicine *selectedMedicine = [self.medicines objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
     }
