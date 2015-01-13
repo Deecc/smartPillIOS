@@ -8,7 +8,7 @@
 
 #import "Remedios.h"
 #import "Lembrete.h"
-#import "User.h"
+
 
 
 @implementation Remedios
@@ -21,5 +21,6 @@
 @dynamic quantidade;
 @dynamic lembretes;
 @dynamic user;
+
 
 @end

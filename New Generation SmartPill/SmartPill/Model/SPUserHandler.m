@@ -8,6 +8,7 @@
 #import "SPViewController.h"
 #import "SPUserHandler.h"
 #import "SPAppDelegate.h"
+#import "Remedios.h"
 
 @implementation SPUserHandler
 + (SPUser*)createFacebookUserWithName:(NSString*)name
@@ -119,8 +120,10 @@
                 return array;
             }
         }
+        NSLog(@"check returning nil");
         return nil;
     }else{
+        NSLog(@"check returning nil 2");
         return nil;
     }
 }

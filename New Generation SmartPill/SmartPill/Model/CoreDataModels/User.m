@@ -2,8 +2,8 @@
 //  User.m
 //  SmartPill
 //
-//  Created by Dennis da Silva Nunes on 12/12/14.
-//  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
+//  Created by Dennis da Silva Nunes on 12/01/15.
+//  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
 #import "User.h"

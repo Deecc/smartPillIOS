@@ -42,4 +42,5 @@
 + (BOOL)checkUserPresenceRemotely:(SPUser*)user;
 + (void)updateUserDataFromServer:(SPUser*)user;
 + (void)dataFromDatabase;
++ (NSArray*)checkPresenceToReturnUserLocally:(SPUser*)user OnDataBase:(NSManagedObjectContext*)context;
 @end
