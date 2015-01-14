@@ -7,28 +7,25 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SPUserHandler.h"
 
-@interface SmartPillTests : XCTestCase
+@interface SPTests : XCTestCase
+
+@end
+
+@implementation SPTests
+
+
+
+- (void)testCreateFacebookUserWithName
+{
+    id user = [SPUserHandler createFacebookUserWithName:@"julian" Email:@"juliansansat@yahoo.com.br" UserFacebookId:@"julianignacio"];
+    
+    XCTAssertNotNil(user, @"is nil");
+    //if ([user isKindOfClass:[SPUser class]]) {
+    //  NSLog(@"Teste do usuário %@", [user name]);
+    //}
+}
 
 @end
 
-@implementation SmartPillTests
-
-- (void)setUp
-{
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
-
-@end
