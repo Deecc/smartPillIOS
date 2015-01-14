@@ -57,4 +57,37 @@
     return medicine;
 }
 
++ (void)updateMedicine:(Medicine *)medicine fromDataBaseContext:(NSManagedObjectContext*)context{
+   
+    if ([medicine.name length]>0) {
+        
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Medicine"];
+        request.predicate = [NSPredicate predicateWithFormat:@"name = %@", medicine.name];
+        
+        NSError *error;
+        NSArray *matches = [context executeFetchRequest:request error:&error];
+        
+        if (!matches) {
+            NSLog(@"Error in Update Medicine");
+            return;
+        } else if ([matches count]) {
+            for (Medicine * med in matches) {
+                if ([med.name isEqualToString:medicine.name]) {
+                    med.name = medicine.name;
+                    med.availability = medicine.availability;
+                    med.manufacturer =medicine.manufacturer;
+                    med.activeIngredient = medicine.activeIngredient;
+                    med.quantity = medicine.quantity;
+                    med.reminder = medicine.reminder;
+                }
+            }
+        }else if(![matches count]){
+            NSLog(@"Could not find any medicine in the database");
+        
+        }
+        
+    }
+    [context save:nil];
+}
+
 @end

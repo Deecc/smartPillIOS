@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SMY-ya-xTQ">
-                                <rect key="frame" x="0.0" y="74" width="320" height="374"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -214,7 +214,7 @@
                             <navigationBar contentMode="scaleToFill" id="ANw-Jw-6ja">
                                 <rect key="frame" x="0.0" y="13" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="New Medicine" id="GKg-Re-JVN">
+                                    <navigationItem title="Remédio" id="GKg-Re-JVN">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="deu-sv-QHK">
                                             <connections>
                                                 <action selector="cancelButtonAction:" destination="7xp-DF-U2z" id="rON-Mh-4kH"/>
@@ -459,16 +459,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="srM-uP-JB5">
-                                        <rect key="frame" x="0.0" y="5" width="320" height="401"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="406"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="pS3-nF-2hj" id="9dV-L7-Hjo"/>
+                                            <outlet property="delegate" destination="pS3-nF-2hj" id="mOE-Cs-mhO"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="320" height="500"/>
+                                        <size key="value" width="320" height="400"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
@@ -478,7 +479,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7xp-DF-U2z" kind="modal" id="LeH-Ga-xt3"/>
+                                    <segue destination="7xp-DF-U2z" kind="modal" identifier="newmedicine2" id="LeH-Ga-xt3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -487,6 +488,7 @@
                     <tabBarItem key="tabBarItem" title="Caixa" id="AKG-V0-yp8"/>
                     <connections>
                         <outlet property="tableView" destination="srM-uP-JB5" id="BYo-Im-Luw"/>
+                        <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue" id="uM5-C4-xs8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-1O-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,7 +498,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2434" y="-78"/>
+            <point key="canvasLocation" x="2471" y="-78"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="CtN-ah-moj">
@@ -507,21 +509,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VeA-dx-98V">
-                                <rect key="frame" x="139" y="92" width="42" height="21"/>
+                                <rect key="frame" x="20" y="92" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sLA-1T-qyf">
-                                <rect key="frame" x="139" y="153" width="42" height="21"/>
+                                <rect key="frame" x="20" y="153" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fOS-DE-Sed">
-                                <rect key="frame" x="139" y="208" width="42" height="21"/>
+                                <rect key="frame" x="20" y="208" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar appearanceType="aqua" contentMode="scaleToFill" id="pfI-72-ehk">
+                                <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Remédio" id="lDq-Si-qtC">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="YkN-OI-MfT">
+                                            <connections>
+                                                <action selector="BackToLastViewAction:" destination="IDp-CR-0P1" id="2M4-24-whW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="fIK-kj-k4h">
+                                            <connections>
+                                                <segue destination="7xp-DF-U2z" kind="modal" identifier="newmedicine3" id="mrn-vi-LeM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -533,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjF-Re-Oy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2955" y="-78"/>
+            <point key="canvasLocation" x="2969" y="-222"/>
         </scene>
         <!--SmartPill-->
         <scene sceneID="OAo-2D-OXD">

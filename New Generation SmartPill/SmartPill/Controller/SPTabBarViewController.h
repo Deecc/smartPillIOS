@@ -19,5 +19,7 @@
 @property NSString * facebookUserId;
 @property NSString * facebookUserName;
 @property NSString * facebookUserEmail;
+//
+@property Medicine * medicine;
 
 @end

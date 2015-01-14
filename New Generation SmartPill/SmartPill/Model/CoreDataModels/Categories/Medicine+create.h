@@ -17,4 +17,5 @@
                      reminder:(NSSet *)reminder
                           user:(User*)user
         inManagedObjectContext:(NSManagedObjectContext *)context;
++ (void)updateMedicine:(Medicine *)medicine fromDataBaseContext:(NSManagedObjectContext*)context;
 @end

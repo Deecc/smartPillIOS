@@ -18,7 +18,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [SPUserHandler dataFromDatabase];
 }
 
 @end

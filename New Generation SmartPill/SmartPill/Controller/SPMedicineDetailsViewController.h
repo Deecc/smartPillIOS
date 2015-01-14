@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeInLabel;
 
-@property (strong) Medicine * medicine;
+@property (strong,nonatomic) Medicine * medicine;
+
+- (IBAction)BackToLastViewAction:(UIBarButtonItem *)sender;
+
 @end
