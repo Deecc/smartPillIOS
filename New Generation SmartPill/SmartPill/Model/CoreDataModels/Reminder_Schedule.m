@@ -2,7 +2,7 @@
 //  Reminder_Schedule.m
 //  SmartPill
 //
-//  Created by Mobile School - Thiago on 13/01/15.
+//  Created by Dennis da Silva Nunes on 16/01/15.
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 @implementation Reminder_Schedule
 
 @dynamic idReminderSchedule;
+@dynamic schedule;
 @dynamic reminder;
 
 @end

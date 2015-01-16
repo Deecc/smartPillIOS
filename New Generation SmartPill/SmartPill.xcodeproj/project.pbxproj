@@ -17,7 +17,6 @@
 		AF05F7841A13E6BD0079AEA3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */; };
 		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
-		AF9204691A65620F00D8E237 /* Reminder_Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9204681A65620F00D8E237 /* Reminder_Schedule.m */; };
 		AF92046C1A65620F00D8E237 /* Reminder_Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92046B1A65620F00D8E237 /* Reminder_Sound.m */; };
 		AF92046F1A65620F00D8E237 /* User_Google.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92046E1A65620F00D8E237 /* User_Google.m */; };
 		AF9204721A65621000D8E237 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9204711A65621000D8E237 /* Reminder.m */; };
@@ -43,6 +42,7 @@
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
 		B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */; };
+		B3D5705C1A69AECD006EB1CE /* Reminder_Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -79,8 +79,6 @@
 		AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AF9204671A65620F00D8E237 /* Reminder_Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder_Schedule.h; path = Model/CoreDataModels/Reminder_Schedule.h; sourceTree = "<group>"; };
-		AF9204681A65620F00D8E237 /* Reminder_Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder_Schedule.m; path = Model/CoreDataModels/Reminder_Schedule.m; sourceTree = "<group>"; };
 		AF92046A1A65620F00D8E237 /* Reminder_Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder_Sound.h; path = Model/CoreDataModels/Reminder_Sound.h; sourceTree = "<group>"; };
 		AF92046B1A65620F00D8E237 /* Reminder_Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder_Sound.m; path = Model/CoreDataModels/Reminder_Sound.m; sourceTree = "<group>"; };
 		AF92046D1A65620F00D8E237 /* User_Google.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User_Google.h; path = Model/CoreDataModels/User_Google.h; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 		B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPProfileViewController.m; path = Controller/SPProfileViewController.m; sourceTree = "<group>"; };
 		B3D4A0DD1A41FCFB001A90F4 /* SPBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBoxViewController.h; path = Controller/SPBoxViewController.h; sourceTree = "<group>"; };
 		B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBoxViewController.m; path = Controller/SPBoxViewController.m; sourceTree = "<group>"; };
+		B3D5705A1A69AECD006EB1CE /* Reminder_Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder_Schedule.h; path = Model/CoreDataModels/Reminder_Schedule.h; sourceTree = "<group>"; };
+		B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder_Schedule.m; path = Model/CoreDataModels/Reminder_Schedule.m; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,6 +196,8 @@
 		B3BCB4F11A3B7E2A00D5696C /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
+				B3D5705A1A69AECD006EB1CE /* Reminder_Schedule.h */,
+				B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */,
 				AF9204791A65621000D8E237 /* User_Facebook.h */,
 				AF92047A1A65621000D8E237 /* User_Facebook.m */,
 				AF9204761A65621000D8E237 /* Medicine.h */,
@@ -208,8 +210,6 @@
 				AF92046E1A65620F00D8E237 /* User_Google.m */,
 				AF92046A1A65620F00D8E237 /* Reminder_Sound.h */,
 				AF92046B1A65620F00D8E237 /* Reminder_Sound.m */,
-				AF9204671A65620F00D8E237 /* Reminder_Schedule.h */,
-				AF9204681A65620F00D8E237 /* Reminder_Schedule.m */,
 				B3115C441A408AA600B7002D /* User_Facebook+Create.h */,
 				B3115C451A408AA600B7002D /* User_Facebook+Create.m */,
 				B3115C471A408AC500B7002D /* User_Google+create.h */,
@@ -456,7 +456,6 @@
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
 				B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
-				AF9204691A65620F00D8E237 /* Reminder_Schedule.m in Sources */,
 				AF9204721A65621000D8E237 /* Reminder.m in Sources */,
 				AF9204781A65621000D8E237 /* Medicine.m in Sources */,
 				AF9204751A65621000D8E237 /* User.m in Sources */,
@@ -469,6 +468,7 @@
 				B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */,
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
+				B3D5705C1A69AECD006EB1CE /* Reminder_Schedule.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				AF92046F1A65620F00D8E237 /* User_Google.m in Sources */,
 				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
