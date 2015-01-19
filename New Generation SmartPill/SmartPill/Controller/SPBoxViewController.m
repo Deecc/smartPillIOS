@@ -52,14 +52,8 @@
 }
 
 - (SPUser*)getCurrentUser{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    SPUser * user;
-    if (tbvc.facebookUserName) {
-        user = [SPUserHandler createFacebookUserWithName:tbvc.facebookUserName Email:tbvc.facebookUserEmail UserFacebookId:tbvc.facebookUserId];
-    }else if (tbvc.googleUserName) {
-        user = [SPUserHandler createGoogleUserWithName:tbvc.googleUserName Email:tbvc.googleUserEmail UserGoogleId:tbvc.googleUserId];
-    }
-    return user;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    return delegate.currentUser;
 }
 
 - (User*)getCurrentDatabaseUser{

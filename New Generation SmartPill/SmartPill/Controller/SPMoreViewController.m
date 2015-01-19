@@ -34,11 +34,11 @@
 }
 
 - (NSString*)checkConnectedAccount{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-        if (tbvc.facebookUserName) {
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+        if (delegate.currentUser.userFacebookId) {
             return @"Facebook";
         }
-        if (tbvc.googleUserName) {
+        if (delegate.currentUser.userGoogleId) {
             return @"Google";
         }
             return @"SmartPill";
@@ -49,13 +49,8 @@
 }
 
 - (void)resetUserLabelData{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    tbvc.facebookUserName = nil;
-    tbvc.facebookUserId = nil;
-    tbvc.facebookUserEmail = nil;
-    tbvc.googleUserName = nil;
-    tbvc.googleUserId = nil;
-    tbvc.googleUserEmail = nil;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    delegate.currentUser = nil;
 }
 
 @end

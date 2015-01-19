@@ -34,6 +34,15 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self createViews];
 }
 
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
 #pragma mark - Facebook
 
 //Método para criar o botão do Facebook.
@@ -395,22 +404,22 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 }
 #pragma mark - Extra
 
-- (void)passingDataToTabBar:(SPTabBarViewController*)tbvc{
+- (void)storingCurrentUserInfo{
+    SPUser * user = nil;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     if (self.facebookUserName) {
-        tbvc.facebookUserName = self.facebookUserName;
+       user = [SPUserHandler createFacebookUserWithName:self.facebookUserName Email:self.facebookUserEmail UserFacebookId:self.facebookUserId];
         self.facebookUserName = nil;
-        tbvc.facebookUserId = self.facebookUserId;
         self.facebookUserId = nil;
-        tbvc.facebookUserEmail = self.facebookUserEmail;
         self.facebookUserEmail = nil;
+        delegate.currentUser = user;
     }
     if (self.googleUserName) {
-        tbvc.googleUserName = self.googleUserName;
+        user = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
         self.googleUserName = nil;
-        tbvc.googleUserId = self.googleUserId;
         self.googleUserId = nil;
-        tbvc.googleUserEmail = self.googleUserEmail;
         self.googleUserEmail = nil;
+        delegate.currentUser = user;
     }
 }
 
@@ -420,8 +429,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)goToHomeScreen{
     if ([self isEqual:self.navigationController.topViewController]) {
         SPTabBarViewController * viewControllerTabBar = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
-        [self passingDataToTabBar:viewControllerTabBar];
-    //passando dados para a tabBar
+        [self storingCurrentUserInfo];
         viewControllerTabBar.navigationItem.hidesBackButton = YES;
         [self.navigationController pushViewController:viewControllerTabBar animated:YES];
     }

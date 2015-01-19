@@ -120,10 +120,10 @@
                 return array;
             }
         }
-        NSLog(@"check returning nil");
+        NSLog(@"checkPresenceToReturnUserLocally nil (User Not Found)");
         return nil;
     }else{
-        NSLog(@"check returning nil 2");
+        NSLog(@"checkPresenceToReturnUserLocally nil 2 (No Users)");
         return nil;
     }
 }

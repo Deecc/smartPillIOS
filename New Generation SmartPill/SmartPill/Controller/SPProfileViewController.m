@@ -31,72 +31,59 @@
 }
 
 - (NSString*)userNameString{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    if (tbvc.facebookUserName) {
-        return tbvc.facebookUserName;
-    }
-    if (tbvc.googleUserName) {
-        return tbvc.googleUserName;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if (delegate.currentUser.name) {
+        return delegate.currentUser.name;
     }
     return nil;
 }
 
 - (NSString*)userIdNumber{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    if (tbvc.facebookUserId) {
-        return tbvc.facebookUserId;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if (delegate.currentUser.userFacebookId) {
+        return delegate.currentUser.userFacebookId;
     }
-    if (tbvc.googleUserId) {
-        return tbvc.googleUserId;
+    if (delegate.currentUser.userGoogleId) {
+        return delegate.currentUser.userGoogleId;
     }
     return nil;
 }
 
 - (NSString*)userEmailString{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    if (tbvc.facebookUserName) {
-        return tbvc.facebookUserEmail;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if (delegate.currentUser.email) {
+        return delegate.currentUser.email;
     }
-    if (tbvc.googleUserName) {
-        return tbvc.googleUserEmail;
-    }
-    return nil;
+        return nil;
 }
 
 - (NSString*)connectedWithString{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    if (tbvc.facebookUserName) {
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if (delegate.currentUser.userFacebookId) {
         return @"Facebook";
     }
-    if (tbvc.googleUserName) {
+    if (delegate.currentUser.userGoogleId) {
         return @"Google";
     }
     return nil;
 }
 
 - (void)resetUserLabelData{
-    SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
-    tbvc.facebookUserName = nil;
-    tbvc.facebookUserId = nil;
-    tbvc.facebookUserEmail = nil;
-    tbvc.googleUserName = nil;
-    tbvc.googleUserId = nil;
-    tbvc.googleUserEmail = nil;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    delegate.currentUser = nil;
 }
 
 - (IBAction)removeAccountAction:(UIButton *)sender {
     //Retirar do banco
-    SPAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
     if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
-        SPUser * user = [SPUserHandler createFacebookUserWithName:[self userNameString] Email:[self userEmailString] UserFacebookId:[self userIdNumber]];
-        [SPUserHandler deleteUser:user fromDataBase:appDelegate.managedObjectContext];
+        [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
         [self resetUserLabelData];
-        [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }else if ([[self connectedWithString]isEqualToString:@"Google"]){
-        SPUser * user = [SPUserHandler createGoogleUserWithName:[self userNameString] Email:[self userEmailString] UserGoogleId:[self userIdNumber]];
-        [SPUserHandler deleteUser:user fromDataBase:appDelegate.managedObjectContext];
+        [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
         [self resetUserLabelData];
-        [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 

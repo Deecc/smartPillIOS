@@ -10,6 +10,7 @@
 #import <GooglePlus/GooglePlus.h>
 #import "SPUserHandler.h"
 #import <CoreData/CoreData.h>
+#import "SPAppDelegate.h"
 
 @class GPPSignInButton;
 
@@ -24,7 +25,6 @@
 @property NSString * facebookUserName;
 @property NSString * facebookUserEmail;
 //CoreData
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

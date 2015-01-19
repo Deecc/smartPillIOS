@@ -31,6 +31,7 @@
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
 		B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */; };
+		B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */; };
 		B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */; };
 		B33F572C1A438C5A00394227 /* SPNewMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */; };
 		B33F572F1A43934900394227 /* Medicine+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572E1A43934900394227 /* Medicine+create.m */; };
@@ -105,6 +106,8 @@
 		B32BCE051A23B66B0003F97A /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUser.h; path = Model/SPUser.h; sourceTree = "<group>"; };
 		B32BCE061A23B66B0003F97A /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUser.m; path = Model/SPUser.m; sourceTree = "<group>"; };
 		B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		B3336AA81A6D8CFD00C51F6D /* SPReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPReminderViewController.h; path = Controller/SPReminderViewController.h; sourceTree = "<group>"; };
+		B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPReminderViewController.m; path = Controller/SPReminderViewController.m; sourceTree = "<group>"; };
 		B33F57271A436B7200394227 /* SPMedicineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMedicineDetailsViewController.h; path = Controller/SPMedicineDetailsViewController.h; sourceTree = "<group>"; };
 		B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMedicineDetailsViewController.m; path = Controller/SPMedicineDetailsViewController.m; sourceTree = "<group>"; };
 		B33F572A1A438C5A00394227 /* SPNewMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineViewController.h; path = Controller/SPNewMedicineViewController.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */,
 				B33F572A1A438C5A00394227 /* SPNewMedicineViewController.h */,
 				B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */,
+				B3336AA81A6D8CFD00C51F6D /* SPReminderViewController.h */,
+				B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */,
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
+				B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */,
 				B3D5705C1A69AECD006EB1CE /* Reminder_Schedule.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				AF92046F1A65620F00D8E237 /* User_Google.m in Sources */,

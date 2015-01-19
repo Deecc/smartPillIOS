@@ -7,15 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
 #import "SPUserHandler.h"
 
-@interface SPMoreViewController : UITableViewController<FBLoginViewDelegate>
-
-//Facebook
-@property NSString * facebookUserId;
-@property NSString * facebookUserName;
-@property NSString * facebookUserEmail;
-
-
+@interface SPMoreViewController : UITableViewController
 @end

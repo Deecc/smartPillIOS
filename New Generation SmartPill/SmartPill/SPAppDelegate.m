@@ -19,9 +19,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    SPViewController *SPVC = (SPViewController *)navigationController.topViewController;
-    SPVC.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Medicine.h"
+#import "SPAppDelegate.h"
 
 @interface SPMedicineDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

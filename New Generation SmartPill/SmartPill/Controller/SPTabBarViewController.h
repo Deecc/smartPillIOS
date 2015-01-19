@@ -11,15 +11,6 @@
 
 @interface SPTabBarViewController : UITabBarController
 
-//Google
-@property NSString * googleUserId;
-@property NSString * googleUserName;
-@property NSString * googleUserEmail;
-//Facebook
-@property NSString * facebookUserId;
-@property NSString * facebookUserName;
-@property NSString * facebookUserEmail;
-//
 @property Medicine * medicine;
 
 @end
