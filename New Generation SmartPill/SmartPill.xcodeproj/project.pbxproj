@@ -21,9 +21,10 @@
 		AF92046F1A65620F00D8E237 /* User_Google.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92046E1A65620F00D8E237 /* User_Google.m */; };
 		AF9204721A65621000D8E237 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9204711A65621000D8E237 /* Reminder.m */; };
 		AF9204751A65621000D8E237 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9204741A65621000D8E237 /* User.m */; };
-		AF9204781A65621000D8E237 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9204771A65621000D8E237 /* Medicine.m */; };
 		AF92047B1A65621000D8E237 /* User_Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = AF92047A1A65621000D8E237 /* User_Facebook.m */; };
 		AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */; };
+		AFBA0A021A6ED4800097FE71 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA0A011A6ED4800097FE71 /* Medicine.m */; };
+		AFBA0A051A6ED4800097FE71 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBA0A041A6ED4800097FE71 /* Recipe.m */; };
 		B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C451A408AA600B7002D /* User_Facebook+Create.m */; };
 		B3115C491A408AC500B7002D /* User_Google+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C481A408AC500B7002D /* User_Google+create.m */; };
 		B3115C4C1A408ADF00B7002D /* User+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C4B1A408ADF00B7002D /* User+create.m */; };
@@ -88,11 +89,13 @@
 		AF9204711A65621000D8E237 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder.m; path = Model/CoreDataModels/Reminder.m; sourceTree = "<group>"; };
 		AF9204731A65621000D8E237 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/CoreDataModels/User.h; sourceTree = "<group>"; };
 		AF9204741A65621000D8E237 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/CoreDataModels/User.m; sourceTree = "<group>"; };
-		AF9204761A65621000D8E237 /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/CoreDataModels/Medicine.h; sourceTree = "<group>"; };
-		AF9204771A65621000D8E237 /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/CoreDataModels/Medicine.m; sourceTree = "<group>"; };
 		AF9204791A65621000D8E237 /* User_Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User_Facebook.h; path = Model/CoreDataModels/User_Facebook.h; sourceTree = "<group>"; };
 		AF92047A1A65621000D8E237 /* User_Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User_Facebook.m; path = Model/CoreDataModels/User_Facebook.m; sourceTree = "<group>"; };
 		AF937C891A3B5A1E00610583 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AFBA0A001A6ED4800097FE71 /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/CoreDataModels/Medicine.h; sourceTree = "<group>"; };
+		AFBA0A011A6ED4800097FE71 /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/CoreDataModels/Medicine.m; sourceTree = "<group>"; };
+		AFBA0A031A6ED4800097FE71 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = Model/CoreDataModels/Recipe.h; sourceTree = "<group>"; };
+		AFBA0A041A6ED4800097FE71 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe.m; path = Model/CoreDataModels/Recipe.m; sourceTree = "<group>"; };
 		B3115C441A408AA600B7002D /* User_Facebook+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User_Facebook+Create.h"; path = "Model/CoreDataModels/Categories/User_Facebook+Create.h"; sourceTree = "<group>"; };
 		B3115C451A408AA600B7002D /* User_Facebook+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User_Facebook+Create.m"; path = "Model/CoreDataModels/Categories/User_Facebook+Create.m"; sourceTree = "<group>"; };
 		B3115C471A408AC500B7002D /* User_Google+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User_Google+create.h"; path = "Model/CoreDataModels/Categories/User_Google+create.h"; sourceTree = "<group>"; };
@@ -199,12 +202,14 @@
 		B3BCB4F11A3B7E2A00D5696C /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFBA0A031A6ED4800097FE71 /* Recipe.h */,
+				AFBA0A041A6ED4800097FE71 /* Recipe.m */,
+				AFBA0A001A6ED4800097FE71 /* Medicine.h */,
+				AFBA0A011A6ED4800097FE71 /* Medicine.m */,
 				B3D5705A1A69AECD006EB1CE /* Reminder_Schedule.h */,
 				B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */,
 				AF9204791A65621000D8E237 /* User_Facebook.h */,
 				AF92047A1A65621000D8E237 /* User_Facebook.m */,
-				AF9204761A65621000D8E237 /* Medicine.h */,
-				AF9204771A65621000D8E237 /* Medicine.m */,
 				AF9204731A65621000D8E237 /* User.h */,
 				AF9204741A65621000D8E237 /* User.m */,
 				AF9204701A65621000D8E237 /* Reminder.h */,
@@ -462,11 +467,12 @@
 				B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				AF9204721A65621000D8E237 /* Reminder.m in Sources */,
-				AF9204781A65621000D8E237 /* Medicine.m in Sources */,
 				AF9204751A65621000D8E237 /* User.m in Sources */,
 				AF92046C1A65620F00D8E237 /* Reminder_Sound.m in Sources */,
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
+				AFBA0A021A6ED4800097FE71 /* Medicine.m in Sources */,
 				B3115C4C1A408ADF00B7002D /* User+create.m in Sources */,
+				AFBA0A051A6ED4800097FE71 /* Recipe.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				AF92047B1A65621000D8E237 /* User_Facebook.m in Sources */,
 				B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */,
