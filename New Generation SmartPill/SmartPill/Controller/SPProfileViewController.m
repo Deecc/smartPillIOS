@@ -73,18 +73,30 @@
     delegate.currentUser = nil;
 }
 
-- (IBAction)removeAccountAction:(UIButton *)sender {
-    //Retirar do banco
-    SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
-        [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
-        [self resetUserLabelData];
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }else if ([[self connectedWithString]isEqualToString:@"Google"]){
-        [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
-        [self resetUserLabelData];
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    //Checks
+    if (buttonIndex == 1) {
+        //Retirar do banco
+        SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+        if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
+            [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
+            [self resetUserLabelData];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else if ([[self connectedWithString]isEqualToString:@"Google"]){
+            [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
+            [self resetUserLabelData];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        } 
 }
+
+
+
+- (IBAction)removeAccountAction:(UIButton *)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Desvincular conta" message:@"Deseja excluir permanentemente esta conta?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Excluir", nil];
+    [alert show];
+    [self alertView:alert clickedButtonAtIndex:0];
+    }
 
 @end
