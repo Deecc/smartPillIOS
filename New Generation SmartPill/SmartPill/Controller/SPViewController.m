@@ -439,4 +439,9 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self performSegueWithIdentifier:@"newUserSegue" sender:self];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField endEditing:YES];
+    return YES;
+}
+
 @end

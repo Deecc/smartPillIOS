@@ -14,7 +14,7 @@
 
 @class GPPSignInButton;
 
-@interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate,NSFetchedResultsControllerDelegate>
+@interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate,NSFetchedResultsControllerDelegate, UITextFieldDelegate>
 
 //Google
 @property NSString * googleUserId;
