@@ -34,6 +34,7 @@
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
 		B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */; };
 		B32D5BE31A72C78400635302 /* SPNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */; };
+		B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */; };
 		B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */; };
 		B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */; };
 		B33F572C1A438C5A00394227 /* SPNewMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */; };
@@ -115,6 +116,8 @@
 		B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		B32D5BE11A72C78400635302 /* SPNewReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewReminderViewController.h; path = Controller/SPNewReminderViewController.h; sourceTree = "<group>"; };
 		B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewReminderViewController.m; path = Controller/SPNewReminderViewController.m; sourceTree = "<group>"; };
+		B32D5BE41A72C8BA00635302 /* SPReminderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPReminderDetailsViewController.h; path = Controller/SPReminderDetailsViewController.h; sourceTree = "<group>"; };
+		B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPReminderDetailsViewController.m; path = Controller/SPReminderDetailsViewController.m; sourceTree = "<group>"; };
 		B3336AA81A6D8CFD00C51F6D /* SPReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPReminderViewController.h; path = Controller/SPReminderViewController.h; sourceTree = "<group>"; };
 		B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPReminderViewController.m; path = Controller/SPReminderViewController.m; sourceTree = "<group>"; };
 		B33F57271A436B7200394227 /* SPMedicineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMedicineDetailsViewController.h; path = Controller/SPMedicineDetailsViewController.h; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */,
 				B32D5BE11A72C78400635302 /* SPNewReminderViewController.h */,
 				B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */,
+				B32D5BE41A72C8BA00635302 /* SPReminderDetailsViewController.h */,
+				B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				AF9204721A65621000D8E237 /* Reminder.m in Sources */,
 				AF9204781A65621000D8E237 /* Medicine.m in Sources */,
 				AF9204751A65621000D8E237 /* User.m in Sources */,
+				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,
 				AF92046C1A65620F00D8E237 /* Reminder_Sound.m in Sources */,
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
 				B3115C4C1A408ADF00B7002D /* User+create.m in Sources */,

@@ -12,5 +12,6 @@
 @interface SPTabBarViewController : UITabBarController
 
 @property Medicine * medicine;
+@property Reminder * reminder;
 
 @end
