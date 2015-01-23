@@ -5,15 +5,7 @@
 //  Created by Dennis da Silva Nunes on 19/01/15.
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
-
 #import "SPReminderViewController.h"
-#import "SPAppDelegate.h"
-#import "SPUserHandler.h"
-#import "User.h"
-#import "Medicine.h"
-#import "Reminder.h"
-#import "SPNewReminderViewController.h"
-#import "SPReminderDetailsViewController.h"
 
 @interface SPReminderViewController ()
 
@@ -51,9 +43,13 @@
 
 - (NSMutableArray *)reminders
 {
-    _reminders = [@[] mutableCopy];
-    for (Medicine * med in self.medicines) {
-        [_reminders addObject:med.reminder];
+    if (!_reminders) {
+        _reminders = [@[] mutableCopy];
+        for (Medicine * med in self.medicines) {
+            for (Reminder * rem in med.reminder) {
+                [_reminders addObject:rem];
+            }
+        }
     }
     return _reminders;
 }
@@ -148,5 +144,7 @@
         //SPNewReminderViewController * newReminderVC = segue.destinationViewController;
     }
 }
+
+
 
 @end

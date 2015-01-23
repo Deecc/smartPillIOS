@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SPUserHandler.h"
+#import "Reminder.h"
 
 @interface SPTabBarViewController : UITabBarController
 

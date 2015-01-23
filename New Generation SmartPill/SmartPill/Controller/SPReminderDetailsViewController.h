@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reminder.h"
 
 @interface SPReminderDetailsViewController : UIViewController
+
+@property (strong,nonatomic) Reminder * reminder;
 
 @end
