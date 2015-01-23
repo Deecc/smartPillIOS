@@ -7,7 +7,7 @@
 //
 
 #import "Reminder_Schedule.h"
-#import "Reminder.h"
+
 
 
 @implementation Reminder_Schedule

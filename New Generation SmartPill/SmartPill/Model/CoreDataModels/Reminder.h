@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Medicine.h"
+#import "Reminder_Schedule.h"
+#import "Reminder_Sound.h"
 
 @class Medicine, Reminder_Schedule, Reminder_Sound;
 

@@ -27,6 +27,8 @@
 		B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C451A408AA600B7002D /* User_Facebook+Create.m */; };
 		B3115C491A408AC500B7002D /* User_Google+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C481A408AC500B7002D /* User_Google+create.m */; };
 		B3115C4C1A408ADF00B7002D /* User+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3115C4B1A408ADF00B7002D /* User+create.m */; };
+		B31285F11A71342000263364 /* Reminder+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B31285F01A71342000263364 /* Reminder+create.m */; };
+		B31285F61A71384200263364 /* Reminder_Schedule+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B31285F51A71384200263364 /* Reminder_Schedule+create.m */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
@@ -99,6 +101,10 @@
 		B3115C481A408AC500B7002D /* User_Google+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User_Google+create.m"; path = "Model/CoreDataModels/Categories/User_Google+create.m"; sourceTree = "<group>"; };
 		B3115C4A1A408ADF00B7002D /* User+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+create.h"; path = "Model/CoreDataModels/Categories/User+create.h"; sourceTree = "<group>"; };
 		B3115C4B1A408ADF00B7002D /* User+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+create.m"; path = "Model/CoreDataModels/Categories/User+create.m"; sourceTree = "<group>"; };
+		B31285EF1A71342000263364 /* Reminder+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Reminder+create.h"; path = "Model/CoreDataModels/Categories/Reminder+create.h"; sourceTree = "<group>"; };
+		B31285F01A71342000263364 /* Reminder+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Reminder+create.m"; path = "Model/CoreDataModels/Categories/Reminder+create.m"; sourceTree = "<group>"; };
+		B31285F41A71384200263364 /* Reminder_Schedule+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Reminder_Schedule+create.h"; path = "Model/CoreDataModels/Categories/Reminder_Schedule+create.h"; sourceTree = "<group>"; };
+		B31285F51A71384200263364 /* Reminder_Schedule+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Reminder_Schedule+create.m"; path = "Model/CoreDataModels/Categories/Reminder_Schedule+create.m"; sourceTree = "<group>"; };
 		B31BCB631A18D17600094C45 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewController.h; path = Controller/SPViewController.h; sourceTree = "<group>"; };
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
@@ -186,6 +192,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31285F31A71344100263364 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B3115C441A408AA600B7002D /* User_Facebook+Create.h */,
+				B3115C451A408AA600B7002D /* User_Facebook+Create.m */,
+				B3115C471A408AC500B7002D /* User_Google+create.h */,
+				B3115C481A408AC500B7002D /* User_Google+create.m */,
+				B3115C4A1A408ADF00B7002D /* User+create.h */,
+				B3115C4B1A408ADF00B7002D /* User+create.m */,
+				B33F572D1A43934900394227 /* Medicine+create.h */,
+				B33F572E1A43934900394227 /* Medicine+create.m */,
+				B31285EF1A71342000263364 /* Reminder+create.h */,
+				B31285F01A71342000263364 /* Reminder+create.m */,
+				B31285F41A71384200263364 /* Reminder_Schedule+create.h */,
+				B31285F51A71384200263364 /* Reminder_Schedule+create.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		B39FA9CD1A1B57980088EFE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +224,7 @@
 		B3BCB4F11A3B7E2A00D5696C /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
+				B31285F31A71344100263364 /* Categories */,
 				B3D5705A1A69AECD006EB1CE /* Reminder_Schedule.h */,
 				B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */,
 				AF9204791A65621000D8E237 /* User_Facebook.h */,
@@ -213,14 +239,6 @@
 				AF92046E1A65620F00D8E237 /* User_Google.m */,
 				AF92046A1A65620F00D8E237 /* Reminder_Sound.h */,
 				AF92046B1A65620F00D8E237 /* Reminder_Sound.m */,
-				B3115C441A408AA600B7002D /* User_Facebook+Create.h */,
-				B3115C451A408AA600B7002D /* User_Facebook+Create.m */,
-				B3115C471A408AC500B7002D /* User_Google+create.h */,
-				B3115C481A408AC500B7002D /* User_Google+create.m */,
-				B3115C4A1A408ADF00B7002D /* User+create.h */,
-				B3115C4B1A408ADF00B7002D /* User+create.m */,
-				B33F572D1A43934900394227 /* Medicine+create.h */,
-				B33F572E1A43934900394227 /* Medicine+create.m */,
 			);
 			name = "CoreData Models";
 			sourceTree = "<group>";
@@ -457,6 +475,7 @@
 				B33F572F1A43934900394227 /* Medicine+create.m in Sources */,
 				B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */,
 				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
+				B31285F11A71342000263364 /* Reminder+create.m in Sources */,
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
 				B3115C461A408AA600B7002D /* User_Facebook+Create.m in Sources */,
@@ -477,6 +496,7 @@
 				B3D5705C1A69AECD006EB1CE /* Reminder_Schedule.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				AF92046F1A65620F00D8E237 /* User_Google.m in Sources */,
+				B31285F61A71384200263364 /* Reminder_Schedule+create.m in Sources */,
 				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
 				B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */,

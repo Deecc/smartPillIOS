@@ -7,9 +7,7 @@
 //
 
 #import "Reminder.h"
-#import "Medicine.h"
-#import "Reminder_Schedule.h"
-#import "Reminder_Sound.h"
+
 
 
 @implementation Reminder
