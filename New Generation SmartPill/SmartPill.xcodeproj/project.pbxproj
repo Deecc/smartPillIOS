@@ -233,7 +233,10 @@
 		B3BCB4F11A3B7E2A00D5696C /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
-				B31285F31A71344100263364 /* Categories */,
+				AFBA0A031A6ED4800097FE71 /* Recipe.h */,
+				AFBA0A041A6ED4800097FE71 /* Recipe.m */,
+				AFBA0A001A6ED4800097FE71 /* Medicine.h */,
+				AFBA0A011A6ED4800097FE71 /* Medicine.m */,
 				B3D5705A1A69AECD006EB1CE /* Reminder_Schedule.h */,
 				B3D5705B1A69AECD006EB1CE /* Reminder_Schedule.m */,
 				AF9204791A65621000D8E237 /* User_Facebook.h */,
