@@ -19,8 +19,6 @@
 @property (nonatomic, retain) NSString * manufacturer;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * quantity;
-@property (nonatomic, retain) UNKNOWN_TYPE attribute;
-@property (nonatomic, retain) UNKNOWN_TYPE attribute1;
 @property (nonatomic, retain) NSSet *reminder;
 @property (nonatomic, retain) NSSet *user;
 @property (nonatomic, retain) NSSet *recipe;

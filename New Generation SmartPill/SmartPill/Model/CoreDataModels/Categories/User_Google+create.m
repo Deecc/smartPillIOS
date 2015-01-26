@@ -1,10 +1,4 @@
-//
-//  User_Google+create.m
-//  SmartPill
-//
-//  Created by Dennis da Silva Nunes on 16/12/14.
-//  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
-//
+
 
 #import "User_Google+create.h"
 

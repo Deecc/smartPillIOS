@@ -20,8 +20,6 @@
 @dynamic manufacturer;
 @dynamic name;
 @dynamic quantity;
-@dynamic attribute;
-@dynamic attribute1;
 @dynamic reminder;
 @dynamic user;
 @dynamic recipe;
