@@ -14,6 +14,7 @@
             withReminderSchedule:(Reminder_Schedule*)reminderSchedule
                    reminderSound:(Reminder_Sound*)reminderSound
           inManagedObjectContext:(NSManagedObjectContext *)context;
-+ (void)updateReminder:(Reminder *)reminder
-   fromDataBaseContext:(NSManagedObjectContext*)context;
++ (void)updateOldReminder:(Reminder *)oldReminder
+            toNewReminder:(Reminder*)newReminder
+      fromDataBaseContext:(NSManagedObjectContext*)context;
 @end

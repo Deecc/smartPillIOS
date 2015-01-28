@@ -1,10 +1,3 @@
-//
-//  SPReminderDetailsViewController.m
-//  SmartPill
-//
-//  Created by Dennis da Silva Nunes on 23/01/15.
-//  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
-//
 
 #import "SPReminderDetailsViewController.h"
 
@@ -14,36 +7,32 @@
 
 @implementation SPReminderDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self writingLabels];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)cancelButtonAction:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"newReminderEdit"]) {
+        SPNewReminderViewController * newReminderVC = segue.destinationViewController;
+        newReminderVC.reminder = self.reminder;
+    }
 }
-*/
+
+- (void)writingLabels{
+    if (self.reminder) {
+        [self.labelMedicineName setText:[self.reminder.medicine valueForKey:@"name"]];
+
+        NSDate * date = self.reminder.reminder_schedule.schedule;
+        NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+        [timeFormat setDateFormat:@"HH:mm"];
+        [self.labelReminderTime setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    }
+}
 
 @end

@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Reminder.h"
+#import "Reminder+create.h"
+#import "User.h"
+#import "Reminder_Schedule+create.h"
 
-@interface SPNewReminderViewController : UIViewController
+@interface SPNewReminderViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong,nonatomic) Reminder * reminder;
+@property (strong,nonatomic) NSMutableArray * medicines;
+- (IBAction)cancelButtonAction:(UIBarButtonItem *)sender;
+- (IBAction)doneButtonAction:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *medicinePicker;
+@property (strong,nonatomic) NSMutableArray * medicineNamePicker;
+- (Medicine*)getMedicineWithName:(NSString*)medicineName;
 
 
 @end

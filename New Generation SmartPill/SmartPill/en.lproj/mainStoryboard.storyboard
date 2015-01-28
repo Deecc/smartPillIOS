@@ -450,6 +450,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7UY-jN-W32" kind="modal" identifier="reminderDetailsSegue" id="09w-Sp-ad6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -460,7 +463,7 @@
                     <navigationItem key="navigationItem" title="Lembretes" id="IRM-2F-2ML">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="d59-vL-eXo">
                             <connections>
-                                <segue destination="LoB-Ia-CQD" kind="modal" id="LR2-7w-7wI"/>
+                                <segue destination="LoB-Ia-CQD" kind="modal" identifier="newReminder" id="LR2-7w-7wI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -482,13 +485,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Lembrete" id="puL-Lo-y9Y">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="O59-dO-z86"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="XLF-MF-qRT"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="O59-dO-z86">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="LoB-Ia-CQD" id="3Rq-ky-In5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="XLF-MF-qRT">
+                                            <connections>
+                                                <action selector="doneButtonAction:" destination="LoB-Ia-CQD" id="s1M-qc-fgC"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="LLt-QA-crN">
-                                <rect key="frame" x="0.0" y="126" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="294" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="443733087.37753701">
                                     <!--2015-01-23 19:11:27 +0000-->
@@ -516,12 +527,30 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <pickerView appearanceType="aqua" contentMode="scaleToFill" id="w5Z-BW-sWM">
-                                <rect key="frame" x="0.0" y="296" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="102" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remedio do Lembrete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gFJ-Q6-UUI">
+                                <rect key="frame" x="20" y="86" width="171" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horário de uso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VkI-rH-r8x">
+                                <rect key="frame" x="20" y="254" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="LLt-QA-crN" id="L3o-C0-WwF"/>
+                        <outlet property="medicinePicker" destination="w5Z-BW-sWM" id="rhV-hm-Ja0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDh-0f-17J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,24 +568,35 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Lembrete" id="cJi-J2-awQ"/>
+                                    <navigationItem title="Lembrete" id="cJi-J2-awQ">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="DTH-E8-6T9">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="7UY-jN-W32" id="Qb0-e9-xQQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="ift-3I-RnQ">
+                                            <connections>
+                                                <segue destination="LoB-Ia-CQD" kind="modal" identifier="newReminderEdit" id="GMG-4s-60H"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remedio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XK-LD-fAk">
-                                <rect key="frame" x="126" y="107" width="69" height="21"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remedio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XK-LD-fAk">
+                                <rect key="frame" x="20" y="107" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario/Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Nl-GA-cXp">
-                                <rect key="frame" x="111" y="165" width="99" height="21"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Nl-GA-cXp">
+                                <rect key="frame" x="20" y="167" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Musica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXc-Ab-IIS">
-                                <rect key="frame" x="132" y="223" width="56" height="21"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Musica" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXc-Ab-IIS">
+                                <rect key="frame" x="20" y="227" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -564,6 +604,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="labelMedicineName" destination="2XK-LD-fAk" id="ibr-qn-Fzn"/>
+                        <outlet property="labelReminderTime" destination="5Nl-GA-cXp" id="7IQ-5W-h6C"/>
+                        <outlet property="labelSongName" destination="wXc-Ab-IIS" id="xfE-Xg-t0o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAI-Xo-WTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -757,5 +802,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dS2-2K-SQf"/>
+        <segue reference="GMG-4s-60H"/>
     </inferredMetricsTieBreakers>
 </document>

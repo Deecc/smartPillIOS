@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Reminder.h"
+#import "SPNewReminderViewController.h"
 
 @interface SPReminderDetailsViewController : UIViewController
 
 @property (strong,nonatomic) Reminder * reminder;
+- (IBAction)cancelButtonAction:(UIBarButtonItem *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelMedicineName;
+@property (weak, nonatomic) IBOutlet UILabel *labelReminderTime;
+@property (weak, nonatomic) IBOutlet UILabel *labelSongName;
 
 @end

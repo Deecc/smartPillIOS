@@ -97,6 +97,6 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Desvincular conta" message:@"Deseja excluir permanentemente esta conta?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Excluir", nil];
     [alert show];
     [self alertView:alert clickedButtonAtIndex:0];
-    }
+}
 
 @end

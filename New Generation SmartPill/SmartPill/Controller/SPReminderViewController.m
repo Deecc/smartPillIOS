@@ -43,12 +43,10 @@
 
 - (NSMutableArray *)reminders
 {
-    if (!_reminders) {
-        _reminders = [@[] mutableCopy];
-        for (Medicine * med in self.medicines) {
-            for (Reminder * rem in med.reminder) {
-                [_reminders addObject:rem];
-            }
+    _reminders = [@[] mutableCopy];
+    for (Medicine * med in self.medicines) {
+        for (Reminder * rem in med.reminder) {
+            [_reminders addObject:rem];
         }
     }
     return _reminders;
@@ -98,8 +96,13 @@
     }
     
     // Configure the cell...
-    NSManagedObject *reminder = [self.reminders objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [reminder valueForKey:@"reminder_schedule"]]];
+    Reminder *reminder = [self.reminders objectAtIndex:indexPath.row];
+    
+    NSDate * date = reminder.reminder_schedule.schedule;
+    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setDateFormat:@"HH:mm"];
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
     [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
     
     return cell;
@@ -141,7 +144,8 @@
         SPReminderDetailsViewController * reminderDetailsVC = segue.destinationViewController;
         reminderDetailsVC.reminder = selectedReminder;
     }else if ([[segue identifier] isEqualToString:@"newReminder"]) {
-        //SPNewReminderViewController * newReminderVC = segue.destinationViewController;
+        SPNewReminderViewController * newReminderVC = segue.destinationViewController;
+        newReminderVC.reminder = nil;
     }
 }
 

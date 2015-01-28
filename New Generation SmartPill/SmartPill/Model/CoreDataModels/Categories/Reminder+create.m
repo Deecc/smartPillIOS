@@ -10,6 +10,11 @@
 
 @implementation Reminder (create)
 
+- (NSString*)description{
+    NSString * string = [NSString stringWithFormat:@"Medicine = %@, and Reminder Schedule = %@",self.medicine.name,self.reminder_schedule.schedule];
+    return string;
+}
+
 + (Reminder *)reminderOfMedicine:(Medicine *)medicine
             withReminderSchedule:(Reminder_Schedule*)reminderSchedule
                    reminderSound:(Reminder_Sound*)reminderSound
@@ -49,8 +54,36 @@
     return nil;
 }
 
-+ (void)updateReminder:(Reminder *)reminder
-   fromDataBaseContext:(NSManagedObjectContext*)context{
-    //Refazer
++ (void)updateOldReminder:(Reminder *)oldReminder
+            toNewReminder:(Reminder*)newReminder
+      fromDataBaseContext:(NSManagedObjectContext*)context{
+
+    if (oldReminder) {
+        
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Medicine"];
+        request.predicate = [NSPredicate predicateWithFormat:@"ANY reminder = %@", oldReminder];
+        
+        NSError *error;
+        NSArray *matches = [context executeFetchRequest:request error:&error];
+        
+        if (!matches) {
+            NSLog(@"Error in Update Medicine");
+            return;
+        } else if ([matches count]) {
+            for (Reminder * rem in matches) {
+                if ([rem isEqual:oldReminder]) {
+                    rem.reminder_schedule = newReminder.reminder_schedule;
+                    if(rem.reminder_sound){rem.reminder_sound = newReminder.reminder_sound;}
+                    rem.medicine = newReminder.medicine;
+                }
+            }
+        }else if(![matches count]){
+            NSLog(@"Could not find any medicine in the database");
+            
+        }
+        
+    }
+    [context save:nil];
 }
+
 @end

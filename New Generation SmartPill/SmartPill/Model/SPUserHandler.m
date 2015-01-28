@@ -153,4 +153,23 @@
         NSLog(@"Banco sem usuários");
     }
 }
+
++ (SPUser*)getCurrentUser{
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    return delegate.currentUser;
+}
+
++ (User*)getCurrentDatabaseUser{
+    SPAppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext * context = appdelegate.managedObjectContext;
+    SPUser * currentUser = [self getCurrentUser];
+    NSArray * arrayOfDataBaseUsers = [SPUserHandler checkPresenceToReturnUserLocally:currentUser OnDataBase:context];
+    for (User *dataBaseUser in arrayOfDataBaseUsers) {
+        if ([dataBaseUser.email isEqualToString:currentUser.email])
+        {
+            return dataBaseUser;
+        }
+    }
+    return nil;
+}
 @end
