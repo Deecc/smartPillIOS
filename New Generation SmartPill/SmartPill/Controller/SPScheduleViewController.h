@@ -10,5 +10,5 @@
 
 
 
-@interface SPScheduleViewController : UIViewController
+@interface SPScheduleViewController : UIViewController< UITableViewDataSource>
 @end

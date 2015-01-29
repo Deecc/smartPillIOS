@@ -39,16 +39,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb342914182564604</string>
+				<string>fb348717275317628</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>342914182564604</string>
+	<string>348717275317628</string>
 	<key>FacebookDisplayName</key>
-	<string>SmartPill - Test1</string>
+	<string>SmartPill</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

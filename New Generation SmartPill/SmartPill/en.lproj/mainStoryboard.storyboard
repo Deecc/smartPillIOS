@@ -126,12 +126,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SMY-ya-xTQ">
                                 <rect key="frame" x="0.0" y="65" width="320" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2wd-pu-7Ef" id="qLm-xZ-Xb9"/>
+                                    <outlet property="delegate" destination="2wd-pu-7Ef" id="eBn-r9-6GZ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hoje" id="Wze-eo-PTa"/>
                     <navigationItem key="navigationItem" id="MTb-W6-oPh"/>
+                    <connections>
+                        <outlet property="tableView" destination="SMY-ya-xTQ" id="wuQ-Tg-9xI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLw-lO-Epz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Qdk-YT-BXo" customClass="MyStyleKit">
