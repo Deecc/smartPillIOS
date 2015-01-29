@@ -77,7 +77,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.medicines.count;
+    return self.reminders.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,16 +91,14 @@
     // Configure the cell...
     
     Reminder *reminder = nil;
-    if ([self.reminders count]>0) {
-        reminder = [self.reminders objectAtIndex:indexPath.row];
+    reminder = [self.reminders objectAtIndex:indexPath.row];
         
-        NSDate * date = reminder.reminder_schedule.schedule;
-        NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
-        [timeFormat setDateFormat:@"HH:mm"];
+    NSDate * date = reminder.reminder_schedule.schedule;
+    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setDateFormat:@"HH:mm"];
         
-        [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
-        [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
-    }
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
     return cell;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
