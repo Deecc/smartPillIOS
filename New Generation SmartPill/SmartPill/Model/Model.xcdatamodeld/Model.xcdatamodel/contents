@@ -14,7 +14,7 @@
     <entity name="Recipe" representedClassName="Recipe" syncable="YES">
         <attribute name="idRecipe" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="recipeImage" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="recipe" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="medicine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine" inverseName="recipe" inverseEntity="Medicine" syncable="YES"/>
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="idReminder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -49,7 +49,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="google" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="63" positionY="-19" width="128" height="180"/>
+        <element name="Medicine" positionX="36" positionY="162" width="128" height="180"/>
         <element name="Recipe" positionX="135" positionY="-216" width="128" height="88"/>
         <element name="Reminder" positionX="376" positionY="36" width="128" height="103"/>
         <element name="Reminder_Schedule" positionX="288" positionY="261" width="128" height="90"/>
