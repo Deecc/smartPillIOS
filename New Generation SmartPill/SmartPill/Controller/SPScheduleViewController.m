@@ -10,6 +10,7 @@
 @interface SPScheduleViewController ()
 @property (strong,nonatomic) NSMutableArray *medicines;
 @property (strong,nonatomic) NSMutableArray *reminders;
+@property (strong,nonatomic) NSMutableArray *pastReminders;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -34,15 +35,70 @@
     return _medicines;
 }
 
+- (NSMutableArray *)pastReminders
+{
+    _pastReminders = [@[] mutableCopy];
+    for (Medicine * med in self.medicines) {
+        for (Reminder * rem in med.reminder) {
+            if ([self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
+                [_pastReminders addObject:rem];
+            }
+        }
+    }
+    
+    NSMutableArray *sortedArray;
+    sortedArray = [_pastReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = [self acessingStringDateFromReminder:a];
+        NSString *second = [self acessingStringDateFromReminder:b];
+        return [first compare:second];
+    }];
+    
+    return sortedArray;
+}
+
 - (NSMutableArray *)reminders
 {
     _reminders = [@[] mutableCopy];
     for (Medicine * med in self.medicines) {
         for (Reminder * rem in med.reminder) {
-            [_reminders addObject:rem];
+            if (![self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
+                [_reminders addObject:rem];
+            }
         }
     }
-    return _reminders;
+    
+    NSMutableArray *sortedArray;
+    sortedArray = [_reminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = [self acessingStringDateFromReminder:a];
+        NSString *second = [self acessingStringDateFromReminder:b];
+        return [first compare:second];
+    }];
+    
+    return sortedArray;
+}
+- (NSString*)acessingStringDateFromTimeNow{
+    NSDate * date = [NSDate date];
+    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setDateFormat:@"HH:mm"];
+    return [NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]];
+}
+- (NSString*)acessingStringDateFromReminder:(Reminder*)reminder{
+    NSDate * date = reminder.reminder_schedule.schedule;
+    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setDateFormat:@"HH:mm"];
+    return [NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]];
+}
+- (BOOL)hasTimeNowPassed:(NSString*)time{
+   
+    NSMutableArray *sortedArray;
+    NSMutableArray *array = [@[[self acessingStringDateFromTimeNow],time]mutableCopy];
+    sortedArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSString* a, NSString* b) {
+        return [a compare:b];
+    }];
+    if ([[sortedArray firstObject] isEqualToString:[self acessingStringDateFromTimeNow]]) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -71,13 +127,18 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return self.reminders.count;
+    if (section==0)
+    {
+        return [self.pastReminders count];
+    }
+    else{
+        return [self.reminders count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,16 +150,23 @@
     }
     
     // Configure the cell...
-    
     Reminder *reminder = nil;
-    reminder = [self.reminders objectAtIndex:indexPath.row];
-        
-    NSDate * date = reminder.reminder_schedule.schedule;
-    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
-    [timeFormat setDateFormat:@"HH:mm"];
-        
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
-    [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
+    
+    if(indexPath.section==0){
+        reminder = [self.pastReminders objectAtIndex:indexPath.row];
+        NSDate * date = reminder.reminder_schedule.schedule;
+        NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+        [timeFormat setDateFormat:@"HH:mm"];
+        [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+        [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
+    }else{
+        reminder = [self.reminders objectAtIndex:indexPath.row];
+        NSDate * date = reminder.reminder_schedule.schedule;
+        NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+        [timeFormat setDateFormat:@"HH:mm"];
+        [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+        [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
+    }
     return cell;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,6 +175,13 @@
     return YES;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section==0) {
+        return @"Remedios Tomados";
+    }else{
+        return @"Remedios à Tomar";
+    }
+}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
