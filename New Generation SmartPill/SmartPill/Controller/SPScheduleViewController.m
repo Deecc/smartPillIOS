@@ -203,13 +203,14 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"medicineDetailsSegue" sender:nil];
+    [self performSegueWithIdentifier:@"medicineDetailsSegue2" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"medicineDetailsSegue"]) {
-        Medicine *selectedMedicine = [self.medicines objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+    if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
+        NSMutableArray * bothReminderArrays = [self.pastReminders arrayByAddingObjectsFromArray:self.reminders];
+        Medicine *selectedMedicine = [[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
     }else if ([[segue identifier] isEqualToString:@"newmedicine"]) {

@@ -138,6 +138,7 @@
                     <navigationItem key="navigationItem" id="MTb-W6-oPh"/>
                     <connections>
                         <outlet property="tableView" destination="SMY-ya-xTQ" id="wuQ-Tg-9xI"/>
+                        <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue2" id="BGa-lk-ZDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLw-lO-Epz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -808,7 +809,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dS2-2K-SQf"/>
         <segue reference="GMG-4s-60H"/>
+        <segue reference="BGa-lk-ZDc"/>
+        <segue reference="LeH-Ga-xt3"/>
     </inferredMetricsTieBreakers>
 </document>
