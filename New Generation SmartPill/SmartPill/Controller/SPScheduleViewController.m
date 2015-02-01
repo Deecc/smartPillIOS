@@ -196,7 +196,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
         ///
-        NSMutableArray * bothReminderArrays = [self.pastReminders arrayByAddingObjectsFromArray:self.reminders];
+        NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.reminders]mutableCopy];
         Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         [context deleteObject:selectedReminder];
         ///
@@ -208,7 +208,7 @@
             return;
         }
         
-        // Remove Medicine from table view
+        // Remove Reminder from table view
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -220,7 +220,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
-        NSMutableArray * bothReminderArrays = [self.pastReminders arrayByAddingObjectsFromArray:self.reminders];
+        NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.reminders]mutableCopy];
         Medicine *selectedMedicine = [[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
