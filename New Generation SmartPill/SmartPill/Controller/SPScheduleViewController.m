@@ -177,9 +177,15 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section==0) {
-        return @"Remedios Tomados";
+        if ([self.pastReminders count]>0) {
+            return @"Remedios Tomados/Atrasados";
+        }
+        return @"";
     }else{
-        return @"Remedios à Tomar";
+        if ([self.reminders count]>0) {
+            return @"Remedios à Tomar";
+        }
+        return @"";
     }
 }
 
@@ -189,7 +195,12 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.medicines objectAtIndex:indexPath.row]];
+        ///
+        NSMutableArray * bothReminderArrays = [self.pastReminders arrayByAddingObjectsFromArray:self.reminders];
+        Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        [context deleteObject:selectedReminder];
+        ///
+        
         
         NSError *error = nil;
         if (![context save:&error]) {
