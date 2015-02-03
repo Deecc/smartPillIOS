@@ -372,7 +372,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vmO-aq-00M" kind="push" id="7rj-Oz-M5m"/>
+                                            <segue destination="vmO-aq-00M" kind="push" id="cq9-nO-dn6"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -405,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkZ-xr-BRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="1081"/>
+            <point key="canvasLocation" x="3607" y="840"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ulz-wU-PuI">
@@ -420,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeQ-uK-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3374" y="1742"/>
+            <point key="canvasLocation" x="3607" y="1492"/>
         </scene>
         <!--Reminder View Controller - Lembretes-->
         <scene sceneID="lJF-jS-4Im">
@@ -448,17 +448,19 @@
                             <outlet property="delegate" destination="vmO-aq-00M" id="XvN-tc-L2W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lembretes" id="IRM-2F-2ML">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="d59-vL-eXo">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Lembretes" id="ECc-EM-BxL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ttv-No-HM5">
                             <connections>
-                                <segue destination="LoB-Ia-CQD" kind="modal" identifier="newReminder" id="LR2-7w-7wI"/>
+                                <segue destination="LoB-Ia-CQD" kind="modal" id="sgQ-pC-lj5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvp-Ln-Ubp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3374" y="2408"/>
+            <point key="canvasLocation" x="3236" y="2167"/>
         </scene>
         <!--New Reminder View Controller-->
         <scene sceneID="7We-j6-MXf">
@@ -521,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDh-0f-17J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="3068"/>
+            <point key="canvasLocation" x="3704" y="2820"/>
         </scene>
         <!--Reminder Details View Controller-->
         <scene sceneID="aMt-XJ-jHY">
@@ -579,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAI-Xo-WTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="2408"/>
+            <point key="canvasLocation" x="3704" y="2167"/>
         </scene>
         <!--Profile View Controller - Perfil-->
         <scene sceneID="90m-x2-MS6">
@@ -627,12 +629,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN4-Ll-BSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4426" y="414"/>
+            <point key="canvasLocation" x="3607" y="195"/>
         </scene>
         <!--Box View Controller-->
         <scene sceneID="Mmw-BV-noo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-1O-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Box" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pS3-nF-2hj" customClass="SPBoxViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9QJ-Hg-n7g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -666,6 +667,7 @@
                         <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue" id="uM5-C4-xs8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-1O-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2960" y="-57"/>
         </scene>
@@ -727,9 +729,10 @@
         <!--SmartPill-->
         <scene sceneID="OAo-2D-OXD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5h-Hf-ZyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="firstScreenNav" title="SmartPill" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ew7-3J-uwF" userLabel="SmartPill" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qzc-94-8uY">
+                    <navigationBar key="navigationBar" hidden="YES" alpha="0.0" contentMode="scaleToFill" id="Qzc-94-8uY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -738,7 +741,6 @@
                         <segue destination="PHa-sX-VOG" kind="relationship" relationship="rootViewController" id="xiD-5O-D2M"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z5h-Hf-ZyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646" y="141"/>
         </scene>
@@ -826,8 +828,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uM5-C4-xs8"/>
         <segue reference="LeH-Ga-xt3"/>
-        <segue reference="GMG-4s-60H"/>
+        <segue reference="uM5-C4-xs8"/>
+        <segue reference="sgQ-pC-lj5"/>
     </inferredMetricsTieBreakers>
 </document>
