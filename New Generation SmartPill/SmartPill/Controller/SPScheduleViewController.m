@@ -16,6 +16,18 @@
 
 @implementation SPScheduleViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    [self decreaseNumberOfBadges];
+}
+
+- (void)decreaseNumberOfBadges{
+    NSInteger numberOfBadges = [UIApplication sharedApplication].applicationIconBadgeNumber;
+    numberOfBadges -=1;
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:numberOfBadges];
+}
+
 #pragma mark - Table view data source
 
 - (NSManagedObjectContext *)managedObjectContext
@@ -99,11 +111,6 @@
         return NO;
     }
     return YES;
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
 }
 
 - (SPUser*)getCurrentUser{

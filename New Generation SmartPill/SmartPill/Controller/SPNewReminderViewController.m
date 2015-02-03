@@ -12,7 +12,8 @@
 
 @interface SPNewReminderViewController ()
 
-@property NSString * selectedMedicine;
+@property (nonatomic)  NSString * selectedMedicine;
+@property (nonatomic)  Medicine * currentSelectedMedicine;
 
 @end
 
@@ -21,16 +22,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.reminder) {
-        [self addingPlaceHolders];
-    }
     self.medicinePicker.dataSource = self;
     self.medicinePicker.delegate = self;
     self.datePicker.datePickerMode = UIDatePickerModeTime;
 }
 
-- (NSMutableArray *)medicineNamePicker{
+- (Medicine *)currentSelectedMedicine{
+    NSInteger row;
+    row = [self.medicinePicker selectedRowInComponent:0];
+    NSString* name = [self.medicineNamePicker objectAtIndex:row];
+    
+    return [self getMedicineWithName:name];
+}
 
+- (NSString*)selectedMedicine{
+    return [[self currentSelectedMedicine]name];
+}
+
+- (NSMutableArray *)medicineNamePicker{
     if (!_medicineNamePicker) {
         NSMutableArray * pickerList = [@[] mutableCopy];
         for (Medicine * med in self.medicines) {
@@ -80,6 +89,18 @@
     return nil;
 }
 
+- (Medicine*)getMedicineWithDate:(NSDate*)date{
+    
+    for (Medicine* med in self.medicines) {
+        for (Reminder* rem in med.reminder) {
+            if ([rem.reminder_schedule.schedule isEqual:date]) {
+                return med;
+            }
+        }
+    }
+    return nil;
+}
+
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -122,20 +143,27 @@
         if (![[self managedObjectContext] save:&error]) {
             NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)addingPlaceHolders{
-    //    self.nameTextField.placeholder = self.medicine.name;
-    //    self.activePrincipleTextField.placeholder = self.medicine.activeIngredient;
-    //    self.madeInTextField.placeholder = self.medicine.manufacturer;
-    //    self.presentationTextField.placeholder = self.medicine.availability;
-    //    self.quantityTextField.placeholder = [NSString stringWithFormat:@"%@",self.medicine.quantity];
+    [self setNotification];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)sendReminderToReminderDetailsView{
     SPTabBarViewController * tbvc = (SPTabBarViewController*)self.tabBarController;
     tbvc.reminder = self.reminder;
+}
+#pragma mark Notification
+
+- (void)setNotification{
+    NSDictionary * userinfo = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat: @"%@",[[self currentSelectedMedicine] name]], @"medicineName", [NSString stringWithFormat: @"%@",self.datePicker.date], @"date", nil];
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = self.datePicker.date;
+    localNotification.alertBody = [NSString stringWithFormat:@"Hora do Remédio %@",[[self currentSelectedMedicine] name]];
+    localNotification.userInfo = userinfo;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    [localNotification setTimeZone:[NSTimeZone defaultTimeZone]];
+    localNotification.applicationIconBadgeNumber = 1;
+    localNotification.repeatInterval = NSDayCalendarUnit;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 @end

@@ -113,9 +113,35 @@
     return YES;
 }
 
+- (void)deleteNotification:(NSIndexPath *)indexPath{
+
+    Reminder * reminder = [self.reminders objectAtIndex:indexPath.row];
+    Medicine * medicine = reminder.medicine;
+    Reminder_Schedule * schedule = reminder.reminder_schedule;
+    
+    //Delete notification
+    NSDictionary * uidToDelete = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat: @"%@",medicine.name ], @"medicineName", schedule.schedule, @"date", nil];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    NSArray *eventArray = [app scheduledLocalNotifications];
+    
+    for (int i=0; i<[eventArray count]; i++)
+    {
+        UILocalNotification* oneEvent = [eventArray objectAtIndex:i];
+        NSDictionary * uid = oneEvent.userInfo;
+        if ([[uid valueForKey:@"medicineName"] isEqual:[uidToDelete valueForKey:@"medicineName"]])
+        {
+            if ([[NSString stringWithFormat:@"%@",[uid valueForKey:@"date"]] isEqualToString:[NSString stringWithFormat:@"%@",[uidToDelete valueForKey:@"date"]]]){
+                [app cancelLocalNotification:oneEvent];
+                break;
+            }
+        }
+    }
+}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self deleteNotification:indexPath];
     NSManagedObjectContext *context = [self managedObjectContext];
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
