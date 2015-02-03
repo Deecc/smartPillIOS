@@ -1,6 +1,6 @@
-# SmartPill: Ajuda inteligente para gerenciar seus medicamentos
+## SmartPill: Ajuda inteligente para gerenciar seus medicamentos
 
-## Resumo
+### Resumo
 Segundo pesquisa do IBGE, estima-se que mais de 30% dos brasileiros de todas as idades são portadores de doenças crônicas, na qual o tratamento não pode ser interrompido, muitas delas sendo idosas, amparado pela maior expectativa de vida. Esse quadro tende a aumentar porque o número de brasileiros acima de 65 anos deve praticamente quadruplicar até 2060. Este é um fato global e hoje já é realidade em países europeus onde a sociedade tem mais de 50% de seu total idosos.
 Além desse quadro, da autonomia dos idosos em gerenciar os seus próprios remédios, existe um outro ponto a ser investigado que destina-se a preocupação de acompanhar o uso dos medicamentos por terceiros, como por exemplo familiares e enfermeiros.
 
@@ -8,7 +8,7 @@ Dado que o consumo de remédios necessita de um controle de horários e que muit
 
 A partir desses pontos levantados, o aplicativo smartPill tem como objetivo controlar a entrada e saída de medicamentos de sua caixa, lembrar os horários de ingestão, lembrar quando o remédio estiver perto de acabar, e quando estiver chegando em sua data de validade, assim como remédios para usar no dia-a-dia.
 
-## Equipe
+### Equipe
 - Leonardo Ataide Minora<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/0855207585191914<br />
