@@ -7,9 +7,6 @@
 //
 
 #import "SPProfileViewController.h"
-#import "SPViewController.h"
-#import "SPTabBarViewController.h"
-#import "SPAppDelegate.h"
 
 @interface SPProfileViewController ()
 

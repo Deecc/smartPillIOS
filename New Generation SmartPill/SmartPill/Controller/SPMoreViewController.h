@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "SPUserHandler.h"
+#import "SPCoreDataTableViewController.h"
+#import "SPAppDelegate.h"
 
-@interface SPMoreViewController : UITableViewController
+@interface SPMoreViewController : SPCoreDataTableViewController
 @end

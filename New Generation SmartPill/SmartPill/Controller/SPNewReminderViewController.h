@@ -6,21 +6,18 @@
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
 #import "Reminder+create.h"
-#import "User.h"
-#import "Reminder_Schedule+create.h"
+#import "SPCoreDataViewController.h"
+#import "SPTabBarViewController.h"
 
-@interface SPNewReminderViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
-
-@property (strong,nonatomic) Reminder * reminder;
-@property (strong,nonatomic) NSMutableArray * medicines;
+@interface SPNewReminderViewController : SPCoreDataViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 - (IBAction)cancelButtonAction:(UIBarButtonItem *)sender;
 - (IBAction)doneButtonAction:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *medicinePicker;
 @property (strong,nonatomic) NSMutableArray * medicineNamePicker;
-- (Medicine*)getMedicineWithName:(NSString*)medicineName;
+
 
 
 @end

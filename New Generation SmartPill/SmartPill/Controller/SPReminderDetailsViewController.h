@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Reminder.h"
 #import "SPNewReminderViewController.h"
+#import "SPCoreDataViewController.h"
 
-@interface SPReminderDetailsViewController : UIViewController
+@interface SPReminderDetailsViewController : SPCoreDataViewController
 
 @property (strong,nonatomic) Reminder * reminder;
 - (IBAction)cancelButtonAction:(UIBarButtonItem *)sender;

@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SPCoreDataViewController.h"
+#import "SPMedicineDetailsViewController.h"
+#import "SPNewMedicineViewController.h"
 
-@interface SPBoxViewController : UIViewController< UITableViewDataSource>
+@interface SPBoxViewController : SPCoreDataViewController< UITableViewDataSource>
 @end

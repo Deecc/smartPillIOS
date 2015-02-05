@@ -7,13 +7,9 @@
 //
 
 #import "SPViewController.h"
-#import "SPScheduleViewController.h"
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import "SPLoginLines.h"
-#import "SPTabBarViewController.h"
-#import "SPNewUserViewController.h"
-
 
 
 static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck53j.apps.googleusercontent.com";
@@ -34,14 +30,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     [self createViews];
 }
 
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
+
 
 #pragma mark - Facebook
 

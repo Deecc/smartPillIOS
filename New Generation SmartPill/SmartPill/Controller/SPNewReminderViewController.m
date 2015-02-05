@@ -7,8 +7,6 @@
 //
 
 #import "SPNewReminderViewController.h"
-#import "SPTabBarViewController.h"
-
 
 @interface SPNewReminderViewController ()
 
@@ -72,44 +70,6 @@
 {
     self.selectedMedicine = [self.medicineNamePicker objectAtIndex:row];
 }
-
-- (NSMutableArray *)medicines
-{
-    User * user = [SPUserHandler getCurrentDatabaseUser];
-    _medicines = [[user.medicine allObjects]mutableCopy];
-    return _medicines;
-}
-
-- (Medicine*)getMedicineWithName:(NSString*)medicineName{
-    for (Medicine * med in self.medicines) {
-        if ([med.name isEqualToString:medicineName]) {
-            return med;
-        }
-    }
-    return nil;
-}
-
-- (Medicine*)getMedicineWithDate:(NSDate*)date{
-    
-    for (Medicine* med in self.medicines) {
-        for (Reminder* rem in med.reminder) {
-            if ([rem.reminder_schedule.schedule isEqual:date]) {
-                return med;
-            }
-        }
-    }
-    return nil;
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
-
 
 - (IBAction)cancelButtonAction:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

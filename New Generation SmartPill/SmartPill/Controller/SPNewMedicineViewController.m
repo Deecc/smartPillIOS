@@ -7,8 +7,6 @@
 //
 
 #import "SPNewMedicineViewController.h"
-#import "Medicine+create.h"
-#import "SPMedicineDetailsViewController.h"
 
 @interface SPNewMedicineViewController ()
 
@@ -24,17 +22,6 @@
         [self addingPlaceHolders];
     }
 }
-
-
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
-
 
 - (IBAction)cancelButtonAction:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

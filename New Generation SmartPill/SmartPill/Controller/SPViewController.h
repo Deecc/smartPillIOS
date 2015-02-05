@@ -6,15 +6,14 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 #import <FacebookSDK/FacebookSDK.h>
-#import <UIKit/UIKit.h>
 #import <GooglePlus/GooglePlus.h>
-#import "SPUserHandler.h"
-#import <CoreData/CoreData.h>
 #import "SPAppDelegate.h"
+#import "SPCoreDataViewController.h"
+#import "SPTabBarViewController.h"
 
 @class GPPSignInButton;
 
-@interface SPViewController : UIViewController<FBLoginViewDelegate,GPPSignInDelegate,NSFetchedResultsControllerDelegate, UITextFieldDelegate>
+@interface SPViewController : SPCoreDataViewController<FBLoginViewDelegate,GPPSignInDelegate, UITextFieldDelegate>
 
 //Google
 @property NSString * googleUserId;
@@ -24,7 +23,5 @@
 @property NSString * facebookUserId;
 @property NSString * facebookUserName;
 @property NSString * facebookUserEmail;
-//CoreData
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

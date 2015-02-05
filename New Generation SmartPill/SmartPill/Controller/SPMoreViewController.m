@@ -7,14 +7,11 @@
 //
 
 #import "SPMoreViewController.h"
-#import "SPTabBarViewController.h"
-#import "SPViewController.h"
 
 
 @interface SPMoreViewController ()
 @property (weak, nonatomic) IBOutlet id signOutButton;
 @property NSString* accountType;
-
 @end
 
 @implementation SPMoreViewController

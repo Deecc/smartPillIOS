@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SPCoreDataViewController.h"
 
-@interface SPNewUserViewController : UIViewController
+@interface SPNewUserViewController : SPCoreDataViewController
 
 @end
