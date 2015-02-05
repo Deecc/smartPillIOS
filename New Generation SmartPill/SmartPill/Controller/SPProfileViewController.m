@@ -75,19 +75,21 @@
     //Checks
     if (buttonIndex == 1) {
         //Retirar do banco
+        UIApplication *app = [UIApplication sharedApplication];
+        [app cancelAllLocalNotifications];
         SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+        SPTabBarViewController * tabBarVC = (SPTabBarViewController*)self.tabBarController;
         if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
             [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
             [self resetUserLabelData];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [tabBarVC.navigationController popToRootViewControllerAnimated:YES];
         }else if ([[self connectedWithString]isEqualToString:@"Google"]){
             [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
             [self resetUserLabelData];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [tabBarVC.navigationController popToRootViewControllerAnimated:YES];
         }
         } 
 }
-
 
 
 - (IBAction)removeAccountAction:(UIButton *)sender {

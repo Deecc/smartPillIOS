@@ -8,6 +8,7 @@
 
 
 #import "SPCoreDataViewController.h"
+#import "SPTabBarViewController.h"
 
 @interface SPProfileViewController : SPCoreDataViewController
 @property (weak, nonatomic) IBOutlet UILabel *userName;
