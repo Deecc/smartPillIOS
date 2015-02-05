@@ -8,10 +8,6 @@
 #import "SPReminderViewController.h"
 
 @interface SPReminderViewController ()
-
-@property (strong,nonatomic) NSMutableArray * medicines;
-@property (strong,nonatomic) NSMutableArray * reminders;
-
 @end
 
 @implementation SPReminderViewController
@@ -23,56 +19,11 @@
 
 #pragma mark - Table view data source
 
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    if (delegate.managedObjectContext) {
-        context = delegate.managedObjectContext;
-    }
-    return context;
-}
-
-- (NSMutableArray *)medicines
-{
-    User * user = [self getCurrentDatabaseUser];
-    _medicines = [[user.medicine allObjects]mutableCopy];
-    return _medicines;
-}
-
-
-- (NSMutableArray *)reminders
-{
-    _reminders = [@[] mutableCopy];
-    for (Medicine * med in self.medicines) {
-        for (Reminder * rem in med.reminder) {
-            [_reminders addObject:rem];
-        }
-    }
-    return _reminders;
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
 
-- (SPUser*)getCurrentUser{
-    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-    return delegate.currentUser;
-}
-
-- (User*)getCurrentDatabaseUser{
-    SPUser * currentUser = [self getCurrentUser];
-    NSArray * arrayOfDataBaseUsers = [SPUserHandler checkPresenceToReturnUserLocally:currentUser OnDataBase:[self managedObjectContext]];
-    for (User *dataBaseUser in arrayOfDataBaseUsers) {
-        if ([dataBaseUser.email isEqualToString:currentUser.email])
-        {
-            return dataBaseUser;
-        }
-    }
-    return nil;
-}
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -142,7 +93,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self deleteNotification:indexPath];
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObjectContext *context = self.managedObjectContext;
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database

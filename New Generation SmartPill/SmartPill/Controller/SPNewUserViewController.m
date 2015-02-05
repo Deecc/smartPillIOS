@@ -7,9 +7,6 @@
 //
 
 #import "SPNewUserViewController.h"
-#import "SPViewController.h"
-#import "SPAppDelegate.h"
-
 
 @interface SPNewUserViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;

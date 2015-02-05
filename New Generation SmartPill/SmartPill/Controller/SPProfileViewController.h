@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface SPProfileViewController : UIViewController
+#import "SPCoreDataViewController.h"
+
+@interface SPProfileViewController : SPCoreDataViewController
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *userEmail;
 @property (weak, nonatomic) IBOutlet UILabel *connectedWith;

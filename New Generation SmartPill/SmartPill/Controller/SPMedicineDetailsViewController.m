@@ -7,7 +7,6 @@
 //
 
 #import "SPMedicineDetailsViewController.h"
-#import "SPNewMedicineViewController.h"
 
 @interface SPMedicineDetailsViewController ()
 
@@ -20,35 +19,9 @@
     [self writingLabels];
 }
 
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
 
 - (IBAction)BackToLastViewAction:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-- (SPUser*)getCurrentUser{
-    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-    return delegate.currentUser;
-}
-
-- (User*)getCurrentDatabaseUser{
-    SPUser * currentUser = [self getCurrentUser];
-    NSArray * arrayOfDataBaseUsers = [SPUserHandler checkPresenceToReturnUserLocally:currentUser OnDataBase:[self managedObjectContext]];
-    for (User *dataBaseUser in arrayOfDataBaseUsers) {
-        if ([dataBaseUser.email isEqualToString:currentUser.email])
-        {
-            return dataBaseUser;
-        }
-    }
-    return nil;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -56,7 +29,7 @@
     if ([[segue identifier] isEqualToString:@"newmedicine3"]) {
         SPNewMedicineViewController * newMedicineVC = segue.destinationViewController;
         newMedicineVC.currentUser = [self getCurrentDatabaseUser];
-        newMedicineVC.medicine = self.medicine;
+        newMedicineVC.medicine = [self tabBarMedicine];
     }
 }
 
@@ -68,11 +41,11 @@
     }
 }
 
-- (Medicine*)medicine{
+- (Medicine*)tabBarMedicine{
     SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
     if (tbvc.medicine) {
-        _medicine = tbvc.medicine;
+        return tbvc.medicine;
     }
-    return _medicine;
+    return nil;
 }
 @end

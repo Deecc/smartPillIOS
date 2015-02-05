@@ -7,15 +7,9 @@
 //
 
 #import "SPBoxViewController.h"
-#import "SPAppDelegate.h"
-#import "SPViewController.h"
-#import "SPTabBarViewController.h"
-#import "SPMedicineDetailsViewController.h"
-#import "SPNewMedicineViewController.h"
 
 @interface SPBoxViewController ()
 
-@property (strong,nonatomic) NSMutableArray *medicines;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -29,43 +23,9 @@
 
 #pragma mark - Table view data source
 
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    if (delegate.managedObjectContext) {
-        context = delegate.managedObjectContext;
-    }
-    return context;
-}
-
-- (NSMutableArray *)medicines
-{
-    User * user = [self getCurrentDatabaseUser];
-    _medicines = [[user.medicine allObjects]mutableCopy];
-    return _medicines;
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-}
-
-- (SPUser*)getCurrentUser{
-    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-    return delegate.currentUser;
-}
-
-- (User*)getCurrentDatabaseUser{
-    SPUser * currentUser = [self getCurrentUser];
-    NSArray * arrayOfDataBaseUsers = [SPUserHandler checkPresenceToReturnUserLocally:currentUser OnDataBase:[self managedObjectContext]];
-    for (User *dataBaseUser in arrayOfDataBaseUsers) {
-        if ([dataBaseUser.email isEqualToString:currentUser.email])
-        {
-            return dataBaseUser;
-        }
-    }
-    return nil;
 }
 
 - (void)deleteNotification:(NSIndexPath *)indexPath{

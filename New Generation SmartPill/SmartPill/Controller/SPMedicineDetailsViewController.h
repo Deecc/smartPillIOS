@@ -6,17 +6,13 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Medicine.h"
-#import "SPAppDelegate.h"
+#import "SPCoreDataViewController.h"
+#import "SPNewMedicineViewController.h"
 
-@interface SPMedicineDetailsViewController : UIViewController
+@interface SPMedicineDetailsViewController : SPCoreDataViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *madeInLabel;
-
-@property (strong,nonatomic) Medicine * medicine;
-
 - (IBAction)BackToLastViewAction:(UIBarButtonItem *)sender;
 
 @end
