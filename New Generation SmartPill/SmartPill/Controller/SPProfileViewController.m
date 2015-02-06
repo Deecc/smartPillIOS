@@ -43,6 +43,9 @@
     if (delegate.currentUser.userGoogleId) {
         return delegate.currentUser.userGoogleId;
     }
+    if (delegate.currentUser) {
+        return [delegate.currentUser.userId stringValue];
+    }
     return nil;
 }
 
@@ -62,6 +65,9 @@
     if (delegate.currentUser.userGoogleId) {
         return @"Google";
     }
+    if (delegate.currentUser) {
+        return @"SmartPill";
+    }
     return nil;
 }
 
@@ -79,16 +85,10 @@
         [app cancelAllLocalNotifications];
         SPAppDelegate * delegate = [[UIApplication sharedApplication] delegate];
         SPTabBarViewController * tabBarVC = (SPTabBarViewController*)self.tabBarController;
-        if ([[self connectedWithString]isEqualToString:@"Facebook"]) {
-            [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
-            [self resetUserLabelData];
-            [tabBarVC.navigationController popToRootViewControllerAnimated:YES];
-        }else if ([[self connectedWithString]isEqualToString:@"Google"]){
-            [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
-            [self resetUserLabelData];
-            [tabBarVC.navigationController popToRootViewControllerAnimated:YES];
-        }
-        } 
+        [SPUserHandler deleteUser:delegate.currentUser fromDataBase:delegate.managedObjectContext];
+        [self resetUserLabelData];
+        [tabBarVC.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 

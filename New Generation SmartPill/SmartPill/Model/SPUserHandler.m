@@ -120,10 +120,10 @@
                 return array;
             }
         }
-        NSLog(@"checkPresenceToReturnUserLocally nil (User Not Found)");
+        NSLog(@"checkPresenceToReturnUserLocally (User Not Found)");
         return nil;
     }else{
-        NSLog(@"checkPresenceToReturnUserLocally nil 2 (No Users)");
+        NSLog(@"checkPresenceToReturnUserLocally (No Users)");
         return nil;
     }
 }
@@ -169,6 +169,23 @@
         {
             return dataBaseUser;
         }
+    }
+    return nil;
+}
+
++ (User*)getOneUserFromDatabase{
+    SPAppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext * context = appdelegate.managedObjectContext;
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    fetch.entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    NSError * error;
+    NSArray * array = [context executeFetchRequest:fetch error:&error];
+    if (array) {
+        for (User * user in array) {
+            return user;
+        }
+    }else{
+        NSLog(@"Banco sem usuários");
     }
     return nil;
 }

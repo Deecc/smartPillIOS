@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ew7-3J-uwF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="WVf-sw-WbF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="GNc-b9-aao">
             <objects>
-                <viewController storyboardIdentifier="firstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PHa-sX-VOG" customClass="SPViewController" sceneMemberID="viewController">
+                <viewController id="PHa-sX-VOG" customClass="SPViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbD-1X-LeD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -21,9 +22,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVE-ME-BRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="141"/>
+            <point key="canvasLocation" x="1647" y="141"/>
         </scene>
-        <!--New User View Controller - Cadastro-->
+        <!--Cadastro-->
         <scene sceneID="rVC-Lw-3ln">
             <objects>
                 <viewController storyboardIdentifier="newuser" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-Th-Lx2" customClass="SPNewUserViewController" sceneMemberID="viewController">
@@ -266,7 +267,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3m-gk-mHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="141"/>
+            <point key="canvasLocation" x="2179" y="141"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="RhL-Wd-agR">
@@ -390,7 +391,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VX-3H-XWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2997" y="677"/>
+            <point key="canvasLocation" x="3529" y="677"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qPw-hx-WMe">
@@ -422,7 +423,7 @@
             </objects>
             <point key="canvasLocation" x="3607" y="1492"/>
         </scene>
-        <!--Reminder View Controller - Lembretes-->
+        <!--Lembretes-->
         <scene sceneID="lJF-jS-4Im">
             <objects>
                 <tableViewController id="vmO-aq-00M" customClass="SPReminderViewController" sceneMemberID="viewController">
@@ -583,7 +584,7 @@
             </objects>
             <point key="canvasLocation" x="3704" y="2167"/>
         </scene>
-        <!--Profile View Controller - Perfil-->
+        <!--Perfil-->
         <scene sceneID="90m-x2-MS6">
             <objects>
                 <viewController id="V99-4k-uFG" customClass="SPProfileViewController" sceneMemberID="viewController">
@@ -629,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN4-Ll-BSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607" y="195"/>
+            <point key="canvasLocation" x="4139" y="195"/>
         </scene>
         <!--Box View Controller-->
         <scene sceneID="Mmw-BV-noo">
@@ -648,7 +649,7 @@
                                     <segue destination="7xp-DF-U2z" kind="modal" identifier="newmedicine2" id="LeH-Ga-xt3"/>
                                 </connections>
                             </button>
-                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EHU-lw-0Kp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EHU-lw-0Kp">
                                 <rect key="frame" x="0.0" y="65" width="320" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -669,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-1O-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960" y="-57"/>
+            <point key="canvasLocation" x="3492" y="-57"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="CtN-ah-moj">
@@ -724,27 +725,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjF-Re-Oy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4021" y="-222"/>
+            <point key="canvasLocation" x="4553" y="-222"/>
         </scene>
-        <!--SmartPill-->
-        <scene sceneID="OAo-2D-OXD">
+        <!--First Screen View Controller-->
+        <scene sceneID="V5a-Wr-gDw">
             <objects>
-                <navigationController storyboardIdentifier="firstScreenNav" title="SmartPill" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ew7-3J-uwF" userLabel="SmartPill" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" hidden="YES" alpha="0.0" contentMode="scaleToFill" id="Qzc-94-8uY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController storyboardIdentifier="firstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7FE-4v-ZfO" customClass="SPFirstScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5GE-LG-rWV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q24-mc-Ljv">
+                                <rect key="frame" x="0.0" y="518" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="User">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToLastUserScheduleScreen:" destination="7FE-4v-ZfO" eventType="touchUpInside" id="Kqb-V0-eXs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZUV-Jl-tXD">
+                                <rect key="frame" x="160" y="518" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Outro">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PHa-sX-VOG" kind="push" id="nVH-nw-yQK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1bs-9N-KRy"/>
                     <connections>
-                        <segue destination="PHa-sX-VOG" kind="relationship" relationship="rootViewController" id="xiD-5O-D2M"/>
+                        <outlet property="blackButton" destination="q24-mc-Ljv" id="7oL-si-h7L"/>
+                        <outlet property="greenButton" destination="ZUV-Jl-tXD" id="DJD-dW-Tku"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z5h-Hf-ZyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZH7-xC-pfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="141"/>
+            <point key="canvasLocation" x="1189" y="141"/>
         </scene>
-        <!--Navigation Controller - Extras-->
+        <!--Extras-->
         <scene sceneID="3cm-0D-qUc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDz-7b-aLH" sceneMemberID="viewController">
@@ -766,9 +796,9 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2471" y="677"/>
+            <point key="canvasLocation" x="3003" y="677"/>
         </scene>
-        <!--Navigation Controller - Caixa-->
+        <!--Caixa-->
         <scene sceneID="e7M-IF-l8R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J38-vv-oe8" sceneMemberID="viewController">
@@ -790,9 +820,9 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2471" y="-78"/>
+            <point key="canvasLocation" x="3003" y="-78"/>
         </scene>
-        <!--Navigation Controller - Hoje-->
+        <!--Hoje-->
         <scene sceneID="lgf-3O-Bev">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6n4-as-7NI" sceneMemberID="viewController">
@@ -816,12 +846,29 @@
             </objects>
             <point key="canvasLocation" x="2434" y="-787"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LdD-yp-cgT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WVf-sw-WbF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="88C-Od-BZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7FE-4v-ZfO" kind="relationship" relationship="rootViewController" id="dok-2o-eOA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSP-yF-9Vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="141"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ProfileImage" width="34" height="34"/>
         <image name="SmartPill" width="50" height="50"/>
     </resources>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -832,4 +879,5 @@
         <segue reference="uM5-C4-xs8"/>
         <segue reference="sgQ-pC-lj5"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

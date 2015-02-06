@@ -32,6 +32,7 @@
 		B32D5BE31A72C78400635302 /* SPNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */; };
 		B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */; };
 		B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */; };
+		B3352DE91A840FB6004DEA2D /* SPFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3352DE81A840FB6004DEA2D /* SPFirstScreenViewController.m */; };
 		B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */; };
 		B33F572C1A438C5A00394227 /* SPNewMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */; };
 		B34080791A1E8E3D00C63D49 /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B34080781A1E8E3D00C63D49 /* MyStyleKit.m */; };
@@ -115,6 +116,8 @@
 		B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPReminderDetailsViewController.m; path = Controller/SPReminderDetailsViewController.m; sourceTree = "<group>"; };
 		B3336AA81A6D8CFD00C51F6D /* SPReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPReminderViewController.h; path = Controller/SPReminderViewController.h; sourceTree = "<group>"; };
 		B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPReminderViewController.m; path = Controller/SPReminderViewController.m; sourceTree = "<group>"; };
+		B3352DE71A840FB6004DEA2D /* SPFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPFirstScreenViewController.h; path = Controller/SPFirstScreenViewController.h; sourceTree = "<group>"; };
+		B3352DE81A840FB6004DEA2D /* SPFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPFirstScreenViewController.m; path = Controller/SPFirstScreenViewController.m; sourceTree = "<group>"; };
 		B33F57271A436B7200394227 /* SPMedicineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMedicineDetailsViewController.h; path = Controller/SPMedicineDetailsViewController.h; sourceTree = "<group>"; };
 		B33F57281A436B7200394227 /* SPMedicineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMedicineDetailsViewController.m; path = Controller/SPMedicineDetailsViewController.m; sourceTree = "<group>"; };
 		B33F572A1A438C5A00394227 /* SPNewMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineViewController.h; path = Controller/SPNewMedicineViewController.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				B365399A1A29F24800E4404A /* SPTabBarViewController.m */,
 				B31BCB631A18D17600094C45 /* SPViewController.h */,
 				B31BCB641A18D17600094C45 /* SPViewController.m */,
+				B3352DE71A840FB6004DEA2D /* SPFirstScreenViewController.h */,
+				B3352DE81A840FB6004DEA2D /* SPFirstScreenViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
 				B3CCB2BE1A767FEC002D6358 /* User_Google+create.m in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
+				B3352DE91A840FB6004DEA2D /* SPFirstScreenViewController.m in Sources */,
 				B33F57291A436B7200394227 /* SPMedicineDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

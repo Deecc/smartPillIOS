@@ -24,7 +24,7 @@
                        UserGoogleId:(NSString*)userGoogleId;
 + (SPUser*)createUserWithName:(NSString*)name
                         Email:(NSString*)email
-                       UserId:(NSString*)userId
+                       UserId:(NSNumber*)userId
                   andPassword:(NSString*)password;
 + (void)deleteUser:(SPUser*)user
       fromDataBase:(NSManagedObjectContext*)context;
@@ -44,4 +44,5 @@
 + (void)dataFromDatabase;
 + (NSArray*)checkPresenceToReturnUserLocally:(SPUser*)user OnDataBase:(NSManagedObjectContext*)context;
 + (User*)getCurrentDatabaseUser;
++ (User*)getOneUserFromDatabase;
 @end
