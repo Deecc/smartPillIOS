@@ -79,8 +79,10 @@
     [context reset];
 }
 
-+ (void)sendUserToRemoteDatabase:(SPUser*)user{
++ (void)sendUserToRemoteDatabase:(User*)user{
     //Enviando para o banco remoto
+    SPConnectionRest * connection = [[SPConnectionRest alloc]init];
+    [connection sendUserToServer:user];
 }
 
 + (BOOL)doesUserExist:(SPUser*)user OnDataBase:(NSManagedObjectContext*)context{
@@ -130,12 +132,27 @@
 
 + (BOOL)checkUserPresenceRemotely:(SPUser*)user{
     //Procura usuário no servidor
-    return YES;
+    SPConnectionRest * connectionRest = [[SPConnectionRest alloc]init];
+    NSDictionary* userDictionary = [connectionRest fetchUserFromServer:user];
+    NSString * emailFromDic = [NSString stringWithFormat:@"%@",[userDictionary objectForKey:@"email"]];
+    if ([user.email isEqualToString:emailFromDic]) {
+        return YES;
+    }
+    return NO;
 }
 
 + (void)updateUserDataFromServer:(SPUser*)user{
     //Atualizar usúario com dados do servidor
-    
+    if ([self checkUserPresenceRemotely:user]) {
+        SPConnectionRest * connectionRest = [[SPConnectionRest alloc]init];
+        NSDictionary* userDictionary = [connectionRest fetchUserFromServer:user];
+        NSString * emailFromDic = [NSString stringWithFormat:@"%@",[userDictionary objectForKey:@"email"]];
+        if ([user.email isEqualToString:emailFromDic]) {
+            user.name = [userDictionary objectForKey:@"name"];
+            user.password = [userDictionary objectForKey:@"pass"];
+#pragma mark - esperando atualização de todos os atributos no servidor.
+        }
+    }
 }
 
 + (void)dataFromDatabase{

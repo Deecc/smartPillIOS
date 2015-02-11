@@ -129,10 +129,13 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
         
         if ([SPUserHandler doesUserExist:facebookUser OnDataBase:self.managedObjectContext]) {
             [SPUserHandler updateUserDataFromServer:facebookUser];
+            [self storingCurrentUserInfo];
             [self goToHomeScreen];
         }else{
             [SPUserHandler sendUser:facebookUser toLocalDatabase:self.managedObjectContext];
-            [SPUserHandler sendUserToRemoteDatabase:facebookUser];
+            [self storingCurrentUserInfo];
+            User * currentUser = [SPUserHandler getCurrentDatabaseUser];
+            [SPUserHandler sendUserToRemoteDatabase:currentUser];
             [self goToHomeScreen];
         }
     }
@@ -245,13 +248,16 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 
 - (void)checkAndSaveGoogleUserData{
     if ([self isGoogleDataColected]) {
-        SPUser* googleUser = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
+        SPUser* googleUser = [SPUserHandler createGoogleUserWithName:@"teste" Email:self.googleUserEmail UserGoogleId:self.googleUserId];
         if ([SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext]) {
             [SPUserHandler updateUserDataFromServer:googleUser];
+            [self storingCurrentUserInfo];
             [self goToHomeScreen];
         }else{
             [SPUserHandler sendUser:googleUser toLocalDatabase:self.managedObjectContext];
-            [SPUserHandler sendUserToRemoteDatabase:googleUser];
+            [self storingCurrentUserInfo];
+            User * currentUser = [SPUserHandler getCurrentDatabaseUser];
+            [SPUserHandler sendUserToRemoteDatabase:currentUser];
             [self goToHomeScreen];
         }
     }
@@ -418,7 +424,6 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)goToHomeScreen{
     if ([self isEqual:self.navigationController.topViewController]) {
         SPTabBarViewController * viewControllerTabBar = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
-        [self storingCurrentUserInfo];
         viewControllerTabBar.navigationItem.hidesBackButton = YES;
         [self.navigationController pushViewController:viewControllerTabBar animated:YES];
     }

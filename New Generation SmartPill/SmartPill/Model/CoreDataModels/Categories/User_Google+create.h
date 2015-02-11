@@ -14,5 +14,4 @@
                inManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)UpdateGoogleUserWithId:(NSString *)googleId
         inManagedObjectContext:(NSManagedObjectContext *)context;
-
 @end

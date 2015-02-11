@@ -14,8 +14,10 @@
 #import "User_Facebook+Create.h"
 #import "User_Google.h"
 #import "User_Google+create.h"
+#import "SPConnectionRest.h"
 
 @interface SPUserHandler : NSObject
+
 + (SPUser*)createFacebookUserWithName:(NSString*)name
                                 Email:(NSString*)email
                        UserFacebookId:(NSString*)userFacebookId;

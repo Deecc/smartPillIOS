@@ -17,4 +17,5 @@
 + (void)updateOldReminder:(Reminder *)oldReminder
             toNewReminder:(Reminder*)newReminder
       fromDataBaseContext:(NSManagedObjectContext*)context;
++ (NSDictionary*)getDictionaryVersionFrom:(Reminder*)reminder;
 @end

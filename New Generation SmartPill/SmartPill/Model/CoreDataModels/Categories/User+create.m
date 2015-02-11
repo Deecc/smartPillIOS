@@ -68,4 +68,10 @@ inManagedObjectContext:(NSManagedObjectContext *)context{
     }
 }
 
++ (NSDictionary*)getDictionaryVersionFrom:(User*)user{
+    NSDictionary * userDictionary = [NSDictionary dictionaryWithObjectsAndKeys:user.idUser,@"id",user.email,@"email",user.name,@"name",user.password,@"pass",nil];
+#pragma mark - completar depois do banco estar atualizado
+    return userDictionary;
+}
+
 @end

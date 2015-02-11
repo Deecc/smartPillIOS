@@ -39,6 +39,7 @@
 		B35188951A82EF1E0009F32F /* SPCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35188941A82EF1E0009F32F /* SPCoreDataTableViewController.m */; };
 		B35188981A82EF3B0009F32F /* SPCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35188971A82EF3B0009F32F /* SPCoreDataViewController.m */; };
 		B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B365399A1A29F24800E4404A /* SPTabBarViewController.m */; };
+		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
@@ -130,6 +131,8 @@
 		B35188971A82EF3B0009F32F /* SPCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCoreDataViewController.m; path = Controller/SPCoreDataViewController.m; sourceTree = "<group>"; };
 		B36539991A29F24800E4404A /* SPTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTabBarViewController.h; path = Controller/SPTabBarViewController.h; sourceTree = "<group>"; };
 		B365399A1A29F24800E4404A /* SPTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTabBarViewController.m; path = Controller/SPTabBarViewController.m; sourceTree = "<group>"; };
+		B38050261A8933A9002C4D75 /* SPConnectionRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPConnectionRest.h; path = Model/SPConnectionRest.h; sourceTree = "<group>"; };
+		B38050271A8933A9002C4D75 /* SPConnectionRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPConnectionRest.m; path = Model/SPConnectionRest.m; sourceTree = "<group>"; };
 		B382364B1A2DF59D00FA7538 /* SPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMoreViewController.h; path = Controller/SPMoreViewController.h; sourceTree = "<group>"; };
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				B32BCE061A23B66B0003F97A /* SPUser.m */,
 				B3960F171A23D583006888ED /* SPUserHandler.h */,
 				B3960F181A23D583006888ED /* SPUserHandler.m */,
+				B38050261A8933A9002C4D75 /* SPConnectionRest.h */,
+				B38050271A8933A9002C4D75 /* SPConnectionRest.m */,
 				AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */,
 				B3BCB4F11A3B7E2A00D5696C /* CoreData Models */,
 			);
@@ -527,6 +532,7 @@
 				B35188951A82EF1E0009F32F /* SPCoreDataTableViewController.m in Sources */,
 				B3CCB2BF1A767FEC002D6358 /* User+create.m in Sources */,
 				B3D647E61A12408600461CAF /* main.m in Sources */,
+				B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */,
 				B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */,
 				B3D5705C1A69AECD006EB1CE /* Reminder_Schedule.m in Sources */,
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,

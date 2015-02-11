@@ -32,8 +32,7 @@
         user = [SPUserHandler createFacebookUserWithName:userDatabase.name
                                                    Email:userDatabase.email
                                           UserFacebookId:userDatabase.facebook.idFacebook];
-    }
-    if (userDatabase.google.idGoogle) {
+    }else if (userDatabase.google.idGoogle){
         user = [SPUserHandler createGoogleUserWithName:userDatabase.name Email:userDatabase.email UserGoogleId:userDatabase.google.idGoogle];
     }else{
         user = [SPUserHandler createUserWithName:userDatabase.name Email:userDatabase.email UserId:userDatabase.idUser andPassword:userDatabase.password];

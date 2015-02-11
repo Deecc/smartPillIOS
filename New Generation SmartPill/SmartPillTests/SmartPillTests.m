@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "SPUserHandler.h"
+#import "SPConnectionRest.h"
+#import "SPAppDelegate.h"
 
 @interface SPTests : XCTestCase
 
@@ -26,6 +28,20 @@
     //  NSLog(@"Teste do usuário %@", [user name]);
     //}
 }
+
+- (void)testSendUserToServer{
+    NSManagedObjectContext *context = nil;
+    SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+
+    SPConnectionRest * connection = [[SPConnectionRest alloc]init];
+    User * user = [User userWithName:@"Iceberg" Email:@"ice@gmail.com" password:@"icepassword" inManagedObjectContext:context];
+    [connection sendUserToServer:user];
+}
+
+
 
 @end
 

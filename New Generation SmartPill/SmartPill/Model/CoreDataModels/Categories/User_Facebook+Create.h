@@ -15,5 +15,4 @@
 + (void)UpdateFacebookUserWithId:(NSString *)facebookId
           inManagedObjectContext:(NSManagedObjectContext *)context;
 
-
 @end

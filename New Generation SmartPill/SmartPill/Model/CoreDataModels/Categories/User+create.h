@@ -18,4 +18,5 @@ inManagedObjectContext:(NSManagedObjectContext *)context;
                      Email:(NSString *)email
                   password:(NSString *)password
     inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSDictionary*)getDictionaryVersionFrom:(User*)user;
 @end
