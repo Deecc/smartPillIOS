@@ -57,7 +57,7 @@
 		B3D648031A12408600461CAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D648011A12408600461CAF /* InfoPlist.strings */; };
 		B3D648051A12408600461CAF /* SmartPillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D648041A12408600461CAF /* SmartPillTests.m */; };
 		B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */; };
-		B93C51A21A7AA503005E1483 /* SPNewPrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51A11A7AA503005E1483 /* SPNewPrescriptionViewController.m */; };
+		B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90042E51A8D211900142D54 /* SPNewPrescriptionViewController.m */; };
 		B93C51ED1A7AB12E005E1483 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51EC1A7AB12E005E1483 /* Medicine.m */; };
 		B93C51F01A7AB12F005E1483 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51EF1A7AB12F005E1483 /* Recipe.m */; };
 		B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51F21A7AB12F005E1483 /* Reminder.m */; };
@@ -161,8 +161,8 @@
 		B3D648041A12408600461CAF /* SmartPillTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartPillTests.m; sourceTree = "<group>"; };
 		B3DE0A751A1B6E5700ABBB5F /* SPLoginLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLoginLines.h; path = View/SPLoginLines.h; sourceTree = "<group>"; };
 		B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLoginLines.m; path = View/SPLoginLines.m; sourceTree = "<group>"; };
-		B93C51A01A7AA503005E1483 /* SPNewPrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewPrescriptionViewController.h; path = Controller/SPNewPrescriptionViewController.h; sourceTree = "<group>"; };
-		B93C51A11A7AA503005E1483 /* SPNewPrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewPrescriptionViewController.m; path = Controller/SPNewPrescriptionViewController.m; sourceTree = "<group>"; };
+		B90042E41A8D211900142D54 /* SPNewPrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewPrescriptionViewController.h; path = Controller/SPNewPrescriptionViewController.h; sourceTree = "<group>"; };
+		B90042E51A8D211900142D54 /* SPNewPrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewPrescriptionViewController.m; path = Controller/SPNewPrescriptionViewController.m; sourceTree = "<group>"; };
 		B93C51EB1A7AB12E005E1483 /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/CoreDataModels/Medicine.h; sourceTree = "<group>"; };
 		B93C51EC1A7AB12E005E1483 /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/CoreDataModels/Medicine.m; sourceTree = "<group>"; };
 		B93C51EE1A7AB12F005E1483 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = Model/CoreDataModels/Recipe.h; sourceTree = "<group>"; };
@@ -376,6 +376,8 @@
 		B3EFE0191A1285550082591C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B90042E41A8D211900142D54 /* SPNewPrescriptionViewController.h */,
+				B90042E51A8D211900142D54 /* SPNewPrescriptionViewController.m */,
 				B3D4A0DD1A41FCFB001A90F4 /* SPBoxViewController.h */,
 				B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */,
 				B35188931A82EF1E0009F32F /* SPCoreDataTableViewController.h */,
@@ -525,9 +527,9 @@
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,
-				AF92046C1A65620F00D8E237 /* Reminder_Sound.m in Sources */,
 				B35188981A82EF3B0009F32F /* SPCoreDataViewController.m in Sources */,
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
+				B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */,
 				B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */,
 				B3CCB2BC1A767FEC002D6358 /* Reminder+create.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
@@ -547,7 +549,6 @@
 				B31BCB651A18D17600094C45 /* SPViewController.m in Sources */,
 				B93C51F01A7AB12F005E1483 /* Recipe.m in Sources */,
 				AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */,
-				B93C51A21A7AA503005E1483 /* SPNewPrescriptionViewController.m in Sources */,
 				B93C51FC1A7AB12F005E1483 /* Reminder_Schedule.m in Sources */,
 				B3CCB2BE1A767FEC002D6358 /* User_Google+create.m in Sources */,
 				B3D647EA1A12408600461CAF /* SPAppDelegate.m in Sources */,
