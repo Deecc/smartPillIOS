@@ -58,6 +58,7 @@
 		B3D648051A12408600461CAF /* SmartPillTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D648041A12408600461CAF /* SmartPillTests.m */; };
 		B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */; };
 		B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90042E51A8D211900142D54 /* SPNewPrescriptionViewController.m */; };
+		B936A4F31A8D24E90009E630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B936A4F21A8D24E90009E630 /* Images.xcassets */; };
 		B93C51ED1A7AB12E005E1483 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51EC1A7AB12E005E1483 /* Medicine.m */; };
 		B93C51F01A7AB12F005E1483 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51EF1A7AB12F005E1483 /* Recipe.m */; };
 		B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51F21A7AB12F005E1483 /* Reminder.m */; };
@@ -66,7 +67,6 @@
 		B93C51FC1A7AB12F005E1483 /* Reminder_Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51FB1A7AB12F005E1483 /* Reminder_Schedule.m */; };
 		B93C51FF1A7AB12F005E1483 /* User_Google.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51FE1A7AB12F005E1483 /* User_Google.m */; };
 		B93C52021A7AB12F005E1483 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C52011A7AB12F005E1483 /* User.m */; };
-		B9AC1B0C1A8BDEC6006B931A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9AC1B0B1A8BDEC6006B931A /* Images.xcassets */; };
 		B9D3539F1A81425B00FF62AF /* SPAddPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D3539E1A81425B00FF62AF /* SPAddPrescription.m */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +163,7 @@
 		B3DE0A761A1B6E5700ABBB5F /* SPLoginLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLoginLines.m; path = View/SPLoginLines.m; sourceTree = "<group>"; };
 		B90042E41A8D211900142D54 /* SPNewPrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewPrescriptionViewController.h; path = Controller/SPNewPrescriptionViewController.h; sourceTree = "<group>"; };
 		B90042E51A8D211900142D54 /* SPNewPrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewPrescriptionViewController.m; path = Controller/SPNewPrescriptionViewController.m; sourceTree = "<group>"; };
+		B936A4F21A8D24E90009E630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B93C51EB1A7AB12E005E1483 /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/CoreDataModels/Medicine.h; sourceTree = "<group>"; };
 		B93C51EC1A7AB12E005E1483 /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/CoreDataModels/Medicine.m; sourceTree = "<group>"; };
 		B93C51EE1A7AB12F005E1483 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = Model/CoreDataModels/Recipe.h; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 		B93C51FE1A7AB12F005E1483 /* User_Google.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User_Google.m; path = Model/CoreDataModels/User_Google.m; sourceTree = "<group>"; };
 		B93C52001A7AB12F005E1483 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/CoreDataModels/User.h; sourceTree = "<group>"; };
 		B93C52011A7AB12F005E1483 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/CoreDataModels/User.m; sourceTree = "<group>"; };
-		B9AC1B0B1A8BDEC6006B931A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../Downloads/SmartPill-master/New Generation SmartPill/SmartPill/Images.xcassets"; sourceTree = "<group>"; };
 		B9D3539D1A81425B00FF62AF /* SPAddPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPAddPrescription.h; path = Controller/SPAddPrescription.h; sourceTree = "<group>"; };
 		B9D3539E1A81425B00FF62AF /* SPAddPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPAddPrescription.m; path = Controller/SPAddPrescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,7 +316,7 @@
 		B3D647DF1A12408600461CAF /* SmartPill */ = {
 			isa = PBXGroup;
 			children = (
-				B9AC1B0B1A8BDEC6006B931A /* Images.xcassets */,
+				B936A4F21A8D24E90009E630 /* Images.xcassets */,
 				B3EFE0191A1285550082591C /* Controller */,
 				B3EFE0171A12854E0082591C /* Model */,
 				B39FA9CD1A1B57980088EFE5 /* View */,
@@ -494,7 +494,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9AC1B0C1A8BDEC6006B931A /* Images.xcassets in Resources */,
+				B936A4F31A8D24E90009E630 /* Images.xcassets in Resources */,
 				B3D647E41A12408600461CAF /* InfoPlist.strings in Resources */,
 				B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */,
 			);

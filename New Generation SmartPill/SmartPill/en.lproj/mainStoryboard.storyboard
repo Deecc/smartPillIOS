@@ -432,23 +432,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Ie-Vf-EfJ">
-                                <rect key="frame" x="0.0" y="65" width="320" height="381"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="IWw-NJ-Xpd" id="mfU-W4-VcU"/>
-                                    <outlet property="delegate" destination="IWw-NJ-Xpd" id="ADd-ho-4FM"/>
-                                </connections>
-                            </tableView>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dmq-Pf-y7V">
-                                <rect key="frame" x="130" y="454" width="60" height="60"/>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="99j-Pl-ozp">
+                                <rect key="frame" x="117" y="429" width="86" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Image">
+                                <state key="normal" image="CameraButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kHp-da-VRH">
+                                <rect key="frame" x="0.0" y="63" width="320" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IWw-NJ-Xpd" id="AWc-MK-mgO"/>
+                                    <outlet property="delegate" destination="IWw-NJ-Xpd" id="kXR-bR-Wke"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -456,7 +454,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="rzH-UO-Ccs"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="MedTable" destination="9Ie-Vf-EfJ" id="qXm-dA-Muu"/>
+                        <outlet property="MedTable" destination="kHp-da-VRH" id="eL5-oC-eS4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exr-F8-DvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -921,7 +919,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="86" height="86"/>
+        <image name="CameraButton" width="86" height="86"/>
         <image name="ProfileImage" width="34" height="34"/>
         <image name="SmartPill" width="50" height="50"/>
     </resources>
@@ -932,8 +930,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LeH-Ga-xt3"/>
         <segue reference="uM5-C4-xs8"/>
+        <segue reference="LeH-Ga-xt3"/>
         <segue reference="sgQ-pC-lj5"/>
     </inferredMetricsTieBreakers>
 </document>
