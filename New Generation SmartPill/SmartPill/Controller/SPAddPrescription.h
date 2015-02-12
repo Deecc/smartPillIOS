@@ -14,5 +14,5 @@
 #import "SPNewMedicineViewController.h"
 
 @interface SPAddPrescription : UIViewController< UITableViewDataSource>
-
+@property (nonatomic, retain) NSIndexPath* checkedIndexPath;
 @end

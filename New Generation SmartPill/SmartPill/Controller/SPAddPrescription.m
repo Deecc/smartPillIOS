@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad
 {
+    self.MedTable.allowsMultipleSelection = YES;
     [super viewDidLoad];
 }
 
@@ -91,7 +92,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
+  
     // Configure the cell...
     NSManagedObject *medicine = [self.medicines objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [medicine valueForKey:@"name"], [medicine valueForKey:@"quantity"]]];
@@ -126,7 +127,16 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryView.hidden = NO;
+    tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryView.hidden = YES;
+    tableViewCell.accessoryType = UITableViewCellAccessoryNone;
 }
 
 
