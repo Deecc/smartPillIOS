@@ -7,7 +7,7 @@
         <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="medicine" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="medicine" inverseEntity="Recipe" syncable="YES"/>
         <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reminder" inverseName="medicine" inverseEntity="Reminder" syncable="YES"/>
         <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="medicine" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -49,7 +49,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="google" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="36" positionY="162" width="128" height="180"/>
+        <element name="Medicine" positionX="36" positionY="162" width="128" height="178"/>
         <element name="Recipe" positionX="135" positionY="-216" width="128" height="88"/>
         <element name="Reminder" positionX="376" positionY="36" width="128" height="103"/>
         <element name="Reminder_Schedule" positionX="288" positionY="261" width="128" height="90"/>

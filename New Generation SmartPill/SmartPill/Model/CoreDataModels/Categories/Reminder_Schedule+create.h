@@ -8,7 +8,7 @@
 
 #import "Reminder_Schedule.h"
 #import "Reminder+create.h"
-
+#import "Medicine+create.h"
 @interface Reminder_Schedule (create)
 + (Reminder_Schedule *)reminderScheduleOfReminder:(Reminder *)reminder
                                          withDate:(NSDate*)date

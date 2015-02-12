@@ -7,7 +7,7 @@
 //
 
 #import "Reminder.h"
-
+#import "Reminder_Schedule+create.h"
 @interface Reminder (create)
 
 + (Reminder *)reminderOfMedicine:(Medicine *)medicine

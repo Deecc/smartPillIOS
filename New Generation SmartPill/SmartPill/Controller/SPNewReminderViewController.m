@@ -8,6 +8,7 @@
 
 #import "SPNewReminderViewController.h"
 #import "SPTabBarViewController.h"
+#import "Medicine+create.h"
 
 
 @interface SPNewReminderViewController ()
