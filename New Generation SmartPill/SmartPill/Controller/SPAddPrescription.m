@@ -142,4 +142,14 @@
 
 
 
+- (IBAction)doneButton:(UIBarButtonItem *)sender {
+    NSArray *cells = [self.MedTable visibleCells];
+    for (UITableViewCell *cell in cells)
+    {
+        if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
+            
+        }
+    }
+
+}
 @end

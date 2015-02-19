@@ -12,7 +12,6 @@
 @class Medicine;
 
 @interface Recipe : NSManagedObject
-
 @property (nonatomic, retain) NSNumber * idRecipe;
 @property (nonatomic, retain) NSData * recipeImage;
 @property (nonatomic, retain) NSSet *medicine;

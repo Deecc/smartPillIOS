@@ -67,6 +67,7 @@
 		B93C51FC1A7AB12F005E1483 /* Reminder_Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51FB1A7AB12F005E1483 /* Reminder_Schedule.m */; };
 		B93C51FF1A7AB12F005E1483 /* User_Google.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C51FE1A7AB12F005E1483 /* User_Google.m */; };
 		B93C52021A7AB12F005E1483 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C52011A7AB12F005E1483 /* User.m */; };
+		B96F52931A9656AF005837C2 /* Recipe+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B96F52921A9656AF005837C2 /* Recipe+create.m */; };
 		B9D3539F1A81425B00FF62AF /* SPAddPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D3539E1A81425B00FF62AF /* SPAddPrescription.m */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,8 @@
 		B93C51FE1A7AB12F005E1483 /* User_Google.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User_Google.m; path = Model/CoreDataModels/User_Google.m; sourceTree = "<group>"; };
 		B93C52001A7AB12F005E1483 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/CoreDataModels/User.h; sourceTree = "<group>"; };
 		B93C52011A7AB12F005E1483 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/CoreDataModels/User.m; sourceTree = "<group>"; };
+		B96F52911A9656AF005837C2 /* Recipe+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Recipe+create.h"; path = "Model/CoreDataModels/Categories/Recipe+create.h"; sourceTree = "<group>"; };
+		B96F52921A9656AF005837C2 /* Recipe+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recipe+create.m"; path = "Model/CoreDataModels/Categories/Recipe+create.m"; sourceTree = "<group>"; };
 		B9D3539D1A81425B00FF62AF /* SPAddPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPAddPrescription.h; path = Controller/SPAddPrescription.h; sourceTree = "<group>"; };
 		B9D3539E1A81425B00FF62AF /* SPAddPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPAddPrescription.m; path = Controller/SPAddPrescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +271,8 @@
 				B3CCB2B71A767FEC002D6358 /* User_Google+create.m */,
 				B3CCB2B81A767FEC002D6358 /* User+create.h */,
 				B3CCB2B91A767FEC002D6358 /* User+create.m */,
+				B96F52911A9656AF005837C2 /* Recipe+create.h */,
+				B96F52921A9656AF005837C2 /* Recipe+create.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
 				B3CCB2BD1A767FEC002D6358 /* User_Facebook+Create.m in Sources */,
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
+				B96F52931A9656AF005837C2 /* Recipe+create.m in Sources */,
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,

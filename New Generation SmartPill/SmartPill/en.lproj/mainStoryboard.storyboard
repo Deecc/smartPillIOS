@@ -451,7 +451,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2zI-sW-Y00">
-                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="rzH-UO-Ccs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="Og0-Nt-dXo">
+                            <connections>
+                                <action selector="doneButton:" destination="IWw-NJ-Xpd" id="oiu-7m-M4D"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="MedTable" destination="kHp-da-VRH" id="eL5-oC-eS4"/>

@@ -14,5 +14,6 @@
 #import "SPNewMedicineViewController.h"
 
 @interface SPAddPrescription : UIViewController< UITableViewDataSource>
+- (IBAction)doneButton:(id)sender;
 @property (nonatomic, retain) NSIndexPath* checkedIndexPath;
 @end
