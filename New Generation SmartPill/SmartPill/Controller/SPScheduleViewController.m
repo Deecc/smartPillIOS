@@ -159,7 +159,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        ///
+        [self deleteNotificationFromReminderIn:indexPath];
         NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.futureReminders]mutableCopy];
         Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         [context deleteObject:selectedReminder];

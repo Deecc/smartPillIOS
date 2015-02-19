@@ -25,4 +25,7 @@
 - (User*)getCurrentDatabaseUser;
 - (Medicine*)getMedicineWithName:(NSString*)medicineName;
 - (Medicine*)getMedicineWithDate:(NSDate*)date;
+- (void)deleteAllNotificationFromMedicineOf:(NSIndexPath *)indexPath;
+- (void)deleteNotificationFromReminderIn:(NSIndexPath *)indexPath;
+
 @end

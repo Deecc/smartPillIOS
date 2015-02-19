@@ -35,6 +35,7 @@
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
+		B3B27B961A8D453000926275 /* SPTripPlanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
@@ -125,6 +126,8 @@
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
+		B3B27B941A8D453000926275 /* SPTripPlanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTripPlanningViewController.h; path = Controller/SPTripPlanningViewController.h; sourceTree = "<group>"; };
+		B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTripPlanningViewController.m; path = Controller/SPTripPlanningViewController.m; sourceTree = "<group>"; };
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				B31BCB641A18D17600094C45 /* SPViewController.m */,
 				B3352DE71A840FB6004DEA2D /* SPFirstScreenViewController.h */,
 				B3352DE81A840FB6004DEA2D /* SPFirstScreenViewController.m */,
+				B3B27B941A8D453000926275 /* SPTripPlanningViewController.h */,
+				B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				B3DE0A771A1B6E5700ABBB5F /* SPLoginLines.m in Sources */,
 				B3CCB2BD1A767FEC002D6358 /* User_Facebook+Create.m in Sources */,
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
+				B3B27B961A8D453000926275 /* SPTripPlanningViewController.m in Sources */,
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,

@@ -16,4 +16,7 @@
 @property (strong,nonatomic) NSMutableArray * medicines;
 @property (strong,nonatomic) NSMutableArray * reminders;
 @property (strong,nonatomic) NSManagedObjectContext * managedObjectContext;
+
+- (void)deleteAllNotificationFromMedicineOf:(NSIndexPath *)indexPath;
+- (void)deleteNotificationFromReminderIn:(NSIndexPath *)indexPath;
 @end

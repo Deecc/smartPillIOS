@@ -248,7 +248,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 
 - (void)checkAndSaveGoogleUserData{
     if ([self isGoogleDataColected]) {
-        SPUser* googleUser = [SPUserHandler createGoogleUserWithName:@"teste" Email:self.googleUserEmail UserGoogleId:self.googleUserId];
+        SPUser* googleUser = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
         if ([SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext]) {
             [SPUserHandler updateUserDataFromServer:googleUser];
             [self storingCurrentUserInfo];

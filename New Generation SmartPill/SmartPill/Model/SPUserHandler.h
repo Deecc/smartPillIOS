@@ -36,7 +36,7 @@
             UserId:(NSNumber*)userId
        andPassword:(NSString*)password;
 + (void)sendUser:(SPUser*)user toLocalDatabase:(NSManagedObjectContext*)context;
-+ (void)sendUserToRemoteDatabase:(SPUser*)user;
++ (void)sendUserToRemoteDatabase:(User*)user;
 + (BOOL)doesUserExist:(SPUser*)user
            OnDataBase:(NSManagedObjectContext*)context;
 + (BOOL)checkUserPresenceLocally:(SPUser*)user
