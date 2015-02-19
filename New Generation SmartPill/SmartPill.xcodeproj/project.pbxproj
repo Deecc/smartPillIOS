@@ -44,6 +44,7 @@
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
+		B3A441121A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
@@ -143,6 +144,8 @@
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
+		B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineHistoryViewController.h; path = Controller/SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
+		B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewMedicineHistoryViewController.m; path = Controller/SPNewMedicineHistoryViewController.m; sourceTree = "<group>"; };
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				8EA15C0B1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m */,
 				8EA15C0D1A8E341500B8F5A1 /* SPMedicineHistoryDetailsViewController.h */,
 				8EA15C0E1A8E341500B8F5A1 /* SPMedicineHistoryDetailsViewController.m */,
+				B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */,
+				B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
 				B3CCB2BC1A767FEC002D6358 /* Reminder+create.m in Sources */,
 				AFBA0A021A6ED4800097FE71 /* Medicine.m in Sources */,
+				B3A441121A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m in Sources */,
 				AFBA0A051A6ED4800097FE71 /* Recipe.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				AF92047B1A65621000D8E237 /* User_Facebook.m in Sources */,

@@ -6,14 +6,9 @@
 //  Copyright (c) 2015 IFRN - Mobile School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SPCoreDataTableViewController.h"
 
-@interface SPMedicineHistoryViewController : UIViewController
-
-@property (strong,nonatomic) IBOutlet UIDatePicker *initialDate;
-@property (strong,nonatomic) IBOutlet UIDatePicker *finalDate;
-
--(IBAction)displayHistory:(UIBarButtonItem *)sender;
+@interface SPMedicineHistoryViewController : SPCoreDataTableViewController
 
 
 @end
