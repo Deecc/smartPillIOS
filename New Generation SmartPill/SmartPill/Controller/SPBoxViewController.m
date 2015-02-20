@@ -28,28 +28,6 @@
     [self.tableView reloadData];
 }
 
-- (void)deleteNotification:(NSIndexPath *)indexPath{
-    
-    Medicine * medicine = [self.medicines objectAtIndex:indexPath.row];
-
-    //Delete notification
-    NSDictionary * uidToDelete = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat: @"%@",medicine.name ], @"medicineName", nil];
-    
-    UIApplication *app = [UIApplication sharedApplication];
-    NSArray *eventArray = [app scheduledLocalNotifications];
-    
-    for (int i=0; i<[eventArray count]; i++)
-    {
-        UILocalNotification* oneEvent = [eventArray objectAtIndex:i];
-        NSDictionary * uid = oneEvent.userInfo;
-        if ([[uid valueForKey:@"medicineName"] isEqual:[uidToDelete valueForKey:@"medicineName"]])
-        {
-            [app cancelLocalNotification:oneEvent];
-        }
-    }
-}
-
-
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -91,6 +69,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
+        [self deleteAllNotificationFromMedicineOf:indexPath];
         [context deleteObject:[self.medicines objectAtIndex:indexPath.row]];
         
         NSError *error = nil;

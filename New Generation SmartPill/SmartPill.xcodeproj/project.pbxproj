@@ -20,6 +20,7 @@
 		AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
+		B31BE7571A96AB7200C28E8F /* SPTripPlanningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
 		B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */; };
 		B32D5BE31A72C78400635302 /* SPNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */; };
@@ -35,6 +36,7 @@
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
+		B3B27B961A8D453000926275 /* SPTripPlanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
@@ -97,6 +99,8 @@
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
 		B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPScheduleViewController.m; path = Controller/SPScheduleViewController.m; sourceTree = "<group>"; };
+		B31BE7551A96AB7200C28E8F /* SPTripPlanningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTripPlanningResultsViewController.h; path = Controller/SPTripPlanningResultsViewController.h; sourceTree = "<group>"; };
+		B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTripPlanningResultsViewController.m; path = Controller/SPTripPlanningResultsViewController.m; sourceTree = "<group>"; };
 		B32BCE051A23B66B0003F97A /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUser.h; path = Model/SPUser.h; sourceTree = "<group>"; };
 		B32BCE061A23B66B0003F97A /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUser.m; path = Model/SPUser.m; sourceTree = "<group>"; };
 		B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
+		B3B27B941A8D453000926275 /* SPTripPlanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTripPlanningViewController.h; path = Controller/SPTripPlanningViewController.h; sourceTree = "<group>"; };
+		B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTripPlanningViewController.m; path = Controller/SPTripPlanningViewController.m; sourceTree = "<group>"; };
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -415,6 +421,10 @@
 				B31BCB641A18D17600094C45 /* SPViewController.m */,
 				B3352DE71A840FB6004DEA2D /* SPFirstScreenViewController.h */,
 				B3352DE81A840FB6004DEA2D /* SPFirstScreenViewController.m */,
+				B3B27B941A8D453000926275 /* SPTripPlanningViewController.h */,
+				B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */,
+				B31BE7551A96AB7200C28E8F /* SPTripPlanningResultsViewController.h */,
+				B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -544,6 +554,7 @@
 				B93C51ED1A7AB12E005E1483 /* Medicine.m in Sources */,
 				B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */,
 				B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */,
+				B31BE7571A96AB7200C28E8F /* SPTripPlanningResultsViewController.m in Sources */,
 				B93C51F61A7AB12F005E1483 /* Reminder_Sound.m in Sources */,
 				B93C51FF1A7AB12F005E1483 /* User_Google.m in Sources */,
 				B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */,
