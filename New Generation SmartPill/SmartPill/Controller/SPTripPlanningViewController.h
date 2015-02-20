@@ -7,7 +7,7 @@
 //
 
 #import "SPCoreDataViewController.h"
+#import "SPTripPlanningResultsViewController.h"
 
 @interface SPTripPlanningViewController : SPCoreDataViewController
-
 @end

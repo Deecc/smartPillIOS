@@ -11,8 +11,9 @@
 @interface SPTripPlanningViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
+@property (nonatomic)  NSMutableArray * selectedReminders;
+@property (nonatomic)  NSMutableArray * resultOfMedicineQuantities;
 @end
 
 @implementation SPTripPlanningViewController
@@ -21,6 +22,22 @@
     [super viewDidAppear:animated];
     self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
     self.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+}
+
+- (NSMutableArray*)selectedMedicines{
+
+    if (!_selectedReminders) {
+        _selectedReminders = [@[] mutableCopy];
+    }
+    return _selectedReminders;
+}
+
+- (NSMutableArray*)resultOfMedicineQuantities{
+    
+    if (!_resultOfMedicineQuantities) {
+        _resultOfMedicineQuantities = [@[] mutableCopy];
+    }
+    return _resultOfMedicineQuantities;
 }
 
 #pragma mark - Table view data source
@@ -56,9 +73,22 @@
     NSDate * date = reminder.reminder_schedule.schedule;
     NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
     [timeFormat setDateFormat:@"HH:mm"];
-    
+    if ([self.resultOfMedicineQuantities count]>0) {
+        NSString * numberOfSelectedReminder = @"";
+        
+        for (NSInteger x = 0; x<=[self.selectedMedicines count]-1; x++) {
+            Reminder* reminderSelected = [self.selectedMedicines objectAtIndex:x];
+            if ([reminderSelected isEqual: reminder]) {
+                numberOfSelectedReminder = [NSString stringWithFormat:@"+%@ unidades",[self.resultOfMedicineQuantities objectAtIndex:x]];
+            }
+        }
+        
+        NSString * description = [NSString stringWithFormat:@"%@                 %@",[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]],numberOfSelectedReminder];
+        [cell.detailTextLabel setText:description];
+    }else{
+        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    }
     [cell.textLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
     
     
     return cell;
@@ -117,11 +147,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    [self.selectedMedicines addObject:[self.reminders objectAtIndex:indexPath.row]];
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    [self.selectedMedicines removeObject:[self.reminders objectAtIndex:indexPath.row]];
 }
 
+- (void)calculateTripPlanningMedicineQuantity{
+    if (![self.quantityTextField.text isEqualToString:@""]) {
+        self.resultOfMedicineQuantities = [@[] mutableCopy];
+        for (Reminder * rem in self.selectedMedicines) {
+            [self.resultOfMedicineQuantities addObject:[NSNumber numberWithInt:[self.quantityTextField.text intValue]]];
+        }
+    }
+    [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"resultsSegue"]) {
+        SPTripPlanningResultsViewController * tripPlanningResultsVC = segue.destinationViewController;
+        [self calculateTripPlanningMedicineQuantity];
+        tripPlanningResultsVC.selectedReminders = self.selectedReminders;
+        tripPlanningResultsVC.resultOfMedicineQuantities = self.resultOfMedicineQuantities;
+        tripPlanningResultsVC.numberOfTripDays = [NSNumber numberWithInt:[self.quantityTextField.text intValue]];
+    }
+}
 
 @end
