@@ -35,6 +35,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return self.arrayBetweenDatesSelected.count;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -45,5 +57,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell...
+    Reminder *reminder = [self.arrayBetweenDatesSelected objectAtIndex:indexPath.row];
+    
+    NSDate * date = reminder.reminder_schedule.schedule;
+    NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setDateFormat:@"HH:mm"];
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    
+    [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
+    
+
+    
+    return cell;
+}
+
 
 @end

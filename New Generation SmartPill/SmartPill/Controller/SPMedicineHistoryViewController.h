@@ -7,8 +7,10 @@
 //
 
 #import "SPCoreDataTableViewController.h"
+#import "SPNewMedicineHistoryViewController.h"
 
 @interface SPMedicineHistoryViewController : SPCoreDataTableViewController
 
+ @property (strong, nonatomic) NSMutableArray *arrayBetweenDatesSelected;
 
 @end
