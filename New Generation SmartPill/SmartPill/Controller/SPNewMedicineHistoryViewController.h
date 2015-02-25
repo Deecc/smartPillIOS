@@ -13,6 +13,7 @@
 
 @property (strong,nonatomic) IBOutlet UIDatePicker *initialDate;
 @property (strong,nonatomic) IBOutlet UIDatePicker *finalDate;
+@property (strong, nonatomic) NSMutableArray *arrayWithDatesRange;
 
 -(IBAction)displayHistory:(UIBarButtonItem *)sender;
 

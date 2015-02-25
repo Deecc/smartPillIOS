@@ -25,12 +25,6 @@
     [self.tableView reloadData];
 }
 
-//- (NSMutableArray*)stringComArray:(NSArray*)array
-//                        string:(NSString*)string
-//                      andSubArray:(NSArray*)array{
-//    NSMutableArray * arrayA = [@[] mutableCopy];
-//    return arrayA;
-//}
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

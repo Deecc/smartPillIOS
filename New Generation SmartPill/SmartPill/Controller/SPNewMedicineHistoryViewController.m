@@ -10,6 +10,8 @@
 
 @interface SPNewMedicineHistoryViewController ()
 
+
+
 @end
 
 @implementation SPNewMedicineHistoryViewController
@@ -45,5 +47,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(IBAction)displayHistory:(UIBarButtonItem *)sender{
+    [self arrayBetweenDatesSelectedAtStart];
+}
+
+- (NSMutableArray*)arrayBetweenDatesSelectedAtStart{
+    _arrayWithDatesRange = [@[]mutableCopy];
+    
+    for (Reminder * arrayRem in self.reminders) {
+        if ((arrayRem.reminder_schedule.schedule > self.initialDate.date) &&
+            (arrayRem.reminder_schedule.schedule < self.finalDate.date)) {
+            [_arrayWithDatesRange addObject:arrayRem.reminder_schedule.reminder];
+        }
+    }
+    return _arrayWithDatesRange;
+}
+
+
 
 @end
