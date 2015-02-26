@@ -45,12 +45,14 @@
 }
 
 - (NSString*)stringInitial{
-    _stringInitial = [_dateFormat stringFromDate:self.initialDate.date];
+    _stringInitial = [self.dateFormat stringFromDate:self.initialDate.date];
+    NSLog(@"stringInitial = %@", _stringInitial);
     return _stringInitial;
 }
 
 - (NSString*)stringFinal{
-    _stringFinal = [_dateFormat stringFromDate:self.finalDate.date];
+    _stringFinal = [self.dateFormat stringFromDate:self.finalDate.date];
+     NSLog(@"stringFinal = %@", _stringFinal);
     return _stringFinal;
 }
 
@@ -73,18 +75,25 @@
 - (NSMutableArray*)arrayBetweenDatesSelected{
     _arrayBetweenDatesSelected = [@[] mutableCopy];
     
-    NSLog(@"initial: %@ , final %@", _stringInitial, _stringFinal);
+//    NSLog(@"initial: %@ , final %@", self.stringInitial, self.stringFinal);
     
 //    NSString * stringInitial = [self.dateFormat stringFromDate:self.initialDate.date];
 //    NSString * stringFinal = [self.dateFormat stringFromDate:self.finalDate.date];
     
     for (Reminder * arrayRem in self.reminders) {
-        NSString * arrayDates = [_dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
-        if (( [self.dateFormat dateFromString:arrayDates] >= [self.dateFormat dateFromString:_stringInitial] ) &&
-            ([self.dateFormat dateFromString:arrayDates] <= [self.dateFormat dateFromString:_stringFinal])) {
+        NSString * arrayDates = [self.dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
+        
+        if (( [self.dateFormat dateFromString:arrayDates] >= [self.dateFormat dateFromString:self.stringInitial] ) &&
+            ([self.dateFormat dateFromString:arrayDates] <= [self.dateFormat dateFromString:self.stringFinal])) {
             [_arrayBetweenDatesSelected addObject:arrayRem];
         }
     }
+    
+    for (Reminder *rem in _arrayBetweenDatesSelected) {
+        NSLog(@"Remedio = %@", rem.medicine.name);
+        NSLog(@"Data = %@", rem.reminder_schedule.schedule);
+    }
+    
     return _arrayBetweenDatesSelected;
 }
 
