@@ -13,7 +13,13 @@
 
 @property (strong,nonatomic) IBOutlet UIDatePicker *initialDate;
 @property (strong,nonatomic) IBOutlet UIDatePicker *finalDate;
-@property (strong, nonatomic) NSMutableArray *arrayBetweenDatesSelected;
+@property (strong,nonatomic) NSString * stringInitial;
+@property (strong,nonatomic) NSString * stringFinal;
+@property (strong,nonatomic) NSMutableArray *arrayBetweenDatesSelected;
+@property (strong,nonatomic) NSMutableArray *arrayRemindersOnlyDates;
+@property (strong,nonatomic) NSDateFormatter *dateFormat;
+
+
 
 -(IBAction)displayHistory:(UIBarButtonItem *)sender;
 

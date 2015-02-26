@@ -17,6 +17,8 @@
 
 @implementation SPNewMedicineHistoryViewController
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,22 +32,58 @@
 }
 
 -(IBAction)displayHistory:(UIBarButtonItem *)sender{
-    
+//    NSString *final = [self.dateFormat stringFromDate:self.finalDate.date];
+//    NSDate *today = [[NSDate alloc]init];
+//    if (final > today){
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data final incorreta!"
+//                                                           message:@"Sua data final não pode ser maior do que a data de hoje."
+//                                                          delegate:self
+//                                                 cancelButtonTitle:@"Ok"
+//                                                 otherButtonTitles:nil];
+//        [alert show];
+//    }
+}
+
+- (NSString*)stringInitial{
+    _stringInitial = [_dateFormat stringFromDate:self.initialDate.date];
+    return _stringInitial;
+}
+
+- (NSString*)stringFinal{
+    _stringFinal = [_dateFormat stringFromDate:self.finalDate.date];
+    return _stringFinal;
+}
+
+- (NSDateFormatter*)dateFormat{
+    _dateFormat = [[NSDateFormatter alloc]init];
+    [_dateFormat setDateFormat:@"dd-MM-yyyy"];
+    return _dateFormat;
+}
+
+
+- (NSMutableArray*)arrayRemindersOnlyDates{
+    _arrayRemindersOnlyDates = [@[] mutableCopy];
+    for (Reminder * arrayRem in self.reminders) {
+        
+        [_arrayRemindersOnlyDates addObject:[_dateFormat stringFromDate:arrayRem.reminder_schedule.schedule]];
+    }
+    return _arrayRemindersOnlyDates;
 }
 
 - (NSMutableArray*)arrayBetweenDatesSelected{
     _arrayBetweenDatesSelected = [@[] mutableCopy];
-    NSLog(@"array reminder = %@",self.reminders);
+    
+    NSLog(@"initial: %@ , final %@", _stringInitial, _stringFinal);
+    
+//    NSString * stringInitial = [self.dateFormat stringFromDate:self.initialDate.date];
+//    NSString * stringFinal = [self.dateFormat stringFromDate:self.finalDate.date];
+    
     for (Reminder * arrayRem in self.reminders) {
-        if ((arrayRem.reminder_schedule.schedule >= self.initialDate.date) &&
-            (arrayRem.reminder_schedule.schedule <= self.finalDate.date)) {
+        NSString * arrayDates = [_dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
+        if (( [self.dateFormat dateFromString:arrayDates] >= [self.dateFormat dateFromString:_stringInitial] ) &&
+            ([self.dateFormat dateFromString:arrayDates] <= [self.dateFormat dateFromString:_stringFinal])) {
             [_arrayBetweenDatesSelected addObject:arrayRem];
         }
-    }
-    NSLog(@"%@",_arrayBetweenDatesSelected);
-    for (Reminder * rem in _arrayBetweenDatesSelected) {
-        NSLog(@"remedio do reminder = %@",rem.medicine.name);
-        NSLog(@"data do remedio = %@",rem.reminder_schedule.schedule);
     }
     return _arrayBetweenDatesSelected;
 }
@@ -53,10 +91,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"MedicineHistorySegue"]) {
-        SPMedicineHistoryViewController * mHVC = segue.destinationViewController;
-        mHVC.arrayBetweenDatesSelected = self.arrayBetweenDatesSelected;
+        SPMedicineHistoryViewController * medicineHistoryVC = segue.destinationViewController;
+        medicineHistoryVC.arrayBetweenDatesSelected = self.arrayBetweenDatesSelected;
         
     }
 
 }
+
+
+
+
+
+
 @end
