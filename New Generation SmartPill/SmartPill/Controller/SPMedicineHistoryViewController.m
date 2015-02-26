@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Array vindo do NewVC %@", self.arrayBetweenDatesSelected);
     // Do any additional setup after loading the view.
 }
 

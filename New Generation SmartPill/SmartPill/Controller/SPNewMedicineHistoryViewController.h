@@ -18,7 +18,7 @@
 @property (strong,nonatomic) NSMutableArray *arrayBetweenDatesSelected;
 @property (strong,nonatomic) NSMutableArray *arrayRemindersOnlyDates;
 @property (strong,nonatomic) NSDateFormatter *dateFormat;
-
+@property (nonatomic, assign) BOOL isReminderBetweenDates;
 
 
 -(IBAction)displayHistory:(UIBarButtonItem *)sender;
