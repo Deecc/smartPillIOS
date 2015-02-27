@@ -33,16 +33,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)displayHistory:(UIBarButtonItem *)sender{
-    NSDate *today = [[NSDate alloc] init];
-    NSString *stringToday = [self.dateFormat stringFromDate:today];
-    today = [self.dateFormat dateFromString:stringToday];
-    self.initialDate.date = [self.dateFormat dateFromString:self.stringInitial];
-    self.finalDate.date = [self.dateFormat dateFromString:self.stringFinal];
-    
-    if (([self.initialDate.date compare:today] == NSOrderedAscending) ||
-        ([self.finalDate.date compare:today] == NSOrderedAscending) ||
-         ([self.initialDate.date compare:self.finalDate.date] == NSOrderedAscending) ){
+-(IBAction)displayHistory:(UIButton *)sender{
+    if ( [self isValidDates:self.today isDateBetween:self.dateInitial andDate:self.dateFinal] ){
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Erro de seleção de data"
                                                      message:@"As data finais e iniciais, não podem ser maiores que a data de hoje, ou a data inicial não pode ser maior que a data final."
                                                      delegate:self
@@ -65,6 +57,12 @@
     }
 }
 
+- (NSDate*)today{
+    _today = [[NSDate alloc] init];
+    NSString *stringToday = [self.dateFormat stringFromDate:_today];
+    return _today = [self.dateFormat dateFromString:stringToday];
+}
+
 - (NSString*)stringInitial{
     _stringInitial = [self.dateFormat stringFromDate:self.initialDate.date];
     return _stringInitial;
@@ -75,6 +73,18 @@
     return _stringFinal;
 }
 
+-(NSDate*)dateInitial {
+    _dateInitial = [self.dateFormat dateFromString:self.stringInitial];
+    return _dateInitial;
+}
+
+- (NSDate*)dateFinal{
+    _dateFinal = [self.dateFormat dateFromString:self.stringFinal];
+    return _dateFinal;
+}
+
+
+
 - (NSDateFormatter*)dateFormat{
     _dateFormat = [[NSDateFormatter alloc]init];
     [_dateFormat setDateFormat:@"dd-MM-yyyy"];
@@ -84,9 +94,13 @@
 
 - (BOOL) isReminderBetweenDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate{
     return (([date compare:initialDate] != NSOrderedAscending) && ([date compare:endDate] != NSOrderedDescending));
-    
 }
 
+- (BOOL) isValidDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate {
+    return (([date compare:initialDate] == NSOrderedAscending) ||
+            ([date compare:endDate] == NSOrderedAscending) ||
+            ([initialDate compare:endDate] == NSOrderedDescending));
+}
 
 - (NSMutableArray*)arrayBetweenDatesSelected{
     _arrayBetweenDatesSelected = [@[] mutableCopy];
