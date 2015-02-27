@@ -67,12 +67,17 @@
 - (NSMutableArray*)arrayBetweenDatesSelected{
     _arrayBetweenDatesSelected = [@[] mutableCopy];
     
+    self.initialDate.date = [self.dateFormat dateFromString:self.stringInitial];
+    self.finalDate.date = [self.dateFormat dateFromString:self.stringFinal];
+    
     NSLog(@"initial: %@ , final %@", self.initialDate.date, self.finalDate.date);
     //NSLog(@"initialString: %@ , finalString %@", self.stringInitial, self.stringFinal);
     
     for (Reminder * arrayRem in self.reminders) {
+        NSString *temp = [self.dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
+        NSDate *tempDate = [self.dateFormat dateFromString:temp];
         NSLog(@"Data lembrete %@", arrayRem.reminder_schedule.schedule );
-        if (([self isReminderBetweenDifDates:arrayRem.reminder_schedule.schedule isDateBetween:self.initialDate.date andDate:self.finalDate.date])){
+        if (([self isReminderBetweenDifDates:tempDate isDateBetween:self.initialDate.date andDate:self.finalDate.date])){
             NSLog(@"Datas Diferentes");
            // [_arrayBetweenDatesSelected addObject:arrayRem];
         }
