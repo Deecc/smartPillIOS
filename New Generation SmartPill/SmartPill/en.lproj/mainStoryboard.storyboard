@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="WVf-sw-WbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="WVf-sw-WbF">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="1647" y="141"/>
         </scene>
-        <!--Cadastro-->
+        <!--New User View Controller - Cadastro-->
         <scene sceneID="rVC-Lw-3ln">
             <objects>
                 <viewController storyboardIdentifier="newuser" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-Th-Lx2" customClass="SPNewUserViewController" sceneMemberID="viewController">
@@ -536,7 +535,7 @@
             </objects>
             <point key="canvasLocation" x="2841" y="2697"/>
         </scene>
-        <!--Lembretes-->
+        <!--Reminder View Controller - Lembretes-->
         <scene sceneID="lJF-jS-4Im">
             <objects>
                 <tableViewController id="vmO-aq-00M" customClass="SPReminderViewController" sceneMemberID="viewController">
@@ -697,7 +696,7 @@
             </objects>
             <point key="canvasLocation" x="4400" y="2151"/>
         </scene>
-        <!--Perfil-->
+        <!--Profile View Controller - Perfil-->
         <scene sceneID="90m-x2-MS6">
             <objects>
                 <viewController id="V99-4k-uFG" customClass="SPProfileViewController" sceneMemberID="viewController">
@@ -887,7 +886,7 @@
             </objects>
             <point key="canvasLocation" x="1189" y="141"/>
         </scene>
-        <!--Extras-->
+        <!--Navigation Controller - Extras-->
         <scene sceneID="3cm-0D-qUc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDz-7b-aLH" sceneMemberID="viewController">
@@ -911,7 +910,7 @@
             </objects>
             <point key="canvasLocation" x="3003" y="677"/>
         </scene>
-        <!--Caixa-->
+        <!--Navigation Controller - Caixa-->
         <scene sceneID="e7M-IF-l8R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J38-vv-oe8" sceneMemberID="viewController">
@@ -935,7 +934,7 @@
             </objects>
             <point key="canvasLocation" x="3003" y="-78"/>
         </scene>
-        <!--Hoje-->
+        <!--Navigation Controller - Hoje-->
         <scene sceneID="lgf-3O-Bev">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6n4-as-7NI" sceneMemberID="viewController">
@@ -982,6 +981,7 @@
         <image name="ProfileImage" width="34" height="34"/>
         <image name="SmartPill" width="50" height="50"/>
     </resources>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -992,5 +992,4 @@
         <segue reference="LeH-Ga-xt3"/>
         <segue reference="GMG-4s-60H"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
