@@ -34,6 +34,17 @@
 }
 
 -(IBAction)displayHistory:(UIBarButtonItem *)sender{
+    NSDate *today = [[NSDate alloc] init];
+    self.finalDate.date = [self.dateFormat dateFromString:self.stringFinal];
+    if (0 > 1) {
+        [[[UIAlertView alloc] initWithTitle:@"Erro de selecao de data"
+                                    message:@"A data final não pode ser maior que a data de hoje."
+                                    delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+        
+
+    }
 
 }
 
@@ -53,13 +64,8 @@
     return _dateFormat;
 }
 
-- (BOOL) isReminderBetweenDifDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate{
+- (BOOL) isReminderBetweenDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate{
     return (([date compare:initialDate] != NSOrderedAscending) && ([date compare:endDate] != NSOrderedDescending));
-    
-}
-
-- (BOOL) isReminderBetweenSameDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate{
-    return (([date compare:initialDate] == NSOrderedSame) && ([date compare:endDate] == NSOrderedSame));
     
 }
 
@@ -70,19 +76,13 @@
     self.initialDate.date = [self.dateFormat dateFromString:self.stringInitial];
     self.finalDate.date = [self.dateFormat dateFromString:self.stringFinal];
     
-    NSLog(@"initial: %@ , final %@", self.initialDate.date, self.finalDate.date);
-    //NSLog(@"initialString: %@ , finalString %@", self.stringInitial, self.stringFinal);
-    
     for (Reminder * arrayRem in self.reminders) {
         NSString *temp = [self.dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
         NSDate *tempDate = [self.dateFormat dateFromString:temp];
-        NSLog(@"Data lembrete %@", arrayRem.reminder_schedule.schedule );
-        if (([self isReminderBetweenDifDates:tempDate isDateBetween:self.initialDate.date andDate:self.finalDate.date])){
-            NSLog(@"Datas Diferentes");
-           // [_arrayBetweenDatesSelected addObject:arrayRem];
+        if (([self isReminderBetweenDates:tempDate isDateBetween:self.initialDate.date andDate:self.finalDate.date])){
+            [_arrayBetweenDatesSelected addObject:arrayRem];
         }
     }
-    
     return _arrayBetweenDatesSelected;
 }
 

@@ -16,7 +16,6 @@
 @property (strong,nonatomic) NSString * stringInitial;
 @property (strong,nonatomic) NSString * stringFinal;
 @property (strong,nonatomic) NSMutableArray *arrayBetweenDatesSelected;
-@property (strong,nonatomic) NSMutableArray *arrayRemindersOnlyDates;
 @property (strong,nonatomic) NSDateFormatter *dateFormat;
 
 
