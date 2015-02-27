@@ -23,8 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    // Do any additional setup after loading the view.
+       // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,26 +34,25 @@
 
 -(IBAction)displayHistory:(UIButton *)sender{
     if ( [self isValidDates:self.today isDateBetween:self.dateInitial andDate:self.dateFinal] ){
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Erro de seleção de data"
-                                                     message:@"As data finais e iniciais, não podem ser maiores que a data de hoje, ou a data inicial não pode ser maior que a data final."
-                                                     delegate:self
-                                                     cancelButtonTitle:@"OK"
-                                                     otherButtonTitles:nil];
+        UIAlertView *theAlert = [[UIAlertView alloc]
+             initWithTitle:@"Erro de seleção de data"
+             message:@"As datas finais e iniciais, não podem ser maiores que a data de hoje, ou a data inicial não pode ser maior que a data final."
+             delegate:self
+             cancelButtonTitle:@"Voltar às datas"
+             otherButtonTitles:nil];
         [theAlert show];
-        [self alertView:theAlert clickedButtonAtIndex:0];
-        
+        [self alertView:theAlert];
     }else [self performSegueWithIdentifier:@"MedicineHistorySegue" sender:sender];
+}
 
+- (void)alertView:(UIAlertView *)actionSheet {
     
 }
 
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    //Checks
-    if (buttonIndex == 1) {
-        //Retirar do banco
-        NSLog(@"FUck Objective-C");
-    }
+- (NSDateFormatter*)dateFormat{
+    _dateFormat = [[NSDateFormatter alloc]init];
+    [_dateFormat setDateFormat:@"dd-MM-yyyy"];
+    return _dateFormat;
 }
 
 - (NSDate*)today{
@@ -83,15 +81,6 @@
     return _dateFinal;
 }
 
-
-
-- (NSDateFormatter*)dateFormat{
-    _dateFormat = [[NSDateFormatter alloc]init];
-    [_dateFormat setDateFormat:@"dd-MM-yyyy"];
-    return _dateFormat;
-}
-
-
 - (BOOL) isReminderBetweenDates:(NSDate*)date isDateBetween:(NSDate*)initialDate andDate:(NSDate*)endDate{
     return (([date compare:initialDate] != NSOrderedAscending) && ([date compare:endDate] != NSOrderedDescending));
 }
@@ -104,14 +93,11 @@
 
 - (NSMutableArray*)arrayBetweenDatesSelected{
     _arrayBetweenDatesSelected = [@[] mutableCopy];
-  
-    self.initialDate.date = [self.dateFormat dateFromString:self.stringInitial];
-    self.finalDate.date = [self.dateFormat dateFromString:self.stringFinal];
-    
+
     for (Reminder * arrayRem in self.reminders) {
             NSString *temp = [self.dateFormat stringFromDate:arrayRem.reminder_schedule.schedule];
             NSDate *tempDate = [self.dateFormat dateFromString:temp];
-            if (([self isReminderBetweenDates:tempDate isDateBetween:self.initialDate.date andDate:self.finalDate.date])){
+            if (([self isReminderBetweenDates:tempDate isDateBetween:self.dateInitial andDate:self.dateFinal])){
                 [_arrayBetweenDatesSelected addObject:arrayRem];
             }
         }
