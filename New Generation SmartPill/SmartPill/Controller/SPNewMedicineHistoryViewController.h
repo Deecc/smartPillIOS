@@ -18,9 +18,9 @@
 @property (strong,nonatomic) NSMutableArray *arrayBetweenDatesSelected;
 @property (strong,nonatomic) NSDateFormatter *dateFormat;
 
+- (IBAction)displayHistory:(UIButton *)sender;
 
 
--(IBAction)displayHistory:(UIBarButtonItem *)sender;
 
 
 @end
