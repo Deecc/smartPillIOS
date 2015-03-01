@@ -209,6 +209,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="feA-76-Sol">
+                                        <rect key="frame" x="241" y="24" width="61" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="BarCode">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tbu-D9-99Q" kind="modal" identifier="codeBarSegue" id="wTf-VZ-fZs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
@@ -247,6 +257,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FS9-hW-0th" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3481" y="-1067"/>
+        </scene>
+        <!--Bar Code View Controller-->
+        <scene sceneID="YfT-o8-Mza">
+            <objects>
+                <viewController id="tbu-D9-99Q" customClass="SPBarCodeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1OU-LV-8u0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yO0-oT-bXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3947" y="-1067"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="89O-yg-6el">

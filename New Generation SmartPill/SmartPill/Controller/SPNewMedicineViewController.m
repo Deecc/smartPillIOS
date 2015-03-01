@@ -5,7 +5,7 @@
 //  Created by Dennis da Silva Nunes on 18/12/14.
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
-
+#import "SPBarCodeViewController.h"
 #import "SPNewMedicineViewController.h"
 
 @interface SPNewMedicineViewController ()
@@ -18,6 +18,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.medicine) {
+        [self addingPlaceHolders];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     if (self.medicine) {
         [self addingPlaceHolders];
     }
@@ -97,5 +104,12 @@
 - (void)sendMedicineToMedicineDetailsView{
     SPTabBarViewController* tbvc = (SPTabBarViewController*)self.tabBarController;
     tbvc.medicine = self.medicine;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"codeBarSegue"]){
+        SPBarCodeViewController *barCodeVC = (SPBarCodeViewController *)[segue destinationViewController];
+        barCodeVC.delegate = self;
+    }
 }
 @end

@@ -18,11 +18,14 @@
 		AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7851A13E6C70079AEA3 /* Security.framework */; };
 		AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */; };
 		AF937C8A1A3B5A1E00610583 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */; };
+		B30F6A921AA2A58B00CBCB17 /* SPBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30F6A911AA2A58B00CBCB17 /* SPBarCodeViewController.m */; };
+		B30F6A941AA2A79300CBCB17 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30F6A931AA2A79300CBCB17 /* FacebookSDK.framework */; };
+		B30F6A961AA2A7FD00CBCB17 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30F6A951AA2A7FD00CBCB17 /* AVFoundation.framework */; };
+		B30F6A981AA2A80C00CBCB17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30F6A971AA2A80C00CBCB17 /* QuartzCore.framework */; };
 		B31BCB651A18D17600094C45 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB641A18D17600094C45 /* SPViewController.m */; };
 		B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BCB671A18D18C00094C45 /* SPScheduleViewController.m */; };
 		B31BE7571A96AB7200C28E8F /* SPTripPlanningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */; };
 		B32BCE071A23B66B0003F97A /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B32BCE061A23B66B0003F97A /* SPUser.m */; };
-		B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */; };
 		B32D5BE31A72C78400635302 /* SPNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */; };
 		B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32D5BE51A72C8BA00635302 /* SPReminderDetailsViewController.m */; };
 		B3336AAA1A6D8CFD00C51F6D /* SPReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3336AA91A6D8CFD00C51F6D /* SPReminderViewController.m */; };
@@ -36,7 +39,6 @@
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
-		B3B27B961A8D453000926275 /* SPTripPlanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
@@ -95,6 +97,11 @@
 		AF05F7851A13E6C70079AEA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AF937C891A3B5A1E00610583 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B30F6A901AA2A58B00CBCB17 /* SPBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBarCodeViewController.h; path = Controller/SPBarCodeViewController.h; sourceTree = "<group>"; };
+		B30F6A911AA2A58B00CBCB17 /* SPBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBarCodeViewController.m; path = Controller/SPBarCodeViewController.m; sourceTree = "<group>"; };
+		B30F6A931AA2A79300CBCB17 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		B30F6A951AA2A7FD00CBCB17 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B30F6A971AA2A80C00CBCB17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B31BCB631A18D17600094C45 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPViewController.h; path = Controller/SPViewController.h; sourceTree = "<group>"; };
 		B31BCB641A18D17600094C45 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPViewController.m; path = Controller/SPViewController.m; sourceTree = "<group>"; };
 		B31BCB661A18D18C00094C45 /* SPScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPScheduleViewController.h; path = Controller/SPScheduleViewController.h; sourceTree = "<group>"; };
@@ -103,7 +110,6 @@
 		B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTripPlanningResultsViewController.m; path = Controller/SPTripPlanningResultsViewController.m; sourceTree = "<group>"; };
 		B32BCE051A23B66B0003F97A /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUser.h; path = Model/SPUser.h; sourceTree = "<group>"; };
 		B32BCE061A23B66B0003F97A /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUser.m; path = Model/SPUser.m; sourceTree = "<group>"; };
-		B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		B32D5BE11A72C78400635302 /* SPNewReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewReminderViewController.h; path = Controller/SPNewReminderViewController.h; sourceTree = "<group>"; };
 		B32D5BE21A72C78400635302 /* SPNewReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewReminderViewController.m; path = Controller/SPNewReminderViewController.m; sourceTree = "<group>"; };
 		B32D5BE41A72C8BA00635302 /* SPReminderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPReminderDetailsViewController.h; path = Controller/SPReminderDetailsViewController.h; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30F6A981AA2A80C00CBCB17 /* QuartzCore.framework in Frameworks */,
+				B30F6A961AA2A7FD00CBCB17 /* AVFoundation.framework in Frameworks */,
+				B30F6A941AA2A79300CBCB17 /* FacebookSDK.framework in Frameworks */,
 				B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */,
 				AF05F7881A13E6CD0079AEA3 /* SystemConfiguration.framework in Frameworks */,
 				AF05F7861A13E6C70079AEA3 /* Security.framework in Frameworks */,
@@ -211,7 +220,6 @@
 				AF05F77A1A13E6750079AEA3 /* AddressBook.framework in Frameworks */,
 				AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */,
 				AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */,
-				B32D416B1A39FD6D009B0998 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +313,9 @@
 		B3D647D81A12408600461CAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B32D416A1A39FD6D009B0998 /* FacebookSDK.framework */,
+				B30F6A971AA2A80C00CBCB17 /* QuartzCore.framework */,
+				B30F6A951AA2A7FD00CBCB17 /* AVFoundation.framework */,
+				B30F6A931AA2A79300CBCB17 /* FacebookSDK.framework */,
 				AF05F7871A13E6CD0079AEA3 /* SystemConfiguration.framework */,
 				AF05F7851A13E6C70079AEA3 /* Security.framework */,
 				AF05F7831A13E6BD0079AEA3 /* MediaPlayer.framework */,
@@ -425,6 +435,8 @@
 				B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */,
 				B31BE7551A96AB7200C28E8F /* SPTripPlanningResultsViewController.h */,
 				B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */,
+				B30F6A901AA2A58B00CBCB17 /* SPBarCodeViewController.h */,
+				B30F6A911AA2A58B00CBCB17 /* SPBarCodeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -550,6 +562,7 @@
 				B3CCB2BC1A767FEC002D6358 /* Reminder+create.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B9D3539F1A81425B00FF62AF /* SPAddPrescription.m in Sources */,
+				B30F6A921AA2A58B00CBCB17 /* SPBarCodeViewController.m in Sources */,
 				B3CCB2BA1A767FEC002D6358 /* Medicine+create.m in Sources */,
 				B93C51ED1A7AB12E005E1483 /* Medicine.m in Sources */,
 				B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */,

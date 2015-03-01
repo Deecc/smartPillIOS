@@ -8,13 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SPUser.h"
-#import "User.h"
 #import "User+create.h"
-#import "User_Facebook.h"
 #import "User_Facebook+Create.h"
-#import "User_Google.h"
 #import "User_Google+create.h"
 #import "SPConnectionRest.h"
+#import "Medicine+create.h"
 
 @interface SPUserHandler : NSObject
 

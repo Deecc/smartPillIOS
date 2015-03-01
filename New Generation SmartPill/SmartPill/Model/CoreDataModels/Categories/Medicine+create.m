@@ -7,7 +7,7 @@
 //
 
 #import "Medicine+create.h"
-
+#import "SPUserHandler.h"
 
 
 @implementation Medicine (create)
@@ -31,10 +31,8 @@
         NSArray *matches = [context executeFetchRequest:request error:&error];
         
         if (!matches) {
-          
             return nil;
         } else if (![matches count]) {
-           
             medicine = [NSEntityDescription insertNewObjectForEntityForName:@"Medicine"
                                                  inManagedObjectContext:context];
            
@@ -58,7 +56,7 @@
 }
 
 + (void)updateMedicine:(Medicine *)medicine fromDataBaseContext:(NSManagedObjectContext*)context{
-   
+    
     if ([medicine.name length]>0) {
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Medicine"];
@@ -79,6 +77,7 @@
                     med.activeIngredient = medicine.activeIngredient;
                     med.quantity = medicine.quantity;
                     med.reminder = medicine.reminder;
+                    med.user = medicine.user;
                 }
             }
         }else if(![matches count]){

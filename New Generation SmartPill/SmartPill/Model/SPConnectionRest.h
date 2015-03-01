@@ -12,5 +12,6 @@
 
 - (NSDictionary*)fetchUserFromServer:(SPUser*)user;
 - (BOOL)sendUserToServer:(User*)user;
+- (Medicine *)getMedicineWithCodeBarNumber:(NSNumber*)number;
 
 @end

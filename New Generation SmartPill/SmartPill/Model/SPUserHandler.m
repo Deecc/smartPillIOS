@@ -8,7 +8,6 @@
 #import "SPViewController.h"
 #import "SPUserHandler.h"
 #import "SPAppDelegate.h"
-#import "Medicine.h"
 
 @implementation SPUserHandler
 + (SPUser*)createFacebookUserWithName:(NSString*)name
