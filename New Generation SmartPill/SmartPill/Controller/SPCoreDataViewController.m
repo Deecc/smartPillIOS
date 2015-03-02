@@ -40,6 +40,18 @@
     _medicines = [[user.medicine allObjects]mutableCopy];
     return _medicines;
 }
+
+- (NSMutableArray *)reminders
+{
+    _reminders = [@[] mutableCopy];
+    for (Medicine * med in self.medicines) {
+        for (Reminder * rem in med.reminder) {
+            [_reminders addObject:rem];
+        }
+    }
+    return _reminders;
+}
+
 - (SPUser*)getCurrentUser
 {
     SPAppDelegate* delegate = [[UIApplication sharedApplication] delegate];

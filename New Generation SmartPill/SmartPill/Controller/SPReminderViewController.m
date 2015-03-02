@@ -8,6 +8,7 @@
 #import "SPReminderViewController.h"
 
 @interface SPReminderViewController ()
+@property (nonatomic)  NSMutableArray * novoArrayEtals;
 @end
 
 @implementation SPReminderViewController
@@ -53,6 +54,7 @@
     [timeFormat setDateFormat:@"HH:mm"];
     
     [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    
     [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
     
     return cell;

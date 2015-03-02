@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EA15C0C1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA15C0B1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m */; };
 		AF05F7771A13DC790079AEA3 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */; };
 		AF05F7781A13DC790079AEA3 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7761A13DC790079AEA3 /* GooglePlus.framework */; };
 		AF05F77A1A13E6750079AEA3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F7791A13E6750079AEA3 /* AddressBook.framework */; };
@@ -39,6 +40,7 @@
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
+		B3A441121A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
 		B3C107F71A24C4A5003BF659 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C107F91A24C4A5003BF659 /* mainStoryboard.storyboard */; };
 		B3CC13FE1A276365001D6C10 /* SPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CC13FD1A276365001D6C10 /* SPProfileViewController.m */; };
@@ -86,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8EA15C0A1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMedicineHistoryViewController.h; path = Controller/SPMedicineHistoryViewController.h; sourceTree = "<group>"; };
+		8EA15C0B1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMedicineHistoryViewController.m; path = Controller/SPMedicineHistoryViewController.m; sourceTree = "<group>"; };
 		AF05F7751A13DC790079AEA3 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		AF05F7761A13DC790079AEA3 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		AF05F7791A13E6750079AEA3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -553,6 +557,7 @@
 				B3960F191A23D583006888ED /* SPUserHandler.m in Sources */,
 				B96F52931A9656AF005837C2 /* Recipe+create.m in Sources */,
 				B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */,
+				8EA15C0C1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m in Sources */,
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,
 				B35188981A82EF3B0009F32F /* SPCoreDataViewController.m in Sources */,
