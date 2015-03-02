@@ -55,12 +55,11 @@
     return NO;
 }
 
-
 - (Medicine *)getMedicineWithCodeBarNumber:(NSNumber*)number{
     if (number.intValue > 0) {
         SPAppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext * context = appdelegate.managedObjectContext;
-        Medicine * medicine = [Medicine medicineWithName:@"Dorflex" availability:@"CodeBarTest" manufactuary:@"Bayer"   activeIngredient:@"Dipirona" quantity:@4 reminder:nil user:[SPUserHandler getOneUserFromDatabase] inManagedObjectContext:context];
+        Medicine * medicine = [Medicine medicineWithName:@"Amoxicilina" availability:@"Comprimido" manufactuary:@"Ache"   activeIngredient:@"Moxicilina" quantity:@30 reminder:nil user:[SPUserHandler getOneUserFromDatabase] inManagedObjectContext:context];
         return medicine;
     }
     return nil;

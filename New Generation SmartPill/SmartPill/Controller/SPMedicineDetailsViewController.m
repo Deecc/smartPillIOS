@@ -29,7 +29,7 @@
     if ([[segue identifier] isEqualToString:@"newmedicine3"]) {
         SPNewMedicineViewController * newMedicineVC = segue.destinationViewController;
         newMedicineVC.currentUser = [self getCurrentDatabaseUser];
-        newMedicineVC.medicine = [self tabBarMedicine];
+        newMedicineVC.medicine = self.medicine;
     }
 }
 
