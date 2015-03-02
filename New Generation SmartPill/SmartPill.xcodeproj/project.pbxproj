@@ -142,6 +142,8 @@
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
 		B3B27B941A8D453000926275 /* SPTripPlanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTripPlanningViewController.h; path = Controller/SPTripPlanningViewController.h; sourceTree = "<group>"; };
 		B3B27B951A8D453000926275 /* SPTripPlanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTripPlanningViewController.m; path = Controller/SPTripPlanningViewController.m; sourceTree = "<group>"; };
+		B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineHistoryViewController.h; path = Controller/SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
+		B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewMedicineHistoryViewController.m; path = Controller/SPNewMedicineHistoryViewController.m; sourceTree = "<group>"; };
 		B3C107EE1A24B2F1003BF659 /* SPNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewUserViewController.h; path = Controller/SPNewUserViewController.h; sourceTree = "<group>"; };
 		B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewUserViewController.m; path = Controller/SPNewUserViewController.m; sourceTree = "<group>"; };
 		B3C107F81A24C4A5003BF659 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -441,6 +443,10 @@
 				B31BE7561A96AB7200C28E8F /* SPTripPlanningResultsViewController.m */,
 				B30F6A901AA2A58B00CBCB17 /* SPBarCodeViewController.h */,
 				B30F6A911AA2A58B00CBCB17 /* SPBarCodeViewController.m */,
+				8EA15C0A1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.h */,
+				8EA15C0B1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m */,
+				B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */,
+				B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -565,6 +571,9 @@
 				B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */,
 				B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */,
 				B3CCB2BC1A767FEC002D6358 /* Reminder+create.m in Sources */,
+				AFBA0A021A6ED4800097FE71 /* Medicine.m in Sources */,
+				B3A441121A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m in Sources */,
+				AFBA0A051A6ED4800097FE71 /* Recipe.m in Sources */,
 				B31BCB681A18D18C00094C45 /* SPScheduleViewController.m in Sources */,
 				B9D3539F1A81425B00FF62AF /* SPAddPrescription.m in Sources */,
 				B30F6A921AA2A58B00CBCB17 /* SPBarCodeViewController.m in Sources */,
