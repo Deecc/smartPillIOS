@@ -53,10 +53,26 @@
     if (![[self managedObjectContext] save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
     }
+    if ([self sendMedicineToServer]) {
+        NSLog(@"Medicine Sent[doneButtonAction/SPNewMedicineViewController]");
+    }else{
+        NSLog(@"Could not send any medicine[doneButtonAction/SPNewMedicineViewController]");
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addingPlaceHolders{
+- (BOOL)sendMedicineToServer{
+    SPConnectionRest * connection = [[SPConnectionRest alloc]init];
+    if (self.medicine && self.currentUser) {
+        if (
+            [connection sendMedicine:self.medicine fromUser:self.currentUser]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)addingPlaceHolders{
     self.nameTextField.placeholder = self.medicine.name;
     self.activePrincipleTextField.placeholder = self.medicine.activeIngredient;
     self.madeInTextField.placeholder = self.medicine.manufacturer;

@@ -29,9 +29,13 @@
     
     if (response1.length > 0 && requestError == nil) {
         NSArray * wrapper = [NSJSONSerialization JSONObjectWithData:response1 options:0 error:NULL];
-        NSDictionary * dictionary = [wrapper objectAtIndex:0];
-        return dictionary;
+        if ([wrapper count]>0) {
+            NSDictionary * dictionary = [wrapper objectAtIndex:0];
+            NSLog(@"Usuário achado no servidor[fetchUserFromServer/SPConnectionRest]");
+            return dictionary;
+        }
     }
+    NSLog(@"Usuário não encontrado no servidor[fetchUserFromServer/SPConnectionRest]");
     return nil;
 }
 
@@ -40,6 +44,27 @@
     
     NSURL * url = [NSURL URLWithString:urlString];
     
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
+                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                        timeoutInterval:10];
+    [request setHTTPMethod: @"POST"];
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    if (requestError == nil) {
+        NSLog(@"Usuário enviado para o servidor[sendUserToServer/SPConnectionRest]");
+        return YES;
+    }
+    NSLog(@"Usuário não enviado para o servidor[sendUserToServer/SPConnectionRest]");
+    return NO;
+}
+
+- (BOOL)sendMedicine:(Medicine*)medicine
+            fromUser:(User*)user{
+    NSString * urlString = [NSString stringWithFormat:@"http://smartpill.noip.me:8080/services/setMedicine?email=%@&idManufacturer=1&idAvaliability=1&idActiveIngredient=1&name=%@&quantity=%d",user.email,medicine.name,[medicine.quantity intValue]];
+    NSURL * url = [NSURL URLWithString:urlString];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
                                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                         timeoutInterval:10];

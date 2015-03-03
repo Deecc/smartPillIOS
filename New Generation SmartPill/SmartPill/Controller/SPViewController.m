@@ -126,8 +126,15 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)checkAndSaveFacebookUserData{
     if ([self isFacebookDataCollected]) {
         SPUser* facebookUser = [SPUserHandler createFacebookUserWithName:self.facebookUserName Email:self.facebookUserEmail UserFacebookId:self.facebookUserId];
-        
-        if ([SPUserHandler doesUserExist:facebookUser OnDataBase:self.managedObjectContext]) {
+        BOOL doesUserExistOnDatabase = [SPUserHandler doesUserExist:facebookUser OnDataBase:self.managedObjectContext];
+        BOOL doesUserExistOnServer = [SPUserHandler checkUserPresenceRemotely:facebookUser];
+        if (doesUserExistOnDatabase) {
+            NSLog(@"Usuário %@, existe no coredata[checkAndSaveFacebookUserData/SPVC]",facebookUser.name);
+        }
+        if (doesUserExistOnServer) {
+            NSLog(@"Usuário %@, existe no servidor[checkAndSaveFacebookUserData/SPVC]",facebookUser.name);
+        }
+        if (doesUserExistOnDatabase && doesUserExistOnServer) {
             [SPUserHandler updateUserDataFromServer:facebookUser];
             [self storingCurrentUserInfo];
             [self goToHomeScreen];
@@ -249,7 +256,18 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)checkAndSaveGoogleUserData{
     if ([self isGoogleDataColected]) {
         SPUser* googleUser = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
-        if ([SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext]) {
+        
+        BOOL doesUserExistOnDatabase = [SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext];
+        BOOL doesUserExistOnServer = [SPUserHandler checkUserPresenceRemotely:googleUser];
+        
+        if (doesUserExistOnDatabase) {
+            NSLog(@"Usuário %@, existe no coredata[checkAndSaveGoogleUserData/SPVC]",googleUser.name);
+        }
+        if (doesUserExistOnServer) {
+            NSLog(@"Usuário %@, existe no servidor[checkAndSaveGoogleUserData/SPVC]",googleUser.name);
+        }
+        
+        if (doesUserExistOnDatabase && doesUserExistOnServer) {
             [SPUserHandler updateUserDataFromServer:googleUser];
             [self storingCurrentUserInfo];
             [self goToHomeScreen];

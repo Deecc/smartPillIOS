@@ -115,16 +115,19 @@
     
     NSError * error;
     NSArray *array = [context executeFetchRequest:fetch error:&error];
-    if (error == nil && [array count]>0) {
+    if (!array) {
+        NSLog(@"Array nil [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
+        return nil;
+    }else if (error == nil && [array count]>0) {
         for (User * usr in array) {
             if ([usr.email isEqualToString:user.email]) {
                 return array;
             }
         }
-        NSLog(@"checkPresenceToReturnUserLocally (User Not Found)");
+        NSLog(@"Usuário não encontrado no coreData [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
         return nil;
     }else{
-        NSLog(@"checkPresenceToReturnUserLocally (No Users)");
+        NSLog(@"Nenhum usuário no coreData [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
         return nil;
     }
 }
@@ -132,11 +135,17 @@
 + (BOOL)checkUserPresenceRemotely:(SPUser*)user{
     //Procura usuário no servidor
     SPConnectionRest * connectionRest = [[SPConnectionRest alloc]init];
+
     NSDictionary* userDictionary = [connectionRest fetchUserFromServer:user];
-    NSString * emailFromDic = [NSString stringWithFormat:@"%@",[userDictionary objectForKey:@"email"]];
-    if ([user.email isEqualToString:emailFromDic]) {
-        return YES;
+    
+    if (userDictionary) {
+            NSString * emailFromDic = [NSString stringWithFormat:@"%@",[userDictionary objectForKey:@"email"]];
+        if ([user.email isEqualToString:emailFromDic]) {
+            NSLog(@"Achou usuário no banco com email passado [checkUserPresenceRemotely/SPUserHandler]");
+            return YES;
+        }
     }
+    NSLog(@"Não achou usuário no banco com email passado [checkUserPresenceRemotely/SPUserHandler]");
     return NO;
 }
 
