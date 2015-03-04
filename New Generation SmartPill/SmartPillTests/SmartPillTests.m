@@ -37,7 +37,7 @@
     }
 
     SPConnectionRest * connection = [[SPConnectionRest alloc]init];
-    User * user = [User userWithName:@"Dennis Nunes" Email:@"nunesdennis@me.com" password:@"1111" inManagedObjectContext:context];
+    User * user = [User userWithName:@"Julian Sansat" Email:@"julian@gmail.com" password:@"1111" inManagedObjectContext:context];
     [connection sendUserToServer:user];
 }
 

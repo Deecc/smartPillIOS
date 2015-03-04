@@ -75,7 +75,7 @@
         }
     }
     if ([_sumOfSameNameResults count]==0) {
-        for (NSNumber* num in self.resultOfMedicineQuantities) {
+        for (int arrayCount = 0; [self.resultOfMedicineQuantities count]>arrayCount; arrayCount++) {
             [_sumOfSameNameResults addObject:@1];
         }
     }

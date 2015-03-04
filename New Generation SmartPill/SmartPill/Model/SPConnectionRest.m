@@ -13,7 +13,7 @@
 
 - (NSDictionary*)fetchUserFromServer:(SPUser*)user{
     NSString * urlString = [NSString stringWithFormat:@"http://smartpill.noip.me:8080/services/getUserByEmail?e=%@",user.email];
-    NSURL * url = [NSURL URLWithString:urlString];   
+    NSURL * url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -31,19 +31,15 @@
         NSArray * wrapper = [NSJSONSerialization JSONObjectWithData:response1 options:0 error:NULL];
         if ([wrapper count]>0) {
             NSDictionary * dictionary = [wrapper objectAtIndex:0];
-            NSLog(@"Usuário achado no servidor[fetchUserFromServer/SPConnectionRest]");
             return dictionary;
         }
     }
-    NSLog(@"Usuário não encontrado no servidor[fetchUserFromServer/SPConnectionRest]");
     return nil;
 }
 
-- (BOOL)sendUserToServer:(User*)user{
+- (BOOL)sendUserToServer:(SPUser*)user{
     NSString * urlString = [NSString stringWithFormat:@"http://smartpill.noip.me:8080/services/setUser?email=%@&name=%@&pass=%@",user.email,user.name,user.password];
-    
-    NSURL * url = [NSURL URLWithString:urlString];
-    
+    NSURL * url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
                                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                         timeoutInterval:10];
@@ -54,17 +50,15 @@
     [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
     if (requestError == nil) {
-        NSLog(@"Usuário enviado para o servidor[sendUserToServer/SPConnectionRest]");
         return YES;
     }
-    NSLog(@"Usuário não enviado para o servidor[sendUserToServer/SPConnectionRest]");
     return NO;
 }
 
 - (BOOL)sendMedicine:(Medicine*)medicine
             fromUser:(User*)user{
-    NSString * urlString = [NSString stringWithFormat:@"http://smartpill.noip.me:8080/services/setMedicine?email=%@&idManufacturer=1&idAvaliability=1&idActiveIngredient=1&name=%@&quantity=%d",user.email,medicine.name,[medicine.quantity intValue]];
-    NSURL * url = [NSURL URLWithString:urlString];
+    NSString * urlString = [NSString stringWithFormat:@"http://smartpill.noip.me:8080/services/setMedicine?email=%@&idManufacturer=1&idAvaliability=1&idActiveIngredient=2&name=%@&quantity=%d",user.email,medicine.name,[medicine.quantity intValue]];
+    NSURL * url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
                                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                         timeoutInterval:10];

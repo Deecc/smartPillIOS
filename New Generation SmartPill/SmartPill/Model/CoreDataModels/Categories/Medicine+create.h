@@ -18,5 +18,5 @@
                           user:(User*)user
         inManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)updateMedicine:(Medicine *)medicine fromDataBaseContext:(NSManagedObjectContext*)context;
-+ (NSDictionary*)getDictionaryVersionFrom:(Medicine*)medicine;
+
 @end

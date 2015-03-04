@@ -9,7 +9,6 @@
 #import "SPTripPlanningViewController.h"
 
 @interface SPTripPlanningViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
 @property (nonatomic)  NSMutableArray * selectedReminders;
@@ -17,12 +16,6 @@
 @end
 
 @implementation SPTripPlanningViewController
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
-    self.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
-}
 
 - (NSMutableArray*)selectedMedicines{
 
@@ -158,17 +151,46 @@
 - (void)calculateTripPlanningMedicineQuantity{
     if (![self.quantityTextField.text isEqualToString:@""]) {
         self.resultOfMedicineQuantities = [@[] mutableCopy];
-        for (Reminder * rem in self.selectedMedicines) {
+        for (int arrayCount = 0; [self.selectedMedicines count]>arrayCount; arrayCount++) {
             [self.resultOfMedicineQuantities addObject:[NSNumber numberWithInt:[self.quantityTextField.text intValue]]];
         }
     }
     [self.tableView reloadData];
 }
+- (void)alertView:(UIAlertView *)actionSheet {
+    
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    [self calculateTripPlanningMedicineQuantity];
+    if ([self.selectedReminders count] == 0 || !self.selectedReminders) {
+        UIAlertView *theAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Erro no Planejamento"
+                                 message:@"Para fazer um planejamento de viagens, selecione algum remédio."
+                                 delegate:self
+                                 cancelButtonTitle:@"Voltar ao Planejamento"
+                                 otherButtonTitles:nil];
+        [theAlert show];
+        [self alertView:theAlert];
+        return NO;
+    }else if ([self.quantityTextField.text intValue]<= 0){
+        UIAlertView *theAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Erro no Planejamento"
+                                 message:@"Para fazer um planejamento de viagens, insira a quantidade de dias em que estará viajando."
+                                 delegate:self
+                                 cancelButtonTitle:@"Voltar ao Planejamento"
+                                 otherButtonTitles:nil];
+        [theAlert show];
+        [self alertView:theAlert];
+        return NO;
+    }else{
+        return YES;
+    }
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"resultsSegue"]) {
         SPTripPlanningResultsViewController * tripPlanningResultsVC = segue.destinationViewController;
-        [self calculateTripPlanningMedicineQuantity];
         tripPlanningResultsVC.selectedReminders = self.selectedReminders;
         tripPlanningResultsVC.resultOfMedicineQuantities = self.resultOfMedicineQuantities;
         tripPlanningResultsVC.numberOfTripDays = [NSNumber numberWithInt:[self.quantityTextField.text intValue]];

@@ -15,5 +15,4 @@
                            inManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)updateReminderSchedule:(Reminder_Schedule *)reminderSchedule
    fromDataBaseContext:(NSManagedObjectContext*)context;
-+ (NSDictionary*)getDictionaryVersionFrom:(Reminder_Schedule*)reminderSchedule;
 @end

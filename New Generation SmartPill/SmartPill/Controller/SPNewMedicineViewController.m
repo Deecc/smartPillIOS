@@ -53,11 +53,7 @@
     if (![[self managedObjectContext] save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
     }
-    if ([self sendMedicineToServer]) {
-        NSLog(@"Medicine Sent[doneButtonAction/SPNewMedicineViewController]");
-    }else{
-        NSLog(@"Could not send any medicine[doneButtonAction/SPNewMedicineViewController]");
-    }
+    [self sendMedicineToServer];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

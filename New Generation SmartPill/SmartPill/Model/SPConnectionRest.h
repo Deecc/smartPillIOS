@@ -11,7 +11,7 @@
 @interface SPConnectionRest : NSObject
 
 - (NSDictionary*)fetchUserFromServer:(SPUser*)user;
-- (BOOL)sendUserToServer:(User*)user;
+- (BOOL)sendUserToServer:(SPUser*)user;
 - (Medicine *)getMedicineWithCodeBarNumber:(NSNumber*)number;
 - (BOOL)sendMedicine:(Medicine*)medicine
             fromUser:(User*)user;

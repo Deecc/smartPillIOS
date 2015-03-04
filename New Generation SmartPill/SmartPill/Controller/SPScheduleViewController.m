@@ -32,11 +32,11 @@
     }
     
     NSMutableArray *sortedArray;
-    sortedArray = [_pastReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+    sortedArray = [[_pastReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         NSString *first = [self acessingStringDateFromReminder:a];
         NSString *second = [self acessingStringDateFromReminder:b];
         return [first compare:second];
-    }];
+    }]mutableCopy];
     
     return sortedArray;
 }
@@ -53,11 +53,11 @@
     }
     
     NSMutableArray *sortedArray;
-    sortedArray = [_futureReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+    sortedArray = [[_futureReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         NSString *first = [self acessingStringDateFromReminder:a];
         NSString *second = [self acessingStringDateFromReminder:b];
         return [first compare:second];
-    }];
+    }]mutableCopy];
     
     return sortedArray;
 }
@@ -78,9 +78,9 @@
    
     NSMutableArray *sortedArray;
     NSMutableArray *array = [@[[self acessingStringDateFromTimeNow],time]mutableCopy];
-    sortedArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSString* a, NSString* b) {
+    sortedArray = [[array sortedArrayUsingComparator:^NSComparisonResult(NSString* a, NSString* b) {
         return [a compare:b];
-    }];
+    }]mutableCopy];
     if ([[sortedArray firstObject] isEqualToString:[self acessingStringDateFromTimeNow]]) {
         return NO;
     }
@@ -185,7 +185,7 @@
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
         NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.futureReminders]mutableCopy];
-        Medicine *selectedMedicine = [[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
+        Medicine *selectedMedicine = (Medicine*)[[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
     }else if ([[segue identifier] isEqualToString:@"newmedicine"]) {

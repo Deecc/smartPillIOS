@@ -126,23 +126,23 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)checkAndSaveFacebookUserData{
     if ([self isFacebookDataCollected]) {
         SPUser* facebookUser = [SPUserHandler createFacebookUserWithName:self.facebookUserName Email:self.facebookUserEmail UserFacebookId:self.facebookUserId];
-        BOOL doesUserExistOnDatabase = [SPUserHandler doesUserExist:facebookUser OnDataBase:self.managedObjectContext];
+        BOOL doesUserExistOnDatabase = [SPUserHandler checkUserPresenceLocally:facebookUser OnDataBase:self.managedObjectContext];
         BOOL doesUserExistOnServer = [SPUserHandler checkUserPresenceRemotely:facebookUser];
-        if (doesUserExistOnDatabase) {
-            NSLog(@"Usuário %@, existe no coredata[checkAndSaveFacebookUserData/SPVC]",facebookUser.name);
-        }
-        if (doesUserExistOnServer) {
-            NSLog(@"Usuário %@, existe no servidor[checkAndSaveFacebookUserData/SPVC]",facebookUser.name);
-        }
+        
         if (doesUserExistOnDatabase && doesUserExistOnServer) {
             [SPUserHandler updateUserDataFromServer:facebookUser];
             [self storingCurrentUserInfo];
             [self goToHomeScreen];
         }else{
-            [SPUserHandler sendUser:facebookUser toLocalDatabase:self.managedObjectContext];
+            if (doesUserExistOnDatabase) {
+                [SPUserHandler sendUserToRemoteDatabase:facebookUser];
+            }else if (doesUserExistOnServer){
+                [SPUserHandler sendUser:facebookUser toLocalDatabase:self.managedObjectContext];
+            }else{
+                [SPUserHandler sendUser:facebookUser toLocalDatabase:self.managedObjectContext];
+                [SPUserHandler sendUserToRemoteDatabase:facebookUser];
+            }
             [self storingCurrentUserInfo];
-            User * currentUser = [SPUserHandler getCurrentDatabaseUser];
-            [SPUserHandler sendUserToRemoteDatabase:currentUser];
             [self goToHomeScreen];
         }
     }
@@ -257,25 +257,29 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
     if ([self isGoogleDataColected]) {
         SPUser* googleUser = [SPUserHandler createGoogleUserWithName:self.googleUserName Email:self.googleUserEmail UserGoogleId:self.googleUserId];
         
-        BOOL doesUserExistOnDatabase = [SPUserHandler doesUserExist:googleUser OnDataBase:self.managedObjectContext];
+        BOOL doesUserExistOnDatabase = [SPUserHandler checkUserPresenceLocally:googleUser OnDataBase:self.managedObjectContext];
         BOOL doesUserExistOnServer = [SPUserHandler checkUserPresenceRemotely:googleUser];
         
-        if (doesUserExistOnDatabase) {
-            NSLog(@"Usuário %@, existe no coredata[checkAndSaveGoogleUserData/SPVC]",googleUser.name);
-        }
-        if (doesUserExistOnServer) {
-            NSLog(@"Usuário %@, existe no servidor[checkAndSaveGoogleUserData/SPVC]",googleUser.name);
-        }
+        NSLog(@"Inicio [checkAndSaveGoogleUserData/SPVC]");
         
         if (doesUserExistOnDatabase && doesUserExistOnServer) {
             [SPUserHandler updateUserDataFromServer:googleUser];
             [self storingCurrentUserInfo];
+            NSLog(@"Usuário no coredata e servidor [checkAndSaveGoogleUserData/SPVC]");
             [self goToHomeScreen];
         }else{
-            [SPUserHandler sendUser:googleUser toLocalDatabase:self.managedObjectContext];
+            if (doesUserExistOnDatabase) {
+                [SPUserHandler sendUserToRemoteDatabase:googleUser];
+                NSLog(@"Usuário existe somente no coredata [checkAndSaveGoogleUserData/SPVC]");
+            }else if (doesUserExistOnServer){
+                [SPUserHandler sendUser:googleUser toLocalDatabase:self.managedObjectContext];
+                NSLog(@"Usuário existe somente no servidor [checkAndSaveGoogleUserData/SPVC]");
+            }else{
+                [SPUserHandler sendUser:googleUser toLocalDatabase:self.managedObjectContext];
+                [SPUserHandler sendUserToRemoteDatabase:googleUser];
+                NSLog(@"Usuário não existe nem no servidor, nem no coreData [checkAndSaveGoogleUserData/SPVC]");
+            }
             [self storingCurrentUserInfo];
-            User * currentUser = [SPUserHandler getCurrentDatabaseUser];
-            [SPUserHandler sendUserToRemoteDatabase:currentUser];
             [self goToHomeScreen];
         }
     }
@@ -354,7 +358,7 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)createSignInButton{
     UIButton *signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [signInButton addTarget:self
-               action:@selector(aMethod:)
+               action:@selector(buttonWarning)
      forControlEvents:UIControlEventTouchUpInside];
     [signInButton setTitle:@"Entrar" forState:UIControlStateNormal];
     signInButton.titleLabel.font = [UIFont systemFontOfSize:23];
@@ -376,12 +380,27 @@ static NSString * const kClientId = @"912018405938-atbar4rkaaot5e984v5prcm9m0pck
 - (void)createForgotPasswordButton{
     UIButton *forgotPasswordButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [forgotPasswordButton addTarget:self
-                      action:@selector(aMethod:)
+                      action:@selector(buttonWarning)
             forControlEvents:UIControlEventTouchUpInside];
     [forgotPasswordButton setTitle:@"Esqueceu a senha?" forState:UIControlStateNormal];
     forgotPasswordButton.titleLabel.font = [UIFont systemFontOfSize:15];
     forgotPasswordButton.frame = CGRectMake(170,527,140,40);
     [self.view addSubview:forgotPasswordButton];
+}
+
+- (void)buttonWarning{
+        UIAlertView *theAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Implementação a ser criada"
+                                 message:@"Desculpe, a implementação escolhida ainda esta para ser criada, obrigado pela compreensão."
+                                 delegate:self
+                                 cancelButtonTitle:@"Ok"
+                                 otherButtonTitles:nil];
+        [theAlert show];
+        [self alertView:theAlert];
+}
+
+- (void)alertView:(UIAlertView *)actionSheet {
+    
 }
 
 - (void)createButtonViews{

@@ -33,8 +33,14 @@
     
     if ([userPassword isEqualToString:userPasswordConfirmation]) {
         SPUser * smartPillUser = [SPUserHandler createUserWithName:userName Email:userEmail UserId:nil andPassword:userPassword];
-        if ([SPUserHandler doesUserExist:smartPillUser OnDataBase:appDelegate.managedObjectContext]) {
+        BOOL doesUserExistOnCoreData = [SPUserHandler checkUserPresenceLocally:smartPillUser OnDataBase:appDelegate.managedObjectContext];
+        BOOL doesUserExistOnServer = [SPUserHandler checkUserPresenceRemotely:smartPillUser];
+        if (doesUserExistOnCoreData && doesUserExistOnServer) {
             [SPUserHandler updateUserDataFromServer:smartPillUser];
+        }else if (doesUserExistOnCoreData){
+            [SPUserHandler sendUserToRemoteDatabase:smartPillUser];
+        }else if (doesUserExistOnServer){
+            [SPUserHandler sendUser:smartPillUser toLocalDatabase:appDelegate.managedObjectContext];
         }else{
             [SPUserHandler sendUser:smartPillUser toLocalDatabase:appDelegate.managedObjectContext];
             [SPUserHandler sendUserToRemoteDatabase:smartPillUser];

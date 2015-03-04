@@ -78,18 +78,10 @@
     [context reset];
 }
 
-+ (void)sendUserToRemoteDatabase:(User*)user{
++ (void)sendUserToRemoteDatabase:(SPUser*)user{
     //Enviando para o banco remoto
     SPConnectionRest * connection = [[SPConnectionRest alloc]init];
     [connection sendUserToServer:user];
-}
-
-+ (BOOL)doesUserExist:(SPUser*)user OnDataBase:(NSManagedObjectContext*)context{
-    if ([self checkUserPresenceLocally:user OnDataBase:context] && [self checkUserPresenceRemotely:user]) {
-        return YES;
-    }else{
-        return NO;
-    }
 }
 
 + (BOOL)checkUserPresenceLocally:(SPUser*)user OnDataBase:(NSManagedObjectContext*)context{
@@ -116,7 +108,6 @@
     NSError * error;
     NSArray *array = [context executeFetchRequest:fetch error:&error];
     if (!array) {
-        NSLog(@"Array nil [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
         return nil;
     }else if (error == nil && [array count]>0) {
         for (User * usr in array) {
@@ -124,10 +115,8 @@
                 return array;
             }
         }
-        NSLog(@"Usuário não encontrado no coreData [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
         return nil;
     }else{
-        NSLog(@"Nenhum usuário no coreData [checkPresenceToReturnUserLocallyOnDatabase/SPUserHandler]");
         return nil;
     }
 }
@@ -141,11 +130,9 @@
     if (userDictionary) {
             NSString * emailFromDic = [NSString stringWithFormat:@"%@",[userDictionary objectForKey:@"email"]];
         if ([user.email isEqualToString:emailFromDic]) {
-            NSLog(@"Achou usuário no banco com email passado [checkUserPresenceRemotely/SPUserHandler]");
             return YES;
         }
     }
-    NSLog(@"Não achou usuário no banco com email passado [checkUserPresenceRemotely/SPUserHandler]");
     return NO;
 }
 
@@ -213,5 +200,18 @@
         NSLog(@"Banco sem usuários");
     }
     return nil;
+}
+
+
++ (SPUser*)convertUserToSPUser:(User*)user{
+    SPUser * spuser = nil;
+    if (user.facebook.idFacebook && ![user.facebook.idFacebook  isEqualToString:@""]) {
+        spuser = [SPUserHandler createFacebookUserWithName:user.name Email:user.email UserFacebookId:user.facebook.idFacebook];
+    }else if (user.google.idGoogle && ![user.google.idGoogle  isEqualToString:@""]){
+        spuser = [SPUserHandler createGoogleUserWithName:user.name Email:user.email UserGoogleId:user.google.idGoogle];
+    }else{
+        spuser = [SPUserHandler createUserWithName:user.name Email:user.email UserId:user.idUser andPassword:user.password];
+    }
+    return spuser;
 }
 @end
