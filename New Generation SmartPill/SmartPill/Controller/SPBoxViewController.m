@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 #pragma mark - Table view data source
@@ -25,6 +26,20 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    [self addRemoveHelpMessage];
+}
+
+- (void)addRemoveHelpMessage{
+    if ([self.medicines count]==0) {
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:[MyStyleKit imageOfAddHelpMessageBox]];
+        [self.tableView addSubview:imgView];
+    }else{
+        for (UITableView *v in self.tableView.subviews) {
+            if ([v isKindOfClass:[UIImageView class]]) {
+                [v removeFromSuperview];
+            }
+        }
+    }
 }
 
 #pragma mark - Table view data source
@@ -80,6 +95,7 @@
         // Remove Medicine from table view
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+    [self addRemoveHelpMessage];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

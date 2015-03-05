@@ -10,6 +10,7 @@
 #import "SPMedicineDetailsViewController.h"
 #import "SPNewReminderViewController.h"
 #import "SPAddPrescription.h"
+#import "MyStyleKit.h"
 
 @interface SPScheduleViewController : SPCoreDataTableViewController
 @property (strong,nonatomic) NSMutableArray *pastReminders;

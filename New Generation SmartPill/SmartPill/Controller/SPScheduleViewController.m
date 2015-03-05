@@ -1,7 +1,7 @@
 #import "SPScheduleViewController.h"
 
-@interface SPScheduleViewController (){
-    UILabel *_labelMessage;}
+@interface SPScheduleViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *arrow;
 
 @end
 
@@ -9,18 +9,36 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
     [self decreaseNumberOfBadges];
+    [self addRemoveHelpMessage];
 }
+
+
+- (void)addRemoveHelpMessage{
+    if ([self.futureReminders count]==0 && [self.pastReminders count]==0) {
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:[MyStyleKit imageOfAddHelpText]];
+        [self.tableView addSubview:imgView];
+    }else{
+        for (UITableView *v in self.tableView.subviews) {
+            if ([v isKindOfClass:[UIImageView class]]) {
+                [v removeFromSuperview];
+            }
+        }
+    }
+}
+
 - (void)decreaseNumberOfBadges{
     NSInteger numberOfBadges = [UIApplication sharedApplication].applicationIconBadgeNumber;
     numberOfBadges -=1;
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:numberOfBadges];
 }
+
 #pragma mark - Table view data source
 - (NSMutableArray *)pastReminders
 {
@@ -91,7 +109,6 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -172,6 +189,8 @@
         // Remove Reminder from table view
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+    [self addRemoveHelpMessage];
+    [self.tableView reloadData];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -185,18 +204,6 @@
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
     }
-}
-
-- (void)addHelpMessage{
-    _labelMessage = [[UILabel alloc] init];
-    _labelMessage.frame = CGRectMake(0, self.tableView.bounds.size.height/2 - 40, self.tableView.bounds.size.width, 80);
-    //_labelMessage.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    _labelMessage.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
-    _labelMessage.textColor = [UIColor whiteColor];
-    _labelMessage.textAlignment = NSTextAlignmentCenter;
-    _labelMessage.text = @"Adicione um remédio e um lembrete \npara visualizar a sua rotina diária.";
-    [self.tableView addSubview:_labelMessage];
-    [self.tableView bringSubviewToFront:_labelMessage];
 }
 
 - (IBAction)displayActionSheet:(id)sender
