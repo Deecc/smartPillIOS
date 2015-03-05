@@ -10,7 +10,6 @@
 
 @interface SPBoxViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -93,9 +92,56 @@
         Medicine *selectedMedicine = [self.medicines objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
-    }else if ([[segue identifier] isEqualToString:@"newmedicine2"]) {
-        SPNewMedicineViewController * newMedicineVC = segue.destinationViewController;
-        newMedicineVC.currentUser = [self getCurrentDatabaseUser];
-    }    
+    }
+}
+
+- (IBAction)displayActionSheet:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Adicionar"
+                                  delegate:self
+                                  cancelButtonTitle:@"Cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Remédios", @"Lembretes",
+                                  @"Receitas", nil];
+    
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+    
+}
+
+#pragma mark UIActionSheetDelegate
+
+- (void)goToNewMedicine{
+    SPNewMedicineViewController * newMedicineVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newmedicine"];;
+    newMedicineVC.currentUser = [self getCurrentDatabaseUser];
+    [self presentViewController:newMedicineVC animated:YES completion:nil];
+}
+
+- (void)goToNewReminder{
+    SPNewReminderViewController * newReminderVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newReminderVC"];
+    newReminderVC.reminder = nil;
+    [self presentViewController:newReminderVC animated:YES completion:nil];
+}
+
+- (void)goToNewRecipe{
+    SPAddPrescription * newRecipeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newRecipeVC"];;
+    [self presentViewController:newRecipeVC animated:YES completion:nil];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self goToNewMedicine];
+            break;
+        case 1:
+            [self goToNewReminder];
+            break;
+        case 2:
+            [self goToNewRecipe];
+            break;
+    }
+    
 }
 @end

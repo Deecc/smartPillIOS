@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import "SPCoreDataViewController.h"
+#import "SPCoreDataTableViewController.h"
 #import "SPMedicineDetailsViewController.h"
+#import "SPNewReminderViewController.h"
+#import "SPAddPrescription.h"
 
-@interface SPScheduleViewController : SPCoreDataViewController< UITableViewDataSource>
+@interface SPScheduleViewController : SPCoreDataTableViewController
 @property (strong,nonatomic) NSMutableArray *pastReminders;
 @property (strong,nonatomic) NSMutableArray *futureReminders;
 @end

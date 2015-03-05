@@ -1,25 +1,27 @@
 #import "SPScheduleViewController.h"
 
-@interface SPScheduleViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface SPScheduleViewController (){
+    UILabel *_labelMessage;}
+
 @end
 
 @implementation SPScheduleViewController
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
     [self decreaseNumberOfBadges];
 }
-
 - (void)decreaseNumberOfBadges{
     NSInteger numberOfBadges = [UIApplication sharedApplication].applicationIconBadgeNumber;
     numberOfBadges -=1;
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:numberOfBadges];
 }
-
 #pragma mark - Table view data source
-
 - (NSMutableArray *)pastReminders
 {
     _pastReminders = [@[] mutableCopy];
@@ -86,14 +88,12 @@
     }
     return YES;
 }
-
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 2;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0)
@@ -104,7 +104,6 @@
         return [self.futureReminders count];
     }
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -138,7 +137,6 @@
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section==0) {
         if ([self.pastReminders count]>0) {
@@ -152,7 +150,6 @@
         return @"";
     }
 }
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -180,7 +177,6 @@
 {
     [self performSegueWithIdentifier:@"medicineDetailsSegue2" sender:nil];
 }
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
@@ -188,9 +184,68 @@
         Medicine *selectedMedicine = (Medicine*)[[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
-    }else if ([[segue identifier] isEqualToString:@"newmedicine"]) {
-        SPNewMedicineViewController * newMedicineVC = segue.destinationViewController;
-        newMedicineVC.currentUser = [self getCurrentDatabaseUser];
     }
+}
+
+- (void)addHelpMessage{
+    _labelMessage = [[UILabel alloc] init];
+    _labelMessage.frame = CGRectMake(0, self.tableView.bounds.size.height/2 - 40, self.tableView.bounds.size.width, 80);
+    //_labelMessage.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    _labelMessage.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
+    _labelMessage.textColor = [UIColor whiteColor];
+    _labelMessage.textAlignment = NSTextAlignmentCenter;
+    _labelMessage.text = @"Adicione um remédio e um lembrete \npara visualizar a sua rotina diária.";
+    [self.tableView addSubview:_labelMessage];
+    [self.tableView bringSubviewToFront:_labelMessage];
+}
+
+- (IBAction)displayActionSheet:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Adicionar"
+                                  delegate:self
+                                  cancelButtonTitle:@"Cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Remédios", @"Lembretes",
+                                  @"Receitas", nil];
+    
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+    
+}
+
+#pragma mark UIActionSheetDelegate
+
+- (void)goToNewMedicine{
+    SPNewMedicineViewController * newMedicineVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newmedicine"];;
+    newMedicineVC.currentUser = [self getCurrentDatabaseUser];
+    [self presentViewController:newMedicineVC animated:YES completion:nil];
+}
+
+- (void)goToNewReminder{
+    SPNewReminderViewController * newReminderVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newReminderVC"];
+    newReminderVC.reminder = nil;
+    [self presentViewController:newReminderVC animated:YES completion:nil];
+}
+
+- (void)goToNewRecipe{
+    SPAddPrescription * newRecipeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newRecipeVC"];;
+    [self presentViewController:newRecipeVC animated:YES completion:nil];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self goToNewMedicine];
+            break;
+        case 1:
+            [self goToNewReminder];
+            break;
+        case 2:
+            [self goToNewRecipe];
+            break;
+    }
+    
 }
 @end

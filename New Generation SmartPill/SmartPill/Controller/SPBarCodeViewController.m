@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     _highlightView.layer.borderColor = [UIColor greenColor].CGColor;
@@ -42,7 +41,7 @@
     _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
     _label.textColor = [UIColor whiteColor];
     _label.textAlignment = NSTextAlignmentCenter;
-    _label.text = @"(none)";
+    _label.text = @"";
     [self.view addSubview:_label];
     
     _session = [[AVCaptureSession alloc] init];
@@ -71,6 +70,18 @@
     
     [self.view bringSubviewToFront:_highlightView];
     [self.view bringSubviewToFront:_label];
+    [self createCancelButton];
+}
+
+- (void)createCancelButton{
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [cancelButton addTarget:self
+                             action:@selector(cancelButtonAction)
+                   forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setTitle:@"Cancelar" forState:UIControlStateNormal];
+    cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
+    cancelButton.frame = CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 40);
+    [self.view addSubview:cancelButton];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -121,4 +132,9 @@
     self.delegate.medicine = medicine;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)cancelButtonAction{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

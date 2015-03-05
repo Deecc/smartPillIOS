@@ -116,67 +116,40 @@
             <point key="canvasLocation" x="1647" y="834"/>
         </scene>
         <!--Schedule View Controller-->
-        <scene sceneID="vRM-Ai-Jcg">
+        <scene sceneID="9hJ-BD-Mg8">
             <objects>
-                <viewController storyboardIdentifier="schedule" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2wd-pu-7Ef" customClass="SPScheduleViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nzn-bH-J8D"/>
-                        <viewControllerLayoutGuide type="bottom" id="OuX-zy-bIr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cXr-fS-O98">
+                <tableViewController storyboardIdentifier="schedule" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gsE-j5-t9y" customClass="SPScheduleViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i2M-GR-vTe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH6-VN-DuS">
-                                <rect key="frame" x="135" y="456" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="chT-vz-cEL"/>
-                                    <constraint firstAttribute="width" constant="50" id="lrM-Ct-Nlx"/>
-                                </constraints>
-                                <state key="normal" image="SmartPill">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oc0-Tc-nfv">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oc0-Tc-nfv" id="PFY-2L-f4v">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7xp-DF-U2z" kind="modal" identifier="newmedicine" id="dS2-2K-SQf"/>
+                                    <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue2" id="CKA-mZ-vRY"/>
                                 </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SMY-ya-xTQ">
-                                <rect key="frame" x="0.0" y="65" width="320" height="383"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="hvD-34-TtL">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvD-34-TtL" id="7gb-mu-QUx">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="2wd-pu-7Ef" id="qLm-xZ-Xb9"/>
-                                    <outlet property="delegate" destination="2wd-pu-7Ef" id="eBn-r9-6GZ"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="SMY-ya-xTQ" secondAttribute="trailing" id="2ns-o2-Lfy"/>
-                            <constraint firstItem="wH6-VN-DuS" firstAttribute="top" secondItem="SMY-ya-xTQ" secondAttribute="bottom" constant="8" id="KGI-Pc-dzy"/>
-                            <constraint firstAttribute="bottom" secondItem="wH6-VN-DuS" secondAttribute="bottom" constant="62" id="N13-lf-HZk"/>
-                            <constraint firstAttribute="trailing" secondItem="SMY-ya-xTQ" secondAttribute="trailing" id="N3u-kX-xxL"/>
-                            <constraint firstItem="SMY-ya-xTQ" firstAttribute="leading" secondItem="cXr-fS-O98" secondAttribute="leading" id="P46-Wa-TD5"/>
-                            <constraint firstItem="SMY-ya-xTQ" firstAttribute="top" secondItem="cXr-fS-O98" secondAttribute="top" constant="65" id="YkY-Zj-qG0"/>
-                            <constraint firstItem="wH6-VN-DuS" firstAttribute="leading" secondItem="cXr-fS-O98" secondAttribute="leading" constant="135" id="u2Q-f8-6OZ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="MTb-W6-oPh"/>
-                    <connections>
-                        <outlet property="tableView" destination="SMY-ya-xTQ" id="wuQ-Tg-9xI"/>
-                        <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue2" id="BGa-lk-ZDc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oLw-lO-Epz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gsE-j5-t9y" id="Huq-mP-TWe"/>
+                            <outlet property="delegate" destination="gsE-j5-t9y" id="Mh8-w8-vV2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1qk-uG-UQa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ssM-Lo-2pe">
+                            <connections>
+                                <action selector="displayActionSheet:" destination="gsE-j5-t9y" id="Kyf-tR-Kuu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OM6-WI-jJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960" y="-787"/>
+            <point key="canvasLocation" x="3150" y="-787"/>
         </scene>
         <!--New Medicine View Controller-->
         <scene sceneID="eCt-kd-1xe">
@@ -289,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FS9-hW-0th" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="-1067"/>
+            <point key="canvasLocation" x="4013" y="-1067"/>
         </scene>
         <!--Bar Code View Controller-->
         <scene sceneID="YfT-o8-Mza">
@@ -307,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yO0-oT-bXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3947" y="-1067"/>
+            <point key="canvasLocation" x="4479" y="-1067"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="89O-yg-6el">
@@ -321,7 +294,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6n4-as-7NI" kind="relationship" relationship="viewControllers" id="0P6-tD-6sv"/>
+                        <segue destination="P0m-Qz-K5k" kind="relationship" relationship="viewControllers" id="Vpt-xB-Boa"/>
                         <segue destination="J38-vv-oe8" kind="relationship" relationship="viewControllers" id="g5b-8o-Osl"/>
                         <segue destination="zDz-7b-aLH" kind="relationship" relationship="viewControllers" id="YYj-f5-B69"/>
                     </connections>
@@ -502,7 +475,7 @@
                     <navigationItem key="navigationItem" id="rtQ-Rq-tFU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pe2-bA-LAd">
                             <connections>
-                                <segue destination="IWw-NJ-Xpd" kind="push" id="Mr2-G5-5vD"/>
+                                <segue destination="IWw-NJ-Xpd" kind="modal" id="AQe-Cu-doh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -621,7 +594,7 @@
         <!--Add Prescription-->
         <scene sceneID="rhs-Bf-oEL">
             <objects>
-                <viewController id="IWw-NJ-Xpd" customClass="SPAddPrescription" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newRecipeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IWw-NJ-Xpd" customClass="SPAddPrescription" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cc0-1t-Qay"/>
                         <viewControllerLayoutGuide type="bottom" id="8mt-Ie-QKo"/>
@@ -652,16 +625,26 @@
                                     <outlet property="delegate" destination="IWw-NJ-Xpd" id="kXR-bR-Wke"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QL5-r6-cE4">
+                                <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="2zI-sW-Y00">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="KOR-kb-5UD">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="IWw-NJ-Xpd" id="dOb-4i-dRA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="Og0-Nt-dXo">
+                                            <connections>
+                                                <action selector="doneButton:" destination="IWw-NJ-Xpd" id="oiu-7m-M4D"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2zI-sW-Y00">
-                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="Og0-Nt-dXo">
-                            <connections>
-                                <action selector="doneButton:" destination="IWw-NJ-Xpd" id="oiu-7m-M4D"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="MedTable" destination="kHp-da-VRH" id="eL5-oC-eS4"/>
                     </connections>
@@ -813,7 +796,7 @@
         <!--New Reminder View Controller-->
         <scene sceneID="7We-j6-MXf">
             <objects>
-                <viewController id="LoB-Ia-CQD" customClass="SPNewReminderViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newReminderVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LoB-Ia-CQD" customClass="SPNewReminderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W46-rO-gbK"/>
                         <viewControllerLayoutGuide type="bottom" id="9wU-5k-Krf"/>
@@ -988,69 +971,40 @@
             <point key="canvasLocation" x="4139" y="195"/>
         </scene>
         <!--Box View Controller-->
-        <scene sceneID="Mmw-BV-noo">
+        <scene sceneID="Rh0-3X-jF1">
             <objects>
-                <viewController storyboardIdentifier="Box" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pS3-nF-2hj" customClass="SPBoxViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HlN-MS-nqU"/>
-                        <viewControllerLayoutGuide type="bottom" id="bg8-yo-U8J"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9QJ-Hg-n7g">
+                <tableViewController storyboardIdentifier="Box" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KqS-Qx-f5G" customClass="SPBoxViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p1I-GH-pSg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gU-uA-fTO">
-                                <rect key="frame" x="135" y="456" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PXE-lN-LWd"/>
-                                    <constraint firstAttribute="width" constant="50" id="uGu-mL-BEJ"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="SmartPill">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hG4-z9-Ces">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hG4-z9-Ces" id="34m-88-d6h">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7xp-DF-U2z" kind="modal" identifier="newmedicine2" id="LeH-Ga-xt3"/>
+                                    <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue" id="i6w-vD-oDF"/>
                                 </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-lw-0Kp">
-                                <rect key="frame" x="0.0" y="65" width="320" height="383"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="ub3-lh-LeH">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ub3-lh-LeH" id="cQh-aW-KA2">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="pS3-nF-2hj" id="6Lw-6K-Stp"/>
-                                    <outlet property="delegate" destination="pS3-nF-2hj" id="AX9-EI-rIu"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4gU-uA-fTO" firstAttribute="top" secondItem="EHU-lw-0Kp" secondAttribute="bottom" constant="8" id="2bL-gI-O7q"/>
-                            <constraint firstAttribute="bottom" secondItem="4gU-uA-fTO" secondAttribute="bottom" constant="62" id="2x6-rY-neb"/>
-                            <constraint firstAttribute="trailing" secondItem="EHU-lw-0Kp" secondAttribute="trailing" id="503-pe-sll"/>
-                            <constraint firstItem="4gU-uA-fTO" firstAttribute="leading" secondItem="9QJ-Hg-n7g" secondAttribute="leading" constant="135" id="FN0-KK-2er"/>
-                            <constraint firstItem="EHU-lw-0Kp" firstAttribute="top" secondItem="9QJ-Hg-n7g" secondAttribute="top" constant="65" id="dkS-IF-TN4"/>
-                            <constraint firstItem="EHU-lw-0Kp" firstAttribute="leading" secondItem="9QJ-Hg-n7g" secondAttribute="leading" id="udg-22-c4s"/>
-                            <constraint firstAttribute="trailing" secondItem="4gU-uA-fTO" secondAttribute="trailing" constant="135" id="xwx-UH-3Ro"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="PRb-T8-1hI"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
-                    <connections>
-                        <outlet property="tableView" destination="EHU-lw-0Kp" id="kOZ-0s-rHZ"/>
-                        <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue" id="uM5-C4-xs8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-1O-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KqS-Qx-f5G" id="dJo-VN-YMq"/>
+                            <outlet property="delegate" destination="KqS-Qx-f5G" id="iOR-Xv-aJt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="y1K-eX-PjL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="smc-d5-XEI">
+                            <connections>
+                                <action selector="displayActionSheet:" destination="KqS-Qx-f5G" id="sEM-5p-TsY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlp-2f-lRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-57"/>
+            <point key="canvasLocation" x="3478" y="-78"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="CtN-ah-moj">
@@ -1108,7 +1062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjF-Re-Oy5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4553" y="-222"/>
+            <point key="canvasLocation" x="4641" y="-301"/>
         </scene>
         <!--First Screen View Controller-->
         <scene sceneID="V5a-Wr-gDw">
@@ -1140,7 +1094,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUV-Jl-tXD">
                                 <rect key="frame" x="160" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XhZ-wq-ND3"/>
                                     <constraint firstAttribute="width" constant="160" id="x4G-3o-DIi"/>
@@ -1209,7 +1163,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pS3-nF-2hj" kind="relationship" relationship="rootViewController" id="sqd-7B-Hxt"/>
+                        <segue destination="KqS-Qx-f5G" kind="relationship" relationship="rootViewController" id="qwy-Pq-jsW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGM-nN-ddC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1220,30 +1174,6 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="3003" y="-78"/>
-        </scene>
-        <!--Hoje-->
-        <scene sceneID="lgf-3O-Bev">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6n4-as-7NI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hoje" id="Wze-eo-PTa"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J3n-8o-nEP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2wd-pu-7Ef" kind="relationship" relationship="rootViewController" id="a4g-Ce-S0C"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v3k-Gj-vd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="ekW-z1-lDt" customClass="MyStyleKit">
-                    <connections>
-                        <outletCollection property="todayIconTargets" destination="Wze-eo-PTa" id="URf-A3-6Id"/>
-                    </connections>
-                </customObject>
-            </objects>
-            <point key="canvasLocation" x="2434" y="-787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LdD-yp-cgT">
@@ -1263,11 +1193,34 @@
             </objects>
             <point key="canvasLocation" x="657" y="141"/>
         </scene>
+        <!--Hoje-->
+        <scene sceneID="8yG-zR-S3B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P0m-Qz-K5k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Hoje" id="tlW-QK-oEH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pk8-T7-Td6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gsE-j5-t9y" kind="relationship" relationship="rootViewController" id="d0o-G0-DtI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oF-9E-iwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="CdP-gS-zBK" customClass="MyStyleKit">
+                    <connections>
+                        <outletCollection property="todayIconTargets" destination="tlW-QK-oEH" id="08k-s3-p1s"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2618" y="-787"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CameraButton" width="86" height="86"/>
         <image name="ProfileImage" width="34" height="34"/>
-        <image name="SmartPill" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1275,9 +1228,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LeH-Ga-xt3"/>
+        <segue reference="CKA-mZ-vRY"/>
         <segue reference="GMG-4s-60H"/>
-        <segue reference="uM5-C4-xs8"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

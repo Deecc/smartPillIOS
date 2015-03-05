@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 IFRN - Mobile School. All rights reserved.
 //
 
-#import "SPCoreDataViewController.h"
+#import "SPCoreDataTableViewController.h"
 #import "SPMedicineDetailsViewController.h"
 #import "SPNewMedicineViewController.h"
+#import "SPNewReminderViewController.h"
+#import "SPAddPrescription.h"
 
-@interface SPBoxViewController : SPCoreDataViewController< UITableViewDataSource>
+
+@interface SPBoxViewController : SPCoreDataTableViewController
 @end

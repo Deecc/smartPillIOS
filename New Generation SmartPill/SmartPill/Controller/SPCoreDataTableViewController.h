@@ -19,4 +19,6 @@
 
 - (void)deleteAllNotificationFromMedicineOf:(NSIndexPath *)indexPath;
 - (void)deleteNotificationFromReminderIn:(NSIndexPath *)indexPath;
+- (SPUser*)getCurrentUser;
+- (User*)getCurrentDatabaseUser;
 @end

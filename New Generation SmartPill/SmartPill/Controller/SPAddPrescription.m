@@ -139,8 +139,9 @@
     tableViewCell.accessoryType = UITableViewCellAccessoryNone;
 }
 
-
-
+- (IBAction)cancelButtonAction:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)doneButton:(UIBarButtonItem *)sender {
     NSArray *cells = [self.MedTable visibleCells];
