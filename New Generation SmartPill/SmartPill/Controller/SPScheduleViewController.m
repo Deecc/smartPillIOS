@@ -1,7 +1,6 @@
 #import "SPScheduleViewController.h"
 
 @interface SPScheduleViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *arrow;
 
 @end
 
@@ -19,9 +18,8 @@
     [self addRemoveHelpMessage];
 }
 
-
 - (void)addRemoveHelpMessage{
-    if ([self.futureReminders count]==0 && [self.pastReminders count]==0) {
+    if ([_futureReminders count]==0 && [_pastReminders count]==0) {
         UIImageView *imgView = [[UIImageView alloc] initWithImage:[MyStyleKit imageOfAddHelpText]];
         [self.tableView addSubview:imgView];
     }else{
@@ -128,19 +126,24 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
     // Configure the cell...
+    /////////////////////////////////////////////////////
+    // create a background image for the cell:
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
+    [cell setBackgroundView:bgView];
+    [cell setIndentationWidth:0.0];
+    
     Reminder *reminder = nil;
     
     if(indexPath.section==0){
-        reminder = [self.pastReminders objectAtIndex:indexPath.row];
+        reminder = [_pastReminders objectAtIndex:indexPath.row];
         NSDate * date = reminder.reminder_schedule.schedule;
         NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
         [timeFormat setDateFormat:@"HH:mm"];
         [cell.textLabel setText:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
         [cell.detailTextLabel setText:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
     }else{
-        reminder = [self.futureReminders objectAtIndex:indexPath.row];
+        reminder = [_futureReminders objectAtIndex:indexPath.row];
         NSDate * date = reminder.reminder_schedule.schedule;
         NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
         [timeFormat setDateFormat:@"HH:mm"];
@@ -156,12 +159,12 @@
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section==0) {
-        if ([self.pastReminders count]>0) {
+        if ([_pastReminders count]>0) {
             return @"Remedios Tomados/Atrasados";
         }
         return @"";
     }else{
-        if ([self.futureReminders count]>0) {
+        if ([_futureReminders count]>0) {
             return @"Remedios à Tomar";
         }
         return @"";
@@ -170,22 +173,19 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObjectContext *context = [self managedObjectContext];
-    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
         [self deleteNotificationFromReminderIn:indexPath];
-        NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.futureReminders]mutableCopy];
+        NSMutableArray * bothReminderArrays = [[_pastReminders arrayByAddingObjectsFromArray:_futureReminders]mutableCopy];
         Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         [context deleteObject:selectedReminder];
         ///
-        
         
         NSError *error = nil;
         if (![context save:&error]) {
             NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
             return;
         }
-        
         // Remove Reminder from table view
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -199,7 +199,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
-        NSMutableArray * bothReminderArrays = [[self.pastReminders arrayByAddingObjectsFromArray:self.futureReminders]mutableCopy];
+        NSMutableArray * bothReminderArrays = [[_pastReminders arrayByAddingObjectsFromArray:_futureReminders]mutableCopy];
         Medicine *selectedMedicine = (Medicine*)[[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;

@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="1647" y="834"/>
         </scene>
-        <!--Schedule View Controller-->
+        <!--Hoje-->
         <scene sceneID="9hJ-BD-Mg8">
             <objects>
                 <tableViewController storyboardIdentifier="schedule" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gsE-j5-t9y" customClass="SPScheduleViewController" sceneMemberID="viewController">
@@ -123,10 +123,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="H84-rT-clD">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oc0-Tc-nfv">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -143,16 +139,13 @@
                             <outlet property="delegate" destination="gsE-j5-t9y" id="Mh8-w8-vV2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1qk-uG-UQa">
+                    <navigationItem key="navigationItem" title="Hoje" id="1qk-uG-UQa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ssM-Lo-2pe">
                             <connections>
                                 <action selector="displayActionSheet:" destination="gsE-j5-t9y" id="Kyf-tR-Kuu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="arrow" destination="H84-rT-clD" id="ERl-VL-Gyn"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM6-WI-jJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,7 +291,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZzL-Hk-rgd">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.22352941176470589" green="0.85098039215686272" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="P0m-Qz-K5k" kind="relationship" relationship="viewControllers" id="Vpt-xB-Boa"/>
@@ -1101,7 +1095,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUV-Jl-tXD">
                                 <rect key="frame" x="160" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XhZ-wq-ND3"/>
                                     <constraint firstAttribute="width" constant="160" id="x4G-3o-DIi"/>
@@ -1190,6 +1184,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="88C-Od-BZ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.070588235294117646" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1209,6 +1204,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pk8-T7-Td6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
