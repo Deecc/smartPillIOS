@@ -132,7 +132,7 @@
     UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
     [cell setBackgroundView:bgView];
     [cell setIndentationWidth:0.0];
-    
+    //
     Reminder *reminder = nil;
     
     if(indexPath.section==0){

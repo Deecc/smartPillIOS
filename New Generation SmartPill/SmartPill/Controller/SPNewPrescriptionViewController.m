@@ -60,6 +60,11 @@
     }
     
     // Configure the cell...
+    // create a background image for the cell:
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
+    [cell setBackgroundView:bgView];
+    [cell setIndentationWidth:0.0];
+    //
     Medicine * medicine = [self.allMedicinesWithRecipes objectAtIndex:indexPath.row];
     
     //celula

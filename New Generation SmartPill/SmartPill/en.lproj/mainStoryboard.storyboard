@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WVf-sw-WbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WVf-sw-WbF">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -82,8 +82,12 @@
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-3i-Llb">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="SmartPill" id="zMe-k7-TTP">
+                                    <navigationItem title="Novo Usuário" id="zMe-k7-TTP">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="84T-fZ-lXB">
                                             <connections>
                                                 <action selector="cancelSignUpAction:" destination="XU3-Th-Lx2" id="FvN-fi-hul"/>
@@ -128,6 +132,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oc0-Tc-nfv" id="PFY-2L-f4v">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.7803921568627451" green="0.92156862745098034" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="IDp-CR-0P1" kind="modal" identifier="medicineDetailsSegue2" id="CKA-mZ-vRY"/>
@@ -149,7 +154,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM6-WI-jJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3150" y="-787"/>
+            <point key="canvasLocation" x="3284" y="-763"/>
         </scene>
         <!--New Medicine View Controller-->
         <scene sceneID="eCt-kd-1xe">
@@ -212,8 +217,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feA-76-Sol">
-                                        <rect key="frame" x="241" y="24" width="61" height="30"/>
-                                        <state key="normal" title="BarCode">
+                                        <rect key="frame" x="255" y="8" width="42" height="42"/>
+                                        <state key="normal" backgroundImage="barcode">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -233,9 +238,13 @@
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANw-Jw-6ja">
-                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Remédio" id="GKg-Re-JVN">
+                                    <navigationItem title="Novo Remédio" id="GKg-Re-JVN">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="deu-sv-QHK">
                                             <connections>
                                                 <action selector="cancelButtonAction:" destination="7xp-DF-U2z" id="rON-Mh-4kH"/>
@@ -292,7 +301,7 @@
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.22352941176470589" green="0.85098039215686272" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.19874543572195322" green="0.68319917929292928" blue="0.48556279362565846" alpha="0.41000000000000003" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="P0m-Qz-K5k" kind="relationship" relationship="viewControllers" id="Vpt-xB-Boa"/>
@@ -304,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="2179" y="141"/>
         </scene>
-        <!--More View Controller-->
+        <!--Extras-->
         <scene sceneID="RhL-Wd-agR">
             <objects>
                 <tableViewController id="97y-Du-Xeh" customClass="SPMoreViewController" sceneMemberID="viewController">
@@ -333,7 +342,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Perfil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6W-wA-jUW">
                                                     <rect key="frame" x="62" y="23" width="205" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-76-RTn">
@@ -358,7 +367,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planejamento de Viagens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yew-e9-cFd">
                                                     <rect key="frame" x="62" y="21" width="205" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -380,7 +389,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Receitas Médicas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-67-V7B">
                                                     <rect key="frame" x="62" y="21" width="205" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -402,7 +411,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lembretes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lim-Q1-bic">
                                                     <rect key="frame" x="62" y="21" width="205" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -424,7 +433,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Histórico de medicamentos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoT-7T-nO8">
                                                     <rect key="frame" x="61" y="16" width="211" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -441,7 +450,7 @@
                             <outlet property="delegate" destination="97y-Du-Xeh" id="n3d-tf-dJz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="p5F-4p-uyr"/>
+                    <navigationItem key="navigationItem" title="Extras" id="p5F-4p-uyr"/>
                     <connections>
                         <outlet property="signOutButton" destination="sCD-E4-RnW" id="Hqw-XF-9S1"/>
                     </connections>
@@ -450,7 +459,7 @@
             </objects>
             <point key="canvasLocation" x="3529" y="677"/>
         </scene>
-        <!--New Prescription View Controller-->
+        <!--Receitas-->
         <scene sceneID="Uk4-ub-kG3">
             <objects>
                 <tableViewController id="StC-QX-lkw" customClass="SPNewPrescriptionViewController" sceneMemberID="viewController">
@@ -473,7 +482,7 @@
                             <outlet property="delegate" destination="StC-QX-lkw" id="Hi7-MV-Cfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rtQ-Rq-tFU">
+                    <navigationItem key="navigationItem" title="Receitas" id="rtQ-Rq-tFU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pe2-bA-LAd">
                             <connections>
                                 <segue destination="IWw-NJ-Xpd" kind="modal" id="AQe-Cu-doh"/>
@@ -485,7 +494,7 @@
             </objects>
             <point key="canvasLocation" x="4139" y="821"/>
         </scene>
-        <!--Trip Planning View Controller-->
+        <!--Planejamento-->
         <scene sceneID="YIv-EQ-IU0">
             <objects>
                 <viewController id="a7i-zZ-eSb" customClass="SPTripPlanningViewController" sceneMemberID="viewController">
@@ -508,7 +517,7 @@
                                     <constraint firstAttribute="width" constant="280" id="KWC-j7-nvL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOV-VH-gdo">
@@ -549,7 +558,7 @@
                             <constraint firstItem="Q9z-4x-21M" firstAttribute="top" secondItem="XNR-CP-K0g" secondAttribute="bottom" constant="8" symbolic="YES" id="zYz-Op-sZg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QPI-S1-jd3">
+                    <navigationItem key="navigationItem" title="Planejamento" id="QPI-S1-jd3">
                         <barButtonItem key="rightBarButtonItem" title="Calcular" id="hIK-yd-cS6">
                             <connections>
                                 <segue destination="8nD-RU-8kN" kind="push" identifier="resultsSegue" id="JiV-Hu-dCb"/>
@@ -586,7 +595,7 @@
                             <outlet property="delegate" destination="8nD-RU-8kN" id="II1-FE-aRM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BGz-IJ-nJ4"/>
+                    <navigationItem key="navigationItem" title="Resultado" id="BGz-IJ-nJ4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxY-3O-Oqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,7 +614,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-Pl-ozp">
-                                <rect key="frame" x="117" y="429" width="86" height="86"/>
+                                <rect key="frame" x="66" y="450" width="40" height="40"/>
                                 <state key="normal" image="CameraButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -628,8 +637,12 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QL5-r6-cE4">
                                 <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem id="2zI-sW-Y00">
+                                    <navigationItem title="Nova Receita" id="2zI-sW-Y00">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="KOR-kb-5UD">
                                             <connections>
                                                 <action selector="cancelButtonAction:" destination="IWw-NJ-Xpd" id="dOb-4i-dRA"/>
@@ -643,6 +656,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sem Imagem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL2-iO-gfI">
+                                <rect key="frame" x="116" y="463" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -668,7 +687,7 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data inicial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSL-xW-GFK">
                                 <rect key="frame" x="104" y="71" width="113" height="21"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -722,7 +741,7 @@
             </objects>
             <point key="canvasLocation" x="2848" y="2029"/>
         </scene>
-        <!--Medicine History View Controller-->
+        <!--Histórico de Medicamentos-->
         <scene sceneID="XeJ-LR-4Sm">
             <objects>
                 <tableViewController id="Zjt-YM-JCZ" customClass="SPMedicineHistoryViewController" sceneMemberID="viewController">
@@ -745,7 +764,7 @@
                             <outlet property="delegate" destination="Zjt-YM-JCZ" id="gM3-km-UpB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CnM-wn-70g"/>
+                    <navigationItem key="navigationItem" title="Histórico de Medicamentos" id="CnM-wn-70g"/>
                     <connections>
                         <outlet property="view" destination="GWi-Sa-HWr" id="57v-PS-XJ5"/>
                     </connections>
@@ -808,6 +827,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOa-0J-Lga">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Lembrete" id="puL-Lo-y9Y">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="O59-dO-z86">
@@ -835,13 +858,13 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remedio do Lembrete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFJ-Q6-UUI">
                                 <rect key="frame" x="20" y="86" width="171" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horário de uso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkI-rH-r8x">
                                 <rect key="frame" x="20" y="254" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -870,6 +893,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpH-7T-dGN">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Lembrete" id="cJi-J2-awQ">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="DTH-E8-6T9">
@@ -888,7 +915,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remedio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XK-LD-fAk">
                                 <rect key="frame" x="20" y="107" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nl-GA-cXp">
@@ -929,7 +956,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qN-Ft-NzS">
                                 <rect key="frame" x="20" y="114" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz6-RF-mV2">
@@ -945,7 +972,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-jb-3TY">
                                 <rect key="frame" x="111" y="434" width="99" height="30"/>
                                 <state key="normal" title="Desvincular">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -971,7 +998,7 @@
             </objects>
             <point key="canvasLocation" x="4139" y="195"/>
         </scene>
-        <!--Box View Controller-->
+        <!--Caixa de Remédios-->
         <scene sceneID="Rh0-3X-jF1">
             <objects>
                 <tableViewController storyboardIdentifier="Box" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KqS-Qx-f5G" customClass="SPBoxViewController" sceneMemberID="viewController">
@@ -995,7 +1022,7 @@
                             <outlet property="delegate" destination="KqS-Qx-f5G" id="iOR-Xv-aJt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="y1K-eX-PjL">
+                    <navigationItem key="navigationItem" title="Caixa de Remédios" id="y1K-eX-PjL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="smc-d5-XEI">
                             <connections>
                                 <action selector="displayActionSheet:" destination="KqS-Qx-f5G" id="sEM-5p-TsY"/>
@@ -1010,7 +1037,7 @@
         <!--Medicine Details View Controller-->
         <scene sceneID="CtN-ah-moj">
             <objects>
-                <viewController id="IDp-CR-0P1" customClass="SPMedicineDetailsViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="IDp-CR-0P1" customClass="SPMedicineDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xlf-GY-kG7"/>
                         <viewControllerLayoutGuide type="bottom" id="Qhf-DA-ejs"/>
@@ -1022,7 +1049,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-dx-98V">
                                 <rect key="frame" x="20" y="92" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLA-1T-qyf">
@@ -1037,6 +1064,10 @@
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfI-72-ehk">
                                 <rect key="frame" x="0.0" y="19" width="320" height="44"/>
+                                <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Remédio" id="lDq-Si-qtC">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="YkN-OI-MfT">
@@ -1079,7 +1110,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q24-mc-Ljv">
                                 <rect key="frame" x="0.0" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1Hz-hh-93z"/>
                                     <constraint firstAttribute="height" constant="50" id="r9m-9v-Wzq"/>
@@ -1095,7 +1126,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUV-Jl-tXD">
                                 <rect key="frame" x="160" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.11800418050587586" green="0.24793403510396597" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XhZ-wq-ND3"/>
                                     <constraint firstAttribute="width" constant="160" id="x4G-3o-DIi"/>
@@ -1137,6 +1168,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Th6-dq-cNQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1161,6 +1196,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="92U-Ko-NEy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1181,10 +1220,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WVf-sw-WbF" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="88C-Od-BZ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.070588235294117646" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1205,9 +1248,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1227,8 +1270,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CameraButton" width="86" height="86"/>
+        <image name="CameraButton" width="60" height="60"/>
         <image name="ProfileImage" width="34" height="34"/>
+        <image name="barcode" width="42" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1239,4 +1283,5 @@
         <segue reference="CKA-mZ-vRY"/>
         <segue reference="GMG-4s-60H"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

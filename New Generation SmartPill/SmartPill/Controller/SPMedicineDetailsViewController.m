@@ -19,6 +19,10 @@
     [self writingLabels];
 }
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+}
+
 
 - (IBAction)BackToLastViewAction:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

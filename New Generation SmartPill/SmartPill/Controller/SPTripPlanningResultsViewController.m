@@ -110,6 +110,11 @@
     }
     
     // Configure the cell...
+    // create a background image for the cell:
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
+    [cell setBackgroundView:bgView];
+    [cell setIndentationWidth:0.0];
+    //
     NSString *medicineName = [self.selectedRemindersOneOfEach objectAtIndex:indexPath.row];
     NSNumber *timesMedicinesPerDay = [self.sumOfSameNameResults objectAtIndex:indexPath.row];
     NSNumber *numberOfTripDaysTimesMedicinesPerDay = [NSNumber numberWithInt:self.numberOfTripDays.intValue * timesMedicinesPerDay.intValue];

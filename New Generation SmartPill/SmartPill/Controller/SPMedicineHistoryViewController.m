@@ -66,6 +66,11 @@
     }
     
     // Configure the cell...
+    // create a background image for the cell:
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
+    [cell setBackgroundView:bgView];
+    [cell setIndentationWidth:0.0];
+    //
     Reminder *reminder = [self.arrayBetweenDatesSelected objectAtIndex:indexPath.row];
     
     NSDate * date = reminder.reminder_schedule.schedule;

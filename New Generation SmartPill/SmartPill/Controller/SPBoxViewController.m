@@ -55,6 +55,13 @@
     return self.medicines.count;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if ([self.medicines count]>0) {
+        return @"Lista de Remédios";
+    }
+    return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -64,6 +71,11 @@
     }
     
     // Configure the cell...
+    // create a background image for the cell:
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"cell"]];
+    [cell setBackgroundView:bgView];
+    [cell setIndentationWidth:0.0];
+    //
     NSManagedObject *medicine = [self.medicines objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [medicine valueForKey:@"name"], [medicine valueForKey:@"quantity"]]];
     [cell.detailTextLabel setText:[medicine valueForKey:@"manufacturer"]];
