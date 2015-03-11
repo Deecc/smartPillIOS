@@ -145,7 +145,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Hoje" id="1qk-uG-UQa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ssM-Lo-2pe">
+                        <barButtonItem key="rightBarButtonItem" image="SmartPillIcon_Add" id="ssM-Lo-2pe">
                             <connections>
                                 <action selector="displayActionSheet:" destination="gsE-j5-t9y" id="Kyf-tR-Kuu"/>
                             </connections>
@@ -345,7 +345,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-76-RTn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartPillIcons_Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-76-RTn">
                                                     <rect key="frame" x="20" y="15" width="34" height="34"/>
                                                 </imageView>
                                             </subviews>
@@ -361,7 +361,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-zR-woQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartPillIcons_Planejamento" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-zR-woQ">
                                                     <rect key="frame" x="20" y="15" width="34" height="34"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planejamento de Viagens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yew-e9-cFd">
@@ -383,7 +383,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="el3-9M-7jY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartPillIcons_receita" translatesAutoresizingMaskIntoConstraints="NO" id="el3-9M-7jY">
                                                     <rect key="frame" x="20" y="15" width="34" height="34"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Receitas Médicas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-67-V7B">
@@ -405,7 +405,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-ju-zkv">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartPillIcon_Lembretes" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-ju-zkv">
                                                     <rect key="frame" x="20" y="15" width="34" height="34"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lembretes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lim-Q1-bic">
@@ -427,7 +427,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8N-z2-WLW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartPillIcon_Historico" translatesAutoresizingMaskIntoConstraints="NO" id="L8N-z2-WLW">
                                                     <rect key="frame" x="20" y="15" width="33" height="37"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Histórico de medicamentos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoT-7T-nO8">
@@ -1023,7 +1023,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Caixa de Remédios" id="y1K-eX-PjL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="smc-d5-XEI">
+                        <barButtonItem key="rightBarButtonItem" image="SmartPillIcon_Add" id="smc-d5-XEI">
                             <connections>
                                 <action selector="displayActionSheet:" destination="KqS-Qx-f5G" id="sEM-5p-TsY"/>
                             </connections>
@@ -1220,7 +1220,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WVf-sw-WbF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="88C-Od-BZ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1250,7 +1249,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.14167552586389973" green="0.25521391360748036" blue="0.64100753117089315" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1271,8 +1270,13 @@
     </scenes>
     <resources>
         <image name="CameraButton" width="60" height="60"/>
-        <image name="ProfileImage" width="34" height="34"/>
+        <image name="SmartPillIcon_Add" width="25" height="25"/>
         <image name="barcode" width="42" height="42"/>
+        <image name="smartPillIcon_Historico" width="25" height="25"/>
+        <image name="smartPillIcon_Lembretes" width="50" height="50"/>
+        <image name="smartPillIcons_Perfil" width="25" height="25"/>
+        <image name="smartPillIcons_Planejamento" width="50" height="50"/>
+        <image name="smartPillIcons_receita" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
