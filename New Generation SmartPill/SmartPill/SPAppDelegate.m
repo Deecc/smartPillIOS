@@ -23,7 +23,12 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-//    // Override point for customization after application launch.
+    /////////////////
+//    UIPageControl *pageControl = [UIPageControl appearance];
+//    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+//    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+//    
+//    pageControl.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 

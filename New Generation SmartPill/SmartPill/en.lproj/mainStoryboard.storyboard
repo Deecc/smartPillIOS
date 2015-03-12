@@ -324,7 +324,9 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sCD-E4-RnW">
                             <rect key="frame" x="0.0" y="397" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Deslogar"/>
+                            <state key="normal" title="Deslogar">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="signOutAction:" destination="97y-Du-Xeh" eventType="touchUpInside" id="dAW-3F-ZS7"/>
                             </connections>
@@ -972,7 +974,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-jb-3TY">
                                 <rect key="frame" x="111" y="434" width="99" height="30"/>
                                 <state key="normal" title="Desvincular">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1096,6 +1098,53 @@
             </objects>
             <point key="canvasLocation" x="4641" y="-301"/>
         </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="ouu-lG-9SN">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ej-3Y-4Pp" customClass="SPPageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9fo-Is-mlc"/>
+                        <viewControllerLayoutGuide type="bottom" id="7XR-bA-lYk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HIy-UW-UBY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-dA-7g0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opi-RZ-Cd1">
+                                <rect key="frame" x="0.0" y="420" width="320" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIM-Ls-Sln">
+                                        <rect key="frame" x="16" y="31" width="288" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="xbJ-dA-7g0" id="qkl-LQ-xHd"/>
+                        <outlet property="titleLabel" destination="FIM-Ls-Sln" id="IIn-Vv-JJe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzf-JF-Gxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="-517"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="pPb-7e-DvW">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jc0-dn-zkc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7f-bl-wSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189" y="-514"/>
+        </scene>
         <!--First Screen View Controller-->
         <scene sceneID="V5a-Wr-gDw">
             <objects>
@@ -1109,31 +1158,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q24-mc-Ljv">
-                                <rect key="frame" x="0.0" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="1Hz-hh-93z"/>
-                                    <constraint firstAttribute="height" constant="50" id="r9m-9v-Wzq"/>
-                                </constraints>
+                                <rect key="frame" x="3" y="507" width="155" height="53"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="User">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goToLastUserScheduleScreen:" destination="7FE-4v-ZfO" eventType="touchUpInside" id="Kqb-V0-eXs"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5RO-VU-8pY">
+                                <rect key="frame" x="141" y="13" width="39" height="37"/>
+                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUV-Jl-tXD">
-                                <rect key="frame" x="160" y="518" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.11800418050587586" green="0.24793403510396597" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="XhZ-wq-ND3"/>
-                                    <constraint firstAttribute="width" constant="160" id="x4G-3o-DIi"/>
-                                </constraints>
+                                <rect key="frame" x="162" y="507" width="155" height="53"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Outro">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1143,16 +1186,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="q24-mc-Ljv" secondAttribute="bottom" id="AoR-SL-Ur5"/>
-                            <constraint firstAttribute="bottom" secondItem="ZUV-Jl-tXD" secondAttribute="bottom" id="MtB-NK-69z"/>
-                            <constraint firstAttribute="trailing" secondItem="ZUV-Jl-tXD" secondAttribute="trailing" id="fwF-Jd-bLd"/>
-                            <constraint firstAttribute="trailing" secondItem="q24-mc-Ljv" secondAttribute="trailing" constant="160" id="snn-VX-6cw"/>
+                            <constraint firstItem="q24-mc-Ljv" firstAttribute="leading" secondItem="5GE-LG-rWV" secondAttribute="leading" constant="3" id="3CY-3n-dvv"/>
+                            <constraint firstAttribute="trailing" secondItem="q24-mc-Ljv" secondAttribute="trailing" constant="162" id="Mxb-CW-qyJ"/>
+                            <constraint firstItem="ZUV-Jl-tXD" firstAttribute="top" secondItem="5GE-LG-rWV" secondAttribute="top" constant="507" id="RzJ-R6-1b5"/>
+                            <constraint firstItem="q24-mc-Ljv" firstAttribute="top" secondItem="5GE-LG-rWV" secondAttribute="top" constant="507" id="haN-6J-5TC"/>
+                            <constraint firstAttribute="bottom" secondItem="ZUV-Jl-tXD" secondAttribute="bottom" constant="8" id="miw-dY-U7G"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZUV-Jl-tXD" secondAttribute="trailing" constant="3" id="mjI-oD-PwQ"/>
+                            <constraint firstItem="ZUV-Jl-tXD" firstAttribute="leading" secondItem="5GE-LG-rWV" secondAttribute="leading" constant="162" id="qQg-rq-Nda"/>
+                            <constraint firstAttribute="bottom" secondItem="q24-mc-Ljv" secondAttribute="bottom" constant="8" id="vwZ-0i-HO3"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUV-Jl-tXD" secondAttribute="trailing" constant="3" id="xbO-ou-eLK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1bs-9N-KRy"/>
                     <connections>
                         <outlet property="blackButton" destination="q24-mc-Ljv" id="7oL-si-h7L"/>
                         <outlet property="greenButton" destination="ZUV-Jl-tXD" id="DJD-dW-Tku"/>
+                        <outlet property="pageControl" destination="5RO-VU-8pY" id="kNM-Ua-SL2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH7-xC-pfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1270,13 +1319,13 @@
     </scenes>
     <resources>
         <image name="CameraButton" width="60" height="60"/>
-        <image name="SmartPillIcon_Add" width="25" height="25"/>
+        <image name="SmartPillIcon_Add" width="34" height="34"/>
         <image name="barcode" width="42" height="42"/>
-        <image name="smartPillIcon_Historico" width="25" height="25"/>
-        <image name="smartPillIcon_Lembretes" width="50" height="50"/>
-        <image name="smartPillIcons_Perfil" width="25" height="25"/>
-        <image name="smartPillIcons_Planejamento" width="50" height="50"/>
-        <image name="smartPillIcons_receita" width="25" height="25"/>
+        <image name="smartPillIcon_Historico" width="34" height="34"/>
+        <image name="smartPillIcon_Lembretes" width="34" height="34"/>
+        <image name="smartPillIcons_Perfil" width="34" height="34"/>
+        <image name="smartPillIcons_Planejamento" width="34" height="34"/>
+        <image name="smartPillIcons_receita" width="34" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

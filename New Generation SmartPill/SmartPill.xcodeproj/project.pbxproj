@@ -40,6 +40,7 @@
 		B365399B1A29F24800E4404A /* SPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B365399A1A29F24800E4404A /* SPTabBarViewController.m */; };
 		B38050281A8933A9002C4D75 /* SPConnectionRest.m in Sources */ = {isa = PBXBuildFile; fileRef = B38050271A8933A9002C4D75 /* SPConnectionRest.m */; };
 		B382364D1A2DF59D00FA7538 /* SPMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */; };
+		B385537F1AB0826B00119DC7 /* SPPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B385537E1AB0826B00119DC7 /* SPPageContentViewController.m */; };
 		B3960F191A23D583006888ED /* SPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3960F181A23D583006888ED /* SPUserHandler.m */; };
 		B3A441121A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */; };
 		B3C107F01A24B2F1003BF659 /* SPNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C107EF1A24B2F1003BF659 /* SPNewUserViewController.m */; };
@@ -139,6 +140,8 @@
 		B38050271A8933A9002C4D75 /* SPConnectionRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPConnectionRest.m; path = Model/SPConnectionRest.m; sourceTree = "<group>"; };
 		B382364B1A2DF59D00FA7538 /* SPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMoreViewController.h; path = Controller/SPMoreViewController.h; sourceTree = "<group>"; };
 		B382364C1A2DF59D00FA7538 /* SPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMoreViewController.m; path = Controller/SPMoreViewController.m; sourceTree = "<group>"; };
+		B385537D1AB0826B00119DC7 /* SPPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPPageContentViewController.h; path = Controller/SPPageContentViewController.h; sourceTree = "<group>"; };
+		B385537E1AB0826B00119DC7 /* SPPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPPageContentViewController.m; path = Controller/SPPageContentViewController.m; sourceTree = "<group>"; };
 		B3960F171A23D583006888ED /* SPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUserHandler.h; path = Model/SPUserHandler.h; sourceTree = "<group>"; };
 		B3960F181A23D583006888ED /* SPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUserHandler.m; path = Model/SPUserHandler.m; sourceTree = "<group>"; };
 		B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNewMedicineHistoryViewController.h; path = Controller/SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				8EA15C0B1A8E2A1B00B8F5A1 /* SPMedicineHistoryViewController.m */,
 				B3A441101A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.h */,
 				B3A441111A961FFF00C6F8F5 /* SPNewMedicineHistoryViewController.m */,
+				B385537D1AB0826B00119DC7 /* SPPageContentViewController.h */,
+				B385537E1AB0826B00119DC7 /* SPPageContentViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				B32BCE071A23B66B0003F97A /* SPUser.m in Sources */,
 				B32D5BE61A72C8BA00635302 /* SPReminderDetailsViewController.m in Sources */,
 				B35188981A82EF3B0009F32F /* SPCoreDataViewController.m in Sources */,
+				B385537F1AB0826B00119DC7 /* SPPageContentViewController.m in Sources */,
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
 				B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */,
 				B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */,

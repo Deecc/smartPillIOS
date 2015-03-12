@@ -8,7 +8,11 @@
 
 #import "SPCoreDataViewController.h"
 #import "SPTabBarViewController.h"
+#import "SPPageContentViewController.h"
 
-@interface SPFirstScreenViewController : SPCoreDataViewController
+@interface SPFirstScreenViewController : SPCoreDataViewController <UIPageViewControllerDataSource>
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageTitles;
+@property (strong, nonatomic) NSArray *pageImages;
 
 @end
