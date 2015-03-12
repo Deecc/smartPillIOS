@@ -46,14 +46,14 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((SPPageContentViewController*) viewController).pageIndex;
-    
     [self.pageControl setCurrentPage:index];
-    
-    if ((index == 0) || (index == NSNotFound)) {
+    if (index == NSNotFound) {
         return nil;
+    }else if(index == 0){
+        index = 2;
+    }else{
+        index--;
     }
-    
-    index--;
     return [self viewControllerAtIndex:index];
 }
 

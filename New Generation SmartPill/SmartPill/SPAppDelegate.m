@@ -23,12 +23,6 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    /////////////////
-//    UIPageControl *pageControl = [UIPageControl appearance];
-//    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-//    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-//    
-//    pageControl.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 
@@ -48,18 +42,18 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    UIView *currentView = [self.window.subviews objectAtIndex:0];
-    UIView *redView = [[UIView alloc]
-                       initWithFrame:currentView.bounds];
-    redView.backgroundColor = [UIColor blackColor];
-    redView.tag = 100;
-    [currentView addSubview:redView];
+//    UIView *currentView = [self.window.subviews objectAtIndex:0];
+//    UIView *redView = [[UIView alloc]
+//                       initWithFrame:currentView.bounds];
+//    redView.backgroundColor = [UIColor blackColor];
+//    redView.tag = 100;
+//    [currentView addSubview:redView];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    UIView *currentView = [self.window.subviews objectAtIndex:0];
-    UIView *redView = [currentView viewWithTag:100];
-    [redView removeFromSuperview];
+//    UIView *currentView = [self.window.subviews objectAtIndex:0];
+//    UIView *redView = [currentView viewWithTag:100];
+//    [redView removeFromSuperview];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

@@ -485,7 +485,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Receitas" id="rtQ-Rq-tFU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pe2-bA-LAd">
+                        <barButtonItem key="rightBarButtonItem" image="SmartPillIcon_Add" id="Pe2-bA-LAd">
                             <connections>
                                 <segue destination="IWw-NJ-Xpd" kind="modal" id="AQe-Cu-doh"/>
                             </connections>
@@ -615,7 +615,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-Pl-ozp">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-Pl-ozp">
                                 <rect key="frame" x="66" y="450" width="40" height="40"/>
                                 <state key="normal" image="CameraButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1333,7 +1333,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CKA-mZ-vRY"/>
+        <segue reference="i6w-vD-oDF"/>
         <segue reference="GMG-4s-60H"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
