@@ -161,14 +161,19 @@
     if (section==0) {
         if ([_pastReminders count]>0) {
             return @"Remedios Tomados/Atrasados";
+        }else{
+            return nil;
         }
-        return @"";
-    }else{
+    }else if(section==1){
         if ([_futureReminders count]>0) {
             return @"Remedios à Tomar";
+        }else{
+            return nil;
         }
-        return @"";
+    }else{
+        return nil;
     }
+    
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -178,7 +183,10 @@
         [self deleteNotificationFromReminderIn:indexPath];
         NSMutableArray * bothReminderArrays = [[_pastReminders arrayByAddingObjectsFromArray:_futureReminders]mutableCopy];
         Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        [_futureReminders removeObject:selectedReminder];
+        [_pastReminders removeObject:selectedReminder];
         [context deleteObject:selectedReminder];
+        [self.tableView reloadData];
         ///
         
         NSError *error = nil;
@@ -187,10 +195,10 @@
             return;
         }
         // Remove Reminder from table view
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
     [self addRemoveHelpMessage];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

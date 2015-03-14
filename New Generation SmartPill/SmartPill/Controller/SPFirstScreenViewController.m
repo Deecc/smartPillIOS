@@ -21,7 +21,7 @@
     [super viewWillAppear:YES];
     [self setButtonsName];
     _pageTitles = @[@"Gerencie", @"Lembre", @"Planeje"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png"];
+    _pageImages = @[@"page2.png", @"page1.png", @"page3.png"];
     /////////////////
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
