@@ -9,16 +9,6 @@ Dado que o consumo de remédios necessita de um controle de horários e que muit
 A partir desses pontos levantados, o aplicativo smartPill tem como objetivo controlar a entrada e saída de medicamentos de sua caixa, lembrar os horários de ingestão, lembrar quando o remédio estiver perto de acabar, e quando estiver chegando em sua data de validade, assim como remédios para usar no dia-a-dia.
 
 ### Equipe
-- Leonardo Ataide Minora<br />
-  IFRN-CNAT<br />
-  http://lattes.cnpq.br/0855207585191914<br />
-  CPF 837.581.944-15<br />
-  01/05/1975
-- Leo Moreira Silva<br />
-  IFRN-Nova Cruz<br />
-  http://lattes.cnpq.br/4853538472620935<br />
-  CPF 061.507.814-10<br />
-  11/08/1986
 - Décio Casagrande Ramuski Filho<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/4605630704325603<br />
@@ -28,18 +18,7 @@ A partir desses pontos levantados, o aplicativo smartPill tem como objetivo cont
   http://lattes.cnpq.br/9286590493995361<br />
   CPF 068.219.404-28<br />
   31/07/1989
-- Ítalo Berg Marques Souza dos Reis<br />
-  IFRN-CNAT<br />
-  http://lattes.cnpq.br/7311096861956541<br />
-  CPF 093.851.594-29<br />
-  16/11/1990
-- Julian Ignacio Sansat<br />
-  IFRN-CNAT<br />
-  http://lattes.cnpq.br/4979805015193377<br />
-  CPF 016.348.174-19<br />
-  01/08/1991
 - Thiago Freitas de Almeida<br />
   IFRN-CNAT<br />
   http://lattes.cnpq.br/3089057453728782<br />
   CPF 075.654.144-17<br />
-
