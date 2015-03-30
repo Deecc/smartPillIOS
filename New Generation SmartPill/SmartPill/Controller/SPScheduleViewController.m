@@ -186,19 +186,18 @@
         [_futureReminders removeObject:selectedReminder];
         [_pastReminders removeObject:selectedReminder];
         [context deleteObject:selectedReminder];
-        [self.tableView reloadData];
-        ///
         
         NSError *error = nil;
         if (![context save:&error]) {
             NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
             return;
         }
+        
         // Remove Reminder from table view
-//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
     }
     [self addRemoveHelpMessage];
-    //[self.tableView reloadData];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
