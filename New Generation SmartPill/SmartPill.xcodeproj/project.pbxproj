@@ -53,6 +53,7 @@
 		B3CCB2BE1A767FEC002D6358 /* User_Google+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CCB2B71A767FEC002D6358 /* User_Google+create.m */; };
 		B3CCB2BF1A767FEC002D6358 /* User+create.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CCB2B91A767FEC002D6358 /* User+create.m */; };
 		B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */; };
+		B3D4F38A1ACA38E000EFA74D /* SPArraySorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4F3891ACA38E000EFA74D /* SPArraySorter.swift */; };
 		B3D647DA1A12408600461CAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647D91A12408600461CAF /* Foundation.framework */; };
 		B3D647DC1A12408600461CAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DB1A12408600461CAF /* CoreGraphics.framework */; };
 		B3D647DE1A12408600461CAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D647DD1A12408600461CAF /* UIKit.framework */; };
@@ -130,12 +131,14 @@
 		B33F572B1A438C5A00394227 /* SPNewMedicineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNewMedicineViewController.m; path = Controller/SPNewMedicineViewController.m; sourceTree = "<group>"; };
 		B34080771A1E8E3D00C63D49 /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyStyleKit.h; path = "PaintCode App/MyStyleKit.h"; sourceTree = "<group>"; };
 		B34080781A1E8E3D00C63D49 /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyStyleKit.m; path = "PaintCode App/MyStyleKit.m"; sourceTree = "<group>"; };
+		B348C4A51ACB219F00D5C1BD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = SmartPill/MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		B35188931A82EF1E0009F32F /* SPCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCoreDataTableViewController.h; path = Controller/SPCoreDataTableViewController.h; sourceTree = "<group>"; };
 		B35188941A82EF1E0009F32F /* SPCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCoreDataTableViewController.m; path = Controller/SPCoreDataTableViewController.m; sourceTree = "<group>"; };
 		B35188961A82EF3B0009F32F /* SPCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCoreDataViewController.h; path = Controller/SPCoreDataViewController.h; sourceTree = "<group>"; };
 		B35188971A82EF3B0009F32F /* SPCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCoreDataViewController.m; path = Controller/SPCoreDataViewController.m; sourceTree = "<group>"; };
 		B36539991A29F24800E4404A /* SPTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTabBarViewController.h; path = Controller/SPTabBarViewController.h; sourceTree = "<group>"; };
 		B365399A1A29F24800E4404A /* SPTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTabBarViewController.m; path = Controller/SPTabBarViewController.m; sourceTree = "<group>"; };
+		B3778EE61ACA302900A367A2 /* SmartPill-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartPill-Bridging-Header.h"; sourceTree = "<group>"; };
 		B38050261A8933A9002C4D75 /* SPConnectionRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPConnectionRest.h; path = Model/SPConnectionRest.h; sourceTree = "<group>"; };
 		B38050271A8933A9002C4D75 /* SPConnectionRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPConnectionRest.m; path = Model/SPConnectionRest.m; sourceTree = "<group>"; };
 		B382364B1A2DF59D00FA7538 /* SPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMoreViewController.h; path = Controller/SPMoreViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		B3CCB2B91A767FEC002D6358 /* User+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+create.m"; path = "Model/CoreDataModels/Categories/User+create.m"; sourceTree = "<group>"; };
 		B3D4A0DD1A41FCFB001A90F4 /* SPBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBoxViewController.h; path = Controller/SPBoxViewController.h; sourceTree = "<group>"; };
 		B3D4A0DE1A41FCFB001A90F4 /* SPBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBoxViewController.m; path = Controller/SPBoxViewController.m; sourceTree = "<group>"; };
+		B3D4F3891ACA38E000EFA74D /* SPArraySorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPArraySorter.swift; path = Model/SPArraySorter.swift; sourceTree = "<group>"; };
 		B3D647D61A12408600461CAF /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D647D91A12408600461CAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D647DB1A12408600461CAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -359,6 +363,7 @@
 		B3D647E01A12408600461CAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B348C4A51ACB219F00D5C1BD /* MyPlayground.playground */,
 				B34080771A1E8E3D00C63D49 /* MyStyleKit.h */,
 				B34080781A1E8E3D00C63D49 /* MyStyleKit.m */,
 				B3D647E81A12408600461CAF /* SPAppDelegate.h */,
@@ -398,6 +403,8 @@
 				B3960F181A23D583006888ED /* SPUserHandler.m */,
 				B38050261A8933A9002C4D75 /* SPConnectionRest.h */,
 				B38050271A8933A9002C4D75 /* SPConnectionRest.m */,
+				B3D4F3891ACA38E000EFA74D /* SPArraySorter.swift */,
+				B3778EE61ACA302900A367A2 /* SmartPill-Bridging-Header.h */,
 				AF937C881A3B5A1E00610583 /* Model.xcdatamodeld */,
 				B3BCB4F11A3B7E2A00D5696C /* CoreData Models */,
 			);
@@ -576,6 +583,7 @@
 				B35188981A82EF3B0009F32F /* SPCoreDataViewController.m in Sources */,
 				B385537F1AB0826B00119DC7 /* SPPageContentViewController.m in Sources */,
 				B3D4A0DF1A41FCFB001A90F4 /* SPBoxViewController.m in Sources */,
+				B3D4F38A1ACA38E000EFA74D /* SPArraySorter.swift in Sources */,
 				B90042E61A8D211900142D54 /* SPNewPrescriptionViewController.m in Sources */,
 				B93C51F31A7AB12F005E1483 /* Reminder.m in Sources */,
 				B3CCB2BC1A767FEC002D6358 /* Reminder+create.m in Sources */,
@@ -671,6 +679,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -685,8 +694,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = SmartPill;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -709,6 +720,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -717,7 +729,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_MODULE_NAME = SmartPill;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -728,6 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -735,8 +750,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartPill/SmartPill-Prefix.pch";
 				INFOPLIST_FILE = "SmartPill/SmartPill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartPill/SmartPill-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -746,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -753,8 +773,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartPill/SmartPill-Prefix.pch";
 				INFOPLIST_FILE = "SmartPill/SmartPill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartPill/SmartPill-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

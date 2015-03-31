@@ -10,6 +10,7 @@
 #import <GooglePlus/GooglePlus.h>
 #import "SPViewController.h"
 
+
 @implementation SPAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;

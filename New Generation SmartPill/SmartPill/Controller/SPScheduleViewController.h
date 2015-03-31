@@ -12,7 +12,9 @@
 #import "SPAddPrescription.h"
 #import "MyStyleKit.h"
 
+
 @interface SPScheduleViewController : SPCoreDataTableViewController
 @property (strong,nonatomic) NSMutableArray *pastReminders;
 @property (strong,nonatomic) NSMutableArray *futureReminders;
+@property (strong,nonatomic) NSMutableArray *allRemindersOrdered;
 @end

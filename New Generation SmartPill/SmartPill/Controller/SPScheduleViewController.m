@@ -1,4 +1,6 @@
+
 #import "SPScheduleViewController.h"
+#import "SmartPill-Swift.h"
 
 @interface SPScheduleViewController ()
 
@@ -11,6 +13,8 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -19,7 +23,7 @@
 }
 
 - (void)addRemoveHelpMessage{
-    if ([_futureReminders count]==0 && [_pastReminders count]==0) {
+    if ([_allRemindersOrdered count]==0) {
         UIImageView *imgView = [[UIImageView alloc] initWithImage:[MyStyleKit imageOfAddHelpText]];
         [self.tableView addSubview:imgView];
     }else{
@@ -38,46 +42,38 @@
 }
 
 #pragma mark - Table view data source
+- (NSMutableArray *)allRemindersOrdered{
+    _allRemindersOrdered = [@[] mutableCopy];
+    for (Medicine * med in self.medicines) {
+        for (Reminder * rem in med.reminder) {
+            [_allRemindersOrdered addObject:rem];
+        }
+    }
+    SPArraySorter * sorter = [[SPArraySorter alloc]init];
+    _allRemindersOrdered = [sorter sortArray:_allRemindersOrdered];
+    return _allRemindersOrdered;
+}
 - (NSMutableArray *)pastReminders
 {
     _pastReminders = [@[] mutableCopy];
-    for (Medicine * med in self.medicines) {
-        for (Reminder * rem in med.reminder) {
-            if ([self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
-                [_pastReminders addObject:rem];
-            }
+
+    for (Reminder * rem in self.allRemindersOrdered) {
+        if ([self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
+            [_pastReminders addObject:rem];
         }
     }
-    
-    NSMutableArray *sortedArray;
-    sortedArray = [[_pastReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSString *first = [self acessingStringDateFromReminder:a];
-        NSString *second = [self acessingStringDateFromReminder:b];
-        return [first compare:second];
-    }]mutableCopy];
-    
-    return sortedArray;
+    return _pastReminders;
 }
 //SobreEscrito da classe pai
 - (NSMutableArray *)futureReminders
 {
     _futureReminders = [@[] mutableCopy];
-    for (Medicine * med in self.medicines) {
-        for (Reminder * rem in med.reminder) {
-            if (![self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
-                [_futureReminders addObject:rem];
-            }
+    for (Reminder * rem in self.allRemindersOrdered) {
+        if (![self hasTimeNowPassed:[self acessingStringDateFromReminder:rem]]) {
+            [_futureReminders addObject:rem];
         }
     }
-    
-    NSMutableArray *sortedArray;
-    sortedArray = [[_futureReminders sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSString *first = [self acessingStringDateFromReminder:a];
-        NSString *second = [self acessingStringDateFromReminder:b];
-        return [first compare:second];
-    }]mutableCopy];
-    
-    return sortedArray;
+    return _futureReminders;
 }
 - (NSString*)acessingStringDateFromTimeNow
 {
@@ -181,10 +177,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
         [self deleteNotificationFromReminderIn:indexPath];
-        NSMutableArray * bothReminderArrays = [[_pastReminders arrayByAddingObjectsFromArray:_futureReminders]mutableCopy];
-        Reminder *selectedReminder = [bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Reminder *selectedReminder = [_allRemindersOrdered objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         [_futureReminders removeObject:selectedReminder];
         [_pastReminders removeObject:selectedReminder];
+        [_allRemindersOrdered removeObject:selectedReminder];
         [context deleteObject:selectedReminder];
         
         NSError *error = nil;
@@ -206,8 +202,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
-        NSMutableArray * bothReminderArrays = [[_pastReminders arrayByAddingObjectsFromArray:_futureReminders]mutableCopy];
-        Medicine *selectedMedicine = (Medicine*)[[bothReminderArrays objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
+        Medicine *selectedMedicine = (Medicine*)[[_allRemindersOrdered objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
         SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
         medicineDetailsVC.medicine = selectedMedicine;
     }
