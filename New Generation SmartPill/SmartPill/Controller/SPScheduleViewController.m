@@ -3,7 +3,6 @@
 #import "SmartPill-Swift.h"
 
 @interface SPScheduleViewController ()
-@property (strong,nonatomic) NSMutableArray *allReminders;
 @end
 
 @implementation SPScheduleViewController
@@ -53,13 +52,7 @@
     _allRemindersOrdered = [sorter sortArray:_allRemindersOrdered];
     return _allRemindersOrdered;
 }
-- (NSMutableArray *)allReminders{
-    _allReminders = [@[] mutableCopy];
-    [_allReminders addObjectsFromArray:_pastReminders];
-    [_allReminders addObjectsFromArray:_futureReminders];
-    NSLog(@"%@",_allReminders);
-    return _allRemindersOrdered;
-}
+
 - (NSMutableArray *)pastReminders
 {
     _pastReminders = [@[] mutableCopy];
