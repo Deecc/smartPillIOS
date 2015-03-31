@@ -3,7 +3,7 @@
 #import "SmartPill-Swift.h"
 
 @interface SPScheduleViewController ()
-
+@property (strong,nonatomic) NSMutableArray *allReminders;
 @end
 
 @implementation SPScheduleViewController
@@ -51,6 +51,13 @@
     }
     SPArraySorter * sorter = [[SPArraySorter alloc]init];
     _allRemindersOrdered = [sorter sortArray:_allRemindersOrdered];
+    return _allRemindersOrdered;
+}
+- (NSMutableArray *)allReminders{
+    _allReminders = [@[] mutableCopy];
+    [_allReminders addObjectsFromArray:_pastReminders];
+    [_allReminders addObjectsFromArray:_futureReminders];
+    NSLog(@"%@",_allReminders);
     return _allRemindersOrdered;
 }
 - (NSMutableArray *)pastReminders
@@ -177,11 +184,15 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
         [self deleteNotificationFromReminderIn:indexPath];
-        Reminder *selectedReminder = [_allRemindersOrdered objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        [_futureReminders removeObject:selectedReminder];
-        [_pastReminders removeObject:selectedReminder];
-        [_allRemindersOrdered removeObject:selectedReminder];
-        [context deleteObject:selectedReminder];
+        if ([indexPath section]==0) {
+            Reminder *selectedReminder = [_pastReminders objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+            [_pastReminders removeObject:selectedReminder];
+            [context deleteObject:selectedReminder];
+        }else{
+            Reminder *selectedReminder = [_futureReminders objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+            [_futureReminders removeObject:selectedReminder];
+            [context deleteObject:selectedReminder];
+        }
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -191,7 +202,6 @@
         
         // Remove Reminder from table view
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-        
     }
     [self addRemoveHelpMessage];
 }
@@ -202,9 +212,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"medicineDetailsSegue2"]) {
-        Medicine *selectedMedicine = (Medicine*)[[_allRemindersOrdered objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
-        SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
-        medicineDetailsVC.medicine = selectedMedicine;
+        if ([[self.tableView indexPathForSelectedRow] section] == 0) {
+            Medicine *selectedMedicine = (Medicine*)[[_pastReminders objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
+            SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
+            medicineDetailsVC.medicine = selectedMedicine;
+        }else{
+            Medicine *selectedMedicine = (Medicine*)[[_futureReminders objectAtIndex:[[self.tableView indexPathForSelectedRow] row]]medicine];
+            SPMedicineDetailsViewController * medicineDetailsVC = segue.destinationViewController;
+            medicineDetailsVC.medicine = selectedMedicine;
+        }
+        
     }
 }
 
