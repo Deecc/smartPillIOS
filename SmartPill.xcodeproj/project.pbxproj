@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B332A9591B17CB7E00420974 /* SPMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */; };
+		B332A95A1B17CB7E00420974 /* SPNewMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332A9581B17CB7E00420974 /* SPNewMedicineHistoryViewController.m */; };
+		B3518EC41B0D383C00884888 /* Reminder_Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC31B0D383C00884888 /* Reminder_Sound.swift */; };
+		B3518EC61B0D383D00884888 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC51B0D383D00884888 /* Medicine.swift */; };
+		B3518EC81B0D383D00884888 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC71B0D383D00884888 /* Recipe.swift */; };
+		B3518ECA1B0D383D00884888 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC91B0D383D00884888 /* Reminder.swift */; };
+		B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */; };
+		B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ECE1B0D38C900884888 /* Medicine+Create.swift */; };
+		B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED01B0D3BBC00884888 /* Reminder_Schedule+Create.swift */; };
+		B3518ED31B0D3BD900884888 /* Reminder+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED21B0D3BD900884888 /* Reminder+Create.swift */; };
+		B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */; };
+		B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */; };
+		B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B36609EF1B1E7F3100E1734F /* MyStyleKit.m */; };
+		B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B21B078A120080D7C2 /* AppDelegate.swift */; };
+		B36E13B61B078A120080D7C2 /* SmartPill.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B41B078A120080D7C2 /* SmartPill.xcdatamodeld */; };
+		B36E13BB1B078A120080D7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36E13B91B078A120080D7C2 /* Main.storyboard */; };
+		B36E13BD1B078A120080D7C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B36E13BC1B078A120080D7C2 /* Images.xcassets */; };
+		B36E13C01B078A120080D7C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E13BE1B078A120080D7C2 /* LaunchScreen.xib */; };
+		B36E13CC1B078A120080D7C2 /* SmartPillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */; };
+		B36E13D61B078AA10080D7C2 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13D51B078AA10080D7C2 /* ScheduleVC.swift */; };
+		B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */; };
+		B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E01B07D4070080D7C2 /* BoxVC.swift */; };
+		B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E21B07E65B0080D7C2 /* AccountVC.swift */; };
+		B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50711B08F96B008FF194 /* EmptySegue.swift */; };
+		B37E50741B08FB83008FF194 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50731B08FB83008FF194 /* ContainerVC.swift */; };
+		B37E50781B092743008FF194 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50771B092743008FF194 /* HistoryVC.swift */; };
+		B37E507A1B09275E008FF194 /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50791B09275E008FF194 /* RecipeVC.swift */; };
+		B37E507C1B092775008FF194 /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E507B1B092775008FF194 /* ReminderVC.swift */; };
+		B3D1D35A1B10CCBB00345735 /* DatabaseGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */; };
+		B3D1D3611B10FA4700345735 /* NewMedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3601B10FA4700345735 /* NewMedicineVC.swift */; };
+		B3D1D3631B10FB2600345735 /* NewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3621B10FB2600345735 /* NewRecipeVC.swift */; };
+		B3D1D3651B10FB3800345735 /* NewReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3641B10FB3800345735 /* NewReminderVC.swift */; };
+		B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D36C1B10FE8000345735 /* SPBarCodeViewController.m */; };
+		B3D1D3721B1120AE00345735 /* ArraySorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3711B1120AE00345735 /* ArraySorter.swift */; };
+		B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46641B0948F400CD1F17 /* GraphView.swift */; };
+		B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46661B094EF800CD1F17 /* SignUpVC.swift */; };
+		B3FD46691B094EF800CD1F17 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46671B094EF800CD1F17 /* SignInVC.swift */; };
+		B3FD466B1B0950D400CD1F17 /* BeforeSignInUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD466A1B0950D400CD1F17 /* BeforeSignInUpVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B36E13C61B078A120080D7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B36E13A51B078A120080D7C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B36E13AC1B078A120080D7C2;
+			remoteInfo = SmartPill;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B332A9551B17CB7E00420974 /* SPMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMedicineHistoryViewController.h; sourceTree = "<group>"; };
+		B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMedicineHistoryViewController.m; sourceTree = "<group>"; };
+		B332A9571B17CB7E00420974 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
+		B332A9581B17CB7E00420974 /* SPNewMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNewMedicineHistoryViewController.m; sourceTree = "<group>"; };
+		B3518EC31B0D383C00884888 /* Reminder_Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder_Sound.swift; path = SmartPill/dbModals/Reminder_Sound.swift; sourceTree = "<group>"; };
+		B3518EC51B0D383D00884888 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medicine.swift; path = SmartPill/dbModals/Medicine.swift; sourceTree = "<group>"; };
+		B3518EC71B0D383D00884888 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = SmartPill/dbModals/Recipe.swift; sourceTree = "<group>"; };
+		B3518EC91B0D383D00884888 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = SmartPill/dbModals/Reminder.swift; sourceTree = "<group>"; };
+		B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder_Schedule.swift; path = SmartPill/dbModals/Reminder_Schedule.swift; sourceTree = "<group>"; };
+		B3518ECE1B0D38C900884888 /* Medicine+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Medicine+Create.swift"; path = "SmartPill/dbModals/Categories/Medicine+Create.swift"; sourceTree = "<group>"; };
+		B3518ED01B0D3BBC00884888 /* Reminder_Schedule+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Schedule+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Schedule+Create.swift"; sourceTree = "<group>"; };
+		B3518ED21B0D3BD900884888 /* Reminder+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder+Create.swift"; sourceTree = "<group>"; };
+		B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+Create.swift"; path = "SmartPill/dbModals/Categories/Recipe+Create.swift"; sourceTree = "<group>"; };
+		B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Sound+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Sound+Create.swift"; sourceTree = "<group>"; };
+		B36609EE1B1E7F3100E1734F /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyleKit.h; sourceTree = "<group>"; };
+		B36609EF1B1E7F3100E1734F /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyleKit.m; sourceTree = "<group>"; };
+		B36AB8251B1BBF1C00AA8840 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		B36E13AD1B078A120080D7C2 /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B36E13B11B078A120080D7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B36E13B21B078A120080D7C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B36E13B51B078A120080D7C2 /* SmartPill.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartPill.xcdatamodel; sourceTree = "<group>"; };
+		B36E13BA1B078A120080D7C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B36E13BC1B078A120080D7C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B36E13BF1B078A120080D7C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B36E13C51B078A120080D7C2 /* SmartPillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartPillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B36E13CA1B078A120080D7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPillTests.swift; sourceTree = "<group>"; };
+		B36E13D51B078AA10080D7C2 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleVC.swift; path = Controllers/ScheduleVC.swift; sourceTree = "<group>"; };
+		B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDrawer.swift; sourceTree = "<group>"; };
+		B36E13E01B07D4070080D7C2 /* BoxVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxVC.swift; path = Controllers/BoxVC.swift; sourceTree = "<group>"; };
+		B36E13E21B07E65B0080D7C2 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = Controllers/AccountVC.swift; sourceTree = "<group>"; };
+		B37E50711B08F96B008FF194 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Controllers/EmptySegue.swift; sourceTree = "<group>"; };
+		B37E50731B08FB83008FF194 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerVC.swift; path = Controllers/ContainerVC.swift; sourceTree = "<group>"; };
+		B37E50771B092743008FF194 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryVC.swift; path = Controllers/HistoryVC.swift; sourceTree = "<group>"; };
+		B37E50791B09275E008FF194 /* RecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeVC.swift; path = Controllers/RecipeVC.swift; sourceTree = "<group>"; };
+		B37E507B1B092775008FF194 /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderVC.swift; path = Controllers/ReminderVC.swift; sourceTree = "<group>"; };
+		B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseGetter.swift; path = Modals/DatabaseGetter.swift; sourceTree = "<group>"; };
+		B3D1D3601B10FA4700345735 /* NewMedicineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMedicineVC.swift; path = Controllers/NewMedicineVC.swift; sourceTree = "<group>"; };
+		B3D1D3621B10FB2600345735 /* NewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRecipeVC.swift; path = Controllers/NewRecipeVC.swift; sourceTree = "<group>"; };
+		B3D1D3641B10FB3800345735 /* NewReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewReminderVC.swift; path = Controllers/NewReminderVC.swift; sourceTree = "<group>"; };
+		B3D1D36B1B10FE8000345735 /* SPBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBarCodeViewController.h; path = ../SPBarCodeViewController.h; sourceTree = "<group>"; };
+		B3D1D36C1B10FE8000345735 /* SPBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBarCodeViewController.m; path = ../SPBarCodeViewController.m; sourceTree = "<group>"; };
+		B3D1D36E1B10FE9100345735 /* SmartPill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SmartPill-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		B3D1D3711B1120AE00345735 /* ArraySorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySorter.swift; sourceTree = "<group>"; };
+		B3FD46641B0948F400CD1F17 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		B3FD46661B094EF800CD1F17 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		B3FD46671B094EF800CD1F17 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		B3FD466A1B0950D400CD1F17 /* BeforeSignInUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeforeSignInUpVC.swift; path = Controllers/BeforeSignInUpVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B36E13AA1B078A120080D7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B36E13C21B078A120080D7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3518EAE1B0D37A100884888 /* DBModels */ = {
+			isa = PBXGroup;
+			children = (
+				B3518ECD1B0D385400884888 /* Categories */,
+				B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */,
+				B3518EC91B0D383D00884888 /* Reminder.swift */,
+				B3518EC71B0D383D00884888 /* Recipe.swift */,
+				B3518EC51B0D383D00884888 /* Medicine.swift */,
+				B3518EC31B0D383C00884888 /* Reminder_Sound.swift */,
+			);
+			name = DBModels;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B3518ECD1B0D385400884888 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B3518ECE1B0D38C900884888 /* Medicine+Create.swift */,
+				B3518ED01B0D3BBC00884888 /* Reminder_Schedule+Create.swift */,
+				B3518ED21B0D3BD900884888 /* Reminder+Create.swift */,
+				B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */,
+				B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		B36E13A41B078A120080D7C2 = {
+			isa = PBXGroup;
+			children = (
+				B36E13AF1B078A120080D7C2 /* SmartPill */,
+				B36E13C81B078A120080D7C2 /* SmartPillTests */,
+				B36E13AE1B078A120080D7C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B36E13AE1B078A120080D7C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B36E13AD1B078A120080D7C2 /* SmartPill.app */,
+				B36E13C51B078A120080D7C2 /* SmartPillTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B36E13AF1B078A120080D7C2 /* SmartPill */ = {
+			isa = PBXGroup;
+			children = (
+				B3518EAE1B0D37A100884888 /* DBModels */,
+				B36E13D91B07B2370080D7C2 /* Modals */,
+				B36E13D71B078AAE0080D7C2 /* Controllers */,
+				B36E13B21B078A120080D7C2 /* AppDelegate.swift */,
+				B36E13B91B078A120080D7C2 /* Main.storyboard */,
+				B36E13BC1B078A120080D7C2 /* Images.xcassets */,
+				B36E13BE1B078A120080D7C2 /* LaunchScreen.xib */,
+				B36E13B41B078A120080D7C2 /* SmartPill.xcdatamodeld */,
+				B36E13B01B078A120080D7C2 /* Supporting Files */,
+			);
+			path = SmartPill;
+			sourceTree = "<group>";
+		};
+		B36E13B01B078A120080D7C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B36E13B11B078A120080D7C2 /* Info.plist */,
+				B36AB8251B1BBF1C00AA8840 /* MyPlayground.playground */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B36E13C81B078A120080D7C2 /* SmartPillTests */ = {
+			isa = PBXGroup;
+			children = (
+				B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */,
+				B36E13C91B078A120080D7C2 /* Supporting Files */,
+			);
+			path = SmartPillTests;
+			sourceTree = "<group>";
+		};
+		B36E13C91B078A120080D7C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B36E13CA1B078A120080D7C2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B36E13D71B078AAE0080D7C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3D1D3731B1124AE00345735 /* NewVC */,
+				B332A9551B17CB7E00420974 /* SPMedicineHistoryViewController.h */,
+				B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */,
+				B3D1D36E1B10FE9100345735 /* SmartPill-Bridging-Header.h */,
+				B3D1D36B1B10FE8000345735 /* SPBarCodeViewController.h */,
+				B3D1D36C1B10FE8000345735 /* SPBarCodeViewController.m */,
+				B3FD46661B094EF800CD1F17 /* SignUpVC.swift */,
+				B3FD46671B094EF800CD1F17 /* SignInVC.swift */,
+				B36E13D51B078AA10080D7C2 /* ScheduleVC.swift */,
+				B36E13E01B07D4070080D7C2 /* BoxVC.swift */,
+				B36E13E21B07E65B0080D7C2 /* AccountVC.swift */,
+				B37E50711B08F96B008FF194 /* EmptySegue.swift */,
+				B37E50731B08FB83008FF194 /* ContainerVC.swift */,
+				B37E50771B092743008FF194 /* HistoryVC.swift */,
+				B37E50791B09275E008FF194 /* RecipeVC.swift */,
+				B37E507B1B092775008FF194 /* ReminderVC.swift */,
+				B3FD466A1B0950D400CD1F17 /* BeforeSignInUpVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B36E13D91B07B2370080D7C2 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				B36609EE1B1E7F3100E1734F /* MyStyleKit.h */,
+				B36609EF1B1E7F3100E1734F /* MyStyleKit.m */,
+				B3D1D3711B1120AE00345735 /* ArraySorter.swift */,
+				B3FD46641B0948F400CD1F17 /* GraphView.swift */,
+				B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */,
+				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
+			);
+			name = Modals;
+			sourceTree = "<group>";
+		};
+		B3D1D3731B1124AE00345735 /* NewVC */ = {
+			isa = PBXGroup;
+			children = (
+				B3D1D3641B10FB3800345735 /* NewReminderVC.swift */,
+				B3D1D3621B10FB2600345735 /* NewRecipeVC.swift */,
+				B3D1D3601B10FA4700345735 /* NewMedicineVC.swift */,
+				B332A9571B17CB7E00420974 /* SPNewMedicineHistoryViewController.h */,
+				B332A9581B17CB7E00420974 /* SPNewMedicineHistoryViewController.m */,
+			);
+			name = NewVC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B36E13AC1B078A120080D7C2 /* SmartPill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B36E13CF1B078A120080D7C2 /* Build configuration list for PBXNativeTarget "SmartPill" */;
+			buildPhases = (
+				B36E13A91B078A120080D7C2 /* Sources */,
+				B36E13AA1B078A120080D7C2 /* Frameworks */,
+				B36E13AB1B078A120080D7C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartPill;
+			productName = SmartPill;
+			productReference = B36E13AD1B078A120080D7C2 /* SmartPill.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B36E13C41B078A120080D7C2 /* SmartPillTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B36E13D21B078A120080D7C2 /* Build configuration list for PBXNativeTarget "SmartPillTests" */;
+			buildPhases = (
+				B36E13C11B078A120080D7C2 /* Sources */,
+				B36E13C21B078A120080D7C2 /* Frameworks */,
+				B36E13C31B078A120080D7C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B36E13C71B078A120080D7C2 /* PBXTargetDependency */,
+			);
+			name = SmartPillTests;
+			productName = SmartPillTests;
+			productReference = B36E13C51B078A120080D7C2 /* SmartPillTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B36E13A51B078A120080D7C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Dennis da Silva Nunes";
+				TargetAttributes = {
+					B36E13AC1B078A120080D7C2 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					B36E13C41B078A120080D7C2 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = B36E13AC1B078A120080D7C2;
+					};
+				};
+			};
+			buildConfigurationList = B36E13A81B078A120080D7C2 /* Build configuration list for PBXProject "SmartPill" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B36E13A41B078A120080D7C2;
+			productRefGroup = B36E13AE1B078A120080D7C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B36E13AC1B078A120080D7C2 /* SmartPill */,
+				B36E13C41B078A120080D7C2 /* SmartPillTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B36E13AB1B078A120080D7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36E13BB1B078A120080D7C2 /* Main.storyboard in Resources */,
+				B36E13C01B078A120080D7C2 /* LaunchScreen.xib in Resources */,
+				B36E13BD1B078A120080D7C2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B36E13C31B078A120080D7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B36E13A91B078A120080D7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B332A9591B17CB7E00420974 /* SPMedicineHistoryViewController.m in Sources */,
+				B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */,
+				B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */,
+				B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */,
+				B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */,
+				B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */,
+				B37E50781B092743008FF194 /* HistoryVC.swift in Sources */,
+				B3D1D3651B10FB3800345735 /* NewReminderVC.swift in Sources */,
+				B3D1D3631B10FB2600345735 /* NewRecipeVC.swift in Sources */,
+				B332A95A1B17CB7E00420974 /* SPNewMedicineHistoryViewController.m in Sources */,
+				B3518ED31B0D3BD900884888 /* Reminder+Create.swift in Sources */,
+				B36E13B61B078A120080D7C2 /* SmartPill.xcdatamodeld in Sources */,
+				B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */,
+				B37E507A1B09275E008FF194 /* RecipeVC.swift in Sources */,
+				B3518EC61B0D383D00884888 /* Medicine.swift in Sources */,
+				B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */,
+				B3D1D3721B1120AE00345735 /* ArraySorter.swift in Sources */,
+				B37E50741B08FB83008FF194 /* ContainerVC.swift in Sources */,
+				B3518EC81B0D383D00884888 /* Recipe.swift in Sources */,
+				B3518EC41B0D383C00884888 /* Reminder_Sound.swift in Sources */,
+				B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */,
+				B37E507C1B092775008FF194 /* ReminderVC.swift in Sources */,
+				B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */,
+				B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */,
+				B3D1D35A1B10CCBB00345735 /* DatabaseGetter.swift in Sources */,
+				B3D1D3611B10FA4700345735 /* NewMedicineVC.swift in Sources */,
+				B3FD466B1B0950D400CD1F17 /* BeforeSignInUpVC.swift in Sources */,
+				B3518ECA1B0D383D00884888 /* Reminder.swift in Sources */,
+				B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */,
+				B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */,
+				B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */,
+				B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */,
+				B36E13D61B078AA10080D7C2 /* ScheduleVC.swift in Sources */,
+				B3FD46691B094EF800CD1F17 /* SignInVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B36E13C11B078A120080D7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36E13CC1B078A120080D7C2 /* SmartPillTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B36E13C71B078A120080D7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B36E13AC1B078A120080D7C2 /* SmartPill */;
+			targetProxy = B36E13C61B078A120080D7C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B36E13B91B078A120080D7C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B36E13BA1B078A120080D7C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B36E13BE1B078A120080D7C2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B36E13BF1B078A120080D7C2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B36E13CD1B078A120080D7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B36E13CE1B078A120080D7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B36E13D01B078A120080D7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartPill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B36E13D11B078A120080D7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartPill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B36E13D31B078A120080D7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartPillTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartPill.app/SmartPill";
+			};
+			name = Debug;
+		};
+		B36E13D41B078A120080D7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartPillTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartPill.app/SmartPill";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B36E13A81B078A120080D7C2 /* Build configuration list for PBXProject "SmartPill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B36E13CD1B078A120080D7C2 /* Debug */,
+				B36E13CE1B078A120080D7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B36E13CF1B078A120080D7C2 /* Build configuration list for PBXNativeTarget "SmartPill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B36E13D01B078A120080D7C2 /* Debug */,
+				B36E13D11B078A120080D7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B36E13D21B078A120080D7C2 /* Build configuration list for PBXNativeTarget "SmartPillTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B36E13D31B078A120080D7C2 /* Debug */,
+				B36E13D41B078A120080D7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B36E13B41B078A120080D7C2 /* SmartPill.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B36E13B51B078A120080D7C2 /* SmartPill.xcdatamodel */,
+			);
+			currentVersion = B36E13B51B078A120080D7C2 /* SmartPill.xcdatamodel */;
+			path = SmartPill.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B36E13A51B078A120080D7C2 /* Project object */;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Medicine" representedClassName="Medicine" syncable="YES">
+        <attribute name="activeIngredient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="availability" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idMedicine" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Recipe" inverseName="medicine" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="medicine" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="idRecipe" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="recipeImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="medicine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Medicine" inverseName="recipe" inverseEntity="Medicine" syncable="YES"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES">
+        <attribute name="idReminder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Medicine" inverseName="reminder" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="reminder_schedule" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reminder_Schedule" inverseName="reminder" inverseEntity="Reminder_Schedule" syncable="YES"/>
+        <relationship name="reminder_sound" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reminder_Sound" inverseName="reminder" inverseEntity="Reminder_Sound" syncable="YES"/>
+    </entity>
+    <entity name="Reminder_Schedule" representedClassName="Reminder_Schedule" syncable="YES">
+        <attribute name="idReminderSchedule" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="schedule" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="reminder_schedule" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <entity name="Reminder_Sound" representedClassName="Reminder_Sound" syncable="YES">
+        <attribute name="idReminderSound" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="reminder_sound" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Medicine" positionX="2709" positionY="-5724" width="128" height="28"/>
+        <element name="Recipe" positionX="3033" positionY="-5679" width="128" height="28"/>
+        <element name="Reminder" positionX="2880" positionY="-5856" width="128" height="28"/>
+        <element name="Reminder_Schedule" positionX="2932" positionY="-6039" width="128" height="28"/>
+        <element name="Reminder_Sound" positionX="3076" positionY="-5817" width="128" height="28"/>
+    </elements>
+</model>
