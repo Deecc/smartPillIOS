@@ -54,4 +54,14 @@ class RecipeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return "Lista de Receitas"
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "RecipeDetailsSegue"){
+            var recDetVC = segue.destinationViewController as! RecipeDetailsVC
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            recDetVC.recipe = recipes[indexPath.row]
+        }
+    }
+    
+    
+    
 }

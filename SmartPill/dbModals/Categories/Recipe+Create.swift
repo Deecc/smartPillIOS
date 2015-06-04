@@ -11,7 +11,7 @@ import CoreData
 
 extension Recipe{
     
-    class func createRecipe(medicine:Medicine,recipeImage:NSData?)->Recipe?{
+    class func createRecipe(medicines:NSMutableArray,recipeImage:NSData?)->Recipe?{
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
@@ -25,25 +25,25 @@ extension Recipe{
             if(matches == nil || matches!.count > 1){
                 return nil
             }else if(matches!.count==0){
-                //CREATE A NEW OFFER
+                //CREATE A NEW RECIPE
                 var rec = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: context!) as! Recipe
                 
                 rec.recipeImage = recipeImage!
                 if (rec.medicine.count==0){
-                    var set = Set([medicine])
-                    rec.medicine = set
+                    var set =  medicines
+                    rec.medicine = NSMutableSet(array: medicines as [AnyObject])
                 }else{
-                    var array:NSMutableArray = rec.medicine.allObjects as! NSMutableArray
-                    array.addObject(medicine)
+                    var array = rec.medicine.allObjects as NSArray
+                    array.arrayByAddingObjectsFromArray(medicines as [AnyObject])
                     rec.medicine.setByAddingObjectsFromArray(array as [AnyObject])
                 }
                 context?.save(nil)
                 return rec
             }else{
-                //OVERWRITE THE OLD OFFER
+                //OVERWRITE THE OLD RECIPE
                 var rec:Recipe = matches!.first!
-                var array:NSMutableArray = rec.medicine.allObjects as! NSMutableArray
-                array.addObject(medicine)
+                var array = rec.medicine.allObjects as NSArray
+                array.arrayByAddingObjectsFromArray(medicines as [AnyObject])
                 rec.medicine.setByAddingObjectsFromArray(array as [AnyObject])
                 rec.recipeImage = recipeImage!
                 context?.save(nil)

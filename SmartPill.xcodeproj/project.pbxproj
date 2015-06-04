@@ -30,6 +30,7 @@
 		B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */; };
 		B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E01B07D4070080D7C2 /* BoxVC.swift */; };
 		B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E21B07E65B0080D7C2 /* AccountVC.swift */; };
+		B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */; };
 		B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50711B08F96B008FF194 /* EmptySegue.swift */; };
 		B37E50741B08FB83008FF194 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50731B08FB83008FF194 /* ContainerVC.swift */; };
 		B37E50781B092743008FF194 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50771B092743008FF194 /* HistoryVC.swift */; };
@@ -89,6 +90,7 @@
 		B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDrawer.swift; sourceTree = "<group>"; };
 		B36E13E01B07D4070080D7C2 /* BoxVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxVC.swift; path = Controllers/BoxVC.swift; sourceTree = "<group>"; };
 		B36E13E21B07E65B0080D7C2 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = Controllers/AccountVC.swift; sourceTree = "<group>"; };
+		B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeDetailsVC.swift; path = Controllers/RecipeDetailsVC.swift; sourceTree = "<group>"; };
 		B37E50711B08F96B008FF194 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Controllers/EmptySegue.swift; sourceTree = "<group>"; };
 		B37E50731B08FB83008FF194 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerVC.swift; path = Controllers/ContainerVC.swift; sourceTree = "<group>"; };
 		B37E50771B092743008FF194 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryVC.swift; path = Controllers/HistoryVC.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		B36E13D71B078AAE0080D7C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B372FF471B20BCCD00341402 /* DetailsVC */,
 				B3D1D3731B1124AE00345735 /* NewVC */,
 				B332A9551B17CB7E00420974 /* SPMedicineHistoryViewController.h */,
 				B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */,
@@ -247,6 +250,14 @@
 				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
 			);
 			name = Modals;
+			sourceTree = "<group>";
+		};
+		B372FF471B20BCCD00341402 /* DetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */,
+			);
+			name = DetailsVC;
 			sourceTree = "<group>";
 		};
 		B3D1D3731B1124AE00345735 /* NewVC */ = {
@@ -364,6 +375,7 @@
 				B332A9591B17CB7E00420974 /* SPMedicineHistoryViewController.m in Sources */,
 				B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */,
 				B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */,
+				B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */,
 				B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */,
 				B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */,
 				B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */,

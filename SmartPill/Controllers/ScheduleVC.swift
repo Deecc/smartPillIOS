@@ -9,7 +9,13 @@
 import UIKit
 
 class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        getDataToArrays()
+        tableView.reloadData()
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,10 +24,6 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var remindersPastTime: [Reminder]!
     var remindersToBeTaken: [Reminder]!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getDataToArrays()
-    }
     
     func getDataToArrays(){
         var arrSorter = ArraySorter()
@@ -29,10 +31,6 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         allRemSorted = arrSorter.sortArray(allRemSorted!)
         remindersPastTime = arrSorter.getRemindersLateTime(self.allRemSorted)
         remindersToBeTaken = arrSorter.getRemindersEarlierTime(self.allRemSorted)
-        
-        print("Remedios Atrasados \(remindersPastTime.count)\n")
-        print("Remedios a Tomar \(remindersToBeTaken.count)\n")
-        print("Remedios Tomados \(remindersTaken.count)\n")
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,9 +73,15 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if (section == 0){return "Remédios atrasados"}
-        else if(section == 1){return "Remédios à tomar"}
-        else{return "Remédios Tomados"}
+        if (section == 0 && remindersPastTime.count>0){
+            return "Remédios atrasados"
+        }else if(section == 1 && remindersToBeTaken.count>0){
+            return "Remédios à tomar"
+        }else if(section == 2 && remindersTaken.count>0){
+            return "Remédios tomados"
+        }else{
+            return ""
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -105,9 +109,6 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             remindersTaken.removeAtIndex(indexPath.row)
         }
         tableView.reloadData()
-        print("Remedios Atrasados \(remindersPastTime.count)\n")
-        print("Remedios a Tomar \(remindersToBeTaken.count)\n")
-        print("Remedios Tomados \(remindersTaken.count)\n")
     }
     
     @IBAction func displayActionSheetDelegate(sender: UIBarButtonItem) {

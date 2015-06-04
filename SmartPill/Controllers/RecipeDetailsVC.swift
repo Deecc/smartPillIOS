@@ -1,25 +1,32 @@
 //
-//  BoxVC.swift
+//  RecipeDetailsVC.swift
 //  SmartPill
 //
-//  Created by Dennis da Silva Nunes on 16/05/15.
+//  Created by Dennis da Silva Nunes on 04/06/15.
 //  Copyright (c) 2015 Dennis da Silva Nunes. All rights reserved.
 //
 
 import UIKit
 
-class BoxVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class RecipeDetailsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var recipe:Recipe!
+    var medicines:[Medicine]!
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
+    override func viewDidLoad() {
+        imageView.image = UIImage(data: recipe.recipeImage)
+        medicines = recipe.medicine.allObjects as! [Medicine]
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipe.medicine.count
     }
     
-    lazy var medicines:[Medicine] = {
-        return DatabaseGetter.getMedicines()
-    }()!
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Remédios da Receita"
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! UITableViewCell
@@ -34,16 +41,5 @@ class BoxVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicines.count
-    }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if(self.medicines.count > 0){return 1}
-        else{return 0}
-    }
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Lista de Remédios"
-    }
 }

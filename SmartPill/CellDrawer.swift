@@ -21,13 +21,12 @@ class CellDrawer: NSObject {
         cell.contentView.addSubview(whiteRoundedCornerView)
         cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
     }
+    
     func createWhiteContentInCellWithFixSize(cell: UITableViewCell,size:CGFloat){
         var whiteRoundedCornerView = UIView(frame: CGRectMake(10,4,size-20,64))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false
         whiteRoundedCornerView.layer.cornerRadius = 3.0
-        //whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1)
-        //whiteRoundedCornerView.layer.shadowOpacity = 0.5
         whiteRoundedCornerView.tag = 1
         cell.contentView.addSubview(whiteRoundedCornerView)
         cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
