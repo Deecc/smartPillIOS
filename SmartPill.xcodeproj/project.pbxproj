@@ -28,7 +28,6 @@
 		B36E13C01B078A120080D7C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36E13BE1B078A120080D7C2 /* LaunchScreen.xib */; };
 		B36E13CC1B078A120080D7C2 /* SmartPillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */; };
 		B36E13D61B078AA10080D7C2 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13D51B078AA10080D7C2 /* ScheduleVC.swift */; };
-		B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */; };
 		B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E01B07D4070080D7C2 /* BoxVC.swift */; };
 		B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E21B07E65B0080D7C2 /* AccountVC.swift */; };
 		B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */; };
@@ -89,7 +88,6 @@
 		B36E13CA1B078A120080D7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPillTests.swift; sourceTree = "<group>"; };
 		B36E13D51B078AA10080D7C2 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleVC.swift; path = Controllers/ScheduleVC.swift; sourceTree = "<group>"; };
-		B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDrawer.swift; sourceTree = "<group>"; };
 		B36E13E01B07D4070080D7C2 /* BoxVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxVC.swift; path = Controllers/BoxVC.swift; sourceTree = "<group>"; };
 		B36E13E21B07E65B0080D7C2 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = Controllers/AccountVC.swift; sourceTree = "<group>"; };
 		B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeDetailsVC.swift; path = Controllers/RecipeDetailsVC.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				B36609EF1B1E7F3100E1734F /* MyStyleKit.m */,
 				B3D1D3711B1120AE00345735 /* ArraySorter.swift */,
 				B3FD46641B0948F400CD1F17 /* GraphView.swift */,
-				B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */,
 				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
 				B36A40041B21256C00998787 /* CustomCell.swift */,
 			);
@@ -379,7 +376,6 @@
 				B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */,
 				B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */,
 				B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */,
-				B36E13DB1B07B25B0080D7C2 /* CellDrawer.swift in Sources */,
 				B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */,
 				B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */,
 				B37E50781B092743008FF194 /* HistoryVC.swift in Sources */,
