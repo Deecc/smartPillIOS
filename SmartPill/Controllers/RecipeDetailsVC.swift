@@ -29,15 +29,13 @@ class RecipeDetailsVC: UIViewController,UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! UITableViewCell
-        var cellDrawer = CellDrawer()
+        var cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! CustomCell
+      
         if (cell.viewWithTag(1) == nil){
-            cellDrawer.createWhiteContentInCell(cell)
+            cell.createWhiteContentInCell()
         }
-        cellDrawer.insertDescriptionLabel(cell, text: medicines[indexPath.row].name)
-        let num = medicines[indexPath.row].quantity
-        let stringNum = num.stringValue
-        cellDrawer.insertQuantityLabelInVCenter(cell, text: stringNum)
+        cell.name.text = medicines[indexPath.row].name
+        
         return cell
     }
     

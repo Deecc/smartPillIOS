@@ -20,6 +20,7 @@
 		B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */; };
 		B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */; };
 		B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B36609EF1B1E7F3100E1734F /* MyStyleKit.m */; };
+		B36A40051B21256C00998787 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A40041B21256C00998787 /* CustomCell.swift */; };
 		B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B21B078A120080D7C2 /* AppDelegate.swift */; };
 		B36E13B61B078A120080D7C2 /* SmartPill.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B41B078A120080D7C2 /* SmartPill.xcdatamodeld */; };
 		B36E13BB1B078A120080D7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36E13B91B078A120080D7C2 /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Sound+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Sound+Create.swift"; sourceTree = "<group>"; };
 		B36609EE1B1E7F3100E1734F /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyleKit.h; sourceTree = "<group>"; };
 		B36609EF1B1E7F3100E1734F /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyleKit.m; sourceTree = "<group>"; };
+		B36A40041B21256C00998787 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = Modals/CustomCell.swift; sourceTree = "<group>"; };
 		B36AB8251B1BBF1C00AA8840 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		B36E13AD1B078A120080D7C2 /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36E13B11B078A120080D7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				B3FD46641B0948F400CD1F17 /* GraphView.swift */,
 				B36E13DA1B07B25B0080D7C2 /* CellDrawer.swift */,
 				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
+				B36A40041B21256C00998787 /* CustomCell.swift */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */,
 				B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */,
 				B36E13D61B078AA10080D7C2 /* ScheduleVC.swift in Sources */,
+				B36A40051B21256C00998787 /* CustomCell.swift in Sources */,
 				B3FD46691B094EF800CD1F17 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

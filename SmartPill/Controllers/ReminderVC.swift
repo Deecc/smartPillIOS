@@ -24,20 +24,16 @@ class ReminderVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! UITableViewCell
+        var cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! CustomCell
         if (cell.viewWithTag(1) == nil){
-            var cellDrawer = CellDrawer()
-            cellDrawer.createWhiteContentInCell(cell)
-            let medName = reminders[indexPath.row].medicine.name
-            let schedule = reminders[indexPath.row].reminder_schedule.schedule
-            let timeFormat = NSDateFormatter()
-            timeFormat.dateFormat = "HH:MM"
-            let dateTimePrefix = timeFormat.stringFromDate(schedule)
-            cellDrawer.insertDescriptionLabel(cell, text: medName)
-            cellDrawer.insertTimeLabelInVCenter(cell, text: dateTimePrefix)
+            cell.createWhiteContentInCell()
         }
-        
-        
+        cell.name.text = reminders[indexPath.row].medicine.name
+        let schedule = reminders[indexPath.row].reminder_schedule.schedule
+        let timeFormat = NSDateFormatter()
+        timeFormat.dateFormat = "HH:MM"
+        cell.time.text = timeFormat.stringFromDate(schedule)
+
         return cell
     }
     

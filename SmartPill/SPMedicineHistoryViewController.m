@@ -29,7 +29,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
@@ -39,10 +39,10 @@
     NSDateFormatter * timeFormat = [[NSDateFormatter alloc]init];
     [timeFormat setDateFormat:@"HH:mm"];
     
-    CellDrawer * drawer = [[CellDrawer alloc]init];
-    [drawer createWhiteContentInCellWithFixSize:cell size:self.view.window.frame.size.width];
-    [drawer insertDescriptionLabel:cell text:[[reminder valueForKey:@"medicine"]valueForKey:@"name"]];
-    [drawer insertTimeLabelInVCenter:cell text:[NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]]];
+    [cell createWhiteContentInCellWithFixSize:self.view.window.frame.size.width];
+    cell.name.text = [[reminder valueForKey:@"medicine"]valueForKey:@"name"];
+    cell.time.text = [NSString stringWithFormat:@"%@",[timeFormat stringFromDate:date]];
+    
     return cell;
 }
 

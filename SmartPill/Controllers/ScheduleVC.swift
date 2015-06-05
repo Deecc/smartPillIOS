@@ -34,7 +34,7 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! UITableViewCell
+        var cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! CustomCell
         var arr:[Reminder]!
         if (indexPath.section == 0){
             arr = remindersPastTime
@@ -44,18 +44,15 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             arr = remindersTaken
         }
         if (cell.viewWithTag(1) == nil){
-            var cellDrawer = CellDrawer()
-            cellDrawer.createWhiteContentInCell(cell)
-            cellDrawer.insertDescriptionLabel(cell, text: arr[indexPath.row].medicine.name)
-            var date = arr[indexPath.row].reminder_schedule.schedule
-            let timeFormat = NSDateFormatter()
-            timeFormat.dateFormat = "HH:MM"
-            let dateTimePrefix = timeFormat.stringFromDate(date)
-            cellDrawer.insertTimeLabel(cell, text: dateTimePrefix)
-            cellDrawer.insertQuantityLabel(cell, text: arr[indexPath.row].medicine.quantity.stringValue)
+            cell.createWhiteContentInCell()
         }
-        
-        
+        cell.name.text = arr[indexPath.row].medicine.name
+        var date = arr[indexPath.row].reminder_schedule.schedule
+        let timeFormat = NSDateFormatter()
+        timeFormat.dateFormat = "HH:MM"
+        let dateTimePrefix = timeFormat.stringFromDate(date)
+        cell.time.text = dateTimePrefix
+        cell.quantity.text = arr[indexPath.row].medicine.quantity.stringValue
         return cell
     }
     
@@ -86,27 +83,28 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.section == 0){
-            print("if\n")
             let reminder = remindersPastTime[indexPath.row]
-            remindersPastTime.removeAtIndex(indexPath.row)
+            if let foundIndex = find(remindersPastTime, reminder) {
+                remindersPastTime.removeAtIndex(foundIndex)
+            }
             remindersTaken.append(reminder)
         }else if(indexPath.section == 1){
-            print("else if\n")
             let reminder = remindersToBeTaken[indexPath.row]
-            remindersToBeTaken.removeAtIndex(indexPath.row)
-            print(reminder.reminder_schedule.schedule)
+            if let foundIndex = find(remindersToBeTaken, reminder) {
+                remindersToBeTaken.removeAtIndex(foundIndex)
+            }
+            remindersTaken.append(reminder)
         }else if(indexPath.section == 2){
-            print("else if2\n")
             let reminder = remindersTaken[indexPath.row]
             let arrSorter = ArraySorter()
             if arrSorter.remindersEarlierSorter(reminder) != nil {
-                print("if2\n")
                 remindersToBeTaken.append(reminder)
             }else if arrSorter.remindersLateSorter(reminder) != nil{
-                print("else2\n")
                 remindersPastTime.append(reminder)
             }
-            remindersTaken.removeAtIndex(indexPath.row)
+            if let foundIndex = find(remindersTaken, reminder) {
+                remindersTaken.removeAtIndex(foundIndex)
+            }
         }
         tableView.reloadData()
     }
@@ -136,5 +134,4 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.presentViewController(actionSheet, animated: true,completion: nil)
     }
 
-       
 }

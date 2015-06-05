@@ -25,19 +25,17 @@ class RecipeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! UITableViewCell
+        var cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! CustomCell
         if (cell.viewWithTag(1) == nil){
-            var cellDrawer = CellDrawer()
-            cellDrawer.createWhiteContentInCell(cell)
-            var stringNames = ""
-            var medicines = recipes[indexPath.row].medicine.allObjects as! [Medicine]
-            for m:Medicine in medicines{
-                stringNames = stringNames + " " + m.name
-            }
-            cellDrawer.insertDescriptionLabel(cell, text: stringNames)
+            cell.createWhiteContentInCell()
         }
-        
-        
+        var stringNames = ""
+        var medicines = recipes[indexPath.row].medicine.allObjects as! [Medicine]
+        for m:Medicine in medicines{
+            stringNames = stringNames + " " + m.name
+        }
+        cell.name.text = stringNames
+
         return cell
     }
     
