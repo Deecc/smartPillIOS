@@ -175,6 +175,7 @@
 		B36E13AF1B078A120080D7C2 /* SmartPill */ = {
 			isa = PBXGroup;
 			children = (
+				B3B1DB741B238F810053B8E4 /* Views */,
 				B3518EAE1B0D37A100884888 /* DBModels */,
 				B36E13D91B07B2370080D7C2 /* Modals */,
 				B36E13D71B078AAE0080D7C2 /* Controllers */,
@@ -242,10 +243,7 @@
 		B36E13D91B07B2370080D7C2 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
-				B36609EE1B1E7F3100E1734F /* MyStyleKit.h */,
-				B36609EF1B1E7F3100E1734F /* MyStyleKit.m */,
 				B3D1D3711B1120AE00345735 /* ArraySorter.swift */,
-				B3FD46641B0948F400CD1F17 /* GraphView.swift */,
 				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
 				B36A40041B21256C00998787 /* CustomCell.swift */,
 			);
@@ -258,6 +256,16 @@
 				B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */,
 			);
 			name = DetailsVC;
+			sourceTree = "<group>";
+		};
+		B3B1DB741B238F810053B8E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B36609EE1B1E7F3100E1734F /* MyStyleKit.h */,
+				B36609EF1B1E7F3100E1734F /* MyStyleKit.m */,
+				B3FD46641B0948F400CD1F17 /* GraphView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B3D1D3731B1124AE00345735 /* NewVC */ = {
