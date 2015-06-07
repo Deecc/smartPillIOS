@@ -26,10 +26,14 @@ class SignInVC: UIViewController {
             if(userPasswordStored == userPassword){
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
                 NSUserDefaults.standardUserDefaults().synchronize()
-                self.performSegueWithIdentifier("accountSegueFromSignIn", sender: nil)
+                backTwo()
             }
         }
     }
-
+    func backTwo() {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController];
+        self.navigationController!.popToViewController(viewControllers.first!, animated: true);
+    }
     
 }

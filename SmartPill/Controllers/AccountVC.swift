@@ -11,10 +11,23 @@ import UIKit
 class AccountVC: UIViewController {
 
     
+    
+    @IBOutlet weak var InOutLabel: UIBarButtonItem!
 
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
     
     var containerVC: ContainerVC!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var status = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if status{
+            InOutLabel.title = "Desconectar"
+        }else{
+            InOutLabel.title = "Conectar"
+        }
+    }
+    
     
     @IBAction func segmentedValueChanged(sender: UISegmentedControl) {
         if(self.mySegmentedControl.titleForSegmentAtIndex(sender.selectedSegmentIndex) == "Histórico"){
@@ -33,8 +46,18 @@ class AccountVC: UIViewController {
     }
     
     @IBAction func logoutAction(sender: UIBarButtonItem) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
+        
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    @IBAction func logInLogOutButton(sender: UIBarButtonItem) {
+        var status = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if status {
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            InOutLabel.title = "Conectar"
+        }else if !status {
+            self.performSegueWithIdentifier("SignInUpSegue", sender: nil)
+        }
     }
     
     

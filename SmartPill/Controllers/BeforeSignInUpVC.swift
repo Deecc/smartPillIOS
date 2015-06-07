@@ -9,14 +9,11 @@
 import UIKit
 
 class BeforeSignInUpVC: UIViewController {
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
-        if(isUserLoggedIn){
-           self.performSegueWithIdentifier("accountSegue", sender: nil)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var status = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if status {
+            //self.navigationController?.popViewControllerAnimated(true)
         }
     }
-    
-    
 }

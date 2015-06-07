@@ -46,10 +46,12 @@ class SignUpVC: UIViewController{
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
         NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
+        NSUserDefaults.standardUserDefaults().synchronize()
         //display alert message with confirmation
         var myAlert = UIAlertController(title: "Alerta", message: "Registro realizado com sucesso", preferredStyle: UIAlertControllerStyle.Alert)
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){ action in
-            self.performSegueWithIdentifier("accountSegueFromSignUp", sender: nil)
+            self.backTwo()
         }
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
@@ -63,6 +65,10 @@ class SignUpVC: UIViewController{
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
-    
+    func backTwo() {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController];
+        self.navigationController!.popToViewController(viewControllers.first!, animated: true);
+    }
     
 }
