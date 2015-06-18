@@ -160,13 +160,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-Gn-cXk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-Gn-cXk" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="16" y="373" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.22352941176470589" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ENTRE COM O FACEBOOK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <outlet property="delegate" destination="SOW-gD-Uiq" id="E6d-P9-N0m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFW-HZ-qzD">
                                 <rect key="frame" x="16" y="309" width="288" height="30"/>
@@ -226,6 +229,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bem vindo" id="Jon-2S-aQZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="j4A-Gn-cXk" id="OVX-U6-oCv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVF-if-Vnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

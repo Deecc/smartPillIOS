@@ -21,6 +21,9 @@
 		B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */; };
 		B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */; };
 		B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B36609EF1B1E7F3100E1734F /* MyStyleKit.m */; };
+		B366ACC61B32390D004EDDEC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */; };
+		B366ACC81B32391E004EDDEC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366ACC71B32391E004EDDEC /* Bolts.framework */; };
+		B366ACCA1B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366ACC91B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift */; };
 		B36A40051B21256C00998787 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A40041B21256C00998787 /* CustomCell.swift */; };
 		B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B21B078A120080D7C2 /* AppDelegate.swift */; };
 		B36E13B61B078A120080D7C2 /* SmartPill.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B36E13B41B078A120080D7C2 /* SmartPill.xcdatamodeld */; };
@@ -61,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		B3328DC31B322E7000FE9404 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		B3328DC61B3235A800FE9404 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "SmartPill/Bridging-Header.h"; sourceTree = "<group>"; };
+		B3328DC61B3235A800FE9404 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B332A9551B17CB7E00420974 /* SPMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMedicineHistoryViewController.h; sourceTree = "<group>"; };
 		B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMedicineHistoryViewController.m; sourceTree = "<group>"; };
 		B332A9571B17CB7E00420974 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
@@ -78,6 +81,9 @@
 		B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Sound+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Sound+Create.swift"; sourceTree = "<group>"; };
 		B36609EE1B1E7F3100E1734F /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyleKit.h; sourceTree = "<group>"; };
 		B36609EF1B1E7F3100E1734F /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyleKit.m; sourceTree = "<group>"; };
+		B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B366ACC71B32391E004EDDEC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B366ACC91B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BeforeSignInUpVC + Facebook.swift"; path = "Controllers/BeforeSignInUpVC + Facebook.swift"; sourceTree = "<group>"; };
 		B36A40041B21256C00998787 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = Modals/CustomCell.swift; sourceTree = "<group>"; };
 		B36AB8251B1BBF1C00AA8840 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		B36E13AD1B078A120080D7C2 /* SmartPill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPill.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B366ACC81B32391E004EDDEC /* Bolts.framework in Frameworks */,
+				B366ACC61B32390D004EDDEC /* FBSDKLoginKit.framework in Frameworks */,
 				B3328DC41B322E7000FE9404 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,10 +168,11 @@
 		B36E13A41B078A120080D7C2 = {
 			isa = PBXGroup;
 			children = (
-				B3328DC61B3235A800FE9404 /* Bridging-Header.h */,
 				B36E13AF1B078A120080D7C2 /* SmartPill */,
 				B36E13C81B078A120080D7C2 /* SmartPillTests */,
 				B36E13AE1B078A120080D7C2 /* Products */,
+				B366ACC71B32391E004EDDEC /* Bolts.framework */,
+				B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */,
 				B3328DC31B322E7000FE9404 /* FBSDKCoreKit.framework */,
 			);
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 			children = (
 				B372FF471B20BCCD00341402 /* DetailsVC */,
 				B3D1D3731B1124AE00345735 /* NewVC */,
+				B3328DC61B3235A800FE9404 /* Bridging-Header.h */,
 				B332A9551B17CB7E00420974 /* SPMedicineHistoryViewController.h */,
 				B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */,
 				B3D1D36B1B10FE8000345735 /* SPBarCodeViewController.h */,
@@ -240,6 +250,7 @@
 				B37E50791B09275E008FF194 /* RecipeVC.swift */,
 				B37E507B1B092775008FF194 /* ReminderVC.swift */,
 				B3FD466A1B0950D400CD1F17 /* BeforeSignInUpVC.swift */,
+				B366ACC91B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -406,6 +417,7 @@
 				B3518EC41B0D383C00884888 /* Reminder_Sound.swift in Sources */,
 				B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */,
 				B37E507C1B092775008FF194 /* ReminderVC.swift in Sources */,
+				B366ACCA1B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift in Sources */,
 				B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */,
 				B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */,
 				B3D1D35A1B10CCBB00345735 /* DatabaseGetter.swift in Sources */,
