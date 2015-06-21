@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         openURL url: NSURL,
         sourceApplication: String?,
         annotation: AnyObject?) -> Bool {
-            return FBSDKApplicationDelegate.sharedInstance().application(
+            return (FBSDKApplicationDelegate.sharedInstance().application(
                 application,
                 openURL: url,
                 sourceApplication: sourceApplication,
-                annotation: annotation)
+                annotation: annotation) || GPPURLHandler.handleURL(url, sourceApplication: sourceApplication, annotation: annotation))
     }
 
     func applicationWillResignActive(application: UIApplication) {

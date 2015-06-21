@@ -10,6 +10,23 @@ import UIKit
 
 extension BeforeSignInUpVC{
     
+    func viewDidLoadFacebook(){
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            // User is already logged in, do work such as go to next view controller.
+            let loginView : FBSDKLoginButton = FBSDKLoginButton()
+            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            self.facebookButton = loginView
+            self.returnUserData()
+        }
+        else
+        {
+            let loginView : FBSDKLoginButton = FBSDKLoginButton()
+            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            self.facebookButton = loginView
+        }
+    }
+    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
 
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
@@ -52,6 +69,7 @@ extension BeforeSignInUpVC{
                 let userEmail = result.valueForKey("email") as! String
                 let userId = result.valueForKey("id") as! String
                 //DADOS COLETADOS, MANDAR PARA O SERVIDOR
+               self.navigationController?.popViewControllerAnimated(true)
             }
         })
     }

@@ -20,6 +20,10 @@
 		B3518ED31B0D3BD900884888 /* Reminder+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED21B0D3BD900884888 /* Reminder+Create.swift */; };
 		B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */; };
 		B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */; };
+		B35D43391B370450006939B9 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35D43381B370450006939B9 /* GoogleOpenSource.framework */; };
+		B35D433B1B370460006939B9 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B35D433A1B370460006939B9 /* GooglePlus.bundle */; };
+		B35D433D1B370490006939B9 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35D433C1B370490006939B9 /* GooglePlus.framework */; };
+		B35D433F1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D433E1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift */; };
 		B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B36609EF1B1E7F3100E1734F /* MyStyleKit.m */; };
 		B366ACC61B32390D004EDDEC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */; };
 		B366ACC81B32391E004EDDEC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366ACC71B32391E004EDDEC /* Bolts.framework */; };
@@ -79,6 +83,10 @@
 		B3518ED21B0D3BD900884888 /* Reminder+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder+Create.swift"; sourceTree = "<group>"; };
 		B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+Create.swift"; path = "SmartPill/dbModals/Categories/Recipe+Create.swift"; sourceTree = "<group>"; };
 		B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Sound+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Sound+Create.swift"; sourceTree = "<group>"; };
+		B35D43381B370450006939B9 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		B35D433A1B370460006939B9 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
+		B35D433C1B370490006939B9 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		B35D433E1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BeforeSignInUpVC + Google+.swift"; path = "Controllers/BeforeSignInUpVC + Google+.swift"; sourceTree = "<group>"; };
 		B36609EE1B1E7F3100E1734F /* MyStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyleKit.h; sourceTree = "<group>"; };
 		B36609EF1B1E7F3100E1734F /* MyStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyleKit.m; sourceTree = "<group>"; };
 		B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -123,8 +131,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35D433D1B370490006939B9 /* GooglePlus.framework in Frameworks */,
 				B366ACC81B32391E004EDDEC /* Bolts.framework in Frameworks */,
 				B366ACC61B32390D004EDDEC /* FBSDKLoginKit.framework in Frameworks */,
+				B35D43391B370450006939B9 /* GoogleOpenSource.framework in Frameworks */,
 				B3328DC41B322E7000FE9404 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +184,9 @@
 				B366ACC71B32391E004EDDEC /* Bolts.framework */,
 				B366ACC51B32390D004EDDEC /* FBSDKLoginKit.framework */,
 				B3328DC31B322E7000FE9404 /* FBSDKCoreKit.framework */,
+				B35D433C1B370490006939B9 /* GooglePlus.framework */,
+				B35D43381B370450006939B9 /* GoogleOpenSource.framework */,
+				B35D433A1B370460006939B9 /* GooglePlus.bundle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +264,7 @@
 				B37E507B1B092775008FF194 /* ReminderVC.swift */,
 				B3FD466A1B0950D400CD1F17 /* BeforeSignInUpVC.swift */,
 				B366ACC91B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift */,
+				B35D433E1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +391,7 @@
 			files = (
 				B36E13BB1B078A120080D7C2 /* Main.storyboard in Resources */,
 				B36E13C01B078A120080D7C2 /* LaunchScreen.xib in Resources */,
+				B35D433B1B370460006939B9 /* GooglePlus.bundle in Resources */,
 				B36E13BD1B078A120080D7C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +440,7 @@
 				B3FD466B1B0950D400CD1F17 /* BeforeSignInUpVC.swift in Sources */,
 				B3518ECA1B0D383D00884888 /* Reminder.swift in Sources */,
 				B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */,
+				B35D433F1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift in Sources */,
 				B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */,
 				B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */,
 				B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */,
@@ -563,6 +579,7 @@
 				);
 				INFOPLIST_FILE = SmartPill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartPill/Bridging-Header.h";
@@ -579,6 +596,7 @@
 				);
 				INFOPLIST_FILE = SmartPill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartPill/Bridging-Header.h";

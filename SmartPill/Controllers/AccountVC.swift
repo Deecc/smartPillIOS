@@ -55,6 +55,12 @@ class AccountVC: UIViewController {
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
             NSUserDefaults.standardUserDefaults().synchronize()
             InOutLabel.title = "Conectar"
+        //Facebook logout
+            let fbLoginManager = FBSDKLoginManager()
+            fbLoginManager.logOut()
+        //Google logout
+            let gLoginManager = GPPSignIn.sharedInstance()
+            gLoginManager.signOut()
         }else if !status {
             self.performSegueWithIdentifier("SignInUpSegue", sender: nil)
         }

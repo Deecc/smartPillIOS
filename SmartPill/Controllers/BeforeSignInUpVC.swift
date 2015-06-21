@@ -8,40 +8,32 @@
 
 import UIKit
 
-class BeforeSignInUpVC: UIViewController,FBSDKLoginButtonDelegate {
+class BeforeSignInUpVC: UIViewController,FBSDKLoginButtonDelegate, GPPSignInDelegate  {
     
-    
+    //Facebook
     @IBOutlet weak var facebookButton: FBSDKLoginButton!
+    //Google+
+    @IBOutlet weak var googleButton: GPPSignInButton!
+    var signIn : GPPSignIn!
+    let clientId = "1017118379545-hf0f9jt0booe8c976nnvvaur86vlqpd1.apps.googleusercontent.com"
+    
     
     override func viewWillAppear(animated: Bool) {
-         weak var facebookButton: UIButton!
         super.viewWillAppear(animated)
         var status = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
         if status {
-            //self.navigationController?.popViewControllerAnimated(true)
+            // User is already logged in SmartPill, do something here
         }
+        self.googleButton.frame = CGRect(x: 16, y: 301, width: self.view.frame.width - 20, height: 34)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            self.facebookButton = loginView
-            self.returnUserData()
-        }
-        else
-        {
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            self.facebookButton = loginView
-        }
+        viewDidLoadFacebook()
+        viewDidLoadGoogle()
         
     }
-
     
 }
+
