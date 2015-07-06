@@ -108,10 +108,10 @@
             int number = [detectionString intValue];
             NSNumber * objInt = [NSNumber numberWithInt:number];
 //PEGAR REMEDIO DO SERVIDOR
-            //Medicine * medicine = [self getMedicineFromServerWithNumber:objInt];
-//            if (medicine) {
-//                [self sendMedicineToNewMedicineVC:medicine];
-//            }
+            Medicine * med = [Medicine createMedicine:@"Cloridrato de Ciclobenzaprina" availability:@"Comprimido" manufacturer:@"Eurofarma" name:@"Musculare" quantity:@15 recipe:nil reminder:nil];
+            if (med) {
+                [self sendMedicineToNewMedicineVC:med];
+            }
             break;
         }
         else
@@ -128,7 +128,8 @@
 //}
 
 - (void)sendMedicineToNewMedicineVC:(Medicine *)medicine{
-    //self.delegate.medicine = medicine;
+    AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.med = medicine;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

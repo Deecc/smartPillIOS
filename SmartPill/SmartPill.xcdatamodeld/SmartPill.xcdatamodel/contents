@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="not_taken" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine" inverseName="history" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="taken" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine_Taken" inverseName="history" inverseEntity="Medicine_Taken" syncable="YES"/>
+    </entity>
     <entity name="Medicine" representedClassName="Medicine" syncable="YES">
         <attribute name="activeIngredient" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="availability" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,17 +12,32 @@
         <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="History" inverseName="not_taken" inverseEntity="History" syncable="YES"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Recipe" inverseName="medicine" inverseEntity="Recipe" syncable="YES"/>
         <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="medicine" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <entity name="Medicine_Taken" representedClassName="Medicine_Taken" syncable="YES">
+        <attribute name="activeIngredient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="availability" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="idMedicine" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="History" inverseName="taken" inverseEntity="History" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="medicineTaken" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reminder" inverseName="medicineTaken" inverseEntity="Reminder" syncable="YES"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES">
         <attribute name="idRecipe" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="recipeImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="medicine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Medicine" inverseName="recipe" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="medicineTaken" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine_Taken" inverseName="recipe" inverseEntity="Medicine_Taken" syncable="YES"/>
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="idReminder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Medicine" inverseName="reminder" inverseEntity="Medicine" syncable="YES"/>
+        <relationship name="medicineTaken" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine_Taken" inverseName="reminder" inverseEntity="Medicine_Taken" syncable="YES"/>
         <relationship name="reminder_schedule" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reminder_Schedule" inverseName="reminder" inverseEntity="Reminder_Schedule" syncable="YES"/>
         <relationship name="reminder_sound" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reminder_Sound" inverseName="reminder" inverseEntity="Reminder_Sound" syncable="YES"/>
     </entity>
@@ -31,10 +51,12 @@
         <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="reminder_sound" inverseEntity="Reminder" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="2709" positionY="-5724" width="128" height="28"/>
-        <element name="Recipe" positionX="3033" positionY="-5679" width="128" height="28"/>
-        <element name="Reminder" positionX="2880" positionY="-5856" width="128" height="28"/>
-        <element name="Reminder_Schedule" positionX="2932" positionY="-6039" width="128" height="28"/>
-        <element name="Reminder_Sound" positionX="3076" positionY="-5817" width="128" height="28"/>
+        <element name="Medicine" positionX="2385" positionY="-5967" width="128" height="178"/>
+        <element name="Recipe" positionX="2808" positionY="-5647" width="128" height="103"/>
+        <element name="Reminder" positionX="2691" positionY="-5788" width="128" height="118"/>
+        <element name="Reminder_Schedule" positionX="2871" positionY="-5922" width="128" height="88"/>
+        <element name="Reminder_Sound" positionX="2923" positionY="-5779" width="128" height="73"/>
+        <element name="Medicine_Taken" positionX="2385" positionY="-5778" width="128" height="193"/>
+        <element name="History" positionX="2754" positionY="-5526" width="128" height="88"/>
     </elements>
 </model>

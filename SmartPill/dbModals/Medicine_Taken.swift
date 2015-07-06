@@ -1,5 +1,5 @@
 //
-//  Medicine.swift
+//  Medicine_Taken.swift
 //  SmartPill
 //
 //  Created by Dennis da Silva Nunes on 05/07/15.
@@ -8,9 +8,9 @@
 
 import Foundation
 import CoreData
-@objc(Medicine)
+@objc(Medicine_Taken)
 
-class Medicine: NSManagedObject {
+class Medicine_Taken: NSManagedObject {
 
     @NSManaged var activeIngredient: String
     @NSManaged var availability: String
@@ -18,8 +18,9 @@ class Medicine: NSManagedObject {
     @NSManaged var manufacturer: String
     @NSManaged var name: String
     @NSManaged var quantity: NSNumber
+    @NSManaged var date_time: NSDate
+    @NSManaged var history: History
     @NSManaged var recipe: Recipe
     @NSManaged var reminder: NSSet
-    @NSManaged var history: History
 
 }

@@ -25,7 +25,7 @@ extension Medicine{
             if(matches == nil || matches!.count > 1){
                 return nil
             }else if(matches!.count==0){
-                //CREATE A NEW OFFER
+                //CREATE A NEW MEDICINE
                 var med = NSEntityDescription.insertNewObjectForEntityForName("Medicine", inManagedObjectContext: context!) as! Medicine
                 
                 med.activeIngredient = activeIngredient
@@ -38,7 +38,7 @@ extension Medicine{
                 context?.save(nil)
                 return med
             }else{
-                //OVERWRITE THE OLD OFFER
+                //OVERWRITE THE OLD MEDICINE
                 var med:Medicine = matches!.first!
                 
                 med.activeIngredient = activeIngredient
@@ -54,4 +54,15 @@ extension Medicine{
         }
         return nil
     }
+    func decreaseQuantity(quantity:Int){
+        let quant = self.quantity.integerValue
+        let result = quant - quantity
+        self.quantity = NSNumber(integer: result)
+    }
+    func increaseQuantity(quantity:Int){
+        let quant = self.quantity.integerValue
+        let result = quant + quantity
+        self.quantity = NSNumber(integer: result)
+    }
+    
 }

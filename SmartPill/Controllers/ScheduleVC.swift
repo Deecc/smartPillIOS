@@ -19,18 +19,26 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var allRemSorted:[Reminder]!
+    var allRemSorted:[Reminder] = []
     var remindersTaken: [Reminder] = []
-    var remindersPastTime: [Reminder]!
-    var remindersToBeTaken: [Reminder]!
+    var remindersPastTime: [Reminder] = []
+    var remindersToBeTaken: [Reminder] = []
     
     
     func getDataToArrays(){
         var arrSorter = ArraySorter()
-        allRemSorted = DatabaseGetter.getReminders()
-        allRemSorted = arrSorter.sortArray(allRemSorted!)
+        //All reminders
+        allRemSorted = DatabaseGetter.getRemindersFromHistory()
+        allRemSorted = arrSorter.sortArray(allRemSorted)
+        //Reminders after current time
         remindersPastTime = arrSorter.getRemindersLateTime(self.allRemSorted)
+        remindersPastTime = arrSorter.sortArray(remindersPastTime)
+        //Reminders before current time
         remindersToBeTaken = arrSorter.getRemindersEarlierTime(self.allRemSorted)
+        remindersToBeTaken = arrSorter.sortArray(remindersToBeTaken)
+        //Reminders already taken
+        remindersTaken = DatabaseGetter.getRemindersFromTakenHistory()
+        remindersTaken = arrSorter.sortArray(remindersTaken)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -40,30 +48,30 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             arr = remindersPastTime
         }else if (indexPath.section == 1){
             arr = remindersToBeTaken
-        }else {
+        }else if (indexPath.section == 2){
             arr = remindersTaken
         }
         if (cell.viewWithTag(1) == nil){
             cell.createWhiteContentInCell()
         }
         cell.name.text = arr[indexPath.row].medicine.name
-        var date = arr[indexPath.row].reminder_schedule.schedule
-        let timeFormat = NSDateFormatter()
-        timeFormat.dateFormat = "HH:MM"
-        let dateTimePrefix = timeFormat.stringFromDate(date)
+        let date = arr[indexPath.row].reminder_schedule.schedule
+        var timeFormat = NSDateFormatter()
+        timeFormat.dateFormat = "hh:mm"
+        var dateTimePrefix = timeFormat.stringFromDate(date)
         cell.time.text = dateTimePrefix
         cell.quantity.text = arr[indexPath.row].medicine.quantity.stringValue
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0){return remindersPastTime!.count}
-        else if(section == 1){return remindersToBeTaken!.count}
+        if (section == 0){return remindersPastTime.count}
+        else if(section == 1){return remindersToBeTaken.count}
         else{return remindersTaken.count}
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if(self.allRemSorted.count > 0){return 3}
+        if((self.allRemSorted.count + self.remindersTaken.count) > 0){return 3}
         else{
             return 0
         }
@@ -84,28 +92,15 @@ class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.section == 0){
             let reminder = remindersPastTime[indexPath.row]
-            if let foundIndex = find(remindersPastTime, reminder) {
-                remindersPastTime.removeAtIndex(foundIndex)
-            }
-            remindersTaken.append(reminder)
+            RemindersManager.medicineWasTaken(reminder)
         }else if(indexPath.section == 1){
             let reminder = remindersToBeTaken[indexPath.row]
-            if let foundIndex = find(remindersToBeTaken, reminder) {
-                remindersToBeTaken.removeAtIndex(foundIndex)
-            }
-            remindersTaken.append(reminder)
+            RemindersManager.medicineWasTaken(reminder)
         }else if(indexPath.section == 2){
             let reminder = remindersTaken[indexPath.row]
-            let arrSorter = ArraySorter()
-            if arrSorter.remindersEarlierSorter(reminder) != nil {
-                remindersToBeTaken.append(reminder)
-            }else if arrSorter.remindersLateSorter(reminder) != nil{
-                remindersPastTime.append(reminder)
-            }
-            if let foundIndex = find(remindersTaken, reminder) {
-                remindersTaken.removeAtIndex(foundIndex)
-            }
+            RemindersManager.medicineWasUntaken(reminder)
         }
+        getDataToArrays()
         tableView.reloadData()
     }
     

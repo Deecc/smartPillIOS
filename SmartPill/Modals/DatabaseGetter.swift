@@ -11,6 +11,58 @@ import CoreData
 
 class DatabaseGetter: NSObject {
     
+    class func getRemindersFromHistory() -> [Reminder]{
+        createHistoryToday()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext!
+        var fetch = NSFetchRequest(entityName: "History")
+        let today = TimeManager.getStartDayHour()
+        fetch.predicate = NSPredicate(format: "date = %@", today)
+        var array = context.executeFetchRequest(fetch, error: nil) as! [History]
+        return getRemindersInHistory(array)
+    }
+    class func createHistoryToday(){
+        History.createToday()
+    }
+    
+    class func getRemindersInHistory(arrHistory:[History])->[Reminder]{
+        var array:[Reminder] = []
+        for history in  arrHistory{
+            let medicines = history.not_taken.allObjects as! [Medicine]
+            for med in medicines{
+                let rems = med.reminder.allObjects as! [Reminder]
+                for rem in rems {
+                    array.append(rem)
+                }
+            }
+        }
+        return array
+    }
+    
+    class func getRemindersFromTakenHistory() -> [Reminder]{
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        var fetch = NSFetchRequest(entityName: "History")
+        let today = TimeManager.getStartDayHour()
+        fetch.predicate = NSPredicate(format: "date = %@", today)
+        var array = context?.executeFetchRequest(fetch, error: nil) as! [History]
+        return getRemindersInTakenHistory(array)
+    }
+    
+    class func getRemindersInTakenHistory(arrHistory:[History])->[Reminder]{
+        var array:[Reminder] = []
+        for history in  arrHistory{
+            let medicines = history.taken.allObjects as! [Medicine_Taken]
+            for med in medicines{
+                let rems = med.reminder.allObjects as! [Reminder]
+                for rem in rems {
+                    array.append(rem)
+                }
+            }
+        }
+        return array
+    }
+
     class func getMedicines()->[Medicine]?{
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
@@ -19,6 +71,7 @@ class DatabaseGetter: NSObject {
         var array = context?.executeFetchRequest(fetch, error: nil) as! [Medicine]
         return array
     }
+    
     class func getMedicineWithName(name:String)->Medicine?{
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext

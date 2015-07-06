@@ -11,9 +11,6 @@
 		B332A9591B17CB7E00420974 /* SPMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332A9561B17CB7E00420974 /* SPMedicineHistoryViewController.m */; };
 		B332A95A1B17CB7E00420974 /* SPNewMedicineHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332A9581B17CB7E00420974 /* SPNewMedicineHistoryViewController.m */; };
 		B3518EC41B0D383C00884888 /* Reminder_Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC31B0D383C00884888 /* Reminder_Sound.swift */; };
-		B3518EC61B0D383D00884888 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC51B0D383D00884888 /* Medicine.swift */; };
-		B3518EC81B0D383D00884888 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC71B0D383D00884888 /* Recipe.swift */; };
-		B3518ECA1B0D383D00884888 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518EC91B0D383D00884888 /* Reminder.swift */; };
 		B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */; };
 		B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ECE1B0D38C900884888 /* Medicine+Create.swift */; };
 		B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3518ED01B0D3BBC00884888 /* Reminder_Schedule+Create.swift */; };
@@ -39,6 +36,7 @@
 		B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E01B07D4070080D7C2 /* BoxVC.swift */; };
 		B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E13E21B07E65B0080D7C2 /* AccountVC.swift */; };
 		B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */; };
+		B37C621B1B4B38A800326224 /* CreateMedicineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C621A1B4B38A800326224 /* CreateMedicineTests.swift */; };
 		B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50711B08F96B008FF194 /* EmptySegue.swift */; };
 		B37E50741B08FB83008FF194 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50731B08FB83008FF194 /* ContainerVC.swift */; };
 		B37E50781B092743008FF194 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E50771B092743008FF194 /* HistoryVC.swift */; };
@@ -50,6 +48,15 @@
 		B3D1D3651B10FB3800345735 /* NewReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3641B10FB3800345735 /* NewReminderVC.swift */; };
 		B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D36C1B10FE8000345735 /* SPBarCodeViewController.m */; };
 		B3D1D3721B1120AE00345735 /* ArraySorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1D3711B1120AE00345735 /* ArraySorter.swift */; };
+		B3D254BB1B49A8910047D0FA /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254BA1B49A8910047D0FA /* Medicine.swift */; };
+		B3D254C11B49A9440047D0FA /* History+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254C01B49A9440047D0FA /* History+Create.swift */; };
+		B3D254C31B49A9630047D0FA /* Medicine_Taken+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254C21B49A9630047D0FA /* Medicine_Taken+Create.swift */; };
+		B3D254C51B49AC720047D0FA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254C41B49AC720047D0FA /* Recipe.swift */; };
+		B3D254CB1B49B5240047D0FA /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254CA1B49B5240047D0FA /* Reminder.swift */; };
+		B3D254CD1B49B5240047D0FA /* Medicine_Taken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254CC1B49B5240047D0FA /* Medicine_Taken.swift */; };
+		B3D254CF1B49B9690047D0FA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254CE1B49B9690047D0FA /* History.swift */; };
+		B3D254D11B49BDC50047D0FA /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254D01B49BDC50047D0FA /* RemindersManager.swift */; };
+		B3D254D31B49DF2D0047D0FA /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254D21B49DF2D0047D0FA /* TimeManager.swift */; };
 		B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46641B0948F400CD1F17 /* GraphView.swift */; };
 		B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46661B094EF800CD1F17 /* SignUpVC.swift */; };
 		B3FD46691B094EF800CD1F17 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46671B094EF800CD1F17 /* SignInVC.swift */; };
@@ -74,9 +81,6 @@
 		B332A9571B17CB7E00420974 /* SPNewMedicineHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNewMedicineHistoryViewController.h; sourceTree = "<group>"; };
 		B332A9581B17CB7E00420974 /* SPNewMedicineHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNewMedicineHistoryViewController.m; sourceTree = "<group>"; };
 		B3518EC31B0D383C00884888 /* Reminder_Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder_Sound.swift; path = SmartPill/dbModals/Reminder_Sound.swift; sourceTree = "<group>"; };
-		B3518EC51B0D383D00884888 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medicine.swift; path = SmartPill/dbModals/Medicine.swift; sourceTree = "<group>"; };
-		B3518EC71B0D383D00884888 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = SmartPill/dbModals/Recipe.swift; sourceTree = "<group>"; };
-		B3518EC91B0D383D00884888 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = SmartPill/dbModals/Reminder.swift; sourceTree = "<group>"; };
 		B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder_Schedule.swift; path = SmartPill/dbModals/Reminder_Schedule.swift; sourceTree = "<group>"; };
 		B3518ECE1B0D38C900884888 /* Medicine+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Medicine+Create.swift"; path = "SmartPill/dbModals/Categories/Medicine+Create.swift"; sourceTree = "<group>"; };
 		B3518ED01B0D3BBC00884888 /* Reminder_Schedule+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder_Schedule+Create.swift"; path = "SmartPill/dbModals/Categories/Reminder_Schedule+Create.swift"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		B36E13E01B07D4070080D7C2 /* BoxVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxVC.swift; path = Controllers/BoxVC.swift; sourceTree = "<group>"; };
 		B36E13E21B07E65B0080D7C2 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = Controllers/AccountVC.swift; sourceTree = "<group>"; };
 		B372FF481B20BD0400341402 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeDetailsVC.swift; path = Controllers/RecipeDetailsVC.swift; sourceTree = "<group>"; };
+		B37C621A1B4B38A800326224 /* CreateMedicineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMedicineTests.swift; sourceTree = "<group>"; };
 		B37E50711B08F96B008FF194 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Controllers/EmptySegue.swift; sourceTree = "<group>"; };
 		B37E50731B08FB83008FF194 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerVC.swift; path = Controllers/ContainerVC.swift; sourceTree = "<group>"; };
 		B37E50771B092743008FF194 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryVC.swift; path = Controllers/HistoryVC.swift; sourceTree = "<group>"; };
@@ -120,6 +125,15 @@
 		B3D1D36B1B10FE8000345735 /* SPBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBarCodeViewController.h; path = ../SPBarCodeViewController.h; sourceTree = "<group>"; };
 		B3D1D36C1B10FE8000345735 /* SPBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBarCodeViewController.m; path = ../SPBarCodeViewController.m; sourceTree = "<group>"; };
 		B3D1D3711B1120AE00345735 /* ArraySorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySorter.swift; sourceTree = "<group>"; };
+		B3D254BA1B49A8910047D0FA /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medicine.swift; path = SmartPill/dbModals/Medicine.swift; sourceTree = "<group>"; };
+		B3D254C01B49A9440047D0FA /* History+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "History+Create.swift"; path = "SmartPill/dbModals/Categories/History+Create.swift"; sourceTree = "<group>"; };
+		B3D254C21B49A9630047D0FA /* Medicine_Taken+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Medicine_Taken+Create.swift"; path = "SmartPill/dbModals/Categories/Medicine_Taken+Create.swift"; sourceTree = "<group>"; };
+		B3D254C41B49AC720047D0FA /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = SmartPill/dbModals/Recipe.swift; sourceTree = "<group>"; };
+		B3D254CA1B49B5240047D0FA /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = SmartPill/dbModals/Reminder.swift; sourceTree = "<group>"; };
+		B3D254CC1B49B5240047D0FA /* Medicine_Taken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medicine_Taken.swift; path = SmartPill/dbModals/Medicine_Taken.swift; sourceTree = "<group>"; };
+		B3D254CE1B49B9690047D0FA /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = SmartPill/dbModals/History.swift; sourceTree = "<group>"; };
+		B3D254D01B49BDC50047D0FA /* RemindersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemindersManager.swift; path = Modals/RemindersManager.swift; sourceTree = "<group>"; };
+		B3D254D21B49DF2D0047D0FA /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeManager.swift; path = Modals/TimeManager.swift; sourceTree = "<group>"; };
 		B3FD46641B0948F400CD1F17 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B3FD46661B094EF800CD1F17 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		B3FD46671B094EF800CD1F17 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -153,10 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				B3518ECD1B0D385400884888 /* Categories */,
+				B3D254CC1B49B5240047D0FA /* Medicine_Taken.swift */,
+				B3D254CE1B49B9690047D0FA /* History.swift */,
+				B3D254CA1B49B5240047D0FA /* Reminder.swift */,
+				B3D254C41B49AC720047D0FA /* Recipe.swift */,
+				B3D254BA1B49A8910047D0FA /* Medicine.swift */,
 				B3518ECB1B0D383D00884888 /* Reminder_Schedule.swift */,
-				B3518EC91B0D383D00884888 /* Reminder.swift */,
-				B3518EC71B0D383D00884888 /* Recipe.swift */,
-				B3518EC51B0D383D00884888 /* Medicine.swift */,
 				B3518EC31B0D383C00884888 /* Reminder_Sound.swift */,
 			);
 			name = DBModels;
@@ -171,6 +187,8 @@
 				B3518ED21B0D3BD900884888 /* Reminder+Create.swift */,
 				B3518ED41B0D3BEB00884888 /* Recipe+Create.swift */,
 				B3518ED61B0D3C0800884888 /* Reminder_Sound+Create.swift */,
+				B3D254C01B49A9440047D0FA /* History+Create.swift */,
+				B3D254C21B49A9630047D0FA /* Medicine_Taken+Create.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -228,6 +246,7 @@
 		B36E13C81B078A120080D7C2 /* SmartPillTests */ = {
 			isa = PBXGroup;
 			children = (
+				B37C621A1B4B38A800326224 /* CreateMedicineTests.swift */,
 				B36E13CB1B078A120080D7C2 /* SmartPillTests.swift */,
 				B36E13C91B078A120080D7C2 /* Supporting Files */,
 			);
@@ -275,6 +294,8 @@
 				B3D1D3711B1120AE00345735 /* ArraySorter.swift */,
 				B3D1D3591B10CCBB00345735 /* DatabaseGetter.swift */,
 				B36A40041B21256C00998787 /* CustomCell.swift */,
+				B3D254D01B49BDC50047D0FA /* RemindersManager.swift */,
+				B3D254D21B49DF2D0047D0FA /* TimeManager.swift */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -353,6 +374,7 @@
 		B36E13A51B078A120080D7C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Dennis da Silva Nunes";
 				TargetAttributes = {
@@ -410,37 +432,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D254C11B49A9440047D0FA /* History+Create.swift in Sources */,
 				B332A9591B17CB7E00420974 /* SPMedicineHistoryViewController.m in Sources */,
+				B3D254C31B49A9630047D0FA /* Medicine_Taken+Create.swift in Sources */,
 				B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */,
 				B3518ED11B0D3BBC00884888 /* Reminder_Schedule+Create.swift in Sources */,
 				B372FF491B20BD0400341402 /* RecipeDetailsVC.swift in Sources */,
 				B3518ECC1B0D383D00884888 /* Reminder_Schedule.swift in Sources */,
+				B3D254D11B49BDC50047D0FA /* RemindersManager.swift in Sources */,
 				B3D1D36D1B10FE8000345735 /* SPBarCodeViewController.m in Sources */,
 				B37E50781B092743008FF194 /* HistoryVC.swift in Sources */,
+				B3D254C51B49AC720047D0FA /* Recipe.swift in Sources */,
+				B3D254BB1B49A8910047D0FA /* Medicine.swift in Sources */,
 				B3D1D3651B10FB3800345735 /* NewReminderVC.swift in Sources */,
 				B3D1D3631B10FB2600345735 /* NewRecipeVC.swift in Sources */,
 				B332A95A1B17CB7E00420974 /* SPNewMedicineHistoryViewController.m in Sources */,
 				B3518ED31B0D3BD900884888 /* Reminder+Create.swift in Sources */,
+				B3D254CB1B49B5240047D0FA /* Reminder.swift in Sources */,
 				B36E13B61B078A120080D7C2 /* SmartPill.xcdatamodeld in Sources */,
 				B3518ED51B0D3BEB00884888 /* Recipe+Create.swift in Sources */,
 				B37E507A1B09275E008FF194 /* RecipeVC.swift in Sources */,
-				B3518EC61B0D383D00884888 /* Medicine.swift in Sources */,
 				B3518ED71B0D3C0800884888 /* Reminder_Sound+Create.swift in Sources */,
 				B3D1D3721B1120AE00345735 /* ArraySorter.swift in Sources */,
 				B37E50741B08FB83008FF194 /* ContainerVC.swift in Sources */,
-				B3518EC81B0D383D00884888 /* Recipe.swift in Sources */,
 				B3518EC41B0D383C00884888 /* Reminder_Sound.swift in Sources */,
 				B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */,
 				B37E507C1B092775008FF194 /* ReminderVC.swift in Sources */,
 				B366ACCA1B3239CA004EDDEC /* BeforeSignInUpVC + Facebook.swift in Sources */,
 				B36609F01B1E7F3100E1734F /* MyStyleKit.m in Sources */,
 				B37E50721B08F96B008FF194 /* EmptySegue.swift in Sources */,
+				B3D254CD1B49B5240047D0FA /* Medicine_Taken.swift in Sources */,
 				B3D1D35A1B10CCBB00345735 /* DatabaseGetter.swift in Sources */,
+				B3D254CF1B49B9690047D0FA /* History.swift in Sources */,
 				B3D1D3611B10FA4700345735 /* NewMedicineVC.swift in Sources */,
 				B3FD466B1B0950D400CD1F17 /* BeforeSignInUpVC.swift in Sources */,
-				B3518ECA1B0D383D00884888 /* Reminder.swift in Sources */,
 				B36E13E31B07E65B0080D7C2 /* AccountVC.swift in Sources */,
 				B35D433F1B3712BD006939B9 /* BeforeSignInUpVC + Google+.swift in Sources */,
+				B3D254D31B49DF2D0047D0FA /* TimeManager.swift in Sources */,
 				B36E13B31B078A120080D7C2 /* AppDelegate.swift in Sources */,
 				B36E13E11B07D4070080D7C2 /* BoxVC.swift in Sources */,
 				B3518ECF1B0D38C900884888 /* Medicine+Create.swift in Sources */,
@@ -455,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36E13CC1B078A120080D7C2 /* SmartPillTests.swift in Sources */,
+				B37C621B1B4B38A800326224 /* CreateMedicineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

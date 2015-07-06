@@ -17,7 +17,17 @@ class NewMedicineVC: UIViewController {
     @IBOutlet weak var quantityTextField: UITextField!
     var medicine:Medicine!
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if appDelegate.med != nil{
+            nameTextField.text = appDelegate.med!.name
+            activePrincipleTextField.text = appDelegate.med!.activeIngredient
+            makerTextField.text = appDelegate.med!.manufacturer
+            presentationTextField.text = appDelegate.med!.availability
+            quantityTextField.text = appDelegate.med!.quantity.stringValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
