@@ -10,6 +10,11 @@ import UIKit
 
 class ScheduleVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getDataToArrays()
+        tableView.reloadData()
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

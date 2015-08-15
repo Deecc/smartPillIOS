@@ -12,8 +12,15 @@ class BoxVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.reloadData()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        var arrayReload = medicines
+        print(arrayReload)
         tableView.reloadData()
     }
     
