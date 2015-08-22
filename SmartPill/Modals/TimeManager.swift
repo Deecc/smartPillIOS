@@ -23,4 +23,17 @@ class TimeManager: NSObject {
         let newDate1 = newDate.dateByAddingTimeInterval(60*60*24*1)
         return newDate1
     }
+    class func convertDateToInt(date:NSDate)-> Int{
+        let calendar = NSCalendar.currentCalendar()
+        let dateSlicer = calendar.components(.CalendarUnitMinute | .CalendarUnitHour | .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear,fromDate: date)
+        let year = dateSlicer.year
+        let month = dateSlicer.month
+        let day = dateSlicer.day
+        let hour = dateSlicer.hour
+        let minute = dateSlicer.minute
+        
+        let intDay = minute + hour*100 + day*10000 + month*1000000 + year*100000000
+        
+        return intDay
+    }
 }

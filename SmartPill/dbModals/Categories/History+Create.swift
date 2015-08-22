@@ -31,10 +31,14 @@ extension History{
             var his = NSEntityDescription.insertNewObjectForEntityForName("History", inManagedObjectContext: context) as! History
             
             his.date = newDate
-            let arrNotTaken = getNotTaken()
-            if arrNotTaken.count>0 {
-                his.not_taken = NSSet(array: arrNotTaken)
+            let arrTaken = getTaken()
+            //let arrNotTaken = getNotTaken()
+            if arrTaken.count>0 {
+                his.taken = NSSet(array: arrTaken)
             }
+//            if arrNotTaken.count>0 {
+//                his.not_taken = NSSet(array: arrNotTaken)
+//            }
             his.taken = NSSet()
             context.save(nil)
 
@@ -55,7 +59,7 @@ extension History{
         }
     }
     class func getTaken() -> [Medicine_Taken]{
-        var arrayRem = DatabaseGetter.getReminders()! as [Reminder]
+        var arrayRem = DatabaseGetter.getReminders() as [Reminder]
         var arrayMed:[Medicine_Taken] = []
         for reminder in arrayRem {
             let rem:Medicine_Taken?
@@ -67,7 +71,7 @@ extension History{
         return arrayMed
     }
     class func getNotTaken() -> [Medicine] {
-        var arrayRem = DatabaseGetter.getReminders()! as [Reminder]
+        var arrayRem = DatabaseGetter.getReminders() as [Reminder]
         var arrayMed:[Medicine] = []
         for reminder in arrayRem {
             arrayMed.append(reminder.medicine)

@@ -17,7 +17,7 @@ class NewRecipeVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
     @IBOutlet weak var noPictureLabel: UILabel!
     lazy var medicines:[Medicine] = {
         return DatabaseGetter.getMedicines()
-        }()!
+        }()
 
     @IBAction func takePhoto(sender: UIButton) {
         imagePicker =  UIImagePickerController()
@@ -74,7 +74,9 @@ class NewRecipeVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
         if(selectedMed.count > 0 && imageView != nil){
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 var imgData = UIImageJPEGRepresentation(self.imageView.image, 1.0)
-                Recipe.createRecipe(self.selectedMed, recipeImage: imgData)
+                let recipe = Recipe.createRecipe(self.selectedMed, recipeImage: imgData)
+                let restConnection = RestCon()
+                restConnection.sendNewRecipeToServer(recipe!)
             }
             self.dismissViewControllerAnimated(true, completion: nil)
         }

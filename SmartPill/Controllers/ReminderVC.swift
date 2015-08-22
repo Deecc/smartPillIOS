@@ -12,7 +12,7 @@ class ReminderVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var reminders:[Reminder] = DatabaseGetter.getReminders()!
+    var reminders:[Reminder] = DatabaseGetter.getReminders()
     
     override func viewDidLoad() {
         super.viewDidLoad()

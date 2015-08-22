@@ -57,6 +57,7 @@
 		B3D254CF1B49B9690047D0FA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254CE1B49B9690047D0FA /* History.swift */; };
 		B3D254D11B49BDC50047D0FA /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254D01B49BDC50047D0FA /* RemindersManager.swift */; };
 		B3D254D31B49DF2D0047D0FA /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D254D21B49DF2D0047D0FA /* TimeManager.swift */; };
+		B3E0419B1B8511D500DB4188 /* RestCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0419A1B8511D500DB4188 /* RestCon.swift */; };
 		B3FD46651B0948F400CD1F17 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46641B0948F400CD1F17 /* GraphView.swift */; };
 		B3FD46681B094EF800CD1F17 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46661B094EF800CD1F17 /* SignUpVC.swift */; };
 		B3FD46691B094EF800CD1F17 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD46671B094EF800CD1F17 /* SignInVC.swift */; };
@@ -134,6 +135,7 @@
 		B3D254CE1B49B9690047D0FA /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = SmartPill/dbModals/History.swift; sourceTree = "<group>"; };
 		B3D254D01B49BDC50047D0FA /* RemindersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemindersManager.swift; path = Modals/RemindersManager.swift; sourceTree = "<group>"; };
 		B3D254D21B49DF2D0047D0FA /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeManager.swift; path = Modals/TimeManager.swift; sourceTree = "<group>"; };
+		B3E0419A1B8511D500DB4188 /* RestCon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestCon.swift; path = Modals/RestCon.swift; sourceTree = "<group>"; };
 		B3FD46641B0948F400CD1F17 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B3FD46661B094EF800CD1F17 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		B3FD46671B094EF800CD1F17 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				B36A40041B21256C00998787 /* CustomCell.swift */,
 				B3D254D01B49BDC50047D0FA /* RemindersManager.swift */,
 				B3D254D21B49DF2D0047D0FA /* TimeManager.swift */,
+				B3E0419A1B8511D500DB4188 /* RestCon.swift */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				B3D254BB1B49A8910047D0FA /* Medicine.swift in Sources */,
 				B3D1D3651B10FB3800345735 /* NewReminderVC.swift in Sources */,
 				B3D1D3631B10FB2600345735 /* NewRecipeVC.swift in Sources */,
+				B3E0419B1B8511D500DB4188 /* RestCon.swift in Sources */,
 				B332A95A1B17CB7E00420974 /* SPNewMedicineHistoryViewController.m in Sources */,
 				B3518ED31B0D3BD900884888 /* Reminder+Create.swift in Sources */,
 				B3D254CB1B49B5240047D0FA /* Reminder.swift in Sources */,

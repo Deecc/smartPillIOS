@@ -17,7 +17,7 @@ class NewReminderVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegat
     
     lazy var medicines:[Medicine] = {
         return DatabaseGetter.getMedicines()
-        }()!
+        }()
     lazy var currentSelectedMedicine:Medicine? = {
         var row = self.medicinePickerView.selectedRowInComponent(0)
         var name = self.medicineNamePicker[row]
@@ -54,6 +54,8 @@ class NewReminderVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegat
     @IBAction func doneButtonAction(sender: UIBarButtonItem) {
         var reminder = Reminder.createReminder(DatabaseGetter.getMedicineWithName(self.selectedMedicine!), remSchedule: createReminderSchedule(), remSound: nil)
         setNotification()
+        let restConnection = RestCon()
+        restConnection.sendNewReminderToServer(reminder!)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

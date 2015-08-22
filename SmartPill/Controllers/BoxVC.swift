@@ -20,13 +20,13 @@ class BoxVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         var arrayReload = medicines
-        print(arrayReload)
+        print("vwa box remedios = \(arrayReload.count)\n")
         tableView.reloadData()
     }
     
     lazy var medicines:[Medicine] = {
         return DatabaseGetter.getMedicines()
-    }()!
+    }()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as! CustomCell

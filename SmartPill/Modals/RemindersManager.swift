@@ -14,6 +14,8 @@ class RemindersManager: NSObject {
     class func medicineWasTaken(rem:Reminder){
         var med:Medicine_Taken = Medicine_Taken.createTakenMedFromMed(rem.medicine,today:NSDate())!
         History.addNewMedicineTaken(med)
+        let restConnection = RestCon()
+        restConnection.sendMedicineTakenToServer(med)
     }
     class func medicineWasUntaken(rem:Reminder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -28,7 +30,11 @@ class RemindersManager: NSObject {
         
         var array = context?.executeFetchRequest(fetch, error: nil) as! [Medicine_Taken]
         
-        History.removeTakenMedicine(array.first!)
-        context?.deleteObject(array.first!)
+        if array.count>0 {
+            let restConnection = RestCon()
+            restConnection.sendMedicineUnTakenToServer(array.first!)
+            History.removeTakenMedicine(array.first!)
+            context?.deleteObject(array.first!)
+        }
     }
 }

@@ -63,13 +63,28 @@ class DatabaseGetter: NSObject {
         return array
     }
 
-    class func getMedicines()->[Medicine]?{
+    class func getMedicines()->[Medicine]{
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         var fetch = NSFetchRequest(entityName: "Medicine")
 
-        var array = context?.executeFetchRequest(fetch, error: nil) as! [Medicine]
-        return array
+        if let array = context!.executeFetchRequest(fetch, error: nil) as? [Medicine]{
+            return array
+        }else{
+            return [Medicine]()
+        }
+    }
+    
+    class func getMedicinesTaken()->[Medicine_Taken]{
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        var fetch = NSFetchRequest(entityName: "Medicine_Taken")
+        
+        if let array = context!.executeFetchRequest(fetch, error: nil) as? [Medicine_Taken]{
+            return array
+        }else{
+            return [Medicine_Taken]()
+        }
     }
     
     class func getMedicineWithName(name:String)->Medicine?{
@@ -94,7 +109,7 @@ class DatabaseGetter: NSObject {
         var array = context?.executeFetchRequest(fetch, error: nil) as! [Reminder_Schedule]
         return array
     }
-    class func getReminders()->[Reminder]?{
+    class func getReminders()->[Reminder]{
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
         var fetch = NSFetchRequest(entityName: "Reminder")
@@ -118,5 +133,58 @@ class DatabaseGetter: NSObject {
         
         var array = context?.executeFetchRequest(fetch, error: nil) as! [Reminder_Sound]
         return array
+    }
+    
+    class func prepareCoreDataToServer()->String{
+        let meds = transformMedicineArray(getMedicines())
+        let takenMeds = transformMedicineTakenArray(getMedicinesTaken())
+        let reminders = transformReminderArray(getReminders())
+        //let recipe = getRecipes()
+        
+        return "&medsNameQt=\(meds)&medsTakenNameQtDate=\(takenMeds)&remMedsNameDate=\(reminders)"
+    }
+//CONVERT COREDATA TO STRING
+    class func transformMedicineArray(meds:[Medicine])->String{
+        var medNamesQt = ""
+        
+        for med in meds{
+            let first = meds.first
+            if first === med {
+                medNamesQt += med.name + "," + "\(med.quantity)"
+            }else{
+                medNamesQt += "," + med.name + "\(med.quantity)"
+            }
+        }
+        
+        return medNamesQt
+    }
+    class func transformMedicineTakenArray(meds:[Medicine_Taken])->String{
+        var medNamesQtDate = ""
+        
+        for med in meds{
+            let first = meds.first
+            var intDate = TimeManager.convertDateToInt(med.date_time)
+            if first === med {
+                medNamesQtDate += med.name + "," + "\(med.quantity)" + "\(intDate)"
+            }else{
+                medNamesQtDate += "," + med.name + "\(med.quantity)" + "\(intDate)"
+            }
+        }
+        return medNamesQtDate
+    }
+    
+    class func transformReminderArray(reminders:[Reminder])->String{
+        var medNamesDate = ""
+        
+        for rem in reminders{
+            let first = reminders.first!.medicine
+            var intDate = TimeManager.convertDateToInt(rem.reminder_schedule.schedule)
+            if first === rem.medicine {
+                medNamesDate += rem.medicine.name + "," + "\(intDate)"
+            }else{
+                medNamesDate += "," + rem.medicine.name + "," + "\(intDate)"
+            }
+        }
+        return medNamesDate
     }
 }

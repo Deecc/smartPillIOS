@@ -36,6 +36,8 @@ class NewMedicineVC: UIViewController {
     @IBAction func doneButtonAction(sender: UIBarButtonItem) {
         if(!nameTextField.text.isEmpty && !activePrincipleTextField.text.isEmpty && !makerTextField.text.isEmpty && !presentationTextField.text.isEmpty && !quantityTextField.text.isEmpty){
             var med = Medicine.createMedicine(addActivePrinciple()!, availability: addPresentation()!, manufacturer: addMaker()!, name: addName()!, quantity: addQuantity()!, recipe: nil, reminder: nil)
+            let restConnection = RestCon()
+            restConnection.sendNewMedicineToServer(med!)
             self.dismissViewControllerAnimated(true, completion: nil)
         }else{
            displayAlertMessage("Por favor, preencha todos os campos")
