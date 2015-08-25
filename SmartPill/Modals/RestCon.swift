@@ -9,7 +9,6 @@
 import UIKit
 
 class RestCon: NSObject {
-
     func sendNewMedicineToServer(medicine: Medicine) {
         
         
@@ -23,35 +22,38 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        //let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
         
-        var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
+        
+        var stringUrl = "http://smartpill.noip.me:8080/MedicamentosWS/setMedicine"
         
         let myUrl = NSURL(string: stringUrl)
         
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST"
 
-        let postString = "userId=\(userId)&medName=\(medicine.name)&actIngredient=\(medicine.activeIngredient)&manufacturer=\(medicine.manufacturer)&availability=\(medicine.availability)&quant=\(medicine.quantity)"
-        
+        //let postString = "userEmail=\(userEmail)&medName=\(medicine.name)&actIngredient=\(medicine.activeIngredient)&manufacturer=\(medicine.manufacturer)&availability=\(medicine.availability)&quant=\(medicine.quantity)"
+        let postString = "email=\(userEmail)&name=\(medicine.name)&quantity=\(medicine.quantity)"
+
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
             { data,response,error in
                 
                 if(error != nil){
-                    print("Problemas ao se conectar ao servidor")
+                    print("Problemas ao se conectar ao servidor\n")
                     return
                 }
                 
-                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSDictionary
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSArray
                 var ans = 0
                 if(json != nil){
-                    if let answer = json{
-                        var ans = answer["Funcionou"] as? Int
+                    if let answer = json as? [String]{
+                        var ans = answer.first! as String
+                        print(ans)
                     }
-                }
-                if ans == 0 {
+                }else{
                     print("Problemas ao se conectar com o servidor")
                 }
         }
@@ -70,7 +72,9 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        //let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
         
         var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
         
@@ -81,7 +85,7 @@ class RestCon: NSObject {
         
         let intToday = TimeManager.convertDateToInt(NSDate())
         
-        let postString = "userId=\(userId)&medName=\(reminder.medicine.name)&date=\(intToday)"
+        let postString = "email=\(userEmail)&name=\(reminder.medicine.name)&date=\(intToday)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -93,14 +97,13 @@ class RestCon: NSObject {
                     return
                 }
                 
-                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSDictionary
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSArray
                 var ans = 0
                 if(json != nil){
-                    if let answer = json{
-                        var ans = answer["Funcionou"] as? Int
+                    if let answer = json as? [String]{
+                        var ans = answer.first! as String
                     }
-                }
-                if ans == 0 {
+                }else{
                     print("Problemas ao se conectar com o servidor")
                 }
         }
@@ -118,7 +121,9 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        //let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
         
         var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
         
@@ -139,7 +144,7 @@ class RestCon: NSObject {
             }
         }
         
-        let postString = "userId=\(userId)&medNames=\(medNames)&photo=\(recipe.recipeImage)"
+        let postString = "userEmail=\(userEmail)&medNames=\(medNames)&photo=\(recipe.recipeImage)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -177,7 +182,9 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        //let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
         
         var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
         
@@ -188,7 +195,8 @@ class RestCon: NSObject {
         
         let intToday = TimeManager.convertDateToInt(NSDate())
         
-        let postString = "userId=\(userId)&medName=\(medicine.name)&date=\(intToday)"
+        let postString = "email=\(userEmail)&name=\(medicine.name)"
+        //&date=\(intToday)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -200,14 +208,14 @@ class RestCon: NSObject {
                     return
                 }
                 
-                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSDictionary
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? NSArray
                 var ans = 0
                 if(json != nil){
-                    if let answer = json{
-                        var ans = answer["Funcionou"] as? Int
+                    if let answer = json as? [String]{
+                        var ans = answer.first! as String
+                        print(ans)
                     }
-                }
-                if ans == 0 {
+                }else{
                     print("Problemas ao se conectar com o servidor")
                 }
         }
@@ -226,7 +234,10 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        //let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
+        
         
         var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
         
@@ -237,7 +248,7 @@ class RestCon: NSObject {
         
         let intDate = TimeManager.convertDateToInt(medicine.date_time)
         
-        let postString = "userId=\(userId)&medName=\(medicine.name)&date=\(intDate)"
+        let postString = "userEmail=\(userEmail)&medName=\(medicine.name)&date=\(intDate)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -275,7 +286,8 @@ class RestCon: NSObject {
             return
         }
         
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+        
+        let userEmail = NSUserDefaults.standardUserDefaults().valueForKey("userEmail") as! String
         
         var stringUrl = "http://smartpill.noip.me:8080/UsuariosWS/???????"
         
@@ -286,7 +298,7 @@ class RestCon: NSObject {
         
         let coreDataString = DatabaseGetter.prepareCoreDataToServer()
         
-        let postString = "userId=\(userId)" + coreDataString
+        let postString = "userEmail=\(userEmail)" + coreDataString
         
         print(postString)
         

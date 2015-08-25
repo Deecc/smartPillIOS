@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-extension Medicine{
+ extension Medicine{
     
-    class func createMedicine(activeIngredient:String,availability:String,manufacturer:String,name:String,quantity:NSNumber,recipe:Recipe?,reminder:NSSet?)->Medicine?{
+    public class func createMedicine(activeIngredient:String,availability:String,manufacturer:String,name:String,quantity:NSNumber,recipe:Recipe?,reminder:NSSet?)->Medicine?{
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext
@@ -54,12 +54,12 @@ extension Medicine{
         }
         return nil
     }
-    func decreaseQuantity(quantity:Int){
+    public func decreaseQuantity(quantity:Int){
         let quant = self.quantity.integerValue
         let result = quant - quantity
         self.quantity = NSNumber(integer: result)
     }
-    func increaseQuantity(quantity:Int){
+    public func increaseQuantity(quantity:Int){
         let quant = self.quantity.integerValue
         let result = quant + quantity
         self.quantity = NSNumber(integer: result)

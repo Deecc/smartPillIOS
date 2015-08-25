@@ -109,6 +109,9 @@ class SignUpVC: UIViewController{
                 }else{
                     if let user = json{
                         if let id = user["id"] as? Int {
+                            NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
+                            NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
+                            NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
                             NSUserDefaults.standardUserDefaults().setInteger(id, forKey: "userId")
                             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
                             NSUserDefaults.standardUserDefaults().synchronize()

@@ -8,22 +8,22 @@
 
 import UIKit
 
-class TimeManager: NSObject {
-    class func getStartDayHour() -> NSDate{
+public class TimeManager: NSObject {
+    public class func getStartDayHour() -> NSDate{
         let date = NSDate()
         let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
         let newDate = cal.startOfDayForDate(date)
         return newDate
     }
     //getEndDayHour()
-    class func getEndDayHour() -> NSDate{
+    public class func getEndDayHour() -> NSDate{
         let date = NSDate()
         let cal = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
         let newDate = cal.startOfDayForDate(date)
         let newDate1 = newDate.dateByAddingTimeInterval(60*60*24*1)
         return newDate1
     }
-    class func convertDateToInt(date:NSDate)-> Int{
+    public class func convertDateToInt(date:NSDate)-> Int{
         let calendar = NSCalendar.currentCalendar()
         let dateSlicer = calendar.components(.CalendarUnitMinute | .CalendarUnitHour | .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear,fromDate: date)
         let year = dateSlicer.year

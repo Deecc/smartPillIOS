@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 extension Medicine_Taken{
-    class func createTakenMedFromMed(med:Medicine,today:NSDate) -> Medicine_Taken?{
+    public class func createTakenMedFromMed(med:Medicine,today:NSDate) -> Medicine_Taken?{
         med.decreaseQuantity(1)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -58,7 +58,7 @@ extension Medicine_Taken{
             return medTaken
         }
     }
-    class func getTakenMedWithDate(date:NSDate,array:[Medicine_Taken]) -> [Medicine_Taken]{
+    public class func getTakenMedWithDate(date:NSDate,array:[Medicine_Taken]) -> [Medicine_Taken]{
         var arrayToday:[Medicine_Taken] = []
         for med:Medicine_Taken in array {
             if med.date_time == NSDate(){

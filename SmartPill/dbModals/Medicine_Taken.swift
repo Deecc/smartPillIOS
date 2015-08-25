@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 @objc(Medicine_Taken)
 
-class Medicine_Taken: NSManagedObject {
+public class Medicine_Taken: NSManagedObject {
 
     @NSManaged var activeIngredient: String
     @NSManaged var availability: String

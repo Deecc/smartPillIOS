@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 @objc(Recipe)
 
-class Recipe: NSManagedObject {
+public class Recipe: NSManagedObject {
 
     @NSManaged var idRecipe: NSNumber
     @NSManaged var recipeImage: NSData
